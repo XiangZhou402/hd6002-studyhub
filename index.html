@@ -7,338 +7,571 @@
 <meta name="copyright" content="ZhouXiang 周想">
 <title>HD6002 AI Ethics & Governance — Study Hub</title>
 <style>
-/* ============================== */
-/*            RESET & BASE         */
-/* ============================== */
+/* ================================================================ */
+/*                    MORANDI DESIGN SYSTEM                          */
+/* ================================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --bg: #f8f9fb;
-  --surface: #ffffff;
-  --border: #e5e7eb;
-  --text: #1e293b;
-  --text-muted: #64748b;
-  --text-dim: #94a3b8;
-  --primary: #2563eb;
-  --primary-light: #eff6ff;
-  --green: #16a34a;
-  --green-light: #f0fdf4;
-  --amber: #d97706;
-  --amber-light: #fffbeb;
-  --red: #dc2626;
-  --red-light: #fef2f2;
-  --purple: #7c3aed;
-  --purple-light: #faf5ff;
-  --radius: 10px;
-  --radius-sm: 6px;
-  --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
-  --shadow-md: 0 4px 16px rgba(0,0,0,.06), 0 2px 6px rgba(0,0,0,.04);
+  /* Morandi base */
+  --bg:            #f3f0ec;
+  --surface:       rgba(255,255,255,0.55);
+  --surface-solid: #faf8f5;
+  --border:        #e4dfd8;
+  --border-soft:   rgba(200,195,188,0.4);
+
+  /* Text */
+  --text:          #4a4036;
+  --text-soft:     #8a8076;
+  --text-muted:    #b0a89e;
+
+  /* Morandi accents */
+  --sage:          #b0bfa3;
+  --sage-bg:       rgba(176,191,163,0.18);
+  --dusty-blue:    #a8b5c4;
+  --dusty-blue-bg: rgba(168,181,196,0.2);
+  --dusty-gold:    #d4c5a9;
+  --dusty-gold-bg: rgba(212,197,169,0.22);
+  --dusty-rose:    #d4b5b5;
+  --dusty-rose-bg: rgba(212,181,181,0.2);
+  --dusty-lavender:#c4b8d4;
+  --dusty-lav-bg:  rgba(196,184,212,0.2);
+  --dusty-teal:    #a8c4c0;
+  --dusty-teal-bg: rgba(168,196,192,0.18);
+
+  /* Geometry */
+  --radius:        20px;
+  --radius-sm:     14px;
+  --radius-xs:     10px;
+
+  /* Glass */
+  --glass-bg:      rgba(255,255,255,0.5);
+  --glass-border:  rgba(255,255,255,0.35);
+  --glass-blur:    24px;
+  --glass-shadow:  0 4px 24px rgba(74,64,54,0.05);
+  --glass-hover:   0 12px 40px rgba(74,64,54,0.09);
+
+  /* Font */
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
-body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; }
-a { color: var(--primary); text-decoration: none; }
-a:hover { text-decoration: underline; }
 
-/* ============================== */
-/*            LAYOUT              */
-/* ============================== */
-.container { max-width: 1080px; margin: 0 auto; padding: 20px 24px 60px; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 15% 60%, rgba(180,195,180,0.2) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 15%, rgba(210,200,185,0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(185,180,200,0.12) 0%, transparent 45%);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
 
-/* ============================== */
-/*            HEADER              */
-/* ============================== */
+/* ================================================================ */
+/*                         LAYOUT                                    */
+/* ================================================================ */
+.container { max-width: 1000px; margin: 0 auto; padding: 32px 24px 80px; }
+
+/* ================================================================ */
+/*                     GLASS CARD BASE                               */
+/* ================================================================ */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition);
+}
+.glass:hover {
+  transform: translateY(-1px) scale(1.008);
+  box-shadow: var(--glass-hover);
+}
+
+/* ================================================================ */
+/*                         HEADER                                    */
+/* ================================================================ */
 .header {
-  background: var(--surface); border-radius: var(--radius);
-  padding: 28px 32px; margin-bottom: 20px;
-  box-shadow: var(--shadow); border: 1px solid var(--border);
   display: flex; align-items: center; justify-content: space-between;
+  padding: 28px 32px; margin-bottom: 28px;
   flex-wrap: wrap; gap: 16px;
 }
-.header-left h1 { font-size: 22px; font-weight: 700; color: var(--text); }
-.header-left .sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
-.header-right { display: flex; gap: 10px; align-items: center; }
+.header-left h1 {
+  font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+  background: linear-gradient(135deg, #6b5e53, #4a4036);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.header-left .sub { font-size: 13px; color: var(--text-soft); margin-top: 4px; }
+.header-right { display: flex; gap: 12px; align-items: center; }
+
 .progress-ring {
   width: 56px; height: 56px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 14px; font-weight: 700;
-  border: 3px solid var(--border);
+  font-size: 13px; font-weight: 700;
+  color: var(--dusty-gold); border: 3px solid var(--dusty-gold);
+  background: rgba(212,197,169,0.08);
+  transition: var(--transition);
 }
+
+/* ================================================================ */
+/*                         BUTTONS                                   */
+/* ================================================================ */
 .btn {
-  padding: 8px 18px; border-radius: var(--radius-sm); border: 1px solid var(--border);
-  background: var(--surface); color: var(--text); font-size: 13px; cursor: pointer;
-  font-family: var(--font); transition: all .15s;
+  padding: 9px 20px; border-radius: 24px; border: 1px solid var(--border);
+  background: rgba(255,255,255,0.6); color: var(--text-soft); font-size: 13px;
+  cursor: pointer; font-family: var(--font); font-weight: 500;
+  transition: var(--transition);
 }
-.btn:hover { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
-.btn-primary { background: var(--primary); color: #fff; border-color: var(--primary); }
-.btn-primary:hover { background: #1d4ed8; color: #fff; }
-.btn-danger { background: var(--red); color: #fff; border-color: var(--red); }
-.btn-danger:hover { background: #b91c1c; color: #fff; }
-.btn-sm { padding: 4px 12px; font-size: 12px; }
+.btn:hover {
+  background: var(--dusty-blue-bg); border-color: var(--dusty-blue);
+  color: #6b7d8e; transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(168,181,196,0.15);
+}
+.btn-primary {
+  background: var(--dusty-blue); color: #fff; border-color: transparent;
+  font-weight: 600;
+}
+.btn-primary:hover { background: #98a9ba; color: #fff; }
+.btn-sm { padding: 6px 16px; font-size: 12px; border-radius: 20px; }
 
-/* ============================== */
-/*          DROP ZONE             */
-/* ============================== */
-.dropzone {
-  border: 2px dashed var(--border); border-radius: var(--radius);
-  padding: 28px 24px; text-align: center; margin-bottom: 20px;
-  background: var(--surface); transition: all .2s;
-  cursor: pointer; position: relative;
+/* ================================================================ */
+/*                     THIS WEEK HERO                                */
+/* ================================================================ */
+.hero { margin-bottom: 28px; padding: 32px; position: relative; overflow: hidden; }
+.hero::before {
+  content: ''; position: absolute; top: -40px; right: -40px;
+  width: 180px; height: 180px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(168,181,196,0.15) 0%, transparent 70%);
+  pointer-events: none;
 }
-.dropzone.drag-over { border-color: var(--primary); background: var(--primary-light); }
-.dropzone-icon { font-size: 32px; margin-bottom: 8px; }
-.dropzone-title { font-size: 15px; font-weight: 600; color: var(--text); }
-.dropzone-hint { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
-.dropzone-feedback {
-  margin-top: 12px; padding: 10px 16px; border-radius: var(--radius-sm);
-  font-size: 13px; display: none;
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px; border-radius: 20px;
+  background: rgba(168,181,196,0.15); color: #6b7d8e;
+  font-size: 12px; font-weight: 600; margin-bottom: 14px;
 }
-.dropzone-feedback.success { display: block; background: var(--green-light); color: var(--green); border: 1px solid #bbf7d0; }
-.dropzone-feedback.error { display: block; background: var(--red-light); color: var(--red); border: 1px solid #fecaca; }
-.dropzone-feedback.info { display: block; background: var(--primary-light); color: var(--primary); border: 1px solid #bfdbfe; }
+.hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--dusty-blue); }
+.hero-title { font-size: 26px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+.hero-sub { font-size: 14px; color: var(--text-soft); margin-bottom: 24px; }
 
-/* ============================== */
-/*          DASHBOARD             */
-/* ============================== */
+.hero-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.hero-step {
+  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: var(--radius-sm); padding: 20px;
+  cursor: pointer; transition: var(--transition);
+  position: relative;
+}
+.hero-step:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--glass-hover);
+  background: rgba(255,255,255,0.65);
+}
+.hero-step .step-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700; margin-bottom: 10px;
+}
+.hero-step .step-num.s1 { background: var(--dusty-blue-bg); color: #6b7d8e; }
+.hero-step .step-num.s2 { background: var(--sage-bg); color: #758062; }
+.hero-step .step-num.s3 { background: var(--dusty-gold-bg); color: #9a8a6b; }
+.hero-step .step-num.s4 { background: var(--dusty-rose-bg); color: #9b7070; }
+.hero-step h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.hero-step p { font-size: 12px; color: var(--text-soft); line-height: 1.5; }
+.hero-step .step-check {
+  position: absolute; top: 16px; right: 16px;
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 2px solid var(--border); display: flex;
+  align-items: center; justify-content: center; font-size: 11px;
+  color: transparent; transition: var(--transition);
+}
+.hero-step .step-check.checked { background: var(--sage); border-color: var(--sage); color: #fff; }
+
+/* ================================================================ */
+/*                        DASHBOARD                                  */
+/* ================================================================ */
 .dashboard {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-  margin-bottom: 20px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-bottom: 24px;
 }
-@media (max-width: 800px) { .dashboard { grid-template-columns: 1fr; } }
-.card {
-  background: var(--surface); border-radius: var(--radius);
-  padding: 20px; box-shadow: var(--shadow); border: 1px solid var(--border);
-}
-.card-title {
-  font-size: 14px; font-weight: 600; text-transform: uppercase;
-  color: var(--text-muted); letter-spacing: .5px; margin-bottom: 14px;
-}
+@media (max-width: 760px) { .dashboard { grid-template-columns: 1fr; } }
 
-/* Assessment list */
+.card-title {
+  font-size: 13px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.8px; color: var(--text-soft); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.card-body { padding: 24px; }
+
 .assessment-item {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 8px 0; border-bottom: 1px solid var(--border);
+  padding: 10px 0; border-bottom: 1px solid rgba(228,223,216,0.6);
   font-size: 13px;
 }
 .assessment-item:last-child { border-bottom: none; }
 .assessment-item .name { font-weight: 500; }
-.assessment-item .meta { color: var(--text-muted); font-size: 12px; }
+.assessment-item .pct {
+  font-weight: 700; font-size: 14px;
+  color: var(--dusty-gold);
+}
+.assessment-item .meta { color: var(--text-muted); font-size: 11px; }
 
-/* Milestones */
 .milestone {
   display: flex; align-items: flex-start; gap: 10px;
   padding: 8px 0; font-size: 13px;
 }
 .milestone-dot {
-  width: 8px; height: 8px; border-radius: 50%; margin-top: 6px;
-  flex-shrink: 0;
+  width: 9px; height: 9px; border-radius: 50%; margin-top: 6px; flex-shrink: 0;
 }
-.milestone-dot.warn { background: var(--amber); }
-.milestone-dot.danger { background: var(--red); }
-.milestone-dot.info { background: var(--primary); }
-.milestone-content { flex: 1; }
+.milestone-dot.warn { background: var(--dusty-gold); }
+.milestone-dot.danger { background: var(--dusty-rose); }
+.milestone-dot.info { background: var(--dusty-blue); }
 .milestone-week { font-weight: 600; }
-.milestone-desc { color: var(--text-muted); font-size: 12px; }
+.milestone-desc { color: var(--text-soft); font-size: 12px; }
 
-/* ============================== */
-/*       MATERIALS GRID           */
-/* ============================== */
-.materials-section { margin-bottom: 20px; }
-.materials-section .card-title { margin-bottom: 14px; }
+/* ================================================================ */
+/*                      DROP ZONE                                    */
+/* ================================================================ */
+.dropzone-wrap { margin-bottom: 24px; }
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius); padding: 32px 24px;
+  text-align: center; cursor: pointer; position: relative;
+}
+.dropzone.drag-over {
+  border-color: var(--dusty-blue);
+  background: rgba(168,181,196,0.1);
+}
+.dropzone-icon { font-size: 36px; margin-bottom: 10px; }
+.dropzone-title { font-size: 15px; font-weight: 600; }
+.dropzone-hint { font-size: 13px; color: var(--text-soft); margin-top: 6px; }
+.dropzone-feedback {
+  margin-top: 14px; padding: 12px 18px; border-radius: var(--radius-xs);
+  font-size: 13px; display: none;
+}
+.dropzone-feedback.success { display: block; background: var(--sage-bg); color: #6a7a52; border: 1px solid rgba(176,191,163,0.4); }
+.dropzone-feedback.error { display: block; background: var(--dusty-rose-bg); color: #9b7070; border: 1px solid rgba(212,181,181,0.4); }
+.dropzone-feedback.info { display: block; background: var(--dusty-blue-bg); color: #6b7d8e; border: 1px solid rgba(168,181,196,0.4); }
+
+/* ================================================================ */
+/*                    MATERIALS GRID                                  */
+/* ================================================================ */
 .materials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(66px, 1fr));
+  gap: 10px;
 }
 .material-cell {
-  aspect-ratio: 1; border-radius: var(--radius-sm);
+  aspect-ratio: 1; border-radius: var(--radius-xs);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   font-size: 11px; text-align: center; cursor: pointer;
-  border: 1px solid var(--border); background: #fafafa;
-  transition: all .2s; position: relative;
-  padding: 4px; gap: 2px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.4);
+  transition: var(--transition); padding: 4px; gap: 2px;
 }
-.material-cell:hover { background: var(--primary-light); border-color: var(--primary); }
-.material-cell .week-num { font-weight: 700; font-size: 14px; }
+.material-cell:hover {
+  transform: scale(1.06);
+  background: rgba(168,181,196,0.12);
+  border-color: var(--dusty-blue);
+}
+.material-cell .week-num { font-weight: 700; font-size: 15px; }
 .material-cell .week-label { color: var(--text-muted); font-size: 10px; }
-.material-cell.collected { background: var(--green-light); border-color: #bbf7d0; }
-.material-cell.collected .week-num { color: var(--green); }
+.material-cell.collected { background: var(--sage-bg); border-color: rgba(176,191,163,0.5); }
+.material-cell.collected .week-num { color: #6a7a52; }
+.material-cell.partial { background: var(--dusty-gold-bg); border-color: rgba(212,197,169,0.5); }
 .material-cell.has-notes::after {
-  content: ''; position: absolute; top: 4px; right: 4px;
-  width: 5px; height: 5px; border-radius: 50%; background: var(--purple);
+  content: ''; position: absolute; top: 5px; right: 5px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--dusty-lavender);
+}
+.material-cell { position: relative; }
+
+/* ================================================================ */
+/*                     ILO CARD                                      */
+/* ================================================================ */
+.ilo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+.ilo-chip {
+  padding: 14px 16px; border-radius: var(--radius-sm);
+  font-size: 12px; line-height: 1.5;
+  transition: var(--transition);
+}
+.ilo-chip:hover { transform: translateY(-1px) scale(1.02); }
+.ilo-chip strong { font-size: 13px; display: block; margin-bottom: 3px; }
+.ilo-1 { background: var(--dusty-blue-bg); border: 1px solid rgba(168,181,196,0.3); }
+.ilo-2 { background: var(--sage-bg); border: 1px solid rgba(176,191,163,0.3); }
+.ilo-3 { background: var(--dusty-gold-bg); border: 1px solid rgba(212,197,169,0.3); }
+.ilo-4 { background: var(--dusty-lav-bg); border: 1px solid rgba(196,184,212,0.3); }
+.ilo-5 { background: var(--dusty-rose-bg); border: 1px solid rgba(212,181,181,0.3); }
+
+/* ================================================================ */
+/*                    WEEK SECTIONS                                  */
+/* ================================================================ */
+.week-section {
+  margin-bottom: 14px; overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition);
+}
+.week-section:hover {
+  box-shadow: var(--glass-hover);
 }
 
-/* ============================== */
-/*       WEEK SECTIONS            */
-/* ============================== */
-.week-section {
-  background: var(--surface); border-radius: var(--radius);
-  margin-bottom: 14px; box-shadow: var(--shadow); border: 1px solid var(--border);
-  overflow: hidden;
-}
 .week-header {
-  display: flex; align-items: center; padding: 16px 20px;
+  display: flex; align-items: center; padding: 18px 24px;
   cursor: pointer; user-select: none;
-  transition: background .15s;
+  transition: background 0.2s;
 }
-.week-header:hover { background: #fafafa; }
+.week-header:hover { background: rgba(255,255,255,0.2); }
 .week-badge {
   width: 36px; height: 36px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 14px; margin-right: 14px;
-  flex-shrink: 0;
+  font-weight: 700; font-size: 14px; margin-right: 14px; flex-shrink: 0;
 }
-.week-badge.active { background: var(--primary); color: #fff; }
-.week-badge.past { background: var(--green-light); color: var(--green); }
-.week-badge.future { background: #f1f5f9; color: var(--text-muted); }
-.week-badge.warn { background: var(--amber-light); color: var(--amber); }
+.week-badge.active { background: var(--dusty-blue); color: #fff; }
+.week-badge.past { background: var(--sage-bg); color: #6a7a52; border: 1px solid rgba(176,191,163,0.4); }
+.week-badge.future { background: rgba(255,255,255,0.4); color: var(--text-muted); border: 1px solid var(--border); }
+.week-badge.warn { background: var(--dusty-rose-bg); color: #9b7070; border: 1px solid rgba(212,181,181,0.4); }
 .week-info { flex: 1; }
 .week-info .topic { font-weight: 600; font-size: 15px; }
-.week-info .flags { display: flex; gap: 6px; margin-top: 4px; flex-wrap: wrap; }
+.week-info .flags { display: flex; gap: 6px; margin-top: 5px; flex-wrap: wrap; }
 .flag {
-  font-size: 10px; padding: 2px 8px; border-radius: 10px;
-  font-weight: 600; text-transform: uppercase; letter-spacing: .3px;
+  font-size: 10px; padding: 3px 10px; border-radius: 12px;
+  font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px;
 }
-.flag.quiz { background: var(--red-light); color: var(--red); }
-.flag.paper { background: var(--amber-light); color: var(--amber); }
-.flag.pres { background: var(--purple-light); color: var(--purple); }
-.flag.case { background: var(--primary-light); color: var(--primary); }
-.week-toggle { font-size: 14px; color: var(--text-muted); transition: transform .2s; }
+.flag.quiz { background: var(--dusty-rose-bg); color: #9b7070; }
+.flag.paper { background: var(--dusty-gold-bg); color: #9a8a6b; }
+.flag.pres { background: var(--dusty-lav-bg); color: #8a7799; }
+.flag.case { background: var(--dusty-blue-bg); color: #6b7d8e; }
+.flag.warn { background: var(--dusty-teal-bg); color: #607a75; }
+.week-toggle {
+  font-size: 14px; color: var(--text-muted);
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
 .week-section.expanded .week-toggle { transform: rotate(180deg); }
-.week-body { display: none; padding: 0 20px 20px; }
+.week-body { display: none; padding: 0 24px 24px; }
 .week-section.expanded .week-body { display: block; }
 
-/* Material slots inside week body */
-.material-slots { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+/* Material slots */
+.material-slots { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
 .material-slot {
-  flex: 1; min-width: 150px; border: 1px dashed var(--border);
-  border-radius: var(--radius-sm); padding: 12px 14px;
-  text-align: center; transition: all .2s;
+  flex: 1; min-width: 140px;
+  border: 1px dashed var(--border); border-radius: var(--radius-sm);
+  padding: 14px 16px; text-align: center;
+  background: rgba(255,255,255,0.3); transition: var(--transition);
 }
-.material-slot.drag-over { border-color: var(--primary); background: var(--primary-light); }
-.material-slot .slot-type { font-size: 11px; color: var(--text-muted); font-weight: 600; }
+.material-slot:hover { border-color: var(--dusty-blue); background: rgba(255,255,255,0.5); }
+.material-slot.drag-over { border-color: var(--dusty-blue); background: var(--dusty-blue-bg); }
+.material-slot .slot-type { font-size: 11px; color: var(--text-soft); font-weight: 600; }
 .material-slot .slot-name { font-size: 12px; color: var(--text); margin-top: 4px; word-break: break-all; }
-.material-slot.filled { border-style: solid; border-color: #bbf7d0; background: var(--green-light); }
+.material-slot.filled {
+  border-style: solid; border-color: rgba(176,191,163,0.5);
+  background: var(--sage-bg);
+}
 .material-slot .slot-check { display: none; font-size: 18px; }
 .material-slot.filled .slot-check { display: block; }
 
-/* Notes area */
+/* Notes */
 .notes-area {
   width: 100%; min-height: 80px; border: 1px solid var(--border);
-  border-radius: var(--radius-sm); padding: 12px 14px;
+  border-radius: var(--radius-sm); padding: 14px 16px;
   font-size: 13px; font-family: var(--font); resize: vertical;
-  background: #fafafa; color: var(--text); outline: none;
-  margin-bottom: 12px;
+  background: rgba(255,255,255,0.45); color: var(--text); outline: none;
+  transition: var(--transition);
 }
-.notes-area:focus { border-color: var(--primary); background: #fff; }
-.notes-hint { font-size: 11px; color: var(--text-dim); margin-bottom: 8px; }
-.save-indicator { font-size: 11px; color: var(--green); opacity: 0; transition: opacity .3s; }
+.notes-area:focus {
+  border-color: var(--dusty-blue);
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 0 0 3px rgba(168,181,196,0.12);
+}
+.notes-hint { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
+.save-indicator { font-size: 11px; color: #6a7a52; opacity: 0; transition: opacity 0.3s; margin-left: 8px; }
 .save-indicator.visible { opacity: 1; }
 
-/* Content blocks */
-.content-block {
-  border-left: 3px solid var(--border); padding-left: 16px;
-  margin-bottom: 16px;
+/* ================================================================ */
+/*                WEEK 1 LEARNING STEPS                              */
+/* ================================================================ */
+.learning-steps { margin-top: 4px; }
+
+.step-block {
+  border: 1px solid rgba(228,223,216,0.8);
+  border-radius: var(--radius-sm); margin-bottom: 10px;
+  background: rgba(255,255,255,0.35);
+  overflow: hidden; transition: var(--transition);
 }
-.content-block h4 { font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
-.content-block p, .content-block li { font-size: 13px; color: var(--text); margin-bottom: 4px; }
-.content-block ul { padding-left: 18px; }
+.step-block:hover {
+  background: rgba(255,255,255,0.55);
+  box-shadow: 0 2px 16px rgba(74,64,54,0.04);
+}
+.step-header {
+  display: flex; align-items: center; padding: 16px 20px;
+  cursor: pointer; user-select: none; gap: 14px;
+  transition: background 0.2s;
+}
+.step-header:hover { background: rgba(255,255,255,0.3); }
+.step-num-circle {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px;
+}
+.step-num-circle.c1 { background: var(--dusty-blue-bg); color: #6b7d8e; }
+.step-num-circle.c2 { background: var(--sage-bg); color: #6a7a52; }
+.step-num-circle.c3 { background: var(--dusty-gold-bg); color: #9a8a6b; }
+.step-num-circle.c4 { background: var(--dusty-rose-bg); color: #9b7070; }
+.step-body { display: none; padding: 0 20px 18px 66px; }
+.step-block.open .step-body { display: block; }
+.step-header .step-label { flex: 1; }
+.step-header .step-label h4 { font-size: 14px; font-weight: 600; }
+.step-header .step-label p { font-size: 12px; color: var(--text-soft); margin-top: 2px; }
+.step-header .step-chevron {
+  font-size: 12px; color: var(--text-muted);
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.step-block.open .step-chevron { transform: rotate(180deg); }
+.step-status {
+  font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 12px;
+}
+.step-status.todo { background: rgba(255,255,255,0.5); color: var(--text-muted); border: 1px solid var(--border); }
+.step-status.done { background: var(--sage-bg); color: #6a7a52; border: 1px solid rgba(176,191,163,0.4); }
+
+/* Exercise table inside steps */
+.exercise-table { width: 100%; font-size: 13px; border-collapse: collapse; margin: 8px 0 16px; }
+.exercise-table th, .exercise-table td {
+  border: 1px solid rgba(228,223,216,0.6); padding: 10px 14px; text-align: left;
+}
+.exercise-table th {
+  background: rgba(255,255,255,0.4); font-weight: 600; font-size: 12px; color: var(--text-soft);
+}
+.exercise-table td { font-size: 12px; }
+.exercise-table .answer {
+  background: var(--sage-bg); font-weight: 700; color: #6a7a52;
+  font-family: "SF Mono", "Fira Code", monospace; text-align: center;
+}
+
+/* Layer stack inside knowledge map */
+.layer-stack { margin: 12px 0 16px; }
+.layer {
+  padding: 16px 18px; border-radius: var(--radius-sm);
+  margin-bottom: 8px; font-size: 13px; line-height: 1.5;
+  transition: var(--transition);
+}
+.layer:hover { transform: translateX(2px); }
+.layer-1 { background: var(--dusty-blue-bg); border-left: 4px solid var(--dusty-blue); }
+.layer-2 { background: var(--sage-bg); border-left: 4px solid #9fb08e; }
+.layer-3 { background: var(--dusty-gold-bg); border-left: 4px solid var(--dusty-gold); }
+.layer-4 { background: var(--dusty-lav-bg); border-left: 4px solid var(--dusty-lavender); }
+.layer-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+.layer-desc { color: var(--text-soft); font-size: 12px; }
 
 /* Comparison table */
-.comp-table { width: 100%; font-size: 13px; border-collapse: collapse; margin: 10px 0; }
-.comp-table th, .comp-table td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
-.comp-table th { background: #f8fafc; font-weight: 600; font-size: 12px; }
+.comp-table { width: 100%; font-size: 12px; border-collapse: collapse; margin: 10px 0; }
+.comp-table th, .comp-table td {
+  border: 1px solid rgba(228,223,216,0.6); padding: 10px 14px; text-align: left;
+}
+.comp-table th {
+  background: rgba(255,255,255,0.4); font-weight: 600; font-size: 11px; color: var(--text-soft);
+}
 .comp-table td { vertical-align: top; }
+.comp-table tr:hover td { background: rgba(255,255,255,0.3); }
 
-/* Fill-in-blank exercise */
-.exercise-table { width: 100%; font-size: 13px; border-collapse: collapse; }
-.exercise-table th, .exercise-table td { border: 1px solid var(--border); padding: 8px 12px; }
-.exercise-table th { background: #f8fafc; font-weight: 600; font-size: 12px; text-align: left; }
-.answer { background: #f0fdf4; font-weight: 600; color: var(--green); font-family: monospace; }
-
-/* Layer diagram */
-.layer-stack { margin: 16px 0; }
-.layer {
-  padding: 14px 16px; border: 1px solid var(--border); border-radius: var(--radius-sm);
-  margin-bottom: 8px; font-size: 13px;
+/* Reminder boxes */
+.reminder {
+  padding: 14px 18px; border-radius: var(--radius-sm);
+  font-size: 13px; margin-top: 12px; line-height: 1.5;
 }
-.layer-1 { background: #eff6ff; border-left: 4px solid #3b82f6; }
-.layer-2 { background: #f0fdf4; border-left: 4px solid #22c55e; }
-.layer-3 { background: #fffbeb; border-left: 4px solid #f59e0b; }
-.layer-4 { background: #faf5ff; border-left: 4px solid #a855f7; }
-.layer-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
-.layer-desc { color: var(--text-muted); }
-
-/* Toast */
-.toast {
-  position: fixed; bottom: 24px; right: 24px;
-  background: #1e293b; color: #fff; padding: 12px 20px;
-  border-radius: var(--radius-sm); font-size: 13px;
-  opacity: 0; transform: translateY(10px);
-  transition: all .3s; pointer-events: none; z-index: 100;
-}
-.toast.show { opacity: 1; transform: translateY(0); }
-
-/* Empty state */
-.empty-state { text-align: center; padding: 40px 20px; color: var(--text-muted); }
-.empty-state .icon { font-size: 48px; margin-bottom: 12px; }
-
-/* Tabs */
-.tabs { display: flex; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 0; }
-.tab {
-  padding: 10px 18px; font-size: 13px; cursor: pointer;
-  border: none; background: none; color: var(--text-muted);
-  font-family: var(--font); border-bottom: 2px solid transparent;
-  margin-bottom: -2px; transition: all .15s;
-}
-.tab:hover { color: var(--text); }
-.tab.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
-
-/* Details / summary */
-.summary-header { font-size: 14px; font-weight: 600; cursor: pointer; padding: 12px 0; }
-.summary-header:hover { color: var(--primary); }
+.reminder.quiz { background: var(--dusty-rose-bg); border: 1px solid rgba(212,181,181,0.3); }
+.reminder.paper { background: var(--dusty-gold-bg); border: 1px solid rgba(212,197,169,0.3); }
+.reminder.info { background: var(--dusty-blue-bg); border: 1px solid rgba(168,181,196,0.3); }
+.reminder.pres { background: var(--dusty-lav-bg); border: 1px solid rgba(196,184,212,0.3); }
 
 /* Reading card */
 .reading-card {
-  background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm);
-  padding: 14px 16px; margin-bottom: 10px;
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(228,223,216,0.6);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px; margin-bottom: 8px;
+  transition: var(--transition);
 }
-.reading-card h5 { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
-.reading-card p { font-size: 12px; color: var(--text-muted); }
+.reading-card:hover { background: rgba(255,255,255,0.5); }
+.reading-card h5 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+.reading-card p { font-size: 12px; color: var(--text-soft); }
 
-/* Icons */
-.icon-sm { font-size: 14px; }
+/* Highlight box for key insight */
+.insight-box {
+  padding: 12px 16px; border-radius: var(--radius-xs);
+  background: rgba(255,255,255,0.4); border: 1px solid rgba(228,223,216,0.6);
+  font-size: 12px; color: var(--text-soft); margin: 8px 0;
+  transition: var(--transition);
+}
 
-/* ============================== */
-/*          FOOTER                */
-/* ============================== */
+/* ================================================================ */
+/*                       TOAST                                       */
+/* ================================================================ */
+.toast {
+  position: fixed; bottom: 28px; right: 28px;
+  background: rgba(74,64,54,0.92);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  color: #f3f0ec; padding: 14px 22px;
+  border-radius: 24px; font-size: 13px; font-weight: 500;
+  opacity: 0; transform: translateY(12px);
+  transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+  pointer-events: none; z-index: 100;
+}
+.toast.show { opacity: 1; transform: translateY(0); }
+
+/* ================================================================ */
+/*                       FOOTER                                      */
+/* ================================================================ */
 .site-footer {
-  margin-top: 40px; padding: 16px 0;
-  border-top: 1px solid var(--border);
-  text-align: center; font-size: 11px; color: var(--text-dim);
+  margin-top: 48px; padding: 20px 0;
+  border-top: 1px solid rgba(228,223,216,0.6);
+  text-align: center; font-size: 11px; color: var(--text-muted);
   display: flex; align-items: center; justify-content: center;
   gap: 16px; flex-wrap: wrap;
 }
+.site-footer .counter-wrap { display: flex; align-items: center; gap: 6px; }
 .site-footer .counter-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--text-dim); display: inline-block;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--text-muted);
 }
 
-/* ============================== */
-/*          PRINT                 */
-/* ============================== */
+/* ================================================================ */
+/*                      PRINT                                        */
+/* ================================================================ */
 @media print {
-  .dropzone, .btn, .week-toggle { display: none !important; }
+  .dropzone-wrap, .btn, .week-toggle { display: none !important; }
   .week-body { display: block !important; }
+  .step-body { display: block !important; }
   body { background: #fff; }
+}
+
+/* ================================================================ */
+/*                  RESPONSIVE                                       */
+/* ================================================================ */
+@media (max-width: 600px) {
+  .container { padding: 16px 14px 60px; }
+  .hero { padding: 24px 20px; }
+  .hero-title { font-size: 21px; }
+  .hero-steps { grid-template-columns: 1fr; }
+  .header { padding: 20px; }
+  .step-body { padding: 0 12px 14px 12px; }
 }
 </style>
 </head>
 <body>
 <div class="container">
 
-<!-- ============================== -->
-<!--            HEADER              -->
-<!-- ============================== -->
-<div class="header">
+<!-- ================================================================ -->
+<!--                          HEADER                                    -->
+<!-- ================================================================ -->
+<div class="header glass">
   <div class="header-left">
     <h1>HD6002 AI Ethics & Governance</h1>
     <div class="sub">Dr. Sabrina Luk · AY2026-27 Semester 1 · 3 AU</div>
@@ -350,137 +583,117 @@ a:hover { text-decoration: underline; }
   </div>
 </div>
 
-<!-- ============================== -->
-<!--          DROP ZONE             -->
-<!-- ============================== -->
-<div class="dropzone" id="mainDropzone">
-  <div class="dropzone-icon">📂</div>
-  <div class="dropzone-title">将课件或阅读 PDF 拖放到这里</div>
-  <div class="dropzone-hint">支持 .PDF、.pptx 文件 · 自动识别周次和类型 · 也可点击选择文件</div>
-  <input type="file" id="fileInput" multiple accept=".pdf,.pptx,.ppt,.docx,.doc" style="display:none">
-  <div class="dropzone-feedback" id="dropFeedback"></div>
+<!-- ================================================================ -->
+<!--                     THIS WEEK HERO                                -->
+<!-- ================================================================ -->
+<div class="hero glass" id="thisWeekHero">
+  <div class="hero-badge"><span class="dot"></span>Week 1 · 入门奠基</div>
+  <div class="hero-title">AI、伦理与治理入门</div>
+  <div class="hero-sub">这不是"导论随便听听"——本周是整门课的地基。完成以下四步，为 Quiz 1 和后续讨论做好准备。</div>
+  <div class="hero-steps" id="heroSteps"></div>
 </div>
 
-<!-- ============================== -->
-<!--          DASHBOARD             -->
-<!-- ============================== -->
+<!-- ================================================================ -->
+<!--                       DROP ZONE                                   -->
+<!-- ================================================================ -->
+<div class="dropzone-wrap">
+  <div class="dropzone glass" id="mainDropzone">
+    <div class="dropzone-icon">📂</div>
+    <div class="dropzone-title">将课件或阅读 PDF 拖放到这里</div>
+    <div class="dropzone-hint">支持 .PDF、.pptx 文件 · 自动识别周次和类型 · 也可点击选择文件</div>
+    <input type="file" id="fileInput" multiple accept=".pdf,.pptx,.ppt,.docx,.doc" style="display:none">
+    <div class="dropzone-feedback" id="dropFeedback"></div>
+  </div>
+</div>
+
+<!-- ================================================================ -->
+<!--                        DASHBOARD                                  -->
+<!-- ================================================================ -->
 <div class="dashboard">
-  <!-- Assessment card -->
-  <div class="card">
-    <div class="card-title">📊 评分结构</div>
-    <div class="assessment-item"><span class="name">课堂讨论</span><span class="meta">15% · 每周</span></div>
-    <div class="assessment-item"><span class="name">Quiz 1</span><span class="meta">15% · Week 5 · 闭卷</span></div>
-    <div class="assessment-item"><span class="name">Quiz 2</span><span class="meta">15% · Week 10 · 闭卷</span></div>
-    <div class="assessment-item"><span class="name">反思论文</span><span class="meta">15% · Week 7 · 课内当堂</span></div>
-    <div class="assessment-item"><span class="name">小组展示</span><span class="meta">20% · Week 12 (团队15%+个人5%)</span></div>
-    <div class="assessment-item"><span class="name">案例分析</span><span class="meta">20% · Week 13 · 闭卷</span></div>
+  <div class="glass" style="overflow:hidden;">
+    <div class="card-body">
+      <div class="card-title">📊 评分结构</div>
+      <div class="assessment-item"><span class="name">课堂讨论</span><span class="pct">15%</span><span class="meta">每周</span></div>
+      <div class="assessment-item"><span class="name">Quiz 1</span><span class="pct">15%</span><span class="meta">Week 5 · 闭卷·无补考</span></div>
+      <div class="assessment-item"><span class="name">Quiz 2</span><span class="pct">15%</span><span class="meta">Week 10 · 闭卷·无补考</span></div>
+      <div class="assessment-item"><span class="name">反思论文</span><span class="pct">15%</span><span class="meta">Week 7 · 课内当堂</span></div>
+      <div class="assessment-item"><span class="name">小组展示</span><span class="pct">20%</span><span class="meta">Week 12 (团队15%+个人5%)</span></div>
+      <div class="assessment-item"><span class="name">案例分析</span><span class="pct">20%</span><span class="meta">Week 13 · 闭卷</span></div>
+    </div>
   </div>
-
-  <!-- Milestones card -->
-  <div class="card">
-    <div class="card-title">⚡ 关键节点</div>
-    <div class="milestone">
-      <div class="milestone-dot info"></div>
-      <div class="milestone-content">
-        <span class="milestone-week">Week 4</span>
-        <span class="milestone-desc">确定小组展示主题 + 组队</span>
-      </div>
-    </div>
-    <div class="milestone">
-      <div class="milestone-dot danger"></div>
-      <div class="milestone-content">
-        <span class="milestone-week">Week 5</span>
-        <span class="milestone-desc">Quiz 1 (覆盖 Week 1-4) · 闭卷·无补考</span>
-      </div>
-    </div>
-    <div class="milestone">
-      <div class="milestone-dot warn"></div>
-      <div class="milestone-content">
-        <span class="milestone-week">Week 7</span>
-        <span class="milestone-desc">课内反思论文 (AI in Healthcare) · 无补考</span>
-      </div>
-    </div>
-    <div class="milestone">
-      <div class="milestone-dot danger"></div>
-      <div class="milestone-content">
-        <span class="milestone-week">Week 10</span>
-        <span class="milestone-desc">Quiz 2 (覆盖 Week 5-9) · 闭卷·无补考</span>
-      </div>
-    </div>
-    <div class="milestone">
-      <div class="milestone-dot info"></div>
-      <div class="milestone-content">
-        <span class="milestone-week">Week 12</span>
-        <span class="milestone-desc">小组展示 (PPT 课前2天提交 Turnitin)</span>
-      </div>
-    </div>
-    <div class="milestone">
-      <div class="milestone-dot danger"></div>
-      <div class="milestone-content">
-        <span class="milestone-week">Week 13</span>
-        <span class="milestone-desc">闭卷案例分析 (综合) · 无补考</span>
-      </div>
+  <div class="glass" style="overflow:hidden;">
+    <div class="card-body">
+      <div class="card-title">⚡ 关键节点</div>
+      <div class="milestone"><div class="milestone-dot info"></div><div><span class="milestone-week">Week 4</span><span class="milestone-desc">确定小组展示主题 + 组队</span></div></div>
+      <div class="milestone"><div class="milestone-dot danger"></div><div><span class="milestone-week">Week 5</span><span class="milestone-desc">Quiz 1 (覆盖 Week 1-4) · 闭卷·无补考</span></div></div>
+      <div class="milestone"><div class="milestone-dot warn"></div><div><span class="milestone-week">Week 7</span><span class="milestone-desc">课内反思论文 (AI in Healthcare) · 无补考</span></div></div>
+      <div class="milestone"><div class="milestone-dot danger"></div><div><span class="milestone-week">Week 10</span><span class="milestone-desc">Quiz 2 (覆盖 Week 5-9) · 闭卷·无补考</span></div></div>
+      <div class="milestone"><div class="milestone-dot info"></div><div><span class="milestone-week">Week 12</span><span class="milestone-desc">小组展示 (PPT 课前2天提交 Turnitin)</span></div></div>
+      <div class="milestone"><div class="milestone-dot danger"></div><div><span class="milestone-week">Week 13</span><span class="milestone-desc">闭卷案例分析 (综合) · 无补考</span></div></div>
     </div>
   </div>
 </div>
 
-<!-- ============================== -->
-<!--       MATERIALS GRID           -->
-<!-- ============================== -->
-<div class="card materials-section" id="materialsOverview">
-  <div class="card-title" style="display:flex;justify-content:space-between;align-items:center;">
-    <span>📁 材料收集状态（点击方块跳转到对应周）</span>
-    <span style="font-size:12px;color:var(--text-muted);font-weight:400;text-transform:none;">
-      🟢 已有 &nbsp; 🟡 部分 &nbsp; ⚪ 缺失
-    </span>
-  </div>
-  <div class="materials-grid" id="materialsGrid"></div>
-  <div style="margin-top: 8px; font-size: 12px; color: var(--text-muted);">
-    💡 将 PDF/PPT 文件拖到上方拖放区，系统会自动识别周次和类型（课件/阅读）
-  </div>
-</div>
-
-<!-- ============================== -->
-<!--       ILOs REFERENCE           -->
-<!-- ============================== -->
-<div class="card" style="margin-bottom:20px;">
-  <div class="card-title">🎯 五大学习目标 (ILOs)</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;">
-    <div style="padding:10px 14px;background:#eff6ff;border-radius:6px;font-size:12px;"><strong>ILO 1</strong><br>描述 AI 及其不同类型</div>
-    <div style="padding:10px 14px;background:#f0fdf4;border-radius:6px;font-size:12px;"><strong>ILO 2</strong><br>识别并解释 AI 伦理原则</div>
-    <div style="padding:10px 14px;background:#fffbeb;border-radius:6px;font-size:12px;"><strong>ILO 3</strong><br>分析 AI 应用的收益与风险</div>
-    <div style="padding:10px 14px;background:#faf5ff;border-radius:6px;font-size:12px;"><strong>ILO 4</strong><br>比较各国 AI 治理方法</div>
-    <div style="padding:10px 14px;background:#fef2f2;border-radius:6px;font-size:12px;"><strong>ILO 5</strong><br>识别有效 AI 治理的促进与障碍因素</div>
+<!-- ================================================================ -->
+<!--                     MATERIALS GRID                                 -->
+<!-- ================================================================ -->
+<div class="glass" style="overflow:hidden;margin-bottom:24px;">
+  <div class="card-body">
+    <div class="card-title" style="justify-content:space-between;flex-wrap:wrap;">
+      <span>📁 材料收集状态</span>
+      <span style="font-size:12px;color:var(--text-muted);font-weight:400;text-transform:none;">
+        🟢 齐全 &nbsp; 🟡 部分 &nbsp; ⚪ 未收集
+      </span>
+    </div>
+    <div class="materials-grid" id="materialsGrid"></div>
+    <p style="margin-top:10px;font-size:12px;color:var(--text-muted);">💡 将文件拖到上方拖放区，系统自动识别。点击方块跳转。</p>
   </div>
 </div>
 
-<!-- ============================== -->
-<!--       WEEK SECTIONS            -->
-<!-- ============================== -->
+<!-- ================================================================ -->
+<!--                      ILO REFERENCE                                -->
+<!-- ================================================================ -->
+<div class="glass" style="overflow:hidden;margin-bottom:20px;">
+  <div class="card-body">
+    <div class="card-title">🎯 五大学习目标 (ILOs)</div>
+    <div class="ilo-grid">
+      <div class="ilo-chip ilo-1"><strong>ILO 1</strong>描述 AI 及其不同类型</div>
+      <div class="ilo-chip ilo-2"><strong>ILO 2</strong>识别并解释 AI 伦理原则</div>
+      <div class="ilo-chip ilo-3"><strong>ILO 3</strong>分析 AI 应用的收益与风险</div>
+      <div class="ilo-chip ilo-4"><strong>ILO 4</strong>比较各国 AI 治理方法</div>
+      <div class="ilo-chip ilo-5"><strong>ILO 5</strong>识别有效 AI 治理的促进与障碍因素</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================ -->
+<!--                     WEEK SECTIONS                                 -->
+<!-- ================================================================ -->
 <div id="weekSections"></div>
 
-<!-- ============================== -->
-<!--            FOOTER              -->
-<!-- ============================== -->
+<!-- ================================================================ -->
+<!--                         FOOTER                                    -->
+<!-- ================================================================ -->
 <footer class="site-footer">
   <span>Maintained by <strong>ZhouXiang 周想</strong></span>
-  <span class="counter-dot"></span>
-  <span id="visitDisplay">加载中…</span>
+  <span class="counter-wrap"><span class="counter-dot"></span><span id="visitDisplay">加载中…</span></span>
 </footer>
 
-</div> <!-- /container -->
+</div>
 
-<!-- Toast -->
 <div class="toast" id="toast"></div>
 
+<!-- ================================================================ -->
+<!--                        SCRIPT                                     -->
+<!-- ================================================================ -->
 <script>
 // ==============================
 //         DATA MANAGEMENT
 // ==============================
-
 const DEFAULT_STATE = {
-  materials: {},     // { "1": { slides: {filename, collected}, reading1: {...}, reading2: {...} }, ... }
-  notes: {},         // { "1": "note text", ... }
+  materials: {},
+  notes: {},
+  stepCompletion: {}, // track which steps user has "completed"
   lastUpdated: null
 };
 
@@ -489,12 +702,12 @@ function loadState() {
     const raw = localStorage.getItem('hd6002_studyhub');
     if (raw) {
       const state = JSON.parse(raw);
-      // Merge with defaults for any new weeks/fields
       for (let w = 1; w <= 13; w++) {
         if (!state.materials[w]) state.materials[w] = { slides: {collected: false, filename: ''}, reading1: {collected: false, filename: ''}, reading2: {collected: false, filename: ''} };
         if (!state.materials[w].reading2) state.materials[w].reading2 = { collected: false, filename: '' };
         if (!state.notes[w]) state.notes[w] = '';
       }
+      if (!state.stepCompletion) state.stepCompletion = {};
       return state;
     }
   } catch(e) { console.error('State load error:', e); }
@@ -502,7 +715,7 @@ function loadState() {
 }
 
 function getDefaultState() {
-  const s = { materials: {}, notes: {}, lastUpdated: new Date().toISOString() };
+  const s = { materials: {}, notes: {}, stepCompletion: {}, lastUpdated: new Date().toISOString() };
   for (let w = 1; w <= 13; w++) {
     s.materials[w] = { slides: {collected: false, filename: ''}, reading1: {collected: false, filename: ''}, reading2: {collected: false, filename: ''} };
     s.notes[w] = '';
@@ -517,11 +730,9 @@ function saveState(state) {
 
 let appState = loadState();
 
-// Check if we have initial materials to auto-detect (Week 1)
 function preloadWeek1() {
   if (!appState.materials[1]) appState.materials[1] = { slides: {collected: false, filename: ''}, reading1: {collected: false, filename: ''}, reading2: {collected: false, filename: ''} };
   if (!appState.notes[1]) appState.notes[1] = '';
-  // Don't auto-fill - user should drag files in
   saveState(appState);
 }
 preloadWeek1();
@@ -529,7 +740,6 @@ preloadWeek1();
 // ==============================
 //        WEEK DEFINITIONS
 // ==============================
-
 const WEEKS = [
   { num: 1, topic: 'Introduction to AI, Ethics and Governance', flags: [], defaultReadings: ['UNESCO (2022)', 'Reese & Becker (2024) PwC'], hasRead2: true },
   { num: 2, topic: 'Human Intelligence vs. Artificial Intelligence', flags: [], defaultReadings: ['Cambridge Judge BS (2025)', 'Jarrahi et al. (2022)'], hasRead2: true, extraRead: 'Stern (2025) WSJ' },
@@ -549,13 +759,10 @@ const WEEKS = [
 // ==============================
 //        FILE PROCESSING
 // ==============================
-
 function getWeekFromFilename(filename) {
   const name = filename.toLowerCase();
-  // Try "Week X" pattern
   let match = name.match(/week\s*[_.-]?\s*(\d+)/i);
   if (match) return parseInt(match[1]);
-  // Try "W X" pattern
   match = name.match(/\bw(\d+)\b/i);
   if (match) return parseInt(match[1]);
   return null;
@@ -563,11 +770,9 @@ function getWeekFromFilename(filename) {
 
 function getSlotFromFilename(filename) {
   const name = filename.toLowerCase();
-  // Check for slides/lecture/课件/student version
   if (/student.version|slides|lecture|课件|lecture\s*slides|week\s*\d+\s*(\.pdf|$)/i.test(name) && !/reading|et al|pwc|unesco|recommendation/i.test(name)) {
     return 'slides';
   }
-  // Everything else is a reading
   return 'reading';
 }
 
@@ -575,21 +780,15 @@ function determineReadingSlot(weekNum, filename) {
   const name = filename.toLowerCase();
   const week = WEEKS.find(w => w.num === weekNum);
   if (!week) return 'reading1';
-
   const readings = week.defaultReadings || [];
   if (readings.length === 0) return 'reading1';
-
-  // Try to match against known readings
   for (let i = 0; i < readings.length; i++) {
     const r = readings[i].toLowerCase();
-    // Extract first author surname
     const firstWord = r.split(/[,\s(]+/)[0].toLowerCase();
     if (name.includes(firstWord) && firstWord.length > 2) {
       return i === 0 ? 'reading1' : 'reading2';
     }
   }
-
-  // If reading1 is not yet filled, put it there; otherwise reading2
   const mats = appState.materials[weekNum];
   if (mats && !mats.reading1.collected) return 'reading1';
   if (mats && mats.reading1.collected && week.hasRead2 && !mats.reading2.collected) return 'reading2';
@@ -601,9 +800,7 @@ function processFile(filename) {
   if (!week || week < 1 || week > 13) {
     return { success: false, message: `无法识别 "${filename}" 对应的周次。请确认文件名包含 "Week X" 信息。` };
   }
-
   const slot = getSlotFromFilename(filename);
-
   if (slot === 'slides') {
     if (!appState.materials[week]) initWeekMaterials(week);
     appState.materials[week].slides = { collected: true, filename: filename };
@@ -612,7 +809,6 @@ function processFile(filename) {
   } else {
     if (!appState.materials[week]) initWeekMaterials(week);
     const readingSlot = determineReadingSlot(week, filename);
-
     if (readingSlot === 'reading1') {
       appState.materials[week].reading1 = { collected: true, filename: filename };
     } else {
@@ -637,30 +833,26 @@ function handleFiles(files) {
   const feedback = document.getElementById('dropFeedback');
   let messages = [];
   let anySuccess = false;
-
   for (const file of files) {
     const result = processFile(file.name);
     messages.push(result.message);
     if (result.success) anySuccess = true;
   }
-
   feedback.className = 'dropzone-feedback ' + (anySuccess ? 'success' : 'error');
   feedback.textContent = messages.join('\n');
   feedback.style.display = 'block';
   setTimeout(() => { feedback.style.display = 'none'; }, 5000);
-
   refreshAll();
 }
 
 // ==============================
 //         PROGRESS CALC
 // ==============================
-
 function getTotalSlots() {
   let total = 0;
   for (let w = 1; w <= 13; w++) {
-    total++; // slides
-    total++; // reading1
+    total++;
+    total++;
     const week = WEEKS.find(wk => wk.num === w);
     if (week && week.hasRead2) total++;
   }
@@ -684,15 +876,12 @@ function getWeekCompletion(weekNum) {
   const m = appState.materials[weekNum];
   const week = WEEKS.find(w => w.num === weekNum);
   if (!m || !week) return 'empty';
-
-  let expected = 2; // slides + reading1
+  let expected = 2;
   if (week.hasRead2) expected = 3;
-
   let collected = 0;
   if (m.slides && m.slides.collected) collected++;
   if (m.reading1 && m.reading1.collected) collected++;
   if (m.reading2 && m.reading2.collected) collected++;
-
   if (collected === 0) return 'empty';
   if (collected === expected) return 'full';
   return 'partial';
@@ -701,32 +890,27 @@ function getWeekCompletion(weekNum) {
 // ==============================
 //           RENDERING
 // ==============================
-
 function renderProgress() {
   const ring = document.getElementById('progressRing');
   const total = getTotalSlots();
   const collected = getCollectedCount();
   ring.textContent = `${collected}/${total}`;
-
   const pct = collected / total;
-  if (pct >= 0.5) { ring.style.borderColor = 'var(--green)'; ring.style.color = 'var(--green)'; }
-  else if (pct > 0) { ring.style.borderColor = 'var(--amber)'; ring.style.color = 'var(--amber)'; }
+  if (pct >= 0.5) { ring.style.borderColor = '#9fb08e'; ring.style.color = '#6a7a52'; }
+  else if (pct > 0) { ring.style.borderColor = 'var(--dusty-gold)'; ring.style.color = '#9a8a6b'; }
   else { ring.style.borderColor = 'var(--border)'; ring.style.color = 'var(--text-muted)'; }
 }
 
 function renderMaterialsGrid() {
   const grid = document.getElementById('materialsGrid');
   grid.innerHTML = '';
-
   for (let w = 1; w <= 13; w++) {
     const completion = getWeekCompletion(w);
     const cell = document.createElement('div');
     cell.className = 'material-cell';
     if (completion === 'full') cell.classList.add('collected');
-    if (completion === 'partial') cell.style.background = 'var(--amber-light)';
-    if (completion === 'partial') cell.style.borderColor = '#fde68a';
+    if (completion === 'partial') cell.classList.add('partial');
     if (appState.notes[w] && appState.notes[w].trim()) cell.classList.add('has-notes');
-
     cell.innerHTML = `<span class="week-num">${w}</span><span class="week-label">Week</span>`;
     cell.title = `Week ${w}: ${completion === 'full' ? '材料齐全' : completion === 'partial' ? '部分收集' : '未收集'}`;
     cell.onclick = () => scrollToWeek(w);
@@ -738,7 +922,6 @@ function scrollToWeek(weekNum) {
   const el = document.getElementById('week-' + weekNum);
   if (el) {
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    // Expand if collapsed
     if (!el.classList.contains('expanded')) {
       el.classList.add('expanded');
       const notesArea = el.querySelector('.notes-area');
@@ -759,40 +942,62 @@ function getFlagClass(flag) {
 }
 
 function getWeekBadgeClass(weekNum) {
-  // Logic: current week gets "active", past weeks get "past", future get "future"
-  // For now, since we're in Week 1, let's set a reasonable default
-  // The user can adjust this; we'll use a heuristic
   if (weekNum === 1) return 'active';
   if (weekNum <= 1) return 'past';
-  // Flag weeks
-  if (weekNum === 5 || weekNum === 10) return 'warn';
-  if (weekNum === 7 || weekNum === 12 || weekNum === 13) return 'warn';
+  if (weekNum === 5 || weekNum === 10 || weekNum === 7 || weekNum === 12 || weekNum === 13) return 'warn';
   return 'future';
+}
+
+// ==============================
+//       THIS WEEK HERO
+// ==============================
+function renderHeroSteps() {
+  const container = document.getElementById('heroSteps');
+  if (!container) return;
+  
+  const steps = [
+    { num: 1, title: '填空练习', desc: '完成课件两处填空，理解 AI 能力维度与 ML 三种范式', cls: 's1', stepKey: 'step1' },
+    { num: 2, title: '知识框架', desc: '建立四层认知：定义→技术→伦理vs治理→原则与风险', cls: 's2', stepKey: 'step2' },
+    { num: 3, title: '精读 UNESCO', desc: '理解十大原则和四项核心，自上而下的人权视角', cls: 's3', stepKey: 'step3' },
+    { num: 4, title: '精读 PwC', desc: '理解"治理=价值驱动器"，自下而上的企业视角', cls: 's4', stepKey: 'step4' }
+  ];
+  
+  container.innerHTML = steps.map(s => {
+    const done = appState.stepCompletion && appState.stepCompletion[s.stepKey];
+    return `<div class="hero-step" onclick="toggleHeroStep('${s.stepKey}', this); scrollToWeek(1);">
+      <div class="step-num ${s.cls}">${s.num}</div>
+      <h4>${s.title}</h4>
+      <p>${s.desc}</p>
+      <div class="step-check${done ? ' checked' : ''}">✓</div>
+    </div>`;
+  }).join('');
+}
+
+function toggleHeroStep(key, el) {
+  if (!appState.stepCompletion) appState.stepCompletion = {};
+  appState.stepCompletion[key] = !appState.stepCompletion[key];
+  saveState(appState);
+  const check = el.querySelector('.step-check');
+  if (appState.stepCompletion[key]) check.classList.add('checked');
+  else check.classList.remove('checked');
 }
 
 function renderWeekSections() {
   const container = document.getElementById('weekSections');
   container.innerHTML = '';
-
-  // Week 1 is special - full content
   renderWeek1Special(container);
-
-  // Rest of the weeks
   for (let i = 1; i < WEEKS.length; i++) {
     renderGenericWeek(container, WEEKS[i]);
   }
 }
 
 function renderWeekHeader(week, sectionDiv) {
-  const mats = appState.materials[week.num];
   const completion = getWeekCompletion(week.num);
   const badgeClass = getWeekBadgeClass(week.num);
-
   const header = document.createElement('div');
   header.className = 'week-header';
   header.onclick = function() {
     sectionDiv.classList.toggle('expanded');
-    // Load notes when expanding
     if (sectionDiv.classList.contains('expanded')) {
       const notesArea = sectionDiv.querySelector('.notes-area');
       if (notesArea && notesArea.value === '') {
@@ -800,16 +1005,13 @@ function renderWeekHeader(week, sectionDiv) {
       }
     }
   };
-
   let badgeContent = week.num;
   if (completion === 'full') badgeContent = '✓';
-
   let flagsHTML = '';
   week.flags.forEach(f => {
     const cls = getFlagClass(f);
     if (cls) flagsHTML += `<span class="flag ${cls}">${f}</span>`;
   });
-
   header.innerHTML = `
     <div class="week-badge ${badgeClass}">${badgeContent}</div>
     <div class="week-info">
@@ -818,7 +1020,6 @@ function renderWeekHeader(week, sectionDiv) {
     </div>
     <div class="week-toggle">▼</div>
   `;
-
   sectionDiv.appendChild(header);
 }
 
@@ -826,17 +1027,11 @@ function renderMaterialSlots(week, bodyDiv) {
   const mats = appState.materials[week.num];
   const slots = document.createElement('div');
   slots.className = 'material-slots';
-
-  // Slides slot
   const slidesSlot = createMaterialSlot('课件', 'slides', week.num, mats);
   slots.appendChild(slidesSlot);
-
-  // Reading 1 slot
   const r1Name = week.defaultReadings && week.defaultReadings.length > 0 ? week.defaultReadings[0] : 'Reading';
   const r1Slot = createMaterialSlot(r1Name, 'reading1', week.num, mats);
   slots.appendChild(r1Slot);
-
-  // Reading 2 slot (if applicable)
   if (week.hasRead2 && week.defaultReadings && week.defaultReadings.length > 1) {
     const r2Slot = createMaterialSlot(week.defaultReadings[1], 'reading2', week.num, mats);
     slots.appendChild(r2Slot);
@@ -844,17 +1039,14 @@ function renderMaterialSlots(week, bodyDiv) {
     const r2Slot = createMaterialSlot('Reading 2', 'reading2', week.num, mats);
     slots.appendChild(r2Slot);
   }
-
-  // Extra reading (Week 2 has Stern)
   if (week.extraRead) {
     const extraSlot = document.createElement('div');
     extraSlot.className = 'material-slot';
-    extraSlot.style.borderColor = '#e5e7eb';
-    extraSlot.style.background = '#fafafa';
-    extraSlot.innerHTML = `<div class="slot-type" style="color:#94a3b8;">📄 补充阅读</div><div class="slot-name" style="color:#94a3b8;">${week.extraRead}</div>`;
+    extraSlot.style.borderColor = 'var(--border)';
+    extraSlot.style.background = 'rgba(255,255,255,0.2)';
+    extraSlot.innerHTML = `<div class="slot-type" style="color:var(--text-muted);">📄 补充阅读</div><div class="slot-name" style="color:var(--text-muted);">${week.extraRead}</div>`;
     slots.appendChild(extraSlot);
   }
-
   bodyDiv.appendChild(slots);
 }
 
@@ -863,7 +1055,6 @@ function createMaterialSlot(label, slotType, weekNum, mats) {
   slot.className = 'material-slot';
   slot.setAttribute('data-week', weekNum);
   slot.setAttribute('data-slot', slotType);
-
   const isFilled = mats && mats[slotType] && mats[slotType].collected;
   if (isFilled) {
     slot.classList.add('filled');
@@ -872,45 +1063,26 @@ function createMaterialSlot(label, slotType, weekNum, mats) {
       <div class="slot-check">✅</div>`;
   } else {
     slot.innerHTML = `<div class="slot-type">${slotType === 'slides' ? '📘 课件' : '📄 阅读'}</div>
-      <div class="slot-name" style="color:var(--text-dim);">${label} — 拖放文件到此处</div>
+      <div class="slot-name" style="color:var(--text-muted);">${label} — 拖放文件到此处</div>
       <div class="slot-check">✅</div>`;
   }
-
-  // Make individual slots droppable
-  slot.addEventListener('dragover', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    this.classList.add('drag-over');
-  });
-  slot.addEventListener('dragleave', function(e) {
-    this.classList.remove('drag-over');
-  });
+  slot.addEventListener('dragover', function(e) { e.preventDefault(); e.stopPropagation(); this.classList.add('drag-over'); });
+  slot.addEventListener('dragleave', function(e) { this.classList.remove('drag-over'); });
   slot.addEventListener('drop', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    this.classList.remove('drag-over');
+    e.preventDefault(); e.stopPropagation(); this.classList.remove('drag-over');
     const files = e.dataTransfer.files;
-    if (files.length > 0) {
-      // Force assign to this week/slot
-      forceAssignFile(files[0].name, weekNum, slotType);
-      refreshAll();
-    }
+    if (files.length > 0) { forceAssignFile(files[0].name, weekNum, slotType); refreshAll(); }
   });
-
-  // Click to remove
   if (isFilled) {
     slot.title = '点击移除';
     slot.onclick = function(e) {
       e.stopPropagation();
       if (confirm(`移除 "${mats[slotType].filename}"？`)) {
         mats[slotType] = { collected: false, filename: '' };
-        saveState(appState);
-        refreshAll();
-        showToast('已移除');
+        saveState(appState); refreshAll(); showToast('已移除');
       }
     };
   }
-
   return slot;
 }
 
@@ -923,19 +1095,15 @@ function forceAssignFile(filename, weekNum, slotType) {
 
 function renderNotesArea(weekNum, bodyDiv) {
   const notesWrapper = document.createElement('div');
-  notesWrapper.style.marginBottom = '12px';
-
   const hint = document.createElement('div');
   hint.className = 'notes-hint';
   hint.textContent = '📝 课堂笔记（自动保存到浏览器）';
   notesWrapper.appendChild(hint);
-
   const textarea = document.createElement('textarea');
   textarea.className = 'notes-area';
   textarea.placeholder = '在这里输入本周的课堂笔记、关键概念、思考问题...';
   textarea.value = appState.notes[weekNum] || '';
   textarea.setAttribute('data-week', weekNum);
-
   let saveTimeout;
   textarea.addEventListener('input', function() {
     clearTimeout(saveTimeout);
@@ -946,14 +1114,11 @@ function renderNotesArea(weekNum, bodyDiv) {
       if (indicator) { indicator.classList.add('visible'); setTimeout(() => indicator.classList.remove('visible'), 2000); }
     }, 500);
   });
-
   notesWrapper.appendChild(textarea);
-
   const indicator = document.createElement('span');
   indicator.className = 'save-indicator';
   indicator.textContent = '已保存 ✓';
   notesWrapper.appendChild(indicator);
-
   bodyDiv.appendChild(notesWrapper);
 }
 
@@ -961,182 +1126,105 @@ function renderGenericWeek(container, week) {
   const section = document.createElement('div');
   section.className = 'week-section';
   section.id = 'week-' + week.num;
-
   renderWeekHeader(week, section);
-
   const body = document.createElement('div');
   body.className = 'week-body';
-
   renderMaterialSlots(week, body);
   renderNotesArea(week.num, body);
-
-  // For quiz weeks, add study reminder
   if (week.num === 5) {
-    const reminder = document.createElement('div');
-    reminder.style.cssText = 'padding:12px 16px;background:#fef2f2;border-radius:6px;font-size:13px;margin-top:8px;';
-    reminder.innerHTML = '<strong>⚠ Quiz 1 备考提醒：</strong> 覆盖 Week 1-4。复习 Week 1-4 的笔记 + 知识图谱。';
-    body.appendChild(reminder);
+    const r = document.createElement('div'); r.className = 'reminder quiz';
+    r.innerHTML = '<strong>⚠ Quiz 1 备考提醒：</strong> 覆盖 Week 1-4。复习 Week 1-4 的笔记 + 知识图谱。';
+    body.appendChild(r);
   }
   if (week.num === 10) {
-    const reminder = document.createElement('div');
-    reminder.style.cssText = 'padding:12px 16px;background:#fef2f2;border-radius:6px;font-size:13px;margin-top:8px;';
-    reminder.innerHTML = '<strong>⚠ Quiz 2 备考提醒：</strong> 覆盖 Week 5-9。复习 Week 5-9 的笔记。';
-    body.appendChild(reminder);
+    const r = document.createElement('div'); r.className = 'reminder quiz';
+    r.innerHTML = '<strong>⚠ Quiz 2 备考提醒：</strong> 覆盖 Week 5-9。复习 Week 5-9 的笔记。';
+    body.appendChild(r);
   }
   if (week.num === 7) {
-    const reminder = document.createElement('div');
-    reminder.style.cssText = 'padding:12px 16px;background:#fffbeb;border-radius:6px;font-size:13px;margin-top:8px;';
-    reminder.innerHTML = '<strong>⚠ 反思论文提醒：</strong> 本周课内当堂写 AI in Healthcare 反思论文。提前读完 Fahim et al. (2025)。无补考！';
-    body.appendChild(reminder);
+    const r = document.createElement('div'); r.className = 'reminder paper';
+    r.innerHTML = '<strong>⚠ 反思论文提醒：</strong> 本周课内当堂写 AI in Healthcare 反思论文。提前读完 Fahim et al. (2025)。无补考！';
+    body.appendChild(r);
   }
   if (week.num === 4) {
-    const reminder = document.createElement('div');
-    reminder.style.cssText = 'padding:12px 16px;background:#eff6ff;border-radius:6px;font-size:13px;margin-top:8px;';
-    reminder.innerHTML = '<strong>本周确定小组展示主题 + 组队！</strong> 提前思考感兴趣的 AI 应用领域。';
-    body.appendChild(reminder);
+    const r = document.createElement('div'); r.className = 'reminder info';
+    r.innerHTML = '<strong>本周确定小组展示主题 + 组队！</strong> 提前思考感兴趣的 AI 应用领域。';
+    body.appendChild(r);
   }
   if (week.num === 12) {
-    const reminder = document.createElement('div');
-    reminder.style.cssText = 'padding:12px 16px;background:#faf5ff;border-radius:6px;font-size:13px;margin-top:8px;';
-    reminder.innerHTML = '<strong>小组展示周：</strong> PPT 课前 2 天提交 Turnitin。20 分钟展示 + 10 分钟 Q&A。需国家/城市实例。';
-    body.appendChild(reminder);
+    const r = document.createElement('div'); r.className = 'reminder pres';
+    r.innerHTML = '<strong>小组展示周：</strong> PPT 课前 2 天提交 Turnitin。20 分钟展示 + 10 分钟 Q&A。需国家/城市实例。';
+    body.appendChild(r);
   }
-
   section.appendChild(body);
   container.appendChild(section);
 }
 
 // ==============================
-//       WEEK 1 SPECIAL CONTENT
+//       WEEK 1 — LEARNING PATH
 // ==============================
-
 function renderWeek1Special(container) {
   const section = document.createElement('div');
   section.className = 'week-section expanded';
   section.id = 'week-1';
-
   const week = WEEKS[0];
   renderWeekHeader(week, section);
-
   const body = document.createElement('div');
   body.className = 'week-body';
-
-  // Material slots
   renderMaterialSlots(week, body);
 
-  // Tabs for Week 1 content
-  const tabsDiv = document.createElement('div');
-  tabsDiv.className = 'tabs';
-  tabsDiv.innerHTML = `
-    <button class="tab active" data-tab="fill">🎯 填空练习</button>
-    <button class="tab" data-tab="map">🧠 知识图谱</button>
-    <button class="tab" data-tab="unesco">🏛 UNESCO 梳理</button>
-    <button class="tab" data-tab="pwc">💼 PwC 梳理</button>
-  `;
-  body.appendChild(tabsDiv);
+  // Learning path intro
+  const intro = document.createElement('div');
+  intro.style.cssText = 'display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:13px;color:var(--text-soft);';
+  intro.innerHTML = '<span style="font-weight:600;color:var(--text);">📋 学习路径</span> 按顺序完成以下四步，点击展开详情。每一步完成后可在顶部 Hero 区打勾。';
+  body.appendChild(intro);
 
-  // Tab content containers
-  const tabContents = document.createElement('div');
-  tabContents.id = 'week1-tab-content';
-  tabContents.style.cssText = 'padding-top: 16px;';
-  body.appendChild(tabContents);
+  const stepsContainer = document.createElement('div');
+  stepsContainer.className = 'learning-steps';
 
-  // Fill-in exercise content
-  const fillContent = document.createElement('div');
-  fillContent.className = 'tab-content active';
-  fillContent.setAttribute('data-tab', 'fill');
-  fillContent.innerHTML = `
-    <h4 style="margin-bottom:12px;">练习一：AI 扫地机器人能力分析（幻灯片第 36 页）</h4>
-    <table class="exercise-table" style="margin-bottom:20px;">
+  // Step 1: Fill-in exercises
+  const step1 = createStep(1, '填空练习：理解 AI 能力维度与机器学习范式', '完成课件第 36 页和第 41 页的两处填空。这是 Quiz 1 的必考内容。', 'c1');
+  const step1Body = step1.querySelector('.step-body');
+  step1Body.innerHTML = `
+    <h4 style="margin-bottom:10px;font-size:14px;">练习一：AI 扫地机器人能力分析（幻灯片第 36 页）</h4>
+    <table class="exercise-table">
       <tr><th>能力维度</th><th>答案</th><th>含义</th><th>技术实现</th></tr>
-      <tr>
-        <td><strong>Perception</strong><br><span style="font-size:11px;color:var(--text-muted);">感知</span></td>
-        <td class="answer">scan</td>
-        <td>通过计算机视觉感知环境</td>
-        <td style="font-size:12px;">LiDar + 传感器实时建图，检测灰尘、污渍</td>
-      </tr>
-      <tr>
-        <td><strong>Language<br>processing</strong><br><span style="font-size:11px;color:var(--text-muted);">语言处理</span></td>
-        <td class="answer">understand</td>
-        <td>理解语音指令</td>
-        <td style="font-size:12px;">NLP 自然语言处理</td>
-      </tr>
-      <tr>
-        <td><strong>Reasoning</strong><br><span style="font-size:11px;color:var(--text-muted);">推理</span></td>
-        <td class="answer">determine</td>
-        <td>自主决策清洁策略</td>
-        <td style="font-size:12px;">基于数据分析：优先级、路径、避障</td>
-      </tr>
-      <tr>
-        <td><strong>Learning</strong><br><span style="font-size:11px;color:var(--text-muted);">学习</span></td>
-        <td class="answer">improve</td>
-        <td>从经验中持续优化</td>
-        <td style="font-size:12px;">优化污垢检测、路线规划、清洁方法</td>
-      </tr>
+      <tr><td><strong>Perception</strong><br><span style="font-size:11px;color:var(--text-muted);">感知</span></td><td class="answer">scan</td><td>通过计算机视觉感知环境</td><td style="font-size:12px;">LiDar + 传感器实时建图</td></tr>
+      <tr><td><strong>Language processing</strong><br><span style="font-size:11px;color:var(--text-muted);">语言处理</span></td><td class="answer">understand</td><td>理解语音指令</td><td style="font-size:12px;">NLP 自然语言处理</td></tr>
+      <tr><td><strong>Reasoning</strong><br><span style="font-size:11px;color:var(--text-muted);">推理</span></td><td class="answer">determine</td><td>自主决策清洁策略</td><td style="font-size:12px;">基于数据分析确定优先级、路径</td></tr>
+      <tr><td><strong>Learning</strong><br><span style="font-size:11px;color:var(--text-muted);">学习</span></td><td class="answer">improve</td><td>从经验中持续优化</td><td style="font-size:12px;">优化污垢检测、路线规划</td></tr>
     </table>
-
-    <h4 style="margin-bottom:12px;">练习二：机器学习三种范式（幻灯片第 41 页）</h4>
-    <table class="exercise-table" style="margin-bottom:20px;">
+    <h4 style="margin-bottom:10px;font-size:14px;">练习二：机器学习三种范式（幻灯片第 41 页）</h4>
+    <table class="exercise-table" style="margin-bottom:12px;">
       <tr><th>类型</th><th>训练方式</th><th>学习目标</th><th>典型用例</th></tr>
-      <tr>
-        <td><strong>Supervised</strong></td>
-        <td class="answer">labeled</td>
-        <td>分类 + 预测/回归</td>
-        <td style="font-size:12px;">物体检测、垃圾邮件识别、人脸识别、医疗诊断、价格预测</td>
-      </tr>
-      <tr>
-        <td><strong>Unsupervised</strong></td>
-        <td class="answer">unlabeled</td>
-        <td>发现隐藏模式</td>
-        <td style="font-size:12px;">客户分群、异常检测（欺诈）</td>
-      </tr>
-      <tr>
-        <td><strong>Reinforcement</strong></td>
-        <td class="answer">trial & error</td>
-        <td>通过奖励/惩罚优化决策</td>
-        <td style="font-size:12px;">机器人、游戏AI、自动驾驶（奖励守交规，惩罚闯红灯/碰撞）</td>
-      </tr>
+      <tr><td><strong>Supervised</strong></td><td class="answer">labeled</td><td>分类 + 预测/回归</td><td style="font-size:12px;">物体检测、垃圾邮件识别、医疗诊断</td></tr>
+      <tr><td><strong>Unsupervised</strong></td><td class="answer">unlabeled</td><td>发现隐藏模式</td><td style="font-size:12px;">客户分群、异常检测</td></tr>
+      <tr><td><strong>Reinforcement</strong></td><td class="answer">trial & error</td><td>通过奖励/惩罚优化</td><td style="font-size:12px;">机器人、游戏AI、自动驾驶</td></tr>
     </table>
-    <p style="font-size:12px;color:var(--text-muted);">💡 <strong>关键区分：</strong>有无标签（labeled vs unlabeled）区分监督/无监督；有无奖惩机制区分强化学习。GPT 的 RLHF 就是强化学习的应用。</p>
+    <div class="insight-box">💡 <strong>关键区分：</strong>有无标签区分监督/无监督；有无奖惩机制区分强化学习。GPT 的 RLHF 就是强化学习的应用。</div>
   `;
-  tabContents.appendChild(fillContent);
+  stepsContainer.appendChild(step1);
 
-  // Knowledge map content
-  const mapContent = document.createElement('div');
-  mapContent.className = 'tab-content';
-  mapContent.setAttribute('data-tab', 'map');
-  mapContent.style.display = 'none';
-  mapContent.innerHTML = `
+  // Step 2: Knowledge Map
+  const step2 = createStep(2, '知识图谱：建立 AI 治理的四层认知框架', '从定义到技术谱系，再到伦理与治理的区分，最后到原则与风险——这是整门课的思维骨架。', 'c2');
+  const step2Body = step2.querySelector('.step-body');
+  step2Body.innerHTML = `
     <div class="layer-stack">
-      <div class="layer layer-1">
-        <div class="layer-title">Layer 1: AI 是什么？（定义层）</div>
-        <div class="layer-desc">McCarthy (1956) → UNESCAP → ISO → Rai et al. → 核心共识：<em>能执行通常需要人类智能才能完成的任务的计算机系统</em></div>
-      </div>
-      <div class="layer layer-2">
-        <div class="layer-title">Layer 2: AI 技术谱系（概念关系层）</div>
-        <div class="layer-desc">AI ⊃ Machine Learning ⊃ Deep Learning · ML 三种范式 (Supervised / Unsupervised / Reinforcement) · ANN 结构 (Input → Hidden → Output)</div>
-      </div>
-      <div class="layer layer-3">
-        <div class="layer-title">Layer 3: 伦理 vs 治理（框架区分层）</div>
-        <div class="layer-desc"><strong>AI Ethics</strong> = foundational principles（"应该怎样"）· <strong>AI Governance</strong> = translates principles into policies, regulations, frameworks（"如何确保"）</div>
-      </div>
-      <div class="layer layer-4">
-        <div class="layer-title">Layer 4: 原则与风险（应用层）</div>
-        <div class="layer-desc">风险：Bias · Black Box · Privacy · 原则：Proportionality · Fairness · Privacy · Accountability · 视角：UNESCO(人权自上而下) vs PwC(企业价值自下而上)</div>
-      </div>
+      <div class="layer layer-1"><div class="layer-title">Layer 1: AI 是什么？（定义层）</div><div class="layer-desc">McCarthy → UNESCAP → ISO → Rai et al. → 核心共识：<em>能执行通常需要人类智能才能完成的任务的计算机系统</em></div></div>
+      <div class="layer layer-2"><div class="layer-title">Layer 2: AI 技术谱系（概念关系层）</div><div class="layer-desc">AI ⊃ ML ⊃ DL · 三种范式 (Supervised / Unsupervised / Reinforcement) · ANN 结构 (Input → Hidden → Output)</div></div>
+      <div class="layer layer-3"><div class="layer-title">Layer 3: 伦理 vs 治理（框架区分层）</div><div class="layer-desc"><strong>AI Ethics</strong> = 基础原则（"应该怎样"）· <strong>AI Governance</strong> = 把原则翻译为政策、法规和框架（"如何确保"）</div></div>
+      <div class="layer layer-4"><div class="layer-title">Layer 4: 原则与风险（应用层）</div><div class="layer-desc">风险：Bias · Black Box · Privacy · 原则：Proportionality · Fairness · Privacy · Accountability · 双视角：UNESCO(人权自上而下) vs PwC(企业自下而上)</div></div>
     </div>
-
-    <h4 style="margin:16px 0 8px;">AI 历史关键里程碑</h4>
-    <table class="comp-table">
+    <h4 style="margin:12px 0 8px;">AI 历史关键里程碑</h4>
+    <table class="comp-table" style="margin-bottom:12px;">
       <tr><th>年代</th><th>事件</th><th>意义</th></tr>
-      <tr><td>1950s</td><td>Turing Test</td><td>首次提出机器智能的评价标准</td></tr>
-      <tr><td>1956</td><td>Dartmouth 会议，McCarthy 提出"AI"</td><td>AI 作为学科正式诞生</td></tr>
-      <tr><td>1980s</td><td>AI 进入工业/医疗领域</td><td>从实验室走向产业</td></tr>
+      <tr><td>1950s</td><td>Turing Test</td><td>首次提出机器智能评价标准</td></tr>
+      <tr><td>1956</td><td>Dartmouth 会议，McCarthy 提出"AI"</td><td>AI 学科正式诞生</td></tr>
+      <tr><td>1980s</td><td>AI 进入工业/医疗</td><td>从实验室走向产业</td></tr>
       <tr><td>2010s</td><td>深度学习黄金十年</td><td>算力+数据+算法三重突破</td></tr>
       <tr><td>2020s</td><td>GPT-4 等生成式 AI</td><td>AI 进入"创造性"阶段</td></tr>
     </table>
-
-    <h4 style="margin:16px 0 8px;">核心概念对应 ILO 快速索引</h4>
+    <h4 style="margin:12px 0 8px;">核心概念对 ILO 快速索引</h4>
     <table class="comp-table">
       <tr><th>概念</th><th>ILO</th><th>考试关联</th></tr>
       <tr><td>AI 定义 (4 来源)</td><td>ILO 1</td><td>Quiz 1 必考</td></tr>
@@ -1146,112 +1234,97 @@ function renderWeek1Special(container) {
       <tr><td>UNESCO 原则 / PwC 价值驱动</td><td>ILO 2, 4, 5</td><td>Quiz 1、跨国治理比较</td></tr>
     </table>
   `;
-  tabContents.appendChild(mapContent);
+  stepsContainer.appendChild(step2);
 
-  // UNESCO content
-  const unescoContent = document.createElement('div');
-  unescoContent.className = 'tab-content';
-  unescoContent.setAttribute('data-tab', 'unesco');
-  unescoContent.style.display = 'none';
-  unescoContent.innerHTML = `
-    <div style="background:#f8fafc;border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:16px;">
-      <strong>Recommendation on the Ethics of AI</strong><br>
-      <span style="font-size:12px;color:var(--text-muted);">2021年11月由193个成员国通过 · 史上第一个AI伦理全球标准</span>
+  // Step 3: UNESCO
+  const step3 = createStep(3, '精读 UNESCO (2022)：从人权视角自上而下', '193 国通过的首个 AI 伦理全球标准。理解四大核心价值观、十大原则和两项明确禁止。', 'c3');
+  const step3Body = step3.querySelector('.step-body');
+  step3Body.innerHTML = `
+    <div class="reading-card"><h5>Recommendation on the Ethics of AI</h5><p>2021年11月由193个成员国通过 · 史上第一个AI伦理全球标准</p></div>
+    <h4 style="margin:12px 0 8px;">四大核心价值观</h4>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
+      <div style="padding:10px 12px;background:var(--dusty-blue-bg);border-radius:10px;font-size:12px;"><strong>1.</strong> 尊重、保护和促进人权与人类尊严</div>
+      <div style="padding:10px 12px;background:var(--sage-bg);border-radius:10px;font-size:12px;"><strong>2.</strong> 生活在和平、公正与互联的社会中</div>
+      <div style="padding:10px 12px;background:var(--dusty-gold-bg);border-radius:10px;font-size:12px;"><strong>3.</strong> 确保多样性和包容性</div>
+      <div style="padding:10px 12px;background:var(--dusty-lav-bg);border-radius:10px;font-size:12px;"><strong>4.</strong> 环境与生态系统蓬勃发展</div>
     </div>
-
-    <h4 style="margin-bottom:8px;">四大核心价值观 (Core Values)</h4>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;">
-      <div style="padding:10px 12px;background:#eff6ff;border-radius:6px;font-size:12px;"><strong>1.</strong> 尊重、保护和促进人权与人类尊严</div>
-      <div style="padding:10px 12px;background:#f0fdf4;border-radius:6px;font-size:12px;"><strong>2.</strong> 生活在和平、公正与互联的社会中</div>
-      <div style="padding:10px 12px;background:#fffbeb;border-radius:6px;font-size:12px;"><strong>3.</strong> 确保多样性和包容性</div>
-      <div style="padding:10px 12px;background:#faf5ff;border-radius:6px;font-size:12px;"><strong>4.</strong> 环境与生态系统蓬勃发展</div>
-    </div>
-
-    <h4 style="margin-bottom:8px;">十大核心原则（课件重点标记4项）</h4>
-    <table class="comp-table" style="margin-bottom:16px;">
+    <h4 style="margin:12px 0 8px;">十大原则（⭐为课件重点标记）</h4>
+    <table class="comp-table" style="margin-bottom:14px;">
       <tr><th>#</th><th>原则</th><th>要点</th></tr>
-      <tr style="background:#fffbeb;"><td>1</td><td><strong>⭐ Proportionality and Do No Harm</strong></td><td style="font-size:12px;">AI 方法不应超出实现合法目标所需；需进行风险评估</td></tr>
+      <tr style="background:var(--dusty-gold-bg)"><td>1</td><td><strong>⭐ Proportionality & Do No Harm</strong></td><td style="font-size:12px;">AI 方法不应超出实现合法目标所需</td></tr>
       <tr><td>2</td><td>Safety and Security</td><td style="font-size:12px;">避免意外伤害，防止攻击漏洞</td></tr>
-      <tr style="background:#fffbeb;"><td>3</td><td><strong>⭐ Fairness and Non-discrimination</strong></td><td style="font-size:12px;">包容性方法，收益惠及所有群体（年龄、语言、残障等）</td></tr>
+      <tr style="background:var(--dusty-gold-bg)"><td>3</td><td><strong>⭐ Fairness & Non-discrimination</strong></td><td style="font-size:12px;">包容性方法，收益惠及所有群体</td></tr>
       <tr><td>4</td><td>Sustainability</td><td style="font-size:12px;">评估 AI 对 SDGs 的影响</td></tr>
-      <tr style="background:#fffbeb;"><td>5</td><td><strong>⭐ Right to Privacy and Data Protection</strong></td><td style="font-size:12px;">全生命周期隐私保护，知情同意</td></tr>
-      <tr><td>6</td><td>Human Oversight and Determination</td><td style="font-size:12px;">确保 AI 不取代人类的最终责任</td></tr>
-      <tr><td>7</td><td>Transparency and Explainability</td><td style="font-size:12px;">透明度和可解释性应根据情境适当</td></tr>
-      <tr style="background:#fffbeb;"><td>8</td><td><strong>⭐ Responsibility and Accountability</strong></td><td style="font-size:12px;">审计、影响评估、尽职调查机制</td></tr>
-      <tr><td>9</td><td>Awareness and Literacy</td><td style="font-size:12px;">公众数字素养教育</td></tr>
+      <tr style="background:var(--dusty-gold-bg)"><td>5</td><td><strong>⭐ Right to Privacy</strong></td><td style="font-size:12px;">全生命周期隐私保护，知情同意</td></tr>
+      <tr><td>6</td><td>Human Oversight</td><td style="font-size:12px;">AI 不取代人类最终责任</td></tr>
+      <tr><td>7</td><td>Transparency</td><td style="font-size:12px;">适当透明度和可解释性</td></tr>
+      <tr style="background:var(--dusty-gold-bg)"><td>8</td><td><strong>⭐ Responsibility & Accountability</strong></td><td style="font-size:12px;">审计、影响评估、尽职调查机制</td></tr>
+      <tr><td>9</td><td>Awareness & Literacy</td><td style="font-size:12px;">公众数字素养教育</td></tr>
       <tr><td>10</td><td>Multi-stakeholder Governance</td><td style="font-size:12px;">包容、透明的多方参与治理</td></tr>
     </table>
-
-    <h4 style="margin-bottom:8px;">两大实施工具 + 两项明确禁止</h4>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-      <div style="padding:10px 12px;background:#f0fdf4;border-radius:6px;font-size:12px;"><strong>🛠 EIA</strong> (Ethical Impact Assessment)<br>帮助 AI 项目团队识别和评估伦理影响</div>
-      <div style="padding:10px 12px;background:#f0fdf4;border-radius:6px;font-size:12px;"><strong>🛠 RAM</strong> (Readiness Assessment Methodology)<br>评估成员国法律/技术基础设施准备度</div>
-      <div style="padding:10px 12px;background:#fef2f2;border-radius:6px;font-size:12px;"><strong>🚫 Social Scoring</strong><br>禁止社会信用评分</div>
-      <div style="padding:10px 12px;background:#fef2f2;border-radius:6px;font-size:12px;"><strong>��� Mass Surveillance</strong><br>禁止大规模监控</div>
+      <div style="padding:10px 12px;background:var(--sage-bg);border-radius:10px;font-size:12px;"><strong>🛠 EIA</strong> (Ethical Impact Assessment)</div>
+      <div style="padding:10px 12px;background:var(--sage-bg);border-radius:10px;font-size:12px;"><strong>🛠 RAM</strong> (Readiness Assessment)</div>
+      <div style="padding:10px 12px;background:var(--dusty-rose-bg);border-radius:10px;font-size:12px;"><strong>🚫 Social Scoring</strong> 禁止社会信用评分</div>
+      <div style="padding:10px 12px;background:var(--dusty-rose-bg);border-radius:10px;font-size:12px;"><strong>🚫 Mass Surveillance</strong> 禁止大规模监控</div>
     </div>
   `;
-  tabContents.appendChild(unescoContent);
+  stepsContainer.appendChild(step3);
 
-  // PwC content
-  const pwcContent = document.createElement('div');
-  pwcContent.className = 'tab-content';
-  pwcContent.setAttribute('data-tab', 'pwc');
-  pwcContent.style.display = 'none';
-  pwcContent.innerHTML = `
-    <div style="background:#f8fafc;border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:16px;">
-      <strong>Reese & Becker (2024) — PwC</strong><br>
-      <span style="font-size:12px;color:var(--text-muted);">核心论点：AI 治理不仅是合规要求，更是企业的 <strong>价值驱动器 (Value Driver)</strong>，通过两条路径创造价值</span>
+  // Step 4: PwC
+  const step4 = createStep(4, '精读 PwC (2024)：企业视角——治理就是价值', '核心论点：AI 治理不只是合规，而是通过"支持创新"和"建立信任"两条路径创造商业价值。', 'c4');
+  const step4Body = step4.querySelector('.step-body');
+  step4Body.innerHTML = `
+    <div class="reading-card"><h5>Reese & Becker (2024) — PwC</h5><p>核心理念：AI 治理不仅是合规要求，更是企业的 <strong>价值驱动器 (Value Driver)</strong></p></div>
+    <h4 style="margin:12px 0 8px;">路径一：支持创新与规模化</h4>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+      <div style="padding:10px 12px;background:var(--dusty-blue-bg);border-radius:10px;font-size:12px;"><strong>Pull（市场拉动）</strong><br>治理框架提供客户反馈机制 → 市场需求驱动 AI 开发</div>
+      <div style="padding:10px 12px;background:var(--dusty-blue-bg);border-radius:10px;font-size:12px;"><strong>Push（技术推动）</strong><br>治理框架提供实验空间（实验室、沙盒）→ 鼓励探索新技术</div>
     </div>
-
-    <h4 style="margin-bottom:8px;">路径一：支持创新与规模化</h4>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
-      <div style="padding:10px 12px;background:#eff6ff;border-radius:6px;font-size:12px;"><strong>Pull（市场拉动）</strong><br>治理框架提供客户反馈机制 → 市场需求驱动 AI 开发</div>
-      <div style="padding:10px 12px;background:#eff6ff;border-radius:6px;font-size:12px;"><strong>Push（技术推动）</strong><br>治理框架提供实验空间（实验室、沙盒）→ 鼓励探索新技术</div>
-    </div>
-    <p style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">💡 Innovation Funnel：治理措施贯穿 idea → PoC → scaling 全过程，系统化筛选和推进用例</p>
-
-    <h4 style="margin-bottom:8px;">路径二：驱动可信 AI</h4>
-    <table class="comp-table" style="margin-bottom:16px;">
+    <div class="insight-box">💡 Innovation Funnel：治理措施贯穿 idea → PoC → scaling 全过程，系统化筛选和推进用例。</div>
+    <h4 style="margin:14px 0 8px;">路径二：驱动可信 AI</h4>
+    <table class="comp-table" style="margin-bottom:14px;">
       <tr><th>原则</th><th>实践方式</th></tr>
-      <tr><td>Human Oversight & Agency</td><td style="font-size:12px;">向用户解释模型决策逻辑，让用户参与设计</td></tr>
-      <tr><td>Transparency & Explainability</td><td style="font-size:12px;">确保决策过程可理解、可质疑</td></tr>
+      <tr><td>Human Oversight</td><td style="font-size:12px;">向用户解释模型决策逻辑，让用户参与设计</td></tr>
+      <tr><td>Transparency</td><td style="font-size:12px;">确保决策过程可理解、可质疑</td></tr>
       <tr><td>Robustness & Safety</td><td style="font-size:12px;">系统稳定可靠，能抵抗攻击</td></tr>
       <tr><td>Privacy & Security</td><td style="font-size:12px;">全生命周期数据保护</td></tr>
       <tr><td>Fairness & Societal Wellbeing</td><td style="font-size:12px;">促进社会公平和整体福祉</td></tr>
     </table>
-
-    <h4 style="margin-bottom:8px;">UNESCO vs PwC 对比（ILO 4 核心训练）</h4>
+    <h4 style="margin:12px 0 8px;">UNESCO vs PwC 对比（ILO 4 核心训练）</h4>
     <table class="comp-table">
       <tr><th>维度</th><th>UNESCO (2022)</th><th>PwC (2024)</th></tr>
       <tr><td>出发点</td><td>人权视角，自上而下</td><td>企业价值视角，自下而上</td></tr>
       <tr><td>核心逻辑</td><td>保护人类免受 AI 伤害</td><td>治理让 AI 更好创造商业价值</td></tr>
       <tr><td>受众</td><td>成员国政府、政策制定者</td><td>企业组织</td></tr>
-      <tr><td>共同语言</td><td colspan="2" style="background:#f0fdf4;text-align:center;">Fairness · Transparency · Accountability · Privacy（高度重叠）</td></tr>
+      <tr><td>共同语言</td><td colspan="2" style="text-align:center;background:var(--sage-bg);">Fairness · Transparency · Accountability · Privacy（高度重叠）</td></tr>
     </table>
-    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">💡 "同归殊途"的格局：同一套原则在不同制度框架下以不同逻辑被使用——这对理解全球 AI 治理网络至关重要。</p>
+    <div class="insight-box" style="margin-top:8px;">💡 "同归殊途"的格局：同一套原则在不同制度框架下以不同逻辑被使用——这对理解全球 AI 治理网络至关重要。</div>
   `;
-  tabContents.appendChild(pwcContent);
+  stepsContainer.appendChild(step4);
 
-  // Tab switching logic
-  tabsDiv.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const tabName = this.getAttribute('data-tab');
-      // Update active tab
-      tabsDiv.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      this.classList.add('active');
-      // Show/hide content
-      tabContents.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
-      const target = tabContents.querySelector(`[data-tab="${tabName}"]`);
-      if (target) target.style.display = 'block';
-    });
-  });
-
-  // Notes area
+  body.appendChild(stepsContainer);
   renderNotesArea(1, body);
-
   section.appendChild(body);
   container.appendChild(section);
+}
+
+function createStep(num, title, desc, colorClass) {
+  const block = document.createElement('div');
+  block.className = 'step-block';
+  const header = document.createElement('div');
+  header.className = 'step-header';
+  header.onclick = function() { block.classList.toggle('open'); };
+  header.innerHTML = `
+    <div class="step-num-circle ${colorClass}">${num}</div>
+    <div class="step-label"><h4>${title}</h4><p>${desc}</p></div>
+    <div class="step-chevron">▼</div>
+  `;
+  block.appendChild(header);
+  const body = document.createElement('div');
+  body.className = 'step-body';
+  block.appendChild(body);
+  return block;
 }
 
 // ==============================
@@ -1269,30 +1342,12 @@ function showToast(message) {
 // ==============================
 const dropzone = document.getElementById('mainDropzone');
 const fileInput = document.getElementById('fileInput');
-
 dropzone.addEventListener('click', () => fileInput.click());
 fileInput.addEventListener('change', () => handleFiles(fileInput.files));
-
-dropzone.addEventListener('dragover', function(e) {
-  e.preventDefault();
-  this.classList.add('drag-over');
-});
-dropzone.addEventListener('dragleave', function(e) {
-  this.classList.remove('drag-over');
-});
-dropzone.addEventListener('drop', function(e) {
-  e.preventDefault();
-  this.classList.remove('drag-over');
-  handleFiles(e.dataTransfer.files);
-});
-
-// Also handle paste events for screenshots
-document.addEventListener('paste', function(e) {
-  const files = e.clipboardData.files;
-  if (files.length > 0) {
-    handleFiles(files);
-  }
-});
+dropzone.addEventListener('dragover', function(e) { e.preventDefault(); this.classList.add('drag-over'); });
+dropzone.addEventListener('dragleave', function(e) { this.classList.remove('drag-over'); });
+dropzone.addEventListener('drop', function(e) { e.preventDefault(); this.classList.remove('drag-over'); handleFiles(e.dataTransfer.files); });
+document.addEventListener('paste', function(e) { const files = e.clipboardData.files; if (files.length > 0) handleFiles(files); });
 
 // ==============================
 //      GLOBAL ACTIONS
@@ -1331,6 +1386,7 @@ function exportNotes() {
 function refreshAll() {
   renderProgress();
   renderMaterialsGrid();
+  renderHeroSteps();
   renderWeekSections();
 }
 
@@ -1342,32 +1398,22 @@ function refreshAll() {
   const KEY = 'studyhub-visits';
   const display = document.getElementById('visitDisplay');
   const API_BASE = 'https://api.countapi.xyz';
-
-  // Hit (increment + get)
   fetch(`${API_BASE}/hit/${NS}/${KEY}`)
     .then(r => {
       if (!r.ok) throw new Error('Hit failed');
       return r.json();
     })
-    .then(data => {
-      display.textContent = `${data.value} visits`;
-    })
+    .then(data => { display.textContent = `${data.value} visits`; })
     .catch(() => {
-      // Fallback: try get without increment
       fetch(`${API_BASE}/get/${NS}/${KEY}`)
         .then(r => r.json())
-        .then(data => {
-          display.textContent = `${data.value} visits`;
-        })
+        .then(data => { display.textContent = `${data.value} visits`; })
         .catch(() => {
-          // If counter service is down, try creating namespace first then get
           fetch(`https://api.countapi.xyz/create?namespace=${NS}&key=${KEY}&value=0&update_lowerbound=0&update_upperbound=1000000`)
             .then(() => fetch(`${API_BASE}/hit/${NS}/${KEY}`))
             .then(r => r.json())
             .then(data => { display.textContent = `${data.value} visits`; })
-            .catch(() => {
-              display.textContent = 'visits: —';
-            });
+            .catch(() => { display.textContent = 'visits: —'; });
         });
     });
 })();
@@ -1376,11 +1422,7 @@ function refreshAll() {
 //         INIT
 // ==============================
 refreshAll();
-
-console.log('🎓 HD6002 Study Hub ready.');
-console.log('💡 将课件/阅读 PDF 拖放到页面顶部的拖放区，系统自动识别周次。');
-console.log('📝 每节课后在对应周的笔记区输入笔记 → 自动保存到浏览器。');
-console.log('📥 点击"导出笔记"可以导出所有笔记为 Markdown 文件。');
+console.log('🎓 HD6002 Study Hub ready — Morandi edition');
 </script>
 </body>
 </html>
