@@ -8,36 +8,49 @@
 <title>HD6002 AI Ethics & Governance — Study Hub</title>
 <style>
 /* ================================================================ */
-/*                    MORANDI DESIGN SYSTEM                          */
+/*                      DESIGN SYSTEM v3                              */
 /* ================================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* Morandi base */
-  --bg:            #f3f0ec;
-  --surface:       rgba(255,255,255,0.55);
-  --surface-solid: #faf8f5;
-  --border:        #e4dfd8;
-  --border-soft:   rgba(200,195,188,0.4);
+  /* Background */
+  --bg:            #f5f6f8;
+  --surface:       rgba(255,255,255,0.7);
+  --surface-solid: #ffffff;
 
   /* Text */
-  --text:          #4a4036;
-  --text-soft:     #8a8076;
-  --text-muted:    #b0a89e;
+  --text:          #1e293b;
+  --text-soft:     #475569;
+  --text-muted:    #94a3b8;
 
-  /* Morandi accents */
-  --sage:          #b0bfa3;
-  --sage-bg:       rgba(176,191,163,0.18);
-  --dusty-blue:    #a8b5c4;
-  --dusty-blue-bg: rgba(168,181,196,0.2);
-  --dusty-gold:    #d4c5a9;
-  --dusty-gold-bg: rgba(212,197,169,0.22);
-  --dusty-rose:    #d4b5b5;
-  --dusty-rose-bg: rgba(212,181,181,0.2);
-  --dusty-lavender:#c4b8d4;
-  --dusty-lav-bg:  rgba(196,184,212,0.2);
-  --dusty-teal:    #a8c4c0;
-  --dusty-teal-bg: rgba(168,196,192,0.18);
+  /* Accent colors — clear, unified, high contrast */
+  --blue:          #4F8CFF;
+  --blue-bg:       rgba(79,140,255,0.1);
+  --blue-border:   rgba(79,140,255,0.25);
+
+  --green:         #22C55E;
+  --green-bg:      rgba(34,197,94,0.1);
+  --green-border:  rgba(34,197,94,0.25);
+
+  --amber:         #F59E0B;
+  --amber-bg:      rgba(245,158,11,0.1);
+  --amber-border:  rgba(245,158,11,0.25);
+
+  --red:           #EF4444;
+  --red-bg:        rgba(239,68,68,0.1);
+  --red-border:    rgba(239,68,68,0.25);
+
+  --purple:        #8B5CF6;
+  --purple-bg:     rgba(139,92,246,0.1);
+  --purple-border: rgba(139,92,246,0.25);
+
+  --teal:          #14B8A6;
+  --teal-bg:       rgba(20,184,166,0.1);
+  --teal-border:   rgba(20,184,166,0.25);
+
+  --slate:         #64748B;
+  --slate-bg:      rgba(100,116,139,0.08);
+  --slate-border:  rgba(100,116,139,0.2);
 
   /* Geometry */
   --radius:        20px;
@@ -45,24 +58,23 @@
   --radius-xs:     10px;
 
   /* Glass */
-  --glass-bg:      rgba(255,255,255,0.5);
-  --glass-border:  rgba(255,255,255,0.35);
-  --glass-blur:    24px;
-  --glass-shadow:  0 4px 24px rgba(74,64,54,0.05);
-  --glass-hover:   0 12px 40px rgba(74,64,54,0.09);
+  --glass-bg:      rgba(255,255,255,0.62);
+  --glass-border:  rgba(255,255,255,0.45);
+  --glass-blur:    20px;
+  --glass-shadow:  0 2px 16px rgba(0,0,0,0.04);
+  --glass-hover:   0 8px 32px rgba(0,0,0,0.07);
 
   /* Font */
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 body {
   font-family: var(--font);
   background: var(--bg);
   background-image:
-    radial-gradient(ellipse at 15% 60%, rgba(180,195,180,0.2) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 15%, rgba(210,200,185,0.18) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(185,180,200,0.12) 0%, transparent 45%);
+    radial-gradient(ellipse at 20% 50%, rgba(79,140,255,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.05) 0%, transparent 50%);
   color: var(--text);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -86,7 +98,7 @@ body {
   transition: var(--transition);
 }
 .glass:hover {
-  transform: translateY(-1px) scale(1.008);
+  transform: translateY(-1px) scale(1.005);
   box-shadow: var(--glass-hover);
 }
 
@@ -100,7 +112,7 @@ body {
 }
 .header-left h1 {
   font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
-  background: linear-gradient(135deg, #6b5e53, #4a4036);
+  background: linear-gradient(135deg, var(--blue), var(--purple));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 .header-left .sub { font-size: 13px; color: var(--text-soft); margin-top: 4px; }
@@ -110,8 +122,8 @@ body {
   width: 56px; height: 56px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: 13px; font-weight: 700;
-  color: var(--dusty-gold); border: 3px solid var(--dusty-gold);
-  background: rgba(212,197,169,0.08);
+  color: var(--blue); border: 3px solid var(--blue);
+  background: var(--blue-bg);
   transition: var(--transition);
 }
 
@@ -119,21 +131,16 @@ body {
 /*                         BUTTONS                                   */
 /* ================================================================ */
 .btn {
-  padding: 9px 20px; border-radius: 24px; border: 1px solid var(--border);
-  background: rgba(255,255,255,0.6); color: var(--text-soft); font-size: 13px;
+  padding: 9px 20px; border-radius: 24px; border: 1px solid var(--slate-border);
+  background: rgba(255,255,255,0.7); color: var(--text-soft); font-size: 13px;
   cursor: pointer; font-family: var(--font); font-weight: 500;
   transition: var(--transition);
 }
 .btn:hover {
-  background: var(--dusty-blue-bg); border-color: var(--dusty-blue);
-  color: #6b7d8e; transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(168,181,196,0.15);
+  background: var(--blue-bg); border-color: var(--blue);
+  color: var(--blue); transform: translateY(-1px);
+  box-shadow: 0 4px 16px var(--blue-bg);
 }
-.btn-primary {
-  background: var(--dusty-blue); color: #fff; border-color: transparent;
-  font-weight: 600;
-}
-.btn-primary:hover { background: #98a9ba; color: #fff; }
 .btn-sm { padding: 6px 16px; font-size: 12px; border-radius: 20px; }
 
 /* ================================================================ */
@@ -143,51 +150,51 @@ body {
 .hero::before {
   content: ''; position: absolute; top: -40px; right: -40px;
   width: 180px; height: 180px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(168,181,196,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(79,140,255,0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 5px 14px; border-radius: 20px;
-  background: rgba(168,181,196,0.15); color: #6b7d8e;
+  background: var(--blue-bg); color: var(--blue);
   font-size: 12px; font-weight: 600; margin-bottom: 14px;
 }
-.hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--dusty-blue); }
+.hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
 .hero-title { font-size: 26px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
 .hero-sub { font-size: 14px; color: var(--text-soft); margin-bottom: 24px; }
 
 .hero-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
 .hero-step {
-  background: rgba(255,255,255,0.45);
-  border: 1px solid rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.55);
   border-radius: var(--radius-sm); padding: 20px;
   cursor: pointer; transition: var(--transition);
   position: relative;
 }
 .hero-step:hover {
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px) scale(1.03);
   box-shadow: var(--glass-hover);
-  background: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.8);
 }
 .hero-step .step-num {
   width: 32px; height: 32px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 14px; font-weight: 700; margin-bottom: 10px;
+  font-size: 14px; font-weight: 700; margin-bottom: 10px; color: #fff;
 }
-.hero-step .step-num.s1 { background: var(--dusty-blue-bg); color: #6b7d8e; }
-.hero-step .step-num.s2 { background: var(--sage-bg); color: #758062; }
-.hero-step .step-num.s3 { background: var(--dusty-gold-bg); color: #9a8a6b; }
-.hero-step .step-num.s4 { background: var(--dusty-rose-bg); color: #9b7070; }
-.hero-step h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.hero-step .step-num.s1 { background: var(--blue); }
+.hero-step .step-num.s2 { background: var(--green); }
+.hero-step .step-num.s3 { background: var(--amber); }
+.hero-step .step-num.s4 { background: var(--purple); }
+.hero-step h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: var(--text); }
 .hero-step p { font-size: 12px; color: var(--text-soft); line-height: 1.5; }
 .hero-step .step-check {
   position: absolute; top: 16px; right: 16px;
   width: 22px; height: 22px; border-radius: 50%;
-  border: 2px solid var(--border); display: flex;
+  border: 2px solid #cbd5e1; display: flex;
   align-items: center; justify-content: center; font-size: 11px;
   color: transparent; transition: var(--transition);
 }
-.hero-step .step-check.checked { background: var(--sage); border-color: var(--sage); color: #fff; }
+.hero-step .step-check.checked { background: var(--green); border-color: var(--green); color: #fff; }
 
 /* ================================================================ */
 /*                        DASHBOARD                                  */
@@ -207,15 +214,12 @@ body {
 
 .assessment-item {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 10px 0; border-bottom: 1px solid rgba(228,223,216,0.6);
+  padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);
   font-size: 13px;
 }
 .assessment-item:last-child { border-bottom: none; }
 .assessment-item .name { font-weight: 500; }
-.assessment-item .pct {
-  font-weight: 700; font-size: 14px;
-  color: var(--dusty-gold);
-}
+.assessment-item .pct { font-weight: 700; font-size: 14px; color: var(--blue); }
 .assessment-item .meta { color: var(--text-muted); font-size: 11px; }
 
 .milestone {
@@ -225,9 +229,9 @@ body {
 .milestone-dot {
   width: 9px; height: 9px; border-radius: 50%; margin-top: 6px; flex-shrink: 0;
 }
-.milestone-dot.warn { background: var(--dusty-gold); }
-.milestone-dot.danger { background: var(--dusty-rose); }
-.milestone-dot.info { background: var(--dusty-blue); }
+.milestone-dot.warn { background: var(--amber); }
+.milestone-dot.danger { background: var(--red); }
+.milestone-dot.info { background: var(--blue); }
 .milestone-week { font-weight: 600; }
 .milestone-desc { color: var(--text-soft); font-size: 12px; }
 
@@ -236,13 +240,13 @@ body {
 /* ================================================================ */
 .dropzone-wrap { margin-bottom: 24px; }
 .dropzone {
-  border: 2px dashed var(--border);
+  border: 2px dashed #cbd5e1;
   border-radius: var(--radius); padding: 32px 24px;
   text-align: center; cursor: pointer; position: relative;
 }
 .dropzone.drag-over {
-  border-color: var(--dusty-blue);
-  background: rgba(168,181,196,0.1);
+  border-color: var(--blue);
+  background: var(--blue-bg);
 }
 .dropzone-icon { font-size: 36px; margin-bottom: 10px; }
 .dropzone-title { font-size: 15px; font-weight: 600; }
@@ -251,9 +255,9 @@ body {
   margin-top: 14px; padding: 12px 18px; border-radius: var(--radius-xs);
   font-size: 13px; display: none;
 }
-.dropzone-feedback.success { display: block; background: var(--sage-bg); color: #6a7a52; border: 1px solid rgba(176,191,163,0.4); }
-.dropzone-feedback.error { display: block; background: var(--dusty-rose-bg); color: #9b7070; border: 1px solid rgba(212,181,181,0.4); }
-.dropzone-feedback.info { display: block; background: var(--dusty-blue-bg); color: #6b7d8e; border: 1px solid rgba(168,181,196,0.4); }
+.dropzone-feedback.success { display: block; background: var(--green-bg); color: #15803d; border: 1px solid var(--green-border); }
+.dropzone-feedback.error { display: block; background: var(--red-bg); color: #b91c1c; border: 1px solid var(--red-border); }
+.dropzone-feedback.info { display: block; background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
 
 /* ================================================================ */
 /*                    MATERIALS GRID                                  */
@@ -267,25 +271,28 @@ body {
   aspect-ratio: 1; border-radius: var(--radius-xs);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   font-size: 11px; text-align: center; cursor: pointer;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.4);
+  border: 1px solid #e2e8f0;
+  background: #fff;
   transition: var(--transition); padding: 4px; gap: 2px;
+  position: relative;
 }
 .material-cell:hover {
-  transform: scale(1.06);
-  background: rgba(168,181,196,0.12);
-  border-color: var(--dusty-blue);
+  transform: scale(1.08);
+  border-color: var(--blue);
+  background: var(--blue-bg);
 }
-.material-cell .week-num { font-weight: 700; font-size: 15px; }
+.material-cell .week-num { font-weight: 700; font-size: 16px; color: var(--text); }
 .material-cell .week-label { color: var(--text-muted); font-size: 10px; }
-.material-cell.collected { background: var(--sage-bg); border-color: rgba(176,191,163,0.5); }
-.material-cell.collected .week-num { color: #6a7a52; }
-.material-cell.partial { background: var(--dusty-gold-bg); border-color: rgba(212,197,169,0.5); }
-.material-cell.has-notes::after {
-  content: ''; position: absolute; top: 5px; right: 5px;
-  width: 5px; height: 5px; border-radius: 50%; background: var(--dusty-lavender);
-}
-.material-cell { position: relative; }
+
+/* Week cell status colors — unified */
+.material-cell.full { border-color: var(--green-border); background: var(--green-bg); }
+.material-cell.full .week-num { color: var(--green); }
+.material-cell.partial { border-color: var(--amber-border); background: var(--amber-bg); }
+.material-cell.partial .week-num { color: var(--amber); }
+.material-cell.key { border-color: var(--red-border); background: var(--red-bg); }
+.material-cell.key .week-num { color: var(--red); }
+.material-cell.key.full { border-color: var(--purple-border); background: var(--purple-bg); }
+.material-cell.key.full .week-num { color: var(--purple); }
 
 /* ================================================================ */
 /*                     ILO CARD                                      */
@@ -302,11 +309,17 @@ body {
 }
 .ilo-chip:hover { transform: translateY(-1px) scale(1.02); }
 .ilo-chip strong { font-size: 13px; display: block; margin-bottom: 3px; }
-.ilo-1 { background: var(--dusty-blue-bg); border: 1px solid rgba(168,181,196,0.3); }
-.ilo-2 { background: var(--sage-bg); border: 1px solid rgba(176,191,163,0.3); }
-.ilo-3 { background: var(--dusty-gold-bg); border: 1px solid rgba(212,197,169,0.3); }
-.ilo-4 { background: var(--dusty-lav-bg); border: 1px solid rgba(196,184,212,0.3); }
-.ilo-5 { background: var(--dusty-rose-bg); border: 1px solid rgba(212,181,181,0.3); }
+
+.ilo-1 { background: var(--blue-bg); border: 1px solid var(--blue-border); }
+.ilo-1 strong { color: var(--blue); }
+.ilo-2 { background: var(--green-bg); border: 1px solid var(--green-border); }
+.ilo-2 strong { color: #15803d; }
+.ilo-3 { background: var(--amber-bg); border: 1px solid var(--amber-border); }
+.ilo-3 strong { color: #b45309; }
+.ilo-4 { background: var(--purple-bg); border: 1px solid var(--purple-border); }
+.ilo-4 strong { color: var(--purple); }
+.ilo-5 { background: var(--red-bg); border: 1px solid var(--red-border); }
+.ilo-5 strong { color: var(--red); }
 
 /* ================================================================ */
 /*                    WEEK SECTIONS                                  */
@@ -321,25 +334,27 @@ body {
   box-shadow: var(--glass-shadow);
   transition: var(--transition);
 }
-.week-section:hover {
-  box-shadow: var(--glass-hover);
-}
+.week-section:hover { box-shadow: var(--glass-hover); }
 
 .week-header {
   display: flex; align-items: center; padding: 18px 24px;
   cursor: pointer; user-select: none;
   transition: background 0.2s;
 }
-.week-header:hover { background: rgba(255,255,255,0.2); }
+.week-header:hover { background: rgba(255,255,255,0.25); }
 .week-badge {
   width: 36px; height: 36px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-weight: 700; font-size: 14px; margin-right: 14px; flex-shrink: 0;
+  color: #fff;
 }
-.week-badge.active { background: var(--dusty-blue); color: #fff; }
-.week-badge.past { background: var(--sage-bg); color: #6a7a52; border: 1px solid rgba(176,191,163,0.4); }
-.week-badge.future { background: rgba(255,255,255,0.4); color: var(--text-muted); border: 1px solid var(--border); }
-.week-badge.warn { background: var(--dusty-rose-bg); color: #9b7070; border: 1px solid rgba(212,181,181,0.4); }
+/* Unified week badge colors */
+.week-badge.active { background: var(--blue); }
+.week-badge.key { background: var(--red); }
+.week-badge.collected { background: var(--green); }
+.week-badge.partial-bg { background: var(--amber); }
+.week-badge.default { background: #cbd5e1; color: var(--text-soft); }
+
 .week-info { flex: 1; }
 .week-info .topic { font-weight: 600; font-size: 15px; }
 .week-info .flags { display: flex; gap: 6px; margin-top: 5px; flex-wrap: wrap; }
@@ -347,11 +362,11 @@ body {
   font-size: 10px; padding: 3px 10px; border-radius: 12px;
   font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px;
 }
-.flag.quiz { background: var(--dusty-rose-bg); color: #9b7070; }
-.flag.paper { background: var(--dusty-gold-bg); color: #9a8a6b; }
-.flag.pres { background: var(--dusty-lav-bg); color: #8a7799; }
-.flag.case { background: var(--dusty-blue-bg); color: #6b7d8e; }
-.flag.warn { background: var(--dusty-teal-bg); color: #607a75; }
+.flag.quiz { background: var(--red-bg); color: #b91c1c; }
+.flag.paper { background: var(--amber-bg); color: #b45309; }
+.flag.pres { background: var(--purple-bg); color: #7c3aed; }
+.flag.case { background: var(--blue-bg); color: #2563eb; }
+.flag.warn { background: var(--teal-bg); color: #0f766e; }
 .week-toggle {
   font-size: 14px; color: var(--text-muted);
   transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -364,99 +379,80 @@ body {
 .material-slots { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
 .material-slot {
   flex: 1; min-width: 140px;
-  border: 1px dashed var(--border); border-radius: var(--radius-sm);
+  border: 1px dashed #cbd5e1; border-radius: var(--radius-sm);
   padding: 14px 16px; text-align: center;
-  background: rgba(255,255,255,0.3); transition: var(--transition);
+  background: rgba(255,255,255,0.4); transition: var(--transition);
 }
-.material-slot:hover { border-color: var(--dusty-blue); background: rgba(255,255,255,0.5); }
-.material-slot.drag-over { border-color: var(--dusty-blue); background: var(--dusty-blue-bg); }
+.material-slot:hover { border-color: var(--blue); background: rgba(255,255,255,0.65); }
+.material-slot.drag-over { border-color: var(--blue); background: var(--blue-bg); }
 .material-slot .slot-type { font-size: 11px; color: var(--text-soft); font-weight: 600; }
 .material-slot .slot-name { font-size: 12px; color: var(--text); margin-top: 4px; word-break: break-all; }
 .material-slot.filled {
-  border-style: solid; border-color: rgba(176,191,163,0.5);
-  background: var(--sage-bg);
+  border-style: solid; border-color: var(--green-border);
+  background: var(--green-bg);
 }
 .material-slot .slot-check { display: none; font-size: 18px; }
 .material-slot.filled .slot-check { display: block; }
 
 /* Notes */
 .notes-area {
-  width: 100%; min-height: 80px; border: 1px solid var(--border);
+  width: 100%; min-height: 80px; border: 1px solid #e2e8f0;
   border-radius: var(--radius-sm); padding: 14px 16px;
   font-size: 13px; font-family: var(--font); resize: vertical;
-  background: rgba(255,255,255,0.45); color: var(--text); outline: none;
+  background: rgba(255,255,255,0.55); color: var(--text); outline: none;
   transition: var(--transition);
 }
 .notes-area:focus {
-  border-color: var(--dusty-blue);
-  background: rgba(255,255,255,0.7);
-  box-shadow: 0 0 0 3px rgba(168,181,196,0.12);
+  border-color: var(--blue);
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 0 0 3px var(--blue-bg);
 }
 .notes-hint { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
-.save-indicator { font-size: 11px; color: #6a7a52; opacity: 0; transition: opacity 0.3s; margin-left: 8px; }
+.save-indicator { font-size: 11px; color: #15803d; opacity: 0; transition: opacity 0.3s; margin-left: 8px; }
 .save-indicator.visible { opacity: 1; }
 
 /* ================================================================ */
-/*                WEEK 1 LEARNING STEPS                              */
+/*                WEEK 1 CONTENT SECTIONS                            */
 /* ================================================================ */
-.learning-steps { margin-top: 4px; }
-
-.step-block {
-  border: 1px solid rgba(228,223,216,0.8);
-  border-radius: var(--radius-sm); margin-bottom: 10px;
-  background: rgba(255,255,255,0.35);
-  overflow: hidden; transition: var(--transition);
+.w1-section {
+  margin-bottom: 20px;
+  padding: 20px 24px;
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: var(--transition);
 }
-.step-block:hover {
-  background: rgba(255,255,255,0.55);
-  box-shadow: 0 2px 16px rgba(74,64,54,0.04);
+.w1-section:hover { background: rgba(255,255,255,0.65); }
+.w1-section-header {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
 }
-.step-header {
-  display: flex; align-items: center; padding: 16px 20px;
-  cursor: pointer; user-select: none; gap: 14px;
-  transition: background 0.2s;
-}
-.step-header:hover { background: rgba(255,255,255,0.3); }
-.step-num-circle {
-  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+.w1-section-num {
+  width: 34px; height: 34px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 14px;
+  font-weight: 700; font-size: 15px; color: #fff; flex-shrink: 0;
 }
-.step-num-circle.c1 { background: var(--dusty-blue-bg); color: #6b7d8e; }
-.step-num-circle.c2 { background: var(--sage-bg); color: #6a7a52; }
-.step-num-circle.c3 { background: var(--dusty-gold-bg); color: #9a8a6b; }
-.step-num-circle.c4 { background: var(--dusty-rose-bg); color: #9b7070; }
-.step-body { display: none; padding: 0 20px 18px 66px; }
-.step-block.open .step-body { display: block; }
-.step-header .step-label { flex: 1; }
-.step-header .step-label h4 { font-size: 14px; font-weight: 600; }
-.step-header .step-label p { font-size: 12px; color: var(--text-soft); margin-top: 2px; }
-.step-header .step-chevron {
-  font-size: 12px; color: var(--text-muted);
-  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-.step-block.open .step-chevron { transform: rotate(180deg); }
-.step-status {
-  font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 12px;
-}
-.step-status.todo { background: rgba(255,255,255,0.5); color: var(--text-muted); border: 1px solid var(--border); }
-.step-status.done { background: var(--sage-bg); color: #6a7a52; border: 1px solid rgba(176,191,163,0.4); }
+.w1-section-num.s1 { background: var(--blue); }
+.w1-section-num.s2 { background: var(--green); }
+.w1-section-num.s3 { background: var(--amber); }
+.w1-section-num.s4 { background: var(--purple); }
+.w1-section-header h3 { font-size: 16px; font-weight: 600; }
+.w1-section-header p { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 
-/* Exercise table inside steps */
+/* Exercise table */
 .exercise-table { width: 100%; font-size: 13px; border-collapse: collapse; margin: 8px 0 16px; }
 .exercise-table th, .exercise-table td {
-  border: 1px solid rgba(228,223,216,0.6); padding: 10px 14px; text-align: left;
+  border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left;
 }
 .exercise-table th {
-  background: rgba(255,255,255,0.4); font-weight: 600; font-size: 12px; color: var(--text-soft);
+  background: #f8fafc; font-weight: 600; font-size: 12px; color: var(--text-soft);
 }
 .exercise-table td { font-size: 12px; }
 .exercise-table .answer {
-  background: var(--sage-bg); font-weight: 700; color: #6a7a52;
+  background: var(--green-bg); font-weight: 700; color: #15803d;
   font-family: "SF Mono", "Fira Code", monospace; text-align: center;
 }
 
-/* Layer stack inside knowledge map */
+/* Layer stack */
 .layer-stack { margin: 12px 0 16px; }
 .layer {
   padding: 16px 18px; border-radius: var(--radius-sm);
@@ -464,62 +460,75 @@ body {
   transition: var(--transition);
 }
 .layer:hover { transform: translateX(2px); }
-.layer-1 { background: var(--dusty-blue-bg); border-left: 4px solid var(--dusty-blue); }
-.layer-2 { background: var(--sage-bg); border-left: 4px solid #9fb08e; }
-.layer-3 { background: var(--dusty-gold-bg); border-left: 4px solid var(--dusty-gold); }
-.layer-4 { background: var(--dusty-lav-bg); border-left: 4px solid var(--dusty-lavender); }
+.layer-1 { background: var(--blue-bg); border-left: 4px solid var(--blue); }
+.layer-2 { background: var(--green-bg); border-left: 4px solid var(--green); }
+.layer-3 { background: var(--amber-bg); border-left: 4px solid var(--amber); }
+.layer-4 { background: var(--purple-bg); border-left: 4px solid var(--purple); }
 .layer-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
 .layer-desc { color: var(--text-soft); font-size: 12px; }
 
 /* Comparison table */
 .comp-table { width: 100%; font-size: 12px; border-collapse: collapse; margin: 10px 0; }
 .comp-table th, .comp-table td {
-  border: 1px solid rgba(228,223,216,0.6); padding: 10px 14px; text-align: left;
+  border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left;
 }
 .comp-table th {
-  background: rgba(255,255,255,0.4); font-weight: 600; font-size: 11px; color: var(--text-soft);
+  background: #f8fafc; font-weight: 600; font-size: 11px; color: var(--text-soft);
 }
 .comp-table td { vertical-align: top; }
-.comp-table tr:hover td { background: rgba(255,255,255,0.3); }
+.comp-table tr:hover td { background: rgba(248,250,252,0.5); }
 
 /* Reminder boxes */
 .reminder {
   padding: 14px 18px; border-radius: var(--radius-sm);
   font-size: 13px; margin-top: 12px; line-height: 1.5;
 }
-.reminder.quiz { background: var(--dusty-rose-bg); border: 1px solid rgba(212,181,181,0.3); }
-.reminder.paper { background: var(--dusty-gold-bg); border: 1px solid rgba(212,197,169,0.3); }
-.reminder.info { background: var(--dusty-blue-bg); border: 1px solid rgba(168,181,196,0.3); }
-.reminder.pres { background: var(--dusty-lav-bg); border: 1px solid rgba(196,184,212,0.3); }
+.reminder.quiz { background: var(--red-bg); border: 1px solid var(--red-border); }
+.reminder.paper { background: var(--amber-bg); border: 1px solid var(--amber-border); }
+.reminder.info { background: var(--blue-bg); border: 1px solid var(--blue-border); }
+.reminder.pres { background: var(--purple-bg); border: 1px solid var(--purple-border); }
 
 /* Reading card */
 .reading-card {
-  background: rgba(255,255,255,0.35);
-  border: 1px solid rgba(228,223,216,0.6);
+  background: rgba(255,255,255,0.5);
+  border: 1px solid #e2e8f0;
   border-radius: var(--radius-sm);
   padding: 14px 16px; margin-bottom: 8px;
   transition: var(--transition);
 }
-.reading-card:hover { background: rgba(255,255,255,0.5); }
+.reading-card:hover { background: rgba(255,255,255,0.7); }
 .reading-card h5 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
 .reading-card p { font-size: 12px; color: var(--text-soft); }
 
-/* Highlight box for key insight */
+/* Highlight box */
 .insight-box {
   padding: 12px 16px; border-radius: var(--radius-xs);
-  background: rgba(255,255,255,0.4); border: 1px solid rgba(228,223,216,0.6);
+  background: rgba(255,255,255,0.55); border: 1px solid #e2e8f0;
   font-size: 12px; color: var(--text-soft); margin: 8px 0;
   transition: var(--transition);
 }
+
+/* Sub-grid for cards */
+.sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+.sub-card {
+  padding: 10px 12px; border-radius: 10px; font-size: 12px;
+  border: 1px solid transparent;
+}
+.sub-card.blue { background: var(--blue-bg); border-color: var(--blue-border); }
+.sub-card.green { background: var(--green-bg); border-color: var(--green-border); }
+.sub-card.amber { background: var(--amber-bg); border-color: var(--amber-border); }
+.sub-card.purple { background: var(--purple-bg); border-color: var(--purple-border); }
+.sub-card.red { background: var(--red-bg); border-color: var(--red-border); }
+.sub-card strong { display: block; margin-bottom: 2px; }
 
 /* ================================================================ */
 /*                       TOAST                                       */
 /* ================================================================ */
 .toast {
   position: fixed; bottom: 28px; right: 28px;
-  background: rgba(74,64,54,0.92);
+  background: rgba(30,41,59,0.92);
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  color: #f3f0ec; padding: 14px 22px;
+  color: #f5f6f8; padding: 14px 22px;
   border-radius: 24px; font-size: 13px; font-weight: 500;
   opacity: 0; transform: translateY(12px);
   transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -532,7 +541,7 @@ body {
 /* ================================================================ */
 .site-footer {
   margin-top: 48px; padding: 20px 0;
-  border-top: 1px solid rgba(228,223,216,0.6);
+  border-top: 1px solid rgba(0,0,0,0.06);
   text-align: center; font-size: 11px; color: var(--text-muted);
   display: flex; align-items: center; justify-content: center;
   gap: 16px; flex-wrap: wrap;
@@ -548,7 +557,6 @@ body {
 @media print {
   .dropzone-wrap, .btn, .week-toggle { display: none !important; }
   .week-body { display: block !important; }
-  .step-body { display: block !important; }
   body { background: #fff; }
 }
 
@@ -561,7 +569,7 @@ body {
   .hero-title { font-size: 21px; }
   .hero-steps { grid-template-columns: 1fr; }
   .header { padding: 20px; }
-  .step-body { padding: 0 12px 14px 12px; }
+  .sub-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -579,7 +587,6 @@ body {
   <div class="header-right">
     <div class="progress-ring" id="progressRing" title="材料收集进度">0/13</div>
     <button class="btn btn-sm" onclick="resetAll()" title="清除所有数据">🔄 重置</button>
-    <button class="btn btn-sm" onclick="exportNotes()">📥 导出笔记</button>
   </div>
 </div>
 
@@ -589,7 +596,7 @@ body {
 <div class="hero glass" id="thisWeekHero">
   <div class="hero-badge"><span class="dot"></span>Week 1 · 入门奠基</div>
   <div class="hero-title">AI、伦理与治理入门</div>
-  <div class="hero-sub">这不是"导论随便听听"——本周是整门课的地基。完成以下四步，为 Quiz 1 和后续讨论做好准备。</div>
+  <div class="hero-sub">这不是"导论随便听听"——本周是整门课的地基。按顺序完成以下四步，点击跳转到下方详细内容。</div>
   <div class="hero-steps" id="heroSteps"></div>
 </div>
 
@@ -642,7 +649,7 @@ body {
     <div class="card-title" style="justify-content:space-between;flex-wrap:wrap;">
       <span>📁 材料收集状态</span>
       <span style="font-size:12px;color:var(--text-muted);font-weight:400;text-transform:none;">
-        🟢 齐全 &nbsp; 🟡 部分 &nbsp; ⚪ 未收集
+        🟢 齐全 &nbsp; 🟡 部分 &nbsp; 🔴 关键周 &nbsp; ⚪ 未收集
       </span>
     </div>
     <div class="materials-grid" id="materialsGrid"></div>
@@ -693,7 +700,7 @@ body {
 const DEFAULT_STATE = {
   materials: {},
   notes: {},
-  stepCompletion: {}, // track which steps user has "completed"
+  stepCompletion: {},
   lastUpdated: null
 };
 
@@ -744,7 +751,7 @@ const WEEKS = [
   { num: 1, topic: 'Introduction to AI, Ethics and Governance', flags: [], defaultReadings: ['UNESCO (2022)', 'Reese & Becker (2024) PwC'], hasRead2: true },
   { num: 2, topic: 'Human Intelligence vs. Artificial Intelligence', flags: [], defaultReadings: ['Cambridge Judge BS (2025)', 'Jarrahi et al. (2022)'], hasRead2: true, extraRead: 'Stern (2025) WSJ' },
   { num: 3, topic: 'Trust in AI', flags: [], defaultReadings: ['Afroogh et al. (2024)', 'Gillespie et al. (2025)'], hasRead2: true },
-  { num: 4, topic: 'Predictive Policing', flags: ['组队·定题'], defaultReadings: ['Mavis (2025)', 'Söderholm (2023)'], hasRead2: true },
+  { num: 4, topic: 'Predictive Policing', flags: ['组队·定题'], defaultReadings: ['Mavis (2025)', 'Soderholm (2023)'], hasRead2: true },
   { num: 5, topic: 'AI Surveillance & Human Rights', flags: ['Quiz 1'], defaultReadings: ['Francis (2024)', 'Gabrielli (2025)'], hasRead2: true },
   { num: 6, topic: 'Predictive Algorithms in Justice System', flags: [], defaultReadings: ['Fine et al. (2023)'], hasRead2: false },
   { num: 7, topic: 'AI in Healthcare', flags: ['反思论文'], defaultReadings: ['Fahim et al. (2025)'], hasRead2: false },
@@ -755,6 +762,8 @@ const WEEKS = [
   { num: 12, topic: 'Group Presentation', flags: ['小组展示'], defaultReadings: [], hasRead2: false },
   { num: 13, topic: 'Case Study Analysis', flags: ['案例分析'], defaultReadings: [], hasRead2: false }
 ];
+
+const KEY_WEEKS = [5, 7, 10, 13];
 
 // ==============================
 //        FILE PROCESSING
@@ -798,14 +807,14 @@ function determineReadingSlot(weekNum, filename) {
 function processFile(filename) {
   const week = getWeekFromFilename(filename);
   if (!week || week < 1 || week > 13) {
-    return { success: false, message: `无法识别 "${filename}" 对应的周次。请确认文件名包含 "Week X" 信息。` };
+    return { success: false, message: '\u65e0\u6cd5\u8bc6\u522b "' + filename + '" \u5bf9\u5e94\u7684\u5468\u6b21\u3002\u8bf7\u786e\u8ba4\u6587\u4ef6\u540d\u5305\u542b "Week X" \u4fe1\u606f\u3002' };
   }
   const slot = getSlotFromFilename(filename);
   if (slot === 'slides') {
     if (!appState.materials[week]) initWeekMaterials(week);
     appState.materials[week].slides = { collected: true, filename: filename };
     saveState(appState);
-    return { success: true, message: `✅ "${filename}" 已识别为 Week ${week} 课件`, week, slot: 'slides' };
+    return { success: true, message: '\u2705 "' + filename + '" \u5df2\u8bc6\u522b\u4e3a Week ' + week + ' \u8bfe\u4ef6', week, slot: 'slides' };
   } else {
     if (!appState.materials[week]) initWeekMaterials(week);
     const readingSlot = determineReadingSlot(week, filename);
@@ -815,7 +824,7 @@ function processFile(filename) {
       appState.materials[week].reading2 = { collected: true, filename: filename };
     }
     saveState(appState);
-    return { success: true, message: `✅ "${filename}" 已识别为 Week ${week} 阅读`, week, slot: readingSlot };
+    return { success: true, message: '\u2705 "' + filename + '" \u5df2\u8bc6\u522b\u4e3a Week ' + week + ' \u9605\u8bfb', week, slot: readingSlot };
   }
 }
 
@@ -887,6 +896,10 @@ function getWeekCompletion(weekNum) {
   return 'partial';
 }
 
+function isKeyWeek(weekNum) {
+  return KEY_WEEKS.includes(weekNum);
+}
+
 // ==============================
 //           RENDERING
 // ==============================
@@ -894,11 +907,11 @@ function renderProgress() {
   const ring = document.getElementById('progressRing');
   const total = getTotalSlots();
   const collected = getCollectedCount();
-  ring.textContent = `${collected}/${total}`;
+  ring.textContent = collected + '/' + total;
   const pct = collected / total;
-  if (pct >= 0.5) { ring.style.borderColor = '#9fb08e'; ring.style.color = '#6a7a52'; }
-  else if (pct > 0) { ring.style.borderColor = 'var(--dusty-gold)'; ring.style.color = '#9a8a6b'; }
-  else { ring.style.borderColor = 'var(--border)'; ring.style.color = 'var(--text-muted)'; }
+  if (pct >= 0.5) { ring.style.borderColor = 'var(--green)'; ring.style.color = 'var(--green)'; }
+  else if (pct > 0) { ring.style.borderColor = 'var(--amber)'; ring.style.color = 'var(--amber)'; }
+  else { ring.style.borderColor = '#cbd5e1'; ring.style.color = 'var(--text-muted)'; }
 }
 
 function renderMaterialsGrid() {
@@ -908,11 +921,14 @@ function renderMaterialsGrid() {
     const completion = getWeekCompletion(w);
     const cell = document.createElement('div');
     cell.className = 'material-cell';
-    if (completion === 'full') cell.classList.add('collected');
-    if (completion === 'partial') cell.classList.add('partial');
+    if (isKeyWeek(w)) cell.classList.add('key');
+    if (completion === 'full') cell.classList.add('full');
+    if (completion === 'partial' && !isKeyWeek(w)) cell.classList.add('partial');
     if (appState.notes[w] && appState.notes[w].trim()) cell.classList.add('has-notes');
-    cell.innerHTML = `<span class="week-num">${w}</span><span class="week-label">Week</span>`;
-    cell.title = `Week ${w}: ${completion === 'full' ? '材料齐全' : completion === 'partial' ? '部分收集' : '未收集'}`;
+    cell.innerHTML = '<span class="week-num">' + w + '</span><span class="week-label">Week</span>';
+    let statusText = completion === 'full' ? '\u6750\u6599\u9f50\u5168' : completion === 'partial' ? '\u90e8\u5206\u6536\u96c6' : '\u672a\u6536\u96c6';
+    if (isKeyWeek(w)) statusText += ' \u26a1\u5173\u952e\u5468';
+    cell.title = 'Week ' + w + ': ' + statusText;
     cell.onclick = () => scrollToWeek(w);
     grid.appendChild(cell);
   }
@@ -934,18 +950,20 @@ function scrollToWeek(weekNum) {
 
 function getFlagClass(flag) {
   if (flag.includes('Quiz')) return 'quiz';
-  if (flag.includes('论文')) return 'paper';
-  if (flag.includes('展示')) return 'pres';
-  if (flag.includes('案例')) return 'case';
-  if (flag.includes('组队') || flag.includes('定题')) return 'warn';
+  if (flag.includes('\u8bba\u6587')) return 'paper';
+  if (flag.includes('\u5c55\u793a')) return 'pres';
+  if (flag.includes('\u6848\u4f8b')) return 'case';
+  if (flag.includes('\u7ec4\u961f') || flag.includes('\u5b9a\u9898')) return 'warn';
   return '';
 }
 
 function getWeekBadgeClass(weekNum) {
+  const completion = getWeekCompletion(weekNum);
   if (weekNum === 1) return 'active';
-  if (weekNum <= 1) return 'past';
-  if (weekNum === 5 || weekNum === 10 || weekNum === 7 || weekNum === 12 || weekNum === 13) return 'warn';
-  return 'future';
+  if (isKeyWeek(weekNum)) return 'key';
+  if (completion === 'full') return 'collected';
+  if (completion === 'partial') return 'partial-bg';
+  return 'default';
 }
 
 // ==============================
@@ -954,22 +972,22 @@ function getWeekBadgeClass(weekNum) {
 function renderHeroSteps() {
   const container = document.getElementById('heroSteps');
   if (!container) return;
-  
+
   const steps = [
-    { num: 1, title: '填空练习', desc: '完成课件两处填空，理解 AI 能力维度与 ML 三种范式', cls: 's1', stepKey: 'step1' },
-    { num: 2, title: '知识框架', desc: '建立四层认知：定义→技术→伦理vs治理→原则与风险', cls: 's2', stepKey: 'step2' },
-    { num: 3, title: '精读 UNESCO', desc: '理解十大原则和四项核心，自上而下的人权视角', cls: 's3', stepKey: 'step3' },
-    { num: 4, title: '精读 PwC', desc: '理解"治理=价值驱动器"，自下而上的企业视角', cls: 's4', stepKey: 'step4' }
+    { num: 1, title: '\u586b\u7a7a\u7ec3\u4e60', desc: '\u5b8c\u6210\u8bfe\u4ef6\u4e24\u5904\u586b\u7a7a\uff0c\u7406\u89e3 AI \u80fd\u529b\u7ef4\u5ea6\u4e0e ML \u4e09\u79cd\u8303\u5f0f', cls: 's1', stepKey: 'step1', anchor: 'w1-exercise' },
+    { num: 2, title: '\u77e5\u8bc6\u6846\u67b6', desc: '\u5efa\u7acb\u56db\u5c42\u8ba4\u77e5\uff1a\u5b9a\u4e49\u2192\u6280\u672f\u2192\u4f26\u7406vs\u6cbb\u7406\u2192\u539f\u5219\u4e0e\u98ce\u9669', cls: 's2', stepKey: 'step2', anchor: 'w1-knowledge' },
+    { num: 3, title: '\u7cbe\u8bfb UNESCO', desc: '\u7406\u89e3\u5341\u5927\u539f\u5219\u548c\u56db\u9879\u6838\u5fc3\uff0c\u81ea\u4e0a\u800c\u4e0b\u7684\u4eba\u6743\u89c6\u89d2', cls: 's3', stepKey: 'step3', anchor: 'w1-unesco' },
+    { num: 4, title: '\u7cbe\u8bfb PwC', desc: '\u7406\u89e3\u201c\u6cbb\u7406=\u4ef7\u503c\u9a71\u52a8\u5668\u201d\uff0c\u81ea\u4e0b\u800c\u4e0a\u7684\u4f01\u4e1a\u89c6\u89d2', cls: 's4', stepKey: 'step4', anchor: 'w1-pwc' }
   ];
-  
+
   container.innerHTML = steps.map(s => {
     const done = appState.stepCompletion && appState.stepCompletion[s.stepKey];
-    return `<div class="hero-step" onclick="toggleHeroStep('${s.stepKey}', this); scrollToWeek(1);">
-      <div class="step-num ${s.cls}">${s.num}</div>
-      <h4>${s.title}</h4>
-      <p>${s.desc}</p>
-      <div class="step-check${done ? ' checked' : ''}">✓</div>
-    </div>`;
+    return '<div class="hero-step" onclick="toggleHeroStep(\'' + s.stepKey + '\', this); scrollToSection(\'' + s.anchor + '\');">' +
+      '<div class="step-num ' + s.cls + '">' + s.num + '</div>' +
+      '<h4>' + s.title + '</h4>' +
+      '<p>' + s.desc + '</p>' +
+      '<div class="step-check' + (done ? ' checked' : '') + '">\u2713</div>' +
+    '</div>';
   }).join('');
 }
 
@@ -982,10 +1000,26 @@ function toggleHeroStep(key, el) {
   else check.classList.remove('checked');
 }
 
+function scrollToSection(anchorId) {
+  const el = document.getElementById(anchorId);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Also expand Week 1 if not already
+    const w1 = document.getElementById('week-1');
+    if (w1 && !w1.classList.contains('expanded')) {
+      w1.classList.add('expanded');
+      const notesArea = w1.querySelector('.notes-area');
+      if (notesArea && !notesArea.value && appState.notes[1]) {
+        notesArea.value = appState.notes[1];
+      }
+    }
+  }
+}
+
 function renderWeekSections() {
   const container = document.getElementById('weekSections');
   container.innerHTML = '';
-  renderWeek1Special(container);
+  renderWeek1(container);
   for (let i = 1; i < WEEKS.length; i++) {
     renderGenericWeek(container, WEEKS[i]);
   }
@@ -1006,20 +1040,19 @@ function renderWeekHeader(week, sectionDiv) {
     }
   };
   let badgeContent = week.num;
-  if (completion === 'full') badgeContent = '✓';
+  if (completion === 'full') badgeContent = '\u2713';
   let flagsHTML = '';
   week.flags.forEach(f => {
     const cls = getFlagClass(f);
-    if (cls) flagsHTML += `<span class="flag ${cls}">${f}</span>`;
+    if (cls) flagsHTML += '<span class="flag ' + cls + '">' + f + '</span>';
   });
-  header.innerHTML = `
-    <div class="week-badge ${badgeClass}">${badgeContent}</div>
-    <div class="week-info">
-      <div class="topic">Week ${week.num}: ${week.topic}</div>
-      <div class="flags">${flagsHTML}</div>
-    </div>
-    <div class="week-toggle">▼</div>
-  `;
+  header.innerHTML = '' +
+    '<div class="week-badge ' + badgeClass + '">' + badgeContent + '</div>' +
+    '<div class="week-info">' +
+    '  <div class="topic">Week ' + week.num + ': ' + week.topic + '</div>' +
+    '  <div class="flags">' + flagsHTML + '</div>' +
+    '</div>' +
+    '<div class="week-toggle">\u25bc</div>';
   sectionDiv.appendChild(header);
 }
 
@@ -1027,7 +1060,7 @@ function renderMaterialSlots(week, bodyDiv) {
   const mats = appState.materials[week.num];
   const slots = document.createElement('div');
   slots.className = 'material-slots';
-  const slidesSlot = createMaterialSlot('课件', 'slides', week.num, mats);
+  const slidesSlot = createMaterialSlot('\u8bfe\u4ef6', 'slides', week.num, mats);
   slots.appendChild(slidesSlot);
   const r1Name = week.defaultReadings && week.defaultReadings.length > 0 ? week.defaultReadings[0] : 'Reading';
   const r1Slot = createMaterialSlot(r1Name, 'reading1', week.num, mats);
@@ -1042,9 +1075,9 @@ function renderMaterialSlots(week, bodyDiv) {
   if (week.extraRead) {
     const extraSlot = document.createElement('div');
     extraSlot.className = 'material-slot';
-    extraSlot.style.borderColor = 'var(--border)';
-    extraSlot.style.background = 'rgba(255,255,255,0.2)';
-    extraSlot.innerHTML = `<div class="slot-type" style="color:var(--text-muted);">📄 补充阅读</div><div class="slot-name" style="color:var(--text-muted);">${week.extraRead}</div>`;
+    extraSlot.style.borderColor = '#e2e8f0';
+    extraSlot.style.background = 'rgba(255,255,255,0.3)';
+    extraSlot.innerHTML = '<div class="slot-type" style="color:var(--text-muted);">\ud83d\udcc4 \u8865\u5145\u9605\u8bfb</div><div class="slot-name" style="color:var(--text-muted);">' + week.extraRead + '</div>';
     slots.appendChild(extraSlot);
   }
   bodyDiv.appendChild(slots);
@@ -1058,13 +1091,13 @@ function createMaterialSlot(label, slotType, weekNum, mats) {
   const isFilled = mats && mats[slotType] && mats[slotType].collected;
   if (isFilled) {
     slot.classList.add('filled');
-    slot.innerHTML = `<div class="slot-type">${slotType === 'slides' ? '📘 课件' : '📄 阅读'}</div>
-      <div class="slot-name">${mats[slotType].filename}</div>
-      <div class="slot-check">✅</div>`;
+    slot.innerHTML = '<div class="slot-type">' + (slotType === 'slides' ? '\ud83d\udcd8 \u8bfe\u4ef6' : '\ud83d\udcc4 \u9605\u8bfb') + '</div>' +
+      '<div class="slot-name">' + mats[slotType].filename + '</div>' +
+      '<div class="slot-check">\u2705</div>';
   } else {
-    slot.innerHTML = `<div class="slot-type">${slotType === 'slides' ? '📘 课件' : '📄 阅读'}</div>
-      <div class="slot-name" style="color:var(--text-muted);">${label} — 拖放文件到此处</div>
-      <div class="slot-check">✅</div>`;
+    slot.innerHTML = '<div class="slot-type">' + (slotType === 'slides' ? '\ud83d\udcd8 \u8bfe\u4ef6' : '\ud83d\udcc4 \u9605\u8bfb') + '</div>' +
+      '<div class="slot-name" style="color:var(--text-muted);">' + label + ' \u2014 \u62d6\u653e\u6587\u4ef6\u5230\u6b64\u5904</div>' +
+      '<div class="slot-check">\u2705</div>';
   }
   slot.addEventListener('dragover', function(e) { e.preventDefault(); e.stopPropagation(); this.classList.add('drag-over'); });
   slot.addEventListener('dragleave', function(e) { this.classList.remove('drag-over'); });
@@ -1074,12 +1107,12 @@ function createMaterialSlot(label, slotType, weekNum, mats) {
     if (files.length > 0) { forceAssignFile(files[0].name, weekNum, slotType); refreshAll(); }
   });
   if (isFilled) {
-    slot.title = '点击移除';
+    slot.title = '\u70b9\u51fb\u79fb\u9664';
     slot.onclick = function(e) {
       e.stopPropagation();
-      if (confirm(`移除 "${mats[slotType].filename}"？`)) {
+      if (confirm('\u79fb\u9664 "' + mats[slotType].filename + '"?')) {
         mats[slotType] = { collected: false, filename: '' };
-        saveState(appState); refreshAll(); showToast('已移除');
+        saveState(appState); refreshAll(); showToast('\u5df2\u79fb\u9664');
       }
     };
   }
@@ -1090,18 +1123,18 @@ function forceAssignFile(filename, weekNum, slotType) {
   if (!appState.materials[weekNum]) initWeekMaterials(weekNum);
   appState.materials[weekNum][slotType] = { collected: true, filename: filename };
   saveState(appState);
-  showToast(`✅ "${filename}" → Week ${weekNum} ${slotType === 'slides' ? '课件' : '阅读'}`);
+  showToast('\u2705 "' + filename + '" \u2192 Week ' + weekNum + ' ' + (slotType === 'slides' ? '\u8bfe\u4ef6' : '\u9605\u8bfb'));
 }
 
 function renderNotesArea(weekNum, bodyDiv) {
   const notesWrapper = document.createElement('div');
   const hint = document.createElement('div');
   hint.className = 'notes-hint';
-  hint.textContent = '📝 课堂笔记（自动保存到浏览器）';
+  hint.textContent = '\ud83d\udcdd \u8bfe\u5802\u7b14\u8bb0\uff08\u81ea\u52a8\u4fdd\u5b58\u5230\u6d4f\u89c8\u5668\uff09';
   notesWrapper.appendChild(hint);
   const textarea = document.createElement('textarea');
   textarea.className = 'notes-area';
-  textarea.placeholder = '在这里输入本周的课堂笔记、关键概念、思考问题...';
+  textarea.placeholder = '\u5728\u8fd9\u91cc\u8f93\u5165\u672c\u5468\u7684\u8bfe\u5802\u7b14\u8bb0\u3001\u5173\u952e\u6982\u5ff5\u3001\u601d\u8003\u95ee\u9898...';
   textarea.value = appState.notes[weekNum] || '';
   textarea.setAttribute('data-week', weekNum);
   let saveTimeout;
@@ -1117,7 +1150,7 @@ function renderNotesArea(weekNum, bodyDiv) {
   notesWrapper.appendChild(textarea);
   const indicator = document.createElement('span');
   indicator.className = 'save-indicator';
-  indicator.textContent = '已保存 ✓';
+  indicator.textContent = '\u5df2\u4fdd\u5b58 \u2713';
   notesWrapper.appendChild(indicator);
   bodyDiv.appendChild(notesWrapper);
 }
@@ -1133,27 +1166,27 @@ function renderGenericWeek(container, week) {
   renderNotesArea(week.num, body);
   if (week.num === 5) {
     const r = document.createElement('div'); r.className = 'reminder quiz';
-    r.innerHTML = '<strong>⚠ Quiz 1 备考提醒：</strong> 覆盖 Week 1-4。复习 Week 1-4 的笔记 + 知识图谱。';
+    r.innerHTML = '<strong>\u26a0 Quiz 1 \u5907\u8003\u63d0\u9192\uff1a</strong> \u8986\u76d6 Week 1-4\u3002\u590d\u4e60 Week 1-4 \u7684\u7b14\u8bb0 + \u77e5\u8bc6\u56fe\u8c31\u3002';
     body.appendChild(r);
   }
   if (week.num === 10) {
     const r = document.createElement('div'); r.className = 'reminder quiz';
-    r.innerHTML = '<strong>⚠ Quiz 2 备考提醒：</strong> 覆盖 Week 5-9。复习 Week 5-9 的笔记。';
+    r.innerHTML = '<strong>\u26a0 Quiz 2 \u5907\u8003\u63d0\u9192\uff1a</strong> \u8986\u76d6 Week 5-9\u3002\u590d\u4e60 Week 5-9 \u7684\u7b14\u8bb0\u3002';
     body.appendChild(r);
   }
   if (week.num === 7) {
     const r = document.createElement('div'); r.className = 'reminder paper';
-    r.innerHTML = '<strong>⚠ 反思论文提醒：</strong> 本周课内当堂写 AI in Healthcare 反思论文。提前读完 Fahim et al. (2025)。无补考！';
+    r.innerHTML = '<strong>\u26a0 \u53cd\u601d\u8bba\u6587\u63d0\u9192\uff1a</strong> \u672c\u5468\u8bfe\u5185\u5f53\u5802\u5199 AI in Healthcare \u53cd\u601d\u8bba\u6587\u3002\u63d0\u524d\u8bfb\u5b8c Fahim et al. (2025)\u3002\u65e0\u8865\u8003\uff01';
     body.appendChild(r);
   }
   if (week.num === 4) {
     const r = document.createElement('div'); r.className = 'reminder info';
-    r.innerHTML = '<strong>本周确定小组展示主题 + 组队！</strong> 提前思考感兴趣的 AI 应用领域。';
+    r.innerHTML = '<strong>\u672c\u5468\u786e\u5b9a\u5c0f\u7ec4\u5c55\u793a\u4e3b\u9898 + \u7ec4\u961f\uff01</strong> \u63d0\u524d\u601d\u8003\u611f\u5174\u8da3\u7684 AI \u5e94\u7528\u9886\u57df\u3002';
     body.appendChild(r);
   }
   if (week.num === 12) {
     const r = document.createElement('div'); r.className = 'reminder pres';
-    r.innerHTML = '<strong>小组展示周：</strong> PPT 课前 2 天提交 Turnitin。20 分钟展示 + 10 分钟 Q&A。需国家/城市实例。';
+    r.innerHTML = '<strong>\u5c0f\u7ec4\u5c55\u793a\u5468\uff1a</strong> PPT \u8bfe\u524d 2 \u5929\u63d0\u4ea4 Turnitin\u300220 \u5206\u949f\u5c55\u793a + 10 \u5206\u949f Q&A\u3002\u9700\u56fd\u5bb6/\u57ce\u5e02\u5b9e\u4f8b\u3002';
     body.appendChild(r);
   }
   section.appendChild(body);
@@ -1161,9 +1194,9 @@ function renderGenericWeek(container, week) {
 }
 
 // ==============================
-//       WEEK 1 — LEARNING PATH
+//       WEEK 1 — FLOWING CONTENT
 // ==============================
-function renderWeek1Special(container) {
+function renderWeek1(container) {
   const section = document.createElement('div');
   section.className = 'week-section expanded';
   section.id = 'week-1';
@@ -1173,158 +1206,142 @@ function renderWeek1Special(container) {
   body.className = 'week-body';
   renderMaterialSlots(week, body);
 
-  // Learning path intro
-  const intro = document.createElement('div');
-  intro.style.cssText = 'display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:13px;color:var(--text-soft);';
-  intro.innerHTML = '<span style="font-weight:600;color:var(--text);">📋 学习路径</span> 按顺序完成以下四步，点击展开详情。每一步完成后可在顶部 Hero 区打勾。';
-  body.appendChild(intro);
+  // --- Section 1: Fill-in Exercises ---
+  const s1 = document.createElement('div');
+  s1.className = 'w1-section'; s1.id = 'w1-exercise';
+  s1.innerHTML = '' +
+    '<div class="w1-section-header">' +
+    '  <div class="w1-section-num s1">1</div>' +
+    '  <div><h3>\u586b\u7a7a\u7ec3\u4e60\uff1a\u7406\u89e3 AI \u80fd\u529b\u7ef4\u5ea6\u4e0e\u673a\u5668\u5b66\u4e60\u8303\u5f0f</h3><p>\u5b8c\u6210\u8bfe\u4ef6\u7b2c 36 \u9875\u548c\u7b2c 41 \u9875\u7684\u4e24\u5904\u586b\u7a7a\u3002\u8fd9\u662f Quiz 1 \u7684\u5fc5\u8003\u5185\u5bb9\u3002</p></div>' +
+    '</div>' +
+    '<h4 style="margin-bottom:10px;font-size:14px;">\u7ec3\u4e60\u4e00\uff1aAI \u626b\u5730\u673a\u5668\u4eba\u80fd\u529b\u5206\u6790\uff08\u5e7b\u706f\u7247\u7b2c 36 \u9875\uff09</h4>' +
+    '<table class="exercise-table">' +
+    '  <tr><th>\u80fd\u529b\u7ef4\u5ea6</th><th>\u7b54\u6848</th><th>\u542b\u4e49</th><th>\u6280\u672f\u5b9e\u73b0</th></tr>' +
+    '  <tr><td><strong>Perception</strong><br><span style="font-size:11px;color:var(--text-muted);">\u611f\u77e5</span></td><td class="answer">scan</td><td>\u901a\u8fc7\u8ba1\u7b97\u673a\u89c6\u89c9\u611f\u77e5\u73af\u5883</td><td style="font-size:12px;">LiDar + \u4f20\u611f\u5668\u5b9e\u65f6\u5efa\u56fe</td></tr>' +
+    '  <tr><td><strong>Language processing</strong><br><span style="font-size:11px;color:var(--text-muted);">\u8bed\u8a00\u5904\u7406</span></td><td class="answer">understand</td><td>\u7406\u89e3\u8bed\u97f3\u6307\u4ee4</td><td style="font-size:12px;">NLP \u81ea\u7136\u8bed\u8a00\u5904\u7406</td></tr>' +
+    '  <tr><td><strong>Reasoning</strong><br><span style="font-size:11px;color:var(--text-muted);">\u63a8\u7406</span></td><td class="answer">determine</td><td>\u81ea\u4e3b\u51b3\u7b56\u6e05\u6d01\u7b56\u7565</td><td style="font-size:12px;">\u57fa\u4e8e\u6570\u636e\u5206\u6790\u786e\u5b9a\u4f18\u5148\u7ea7\u3001\u8def\u5f84</td></tr>' +
+    '  <tr><td><strong>Learning</strong><br><span style="font-size:11px;color:var(--text-muted);">\u5b66\u4e60</span></td><td class="answer">improve</td><td>\u4ece\u7ecf\u9a8c\u4e2d\u6301\u7eed\u4f18\u5316</td><td style="font-size:12px;">\u4f18\u5316\u6c61\u57a2\u68c0\u6d4b\u3001\u8def\u7ebf\u89c4\u5212</td></tr>' +
+    '</table>' +
+    '<h4 style="margin-bottom:10px;font-size:14px;">\u7ec3\u4e60\u4e8c\uff1a\u673a\u5668\u5b66\u4e60\u4e09\u79cd\u8303\u5f0f\uff08\u5e7b\u706f\u7247\u7b2c 41 \u9875\uff09</h4>' +
+    '<table class="exercise-table" style="margin-bottom:12px;">' +
+    '  <tr><th>\u7c7b\u578b</th><th>\u8bad\u7ec3\u65b9\u5f0f</th><th>\u5b66\u4e60\u76ee\u6807</th><th>\u5178\u578b\u7528\u4f8b</th></tr>' +
+    '  <tr><td><strong>Supervised</strong></td><td class="answer">labeled</td><td>\u5206\u7c7b + \u9884\u6d4b/\u56de\u5f52</td><td style="font-size:12px;">\u7269\u4f53\u68c0\u6d4b\u3001\u5783\u573e\u90ae\u4ef6\u8bc6\u522b\u3001\u533b\u7597\u8bca\u65ad</td></tr>' +
+    '  <tr><td><strong>Unsupervised</strong></td><td class="answer">unlabeled</td><td>\u53d1\u73b0\u9690\u85cf\u6a21\u5f0f</td><td style="font-size:12px;">\u5ba2\u6237\u5206\u7fa4\u3001\u5f02\u5e38\u68c0\u6d4b</td></tr>' +
+    '  <tr><td><strong>Reinforcement</strong></td><td class="answer">trial & error</td><td>\u901a\u8fc7\u5956\u52b1/\u60e9\u7f5a\u4f18\u5316</td><td style="font-size:12px;">\u673a\u5668\u4eba\u3001\u6e38\u620fAI\u3001\u81ea\u52a8\u9a7e\u9a76</td></tr>' +
+    '</table>' +
+    '<div class="insight-box">\ud83d\udca1 <strong>\u5173\u952e\u533a\u5206\uff1a</strong>\u6709\u65e0\u6807\u7b7e\u533a\u5206\u76d1\u7763/\u65e0\u76d1\u7763\uff1b\u6709\u65e0\u5956\u60e9\u673a\u5236\u533a\u5206\u5f3a\u5316\u5b66\u4e60\u3002GPT \u7684 RLHF \u5c31\u662f\u5f3a\u5316\u5b66\u4e60\u7684\u5e94\u7528\u3002</div>';
+  body.appendChild(s1);
 
-  const stepsContainer = document.createElement('div');
-  stepsContainer.className = 'learning-steps';
+  // --- Section 2: Knowledge Map ---
+  const s2 = document.createElement('div');
+  s2.className = 'w1-section'; s2.id = 'w1-knowledge';
+  s2.innerHTML = '' +
+    '<div class="w1-section-header">' +
+    '  <div class="w1-section-num s2">2</div>' +
+    '  <div><h3>\u77e5\u8bc6\u56fe\u8c31\uff1a\u5efa\u7acb AI \u6cbb\u7406\u7684\u56db\u5c42\u8ba4\u77e5\u6846\u67b6</h3><p>\u4ece\u5b9a\u4e49\u5230\u6280\u672f\u8c31\u7cfb\uff0c\u518d\u5230\u4f26\u7406\u4e0e\u6cbb\u7406\u7684\u533a\u5206\uff0c\u6700\u540e\u5230\u539f\u5219\u4e0e\u98ce\u9669\u2014\u2014\u8fd9\u662f\u6574\u95e8\u8bfe\u7684\u601d\u7ef4\u9aa8\u67b6\u3002</p></div>' +
+    '</div>' +
+    '<div class="layer-stack">' +
+    '  <div class="layer layer-1"><div class="layer-title">Layer 1: AI \u662f\u4ec0\u4e48\uff1f\uff08\u5b9a\u4e49\u5c42\uff09</div><div class="layer-desc">McCarthy \u2192 UNESCAP \u2192 ISO \u2192 Rai et al. \u2192 \u6838\u5fc3\u5171\u8bc6\uff1a<em>\u80fd\u6267\u884c\u901a\u5e38\u9700\u8981\u4eba\u7c7b\u667a\u80fd\u624d\u80fd\u5b8c\u6210\u7684\u4efb\u52a1\u7684\u8ba1\u7b97\u673a\u7cfb\u7edf</em></div></div>' +
+    '  <div class="layer layer-2"><div class="layer-title">Layer 2: AI \u6280\u672f\u8c31\u7cfb\uff08\u6982\u5ff5\u5173\u7cfb\u5c42\uff09</div><div class="layer-desc">AI \u2283 ML \u2283 DL \u00b7 \u4e09\u79cd\u8303\u5f0f (Supervised / Unsupervised / Reinforcement) \u00b7 ANN \u7ed3\u6784 (Input \u2192 Hidden \u2192 Output)</div></div>' +
+    '  <div class="layer layer-3"><div class="layer-title">Layer 3: \u4f26\u7406 vs \u6cbb\u7406\uff08\u6846\u67b6\u533a\u5206\u5c42\uff09</div><div class="layer-desc"><strong>AI Ethics</strong> = \u57fa\u7840\u539f\u5219\uff08\u201c\u5e94\u8be5\u600e\u6837\u201d\uff09\u00b7 <strong>AI Governance</strong> = \u628a\u539f\u5219\u7ffb\u8bd1\u4e3a\u653f\u7b56\u3001\u6cd5\u89c4\u548c\u6846\u67b6\uff08\u201c\u5982\u4f55\u786e\u4fdd\u201d\uff09</div></div>' +
+    '  <div class="layer layer-4"><div class="layer-title">Layer 4: \u539f\u5219\u4e0e\u98ce\u9669\uff08\u5e94\u7528\u5c42\uff09</div><div class="layer-desc">\u98ce\u9669\uff1aBias \u00b7 Black Box \u00b7 Privacy \u00b7 \u539f\u5219\uff1aProportionality \u00b7 Fairness \u00b7 Privacy \u00b7 Accountability \u00b7 \u53cc\u89c6\u89d2\uff1aUNESCO(\u4eba\u6743\u81ea\u4e0a\u800c\u4e0b) vs PwC(\u4f01\u4e1a\u81ea\u4e0b\u800c\u4e0a)</div></div>' +
+    '</div>' +
+    '<h4 style="margin:12px 0 8px;">AI \u5386\u53f2\u5173\u952e\u91cc\u7a0b\u7891</h4>' +
+    '<table class="comp-table" style="margin-bottom:12px;">' +
+    '  <tr><th>\u5e74\u4ee3</th><th>\u4e8b\u4ef6</th><th>\u610f\u4e49</th></tr>' +
+    '  <tr><td>1950s</td><td>Turing Test</td><td>\u9996\u6b21\u63d0\u51fa\u673a\u5668\u667a\u80fd\u8bc4\u4ef7\u6807\u51c6</td></tr>' +
+    '  <tr><td>1956</td><td>Dartmouth \u4f1a\u8bae\uff0cMcCarthy \u63d0\u51fa\u201cAI\u201d</td><td>AI \u5b66\u79d1\u6b63\u5f0f\u8bde\u751f</td></tr>' +
+    '  <tr><td>1980s</td><td>AI \u8fdb\u5165\u5de5\u4e1a/\u533b\u7597</td><td>\u4ece\u5b9e\u9a8c\u5ba4\u8d70\u5411\u4ea7\u4e1a</td></tr>' +
+    '  <tr><td>2010s</td><td>\u6df1\u5ea6\u5b66\u4e60\u9ec4\u91d1\u5341\u5e74</td><td>\u7b97\u529b+\u6570\u636e+\u7b97\u6cd5\u4e09\u91cd\u7a81\u7834</td></tr>' +
+    '  <tr><td>2020s</td><td>GPT-4 \u7b49\u751f\u6210\u5f0f AI</td><td>AI \u8fdb\u5165\u201c\u521b\u9020\u6027\u201d\u9636\u6bb5</td></tr>' +
+    '</table>' +
+    '<h4 style="margin:12px 0 8px;">\u6838\u5fc3\u6982\u5ff5\u5bf9 ILO \u5feb\u901f\u7d22\u5f15</h4>' +
+    '<table class="comp-table">' +
+    '  <tr><th>\u6982\u5ff5</th><th>ILO</th><th>\u8003\u8bd5\u5173\u8054</th></tr>' +
+    '  <tr><td>AI \u5b9a\u4e49 (4 \u6765\u6e90)</td><td>ILO 1</td><td>Quiz 1 \u5fc5\u8003</td></tr>' +
+    '  <tr><td>AI/ML/DL \u5173\u7cfb + \u4e09\u79cd ML</td><td>ILO 1</td><td>Quiz 1 \u5fc5\u8003</td></tr>' +
+    '  <tr><td>AI \u98ce\u9669 (Bias/Black Box/Privacy)</td><td>ILO 2, 3</td><td>\u8bfe\u5802\u8ba8\u8bba\u3001\u53cd\u601d\u8bba\u6587\u3001\u6848\u4f8b\u5206\u6790</td></tr>' +
+    '  <tr><td>Ethics vs Governance \u533a\u5206</td><td>ILO 2, 4, 5</td><td>\u6574\u95e8\u8bfe\u6838\u5fc3\u6846\u67b6</td></tr>' +
+    '  <tr><td>UNESCO \u539f\u5219 / PwC \u4ef7\u503c\u9a71\u52a8</td><td>ILO 2, 4, 5</td><td>Quiz 1\u3001\u8de8\u56fd\u6cbb\u7406\u6bd4\u8f83</td></tr>' +
+    '</table>';
+  body.appendChild(s2);
 
-  // Step 1: Fill-in exercises
-  const step1 = createStep(1, '填空练习：理解 AI 能力维度与机器学习范式', '完成课件第 36 页和第 41 页的两处填空。这是 Quiz 1 的必考内容。', 'c1');
-  const step1Body = step1.querySelector('.step-body');
-  step1Body.innerHTML = `
-    <h4 style="margin-bottom:10px;font-size:14px;">练习一：AI 扫地机器人能力分析（幻灯片第 36 页）</h4>
-    <table class="exercise-table">
-      <tr><th>能力维度</th><th>答案</th><th>含义</th><th>技术实现</th></tr>
-      <tr><td><strong>Perception</strong><br><span style="font-size:11px;color:var(--text-muted);">感知</span></td><td class="answer">scan</td><td>通过计算机视觉感知环境</td><td style="font-size:12px;">LiDar + 传感器实时建图</td></tr>
-      <tr><td><strong>Language processing</strong><br><span style="font-size:11px;color:var(--text-muted);">语言处理</span></td><td class="answer">understand</td><td>理解语音指令</td><td style="font-size:12px;">NLP 自然语言处理</td></tr>
-      <tr><td><strong>Reasoning</strong><br><span style="font-size:11px;color:var(--text-muted);">推理</span></td><td class="answer">determine</td><td>自主决策清洁策略</td><td style="font-size:12px;">基于数据分析确定优先级、路径</td></tr>
-      <tr><td><strong>Learning</strong><br><span style="font-size:11px;color:var(--text-muted);">学习</span></td><td class="answer">improve</td><td>从经验中持续优化</td><td style="font-size:12px;">优化污垢检测、路线规划</td></tr>
-    </table>
-    <h4 style="margin-bottom:10px;font-size:14px;">练习二：机器学习三种范式（幻灯片第 41 页）</h4>
-    <table class="exercise-table" style="margin-bottom:12px;">
-      <tr><th>类型</th><th>训练方式</th><th>学习目标</th><th>典型用例</th></tr>
-      <tr><td><strong>Supervised</strong></td><td class="answer">labeled</td><td>分类 + 预测/回归</td><td style="font-size:12px;">物体检测、垃圾邮件识别、医疗诊断</td></tr>
-      <tr><td><strong>Unsupervised</strong></td><td class="answer">unlabeled</td><td>发现隐藏模式</td><td style="font-size:12px;">客户分群、异常检测</td></tr>
-      <tr><td><strong>Reinforcement</strong></td><td class="answer">trial & error</td><td>通过奖励/惩罚优化</td><td style="font-size:12px;">机器人、游戏AI、自动驾驶</td></tr>
-    </table>
-    <div class="insight-box">💡 <strong>关键区分：</strong>有无标签区分监督/无监督；有无奖惩机制区分强化学习。GPT 的 RLHF 就是强化学习的应用。</div>
-  `;
-  stepsContainer.appendChild(step1);
+  // --- Section 3: UNESCO ---
+  const s3 = document.createElement('div');
+  s3.className = 'w1-section'; s3.id = 'w1-unesco';
+  s3.innerHTML = '' +
+    '<div class="w1-section-header">' +
+    '  <div class="w1-section-num s3">3</div>' +
+    '  <div><h3>\u7cbe\u8bfb UNESCO (2022)\uff1a\u4ece\u4eba\u6743\u89c6\u89d2\u81ea\u4e0a\u800c\u4e0b</h3><p>193 \u56fd\u901a\u8fc7\u7684\u9996\u4e2a AI \u4f26\u7406\u5168\u7403\u6807\u51c6\u3002\u7406\u89e3\u56db\u5927\u6838\u5fc3\u4ef7\u503c\u89c2\u3001\u5341\u5927\u539f\u5219\u548c\u4e24\u9879\u660e\u786e\u7981\u6b62\u3002</p></div>' +
+    '</div>' +
+    '<div class="reading-card"><h5>Recommendation on the Ethics of AI</h5><p>2021\u5e7411\u6708\u7531193\u4e2a\u6210\u5458\u56fd\u901a\u8fc7 \u00b7 \u53f2\u4e0a\u7b2c\u4e00\u4e2aAI\u4f26\u7406\u5168\u7403\u6807\u51c6</p></div>' +
+    '<h4 style="margin:12px 0 8px;">\u56db\u5927\u6838\u5fc3\u4ef7\u503c\u89c2</h4>' +
+    '<div class="sub-grid">' +
+    '  <div class="sub-card blue"><strong>1.</strong> \u5c0a\u91cd\u3001\u4fdd\u62a4\u548c\u4fc3\u8fdb\u4eba\u6743\u4e0e\u4eba\u7c7b\u5c0a\u4e25</div>' +
+    '  <div class="sub-card green"><strong>2.</strong> \u751f\u6d3b\u5728\u548c\u5e73\u3001\u516c\u6b63\u4e0e\u4e92\u8054\u7684\u793e\u4f1a\u4e2d</div>' +
+    '  <div class="sub-card amber"><strong>3.</strong> \u786e\u4fdd\u591a\u6837\u6027\u548c\u5305\u5bb9\u6027</div>' +
+    '  <div class="sub-card purple"><strong>4.</strong> \u73af\u5883\u4e0e\u751f\u6001\u7cfb\u7edf\u84ec\u52c3\u53d1\u5c55</div>' +
+    '</div>' +
+    '<h4 style="margin:12px 0 8px;">\u5341\u5927\u539f\u5219\uff08\u2b50\u4e3a\u8bfe\u4ef6\u91cd\u70b9\u6807\u8bb0\uff09</h4>' +
+    '<table class="comp-table" style="margin-bottom:14px;">' +
+    '  <tr><th>#</th><th>\u539f\u5219</th><th>\u8981\u70b9</th></tr>' +
+    '  <tr style="background:var(--amber-bg)"><td>1</td><td><strong>\u2b50 Proportionality & Do No Harm</strong></td><td style="font-size:12px;">AI \u65b9\u6cd5\u4e0d\u5e94\u8d85\u51fa\u5b9e\u73b0\u5408\u6cd5\u76ee\u6807\u6240\u9700</td></tr>' +
+    '  <tr><td>2</td><td>Safety and Security</td><td style="font-size:12px;">\u907f\u514d\u610f\u5916\u4f24\u5bb3\uff0c\u9632\u6b62\u653b\u51fb\u6f0f\u6d1e</td></tr>' +
+    '  <tr style="background:var(--amber-bg)"><td>3</td><td><strong>\u2b50 Fairness & Non-discrimination</strong></td><td style="font-size:12px;">\u5305\u5bb9\u6027\u65b9\u6cd5\uff0c\u6536\u76ca\u60e0\u53ca\u6240\u6709\u7fa4\u4f53</td></tr>' +
+    '  <tr><td>4</td><td>Sustainability</td><td style="font-size:12px;">\u8bc4\u4f30 AI \u5bf9 SDGs \u7684\u5f71\u54cd</td></tr>' +
+    '  <tr style="background:var(--amber-bg)"><td>5</td><td><strong>\u2b50 Right to Privacy</strong></td><td style="font-size:12px;">\u5168\u751f\u547d\u5468\u671f\u9690\u79c1\u4fdd\u62a4\uff0c\u77e5\u60c5\u540c\u610f</td></tr>' +
+    '  <tr><td>6</td><td>Human Oversight</td><td style="font-size:12px;">AI \u4e0d\u53d6\u4ee3\u4eba\u7c7b\u6700\u7ec8\u8d23\u4efb</td></tr>' +
+    '  <tr><td>7</td><td>Transparency</td><td style="font-size:12px;">\u9002\u5f53\u900f\u660e\u5ea6\u548c\u53ef\u89e3\u91ca\u6027</td></tr>' +
+    '  <tr style="background:var(--amber-bg)"><td>8</td><td><strong>\u2b50 Responsibility & Accountability</strong></td><td style="font-size:12px;">\u5ba1\u8ba1\u3001\u5f71\u54cd\u8bc4\u4f30\u3001\u5c3d\u804c\u8c03\u67e5\u673a\u5236</td></tr>' +
+    '  <tr><td>9</td><td>Awareness & Literacy</td><td style="font-size:12px;">\u516c\u4f17\u6570\u5b57\u7d20\u517b\u6559\u80b2</td></tr>' +
+    '  <tr><td>10</td><td>Multi-stakeholder Governance</td><td style="font-size:12px;">\u5305\u5bb9\u3001\u900f\u660e\u7684\u591a\u65b9\u53c2\u4e0e\u6cbb\u7406</td></tr>' +
+    '</table>' +
+    '<div class="sub-grid">' +
+    '  <div class="sub-card green"><strong>\ud83d\udee0 EIA</strong> (Ethical Impact Assessment)</div>' +
+    '  <div class="sub-card green"><strong>\ud83d\udee0 RAM</strong> (Readiness Assessment)</div>' +
+    '  <div class="sub-card red"><strong>\ud83d\udeab Social Scoring</strong> \u7981\u6b62\u793e\u4f1a\u4fe1\u7528\u8bc4\u5206</div>' +
+    '  <div class="sub-card red"><strong>\ud83d\udeab Mass Surveillance</strong> \u7981\u6b62\u5927\u89c4\u6a21\u76d1\u63a7</div>' +
+    '</div>';
+  body.appendChild(s3);
 
-  // Step 2: Knowledge Map
-  const step2 = createStep(2, '知识图谱：建立 AI 治理的四层认知框架', '从定义到技术谱系，再到伦理与治理的区分，最后到原则与风险——这是整门课的思维骨架。', 'c2');
-  const step2Body = step2.querySelector('.step-body');
-  step2Body.innerHTML = `
-    <div class="layer-stack">
-      <div class="layer layer-1"><div class="layer-title">Layer 1: AI 是什么？（定义层）</div><div class="layer-desc">McCarthy → UNESCAP → ISO → Rai et al. → 核心共识：<em>能执行通常需要人类智能才能完成的任务的计算机系统</em></div></div>
-      <div class="layer layer-2"><div class="layer-title">Layer 2: AI 技术谱系（概念关系层）</div><div class="layer-desc">AI ⊃ ML ⊃ DL · 三种范式 (Supervised / Unsupervised / Reinforcement) · ANN 结构 (Input → Hidden → Output)</div></div>
-      <div class="layer layer-3"><div class="layer-title">Layer 3: 伦理 vs 治理（框架区分层）</div><div class="layer-desc"><strong>AI Ethics</strong> = 基础原则（"应该怎样"）· <strong>AI Governance</strong> = 把原则翻译为政策、法规和框架（"如何确保"）</div></div>
-      <div class="layer layer-4"><div class="layer-title">Layer 4: 原则与风险（应用层）</div><div class="layer-desc">风险：Bias · Black Box · Privacy · 原则：Proportionality · Fairness · Privacy · Accountability · 双视角：UNESCO(人权自上而下) vs PwC(企业自下而上)</div></div>
-    </div>
-    <h4 style="margin:12px 0 8px;">AI 历史关键里程碑</h4>
-    <table class="comp-table" style="margin-bottom:12px;">
-      <tr><th>年代</th><th>事件</th><th>意义</th></tr>
-      <tr><td>1950s</td><td>Turing Test</td><td>首次提出机器智能评价标准</td></tr>
-      <tr><td>1956</td><td>Dartmouth 会议，McCarthy 提出"AI"</td><td>AI 学科正式诞生</td></tr>
-      <tr><td>1980s</td><td>AI 进入工业/医疗</td><td>从实验室走向产业</td></tr>
-      <tr><td>2010s</td><td>深度学习黄金十年</td><td>算力+数据+算法三重突破</td></tr>
-      <tr><td>2020s</td><td>GPT-4 等生成式 AI</td><td>AI 进入"创造性"阶段</td></tr>
-    </table>
-    <h4 style="margin:12px 0 8px;">核心概念对 ILO 快速索引</h4>
-    <table class="comp-table">
-      <tr><th>概念</th><th>ILO</th><th>考试关联</th></tr>
-      <tr><td>AI 定义 (4 来源)</td><td>ILO 1</td><td>Quiz 1 必考</td></tr>
-      <tr><td>AI/ML/DL 关系 + 三种 ML</td><td>ILO 1</td><td>Quiz 1 必考</td></tr>
-      <tr><td>AI 风险 (Bias/Black Box/Privacy)</td><td>ILO 2, 3</td><td>课堂讨论、反思论文、案例分析</td></tr>
-      <tr><td>Ethics vs Governance 区分</td><td>ILO 2, 4, 5</td><td>整门课核心框架</td></tr>
-      <tr><td>UNESCO 原则 / PwC 价值驱动</td><td>ILO 2, 4, 5</td><td>Quiz 1、跨国治理比较</td></tr>
-    </table>
-  `;
-  stepsContainer.appendChild(step2);
+  // --- Section 4: PwC ---
+  const s4 = document.createElement('div');
+  s4.className = 'w1-section'; s4.id = 'w1-pwc';
+  s4.innerHTML = '' +
+    '<div class="w1-section-header">' +
+    '  <div class="w1-section-num s4">4</div>' +
+    '  <div><h3>\u7cbe\u8bfb PwC (2024)\uff1a\u4f01\u4e1a\u89c6\u89d2\u2014\u2014\u6cbb\u7406\u5c31\u662f\u4ef7\u503c</h3><p>\u6838\u5fc3\u8bba\u70b9\uff1aAI \u6cbb\u7406\u4e0d\u53ea\u662f\u5408\u89c4\uff0c\u800c\u662f\u901a\u8fc7\u201c\u652f\u6301\u521b\u65b0\u201d\u548c\u201c\u5efa\u7acb\u4fe1\u4efb\u201d\u4e24\u6761\u8def\u5f84\u521b\u9020\u5546\u4e1a\u4ef7\u503c\u3002</p></div>' +
+    '</div>' +
+    '<div class="reading-card"><h5>Reese & Becker (2024) \u2014 PwC</h5><p>\u6838\u5fc3\u7406\u5ff5\uff1aAI \u6cbb\u7406\u4e0d\u4ec5\u662f\u5408\u89c4\u8981\u6c42\uff0c\u66f4\u662f\u4f01\u4e1a\u7684 <strong>\u4ef7\u503c\u9a71\u52a8\u5668 (Value Driver)</strong></p></div>' +
+    '<h4 style="margin:12px 0 8px;">\u8def\u5f84\u4e00\uff1a\u652f\u6301\u521b\u65b0\u4e0e\u89c4\u6a21\u5316</h4>' +
+    '<div class="sub-grid">' +
+    '  <div class="sub-card blue"><strong>Pull\uff08\u5e02\u573a\u62c9\u52a8\uff09</strong><br>\u6cbb\u7406\u6846\u67b6\u63d0\u4f9b\u5ba2\u6237\u53cd\u9988\u673a\u5236 \u2192 \u5e02\u573a\u9700\u6c42\u9a71\u52a8 AI \u5f00\u53d1</div>' +
+    '  <div class="sub-card blue"><strong>Push\uff08\u6280\u672f\u63a8\u52a8\uff09</strong><br>\u6cbb\u7406\u6846\u67b6\u63d0\u4f9b\u5b9e\u9a8c\u7a7a\u95f4\uff08\u5b9e\u9a8c\u5ba4\u3001\u6c99\u76d2\uff09\u2192 \u9f13\u52b1\u63a2\u7d22\u65b0\u6280\u672f</div>' +
+    '</div>' +
+    '<div class="insight-box">\ud83d\udca1 Innovation Funnel\uff1a\u6cbb\u7406\u63aa\u65bd\u8d2f\u7a7f idea \u2192 PoC \u2192 scaling \u5168\u8fc7\u7a0b\uff0c\u7cfb\u7edf\u5316\u7b5b\u9009\u548c\u63a8\u8fdb\u7528\u4f8b\u3002</div>' +
+    '<h4 style="margin:14px 0 8px;">\u8def\u5f84\u4e8c\uff1a\u9a71\u52a8\u53ef\u4fe1 AI</h4>' +
+    '<table class="comp-table" style="margin-bottom:14px;">' +
+    '  <tr><th>\u539f\u5219</th><th>\u5b9e\u8df5\u65b9\u5f0f</th></tr>' +
+    '  <tr><td>Human Oversight</td><td style="font-size:12px;">\u5411\u7528\u6237\u89e3\u91ca\u6a21\u578b\u51b3\u7b56\u903b\u8f91\uff0c\u8ba9\u7528\u6237\u53c2\u4e0e\u8bbe\u8ba1</td></tr>' +
+    '  <tr><td>Transparency</td><td style="font-size:12px;">\u786e\u4fdd\u51b3\u7b56\u8fc7\u7a0b\u53ef\u7406\u89e3\u3001\u53ef\u8d28\u7591</td></tr>' +
+    '  <tr><td>Robustness & Safety</td><td style="font-size:12px;">\u7cfb\u7edf\u7a33\u5b9a\u53ef\u9760\uff0c\u80fd\u62b5\u6297\u653b\u51fb</td></tr>' +
+    '  <tr><td>Privacy & Security</td><td style="font-size:12px;">\u5168\u751f\u547d\u5468\u671f\u6570\u636e\u4fdd\u62a4</td></tr>' +
+    '  <tr><td>Fairness & Societal Wellbeing</td><td style="font-size:12px;">\u4fc3\u8fdb\u793e\u4f1a\u516c\u5e73\u548c\u6574\u4f53\u798f\u7949</td></tr>' +
+    '</table>' +
+    '<h4 style="margin:12px 0 8px;">UNESCO vs PwC \u5bf9\u6bd4\uff08ILO 4 \u6838\u5fc3\u8bad\u7ec3\uff09</h4>' +
+    '<table class="comp-table">' +
+    '  <tr><th>\u7ef4\u5ea6</th><th>UNESCO (2022)</th><th>PwC (2024)</th></tr>' +
+    '  <tr><td>\u51fa\u53d1\u70b9</td><td>\u4eba\u6743\u89c6\u89d2\uff0c\u81ea\u4e0a\u800c\u4e0b</td><td>\u4f01\u4e1a\u4ef7\u503c\u89c6\u89d2\uff0c\u81ea\u4e0b\u800c\u4e0a</td></tr>' +
+    '  <tr><td>\u6838\u5fc3\u903b\u8f91</td><td>\u4fdd\u62a4\u4eba\u7c7b\u514d\u53d7 AI \u4f24\u5bb3</td><td>\u6cbb\u7406\u8ba9 AI \u66f4\u597d\u521b\u9020\u5546\u4e1a\u4ef7\u503c</td></tr>' +
+    '  <tr><td>\u53d7\u4f17</td><td>\u6210\u5458\u56fd\u653f\u5e9c\u3001\u653f\u7b56\u5236\u5b9a\u8005</td><td>\u4f01\u4e1a\u7ec4\u7ec7</td></tr>' +
+    '  <tr><td>\u5171\u540c\u8bed\u8a00</td><td colspan="2" style="text-align:center;background:var(--green-bg);">Fairness \u00b7 Transparency \u00b7 Accountability \u00b7 Privacy\uff08\u9ad8\u5ea6\u91cd\u53e0\uff09</td></tr>' +
+    '</table>' +
+    '<div class="insight-box" style="margin-top:8px;">\ud83d\udca1 \u201c\u540c\u5f52\u6b8a\u9014\u201d\u7684\u683c\u5c40\uff1a\u540c\u4e00\u5957\u539f\u5219\u5728\u4e0d\u540c\u5236\u5ea6\u6846\u67b6\u4e0b\u4ee5\u4e0d\u540c\u903b\u8f91\u88ab\u4f7f\u7528\u2014\u2014\u8fd9\u5bf9\u7406\u89e3\u5168\u7403 AI \u6cbb\u7406\u7f51\u7edc\u81f3\u5173\u91cd\u8981\u3002</div>';
+  body.appendChild(s4);
 
-  // Step 3: UNESCO
-  const step3 = createStep(3, '精读 UNESCO (2022)：从人权视角自上而下', '193 国通过的首个 AI 伦理全球标准。理解四大核心价值观、十大原则和两项明确禁止。', 'c3');
-  const step3Body = step3.querySelector('.step-body');
-  step3Body.innerHTML = `
-    <div class="reading-card"><h5>Recommendation on the Ethics of AI</h5><p>2021年11月由193个成员国通过 · 史上第一个AI伦理全球标准</p></div>
-    <h4 style="margin:12px 0 8px;">四大核心价值观</h4>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
-      <div style="padding:10px 12px;background:var(--dusty-blue-bg);border-radius:10px;font-size:12px;"><strong>1.</strong> 尊重、保护和促进人权与人类尊严</div>
-      <div style="padding:10px 12px;background:var(--sage-bg);border-radius:10px;font-size:12px;"><strong>2.</strong> 生活在和平、公正与互联的社会中</div>
-      <div style="padding:10px 12px;background:var(--dusty-gold-bg);border-radius:10px;font-size:12px;"><strong>3.</strong> 确保多样性和包容性</div>
-      <div style="padding:10px 12px;background:var(--dusty-lav-bg);border-radius:10px;font-size:12px;"><strong>4.</strong> 环境与生态系统蓬勃发展</div>
-    </div>
-    <h4 style="margin:12px 0 8px;">十大原则（⭐为课件重点标记）</h4>
-    <table class="comp-table" style="margin-bottom:14px;">
-      <tr><th>#</th><th>原则</th><th>要点</th></tr>
-      <tr style="background:var(--dusty-gold-bg)"><td>1</td><td><strong>⭐ Proportionality & Do No Harm</strong></td><td style="font-size:12px;">AI 方法不应超出实现合法目标所需</td></tr>
-      <tr><td>2</td><td>Safety and Security</td><td style="font-size:12px;">避免意外伤害，防止攻击漏洞</td></tr>
-      <tr style="background:var(--dusty-gold-bg)"><td>3</td><td><strong>⭐ Fairness & Non-discrimination</strong></td><td style="font-size:12px;">包容性方法，收益惠及所有群体</td></tr>
-      <tr><td>4</td><td>Sustainability</td><td style="font-size:12px;">评估 AI 对 SDGs 的影响</td></tr>
-      <tr style="background:var(--dusty-gold-bg)"><td>5</td><td><strong>⭐ Right to Privacy</strong></td><td style="font-size:12px;">全生命周期隐私保护，知情同意</td></tr>
-      <tr><td>6</td><td>Human Oversight</td><td style="font-size:12px;">AI 不取代人类最终责任</td></tr>
-      <tr><td>7</td><td>Transparency</td><td style="font-size:12px;">适当透明度和可解释性</td></tr>
-      <tr style="background:var(--dusty-gold-bg)"><td>8</td><td><strong>⭐ Responsibility & Accountability</strong></td><td style="font-size:12px;">审计、影响评估、尽职调查机制</td></tr>
-      <tr><td>9</td><td>Awareness & Literacy</td><td style="font-size:12px;">公众数字素养教育</td></tr>
-      <tr><td>10</td><td>Multi-stakeholder Governance</td><td style="font-size:12px;">包容、透明的多方参与治理</td></tr>
-    </table>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-      <div style="padding:10px 12px;background:var(--sage-bg);border-radius:10px;font-size:12px;"><strong>🛠 EIA</strong> (Ethical Impact Assessment)</div>
-      <div style="padding:10px 12px;background:var(--sage-bg);border-radius:10px;font-size:12px;"><strong>🛠 RAM</strong> (Readiness Assessment)</div>
-      <div style="padding:10px 12px;background:var(--dusty-rose-bg);border-radius:10px;font-size:12px;"><strong>🚫 Social Scoring</strong> 禁止社会信用评分</div>
-      <div style="padding:10px 12px;background:var(--dusty-rose-bg);border-radius:10px;font-size:12px;"><strong>🚫 Mass Surveillance</strong> 禁止大规模监控</div>
-    </div>
-  `;
-  stepsContainer.appendChild(step3);
-
-  // Step 4: PwC
-  const step4 = createStep(4, '精读 PwC (2024)：企业视角——治理就是价值', '核心论点：AI 治理不只是合规，而是通过"支持创新"和"建立信任"两条路径创造商业价值。', 'c4');
-  const step4Body = step4.querySelector('.step-body');
-  step4Body.innerHTML = `
-    <div class="reading-card"><h5>Reese & Becker (2024) — PwC</h5><p>核心理念：AI 治理不仅是合规要求，更是企业的 <strong>价值驱动器 (Value Driver)</strong></p></div>
-    <h4 style="margin:12px 0 8px;">路径一：支持创新与规模化</h4>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
-      <div style="padding:10px 12px;background:var(--dusty-blue-bg);border-radius:10px;font-size:12px;"><strong>Pull（市场拉动）</strong><br>治理框架提供客户反馈机制 → 市场需求驱动 AI 开发</div>
-      <div style="padding:10px 12px;background:var(--dusty-blue-bg);border-radius:10px;font-size:12px;"><strong>Push（技术推动）</strong><br>治理框架提供实验空间（实验室、沙盒）→ 鼓励探索新技术</div>
-    </div>
-    <div class="insight-box">💡 Innovation Funnel：治理措施贯穿 idea → PoC → scaling 全过程，系统化筛选和推进用例。</div>
-    <h4 style="margin:14px 0 8px;">路径二：驱动可信 AI</h4>
-    <table class="comp-table" style="margin-bottom:14px;">
-      <tr><th>原则</th><th>实践方式</th></tr>
-      <tr><td>Human Oversight</td><td style="font-size:12px;">向用户解释模型决策逻辑，让用户参与设计</td></tr>
-      <tr><td>Transparency</td><td style="font-size:12px;">确保决策过程可理解、可质疑</td></tr>
-      <tr><td>Robustness & Safety</td><td style="font-size:12px;">系统稳定可靠，能抵抗攻击</td></tr>
-      <tr><td>Privacy & Security</td><td style="font-size:12px;">全生命周期数据保护</td></tr>
-      <tr><td>Fairness & Societal Wellbeing</td><td style="font-size:12px;">促进社会公平和整体福祉</td></tr>
-    </table>
-    <h4 style="margin:12px 0 8px;">UNESCO vs PwC 对比（ILO 4 核心训练）</h4>
-    <table class="comp-table">
-      <tr><th>维度</th><th>UNESCO (2022)</th><th>PwC (2024)</th></tr>
-      <tr><td>出发点</td><td>人权视角，自上而下</td><td>企业价值视角，自下而上</td></tr>
-      <tr><td>核心逻辑</td><td>保护人类免受 AI 伤害</td><td>治理让 AI 更好创造商业价值</td></tr>
-      <tr><td>受众</td><td>成员国政府、政策制定者</td><td>企业组织</td></tr>
-      <tr><td>共同语言</td><td colspan="2" style="text-align:center;background:var(--sage-bg);">Fairness · Transparency · Accountability · Privacy（高度重叠）</td></tr>
-    </table>
-    <div class="insight-box" style="margin-top:8px;">💡 "同归殊途"的格局：同一套原则在不同制度框架下以不同逻辑被使用——这对理解全球 AI 治理网络至关重要。</div>
-  `;
-  stepsContainer.appendChild(step4);
-
-  body.appendChild(stepsContainer);
   renderNotesArea(1, body);
   section.appendChild(body);
   container.appendChild(section);
-}
-
-function createStep(num, title, desc, colorClass) {
-  const block = document.createElement('div');
-  block.className = 'step-block';
-  const header = document.createElement('div');
-  header.className = 'step-header';
-  header.onclick = function() { block.classList.toggle('open'); };
-  header.innerHTML = `
-    <div class="step-num-circle ${colorClass}">${num}</div>
-    <div class="step-label"><h4>${title}</h4><p>${desc}</p></div>
-    <div class="step-chevron">▼</div>
-  `;
-  block.appendChild(header);
-  const body = document.createElement('div');
-  body.className = 'step-body';
-  block.appendChild(body);
-  return block;
 }
 
 // ==============================
@@ -1353,31 +1370,13 @@ document.addEventListener('paste', function(e) { const files = e.clipboardData.f
 //      GLOBAL ACTIONS
 // ==============================
 function resetAll() {
-  if (confirm('确定要清除所有数据吗？（包括材料记录和笔记）此操作不可撤销。')) {
+  if (confirm('\u786e\u5b9a\u8981\u6e05\u9664\u6240\u6709\u6570\u636e\u5417\uff1f\uff08\u5305\u62ec\u6750\u6599\u8bb0\u5f55\u548c\u7b14\u8bb0\uff09\u6b64\u64cd\u4f5c\u4e0d\u53ef\u64a4\u9500\u3002')) {
     localStorage.removeItem('hd6002_studyhub');
     appState = getDefaultState();
     saveState(appState);
     refreshAll();
-    showToast('已全部重置');
+    showToast('\u5df2\u5168\u90e8\u91cd\u7f6e');
   }
-}
-
-function exportNotes() {
-  let text = '# HD6002 学习笔记导出\n';
-  text += `导出时间: ${new Date().toLocaleString()}\n\n`;
-  for (let w = 1; w <= 13; w++) {
-    const week = WEEKS[w-1];
-    if (appState.notes[w] && appState.notes[w].trim()) {
-      text += `## Week ${w}: ${week.topic}\n\n${appState.notes[w]}\n\n---\n\n`;
-    }
-  }
-  const blob = new Blob([text], {type: 'text/markdown'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = 'HD6002_Notes_Export.md';
-  a.click();
-  URL.revokeObjectURL(url);
-  showToast('笔记已导出');
 }
 
 // ==============================
@@ -1398,22 +1397,22 @@ function refreshAll() {
   const KEY = 'studyhub-visits';
   const display = document.getElementById('visitDisplay');
   const API_BASE = 'https://api.countapi.xyz';
-  fetch(`${API_BASE}/hit/${NS}/${KEY}`)
+  fetch(API_BASE + '/hit/' + NS + '/' + KEY)
     .then(r => {
       if (!r.ok) throw new Error('Hit failed');
       return r.json();
     })
-    .then(data => { display.textContent = `${data.value} visits`; })
+    .then(data => { display.textContent = data.value + ' visits'; })
     .catch(() => {
-      fetch(`${API_BASE}/get/${NS}/${KEY}`)
+      fetch(API_BASE + '/get/' + NS + '/' + KEY)
         .then(r => r.json())
-        .then(data => { display.textContent = `${data.value} visits`; })
+        .then(data => { display.textContent = data.value + ' visits'; })
         .catch(() => {
-          fetch(`https://api.countapi.xyz/create?namespace=${NS}&key=${KEY}&value=0&update_lowerbound=0&update_upperbound=1000000`)
-            .then(() => fetch(`${API_BASE}/hit/${NS}/${KEY}`))
+          fetch('https://api.countapi.xyz/create?namespace=' + NS + '&key=' + KEY + '&value=0&update_lowerbound=0&update_upperbound=1000000')
+            .then(() => fetch(API_BASE + '/hit/' + NS + '/' + KEY))
             .then(r => r.json())
-            .then(data => { display.textContent = `${data.value} visits`; })
-            .catch(() => { display.textContent = 'visits: —'; });
+            .then(data => { display.textContent = data.value + ' visits'; })
+            .catch(() => { display.textContent = 'visits: \u2014'; });
         });
     });
 })();
@@ -1422,7 +1421,6 @@ function refreshAll() {
 //         INIT
 // ==============================
 refreshAll();
-console.log('🎓 HD6002 Study Hub ready — Morandi edition');
 </script>
 </body>
 </html>
