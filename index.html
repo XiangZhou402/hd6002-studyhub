@@ -8,63 +8,57 @@
 <title>HD6002 AI Ethics & Governance — Study Hub</title>
 <style>
 /* ================================================================ */
-/*                      DESIGN SYSTEM v3                              */
+/*                      DESIGN SYSTEM v4                             */
 /* ================================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* Background */
   --bg:            #f5f6f8;
   --surface:       rgba(255,255,255,0.7);
   --surface-solid: #ffffff;
 
-  /* Text */
   --text:          #1e293b;
   --text-soft:     #475569;
   --text-muted:    #94a3b8;
 
-  /* Accent colors — clear, unified, high contrast */
   --blue:          #4F8CFF;
   --blue-bg:       rgba(79,140,255,0.1);
-  --blue-border:   rgba(79,140,255,0.25);
+  --blue-border:   rgba(79,140,255,0.28);
 
   --green:         #22C55E;
   --green-bg:      rgba(34,197,94,0.1);
-  --green-border:  rgba(34,197,94,0.25);
+  --green-border:  rgba(34,197,94,0.28);
 
   --amber:         #F59E0B;
   --amber-bg:      rgba(245,158,11,0.1);
-  --amber-border:  rgba(245,158,11,0.25);
+  --amber-border:  rgba(245,158,11,0.28);
 
   --red:           #EF4444;
   --red-bg:        rgba(239,68,68,0.1);
-  --red-border:    rgba(239,68,68,0.25);
+  --red-border:    rgba(239,68,68,0.28);
 
   --purple:        #8B5CF6;
   --purple-bg:     rgba(139,92,246,0.1);
-  --purple-border: rgba(139,92,246,0.25);
+  --purple-border: rgba(139,92,246,0.28);
 
   --teal:          #14B8A6;
   --teal-bg:       rgba(20,184,166,0.1);
-  --teal-border:   rgba(20,184,166,0.25);
+  --teal-border:   rgba(20,184,166,0.28);
 
   --slate:         #64748B;
   --slate-bg:      rgba(100,116,139,0.08);
   --slate-border:  rgba(100,116,139,0.2);
 
-  /* Geometry */
   --radius:        20px;
   --radius-sm:     14px;
   --radius-xs:     10px;
 
-  /* Glass */
   --glass-bg:      rgba(255,255,255,0.62);
   --glass-border:  rgba(255,255,255,0.45);
   --glass-blur:    20px;
   --glass-shadow:  0 2px 16px rgba(0,0,0,0.04);
   --glass-hover:   0 8px 32px rgba(0,0,0,0.07);
 
-  /* Font */
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Microsoft YaHei", sans-serif;
   --transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
@@ -80,14 +74,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ================================================================ */
-/*                         LAYOUT                                    */
-/* ================================================================ */
 .container { max-width: 1000px; margin: 0 auto; padding: 32px 24px 80px; }
 
-/* ================================================================ */
-/*                     GLASS CARD BASE                               */
-/* ================================================================ */
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
@@ -97,56 +85,53 @@ body {
   box-shadow: var(--glass-shadow);
   transition: var(--transition);
 }
-.glass:hover {
-  transform: translateY(-1px) scale(1.005);
-  box-shadow: var(--glass-hover);
-}
+.glass:hover { transform: translateY(-1px) scale(1.004); box-shadow: var(--glass-hover); }
 
-/* ================================================================ */
-/*                         HEADER                                    */
-/* ================================================================ */
+/* ============================ HEADER ============================ */
 .header {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 28px 32px; margin-bottom: 28px;
-  flex-wrap: wrap; gap: 16px;
+  padding: 24px 28px; margin-bottom: 22px;
+  flex-wrap: wrap; gap: 14px;
 }
 .header-left h1 {
-  font-size: 22px; font-weight: 700; letter-spacing: -0.3px;
+  font-size: 21px; font-weight: 700; letter-spacing: -0.3px;
   background: linear-gradient(135deg, var(--blue), var(--purple));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
-.header-left .sub { font-size: 13px; color: var(--text-soft); margin-top: 4px; }
-.header-right { display: flex; gap: 12px; align-items: center; }
+.header-left .sub { font-size: 12.5px; color: var(--text-soft); margin-top: 4px; }
+.header-right { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 
 .progress-ring {
-  width: 56px; height: 56px; border-radius: 50%;
+  width: 54px; height: 54px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 700;
+  font-size: 12px; font-weight: 700;
   color: var(--blue); border: 3px solid var(--blue);
   background: var(--blue-bg);
   transition: var(--transition);
 }
 
-/* ================================================================ */
-/*                         BUTTONS                                   */
-/* ================================================================ */
 .btn {
-  padding: 9px 20px; border-radius: 24px; border: 1px solid var(--slate-border);
+  padding: 9px 18px; border-radius: 24px; border: 1px solid var(--slate-border);
   background: rgba(255,255,255,0.7); color: var(--text-soft); font-size: 13px;
   cursor: pointer; font-family: var(--font); font-weight: 500;
   transition: var(--transition);
 }
-.btn:hover {
-  background: var(--blue-bg); border-color: var(--blue);
-  color: var(--blue); transform: translateY(-1px);
-  box-shadow: 0 4px 16px var(--blue-bg);
-}
-.btn-sm { padding: 6px 16px; font-size: 12px; border-radius: 20px; }
+.btn:hover { background: var(--blue-bg); border-color: var(--blue); color: var(--blue); transform: translateY(-1px); box-shadow: 0 4px 16px var(--blue-bg); }
+.btn-sm { padding: 6px 14px; font-size: 12px; border-radius: 20px; }
+.btn-primary { background: var(--blue); color: #fff; border-color: var(--blue); }
+.btn-primary:hover { background: #3b7bf0; color: #fff; }
 
-/* ================================================================ */
-/*                     THIS WEEK HERO                                */
-/* ================================================================ */
-.hero { margin-bottom: 28px; padding: 32px; position: relative; overflow: hidden; }
+/* Language toggle */
+.lang-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 16px; border-radius: 20px; font-size: 12.5px; font-weight: 600;
+  border: 1.5px solid var(--blue); color: var(--blue); background: var(--blue-bg);
+  cursor: pointer; font-family: var(--font); transition: var(--transition);
+}
+.lang-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px var(--blue-bg); }
+
+/* ============================ HERO ============================ */
+.hero { margin-bottom: 22px; padding: 30px; position: relative; overflow: hidden; }
 .hero::before {
   content: ''; position: absolute; top: -40px; right: -40px;
   width: 180px; height: 180px; border-radius: 50%;
@@ -160,8 +145,8 @@ body {
   font-size: 12px; font-weight: 600; margin-bottom: 14px;
 }
 .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
-.hero-title { font-size: 26px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
-.hero-sub { font-size: 14px; color: var(--text-soft); margin-bottom: 24px; }
+.hero-title { font-size: 25px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+.hero-sub { font-size: 14px; color: var(--text-soft); margin-bottom: 22px; }
 
 .hero-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
 .hero-step {
@@ -171,11 +156,7 @@ body {
   cursor: pointer; transition: var(--transition);
   position: relative;
 }
-.hero-step:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: var(--glass-hover);
-  background: rgba(255,255,255,0.8);
-}
+.hero-step:hover { transform: translateY(-2px) scale(1.03); box-shadow: var(--glass-hover); background: rgba(255,255,255,0.8); }
 .hero-step .step-num {
   width: 32px; height: 32px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
@@ -196,13 +177,27 @@ body {
 }
 .hero-step .step-check.checked { background: var(--green); border-color: var(--green); color: #fff; }
 
-/* ================================================================ */
-/*                        DASHBOARD                                  */
-/* ================================================================ */
-.dashboard {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 16px; margin-bottom: 24px;
+/* ============================ DROPZONE ============================ */
+.dropzone-wrap { margin-bottom: 22px; }
+.dropzone {
+  border: 2px dashed #cbd5e1;
+  border-radius: var(--radius); padding: 28px 24px;
+  text-align: center; cursor: pointer; position: relative;
 }
+.dropzone.drag-over { border-color: var(--blue); background: var(--blue-bg); }
+.dropzone-icon { font-size: 34px; margin-bottom: 8px; }
+.dropzone-title { font-size: 15px; font-weight: 600; }
+.dropzone-hint { font-size: 13px; color: var(--text-soft); margin-top: 6px; }
+.dropzone-feedback {
+  margin-top: 14px; padding: 12px 18px; border-radius: var(--radius-xs);
+  font-size: 13px; display: none; white-space: pre-line;
+}
+.dropzone-feedback.success { display: block; background: var(--green-bg); color: #15803d; border: 1px solid var(--green-border); }
+.dropzone-feedback.error { display: block; background: var(--red-bg); color: #b91c1c; border: 1px solid var(--red-border); }
+.dropzone-feedback.info { display: block; background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+
+/* ============================ DASHBOARD ============================ */
+.dashboard { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px; }
 @media (max-width: 760px) { .dashboard { grid-template-columns: 1fr; } }
 
 .card-title {
@@ -210,11 +205,11 @@ body {
   letter-spacing: 0.8px; color: var(--text-soft); margin-bottom: 16px;
   display: flex; align-items: center; gap: 8px;
 }
-.card-body { padding: 24px; }
+.card-body { padding: 22px; }
 
 .assessment-item {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 9px 0; border-bottom: 1px solid rgba(0,0,0,0.05);
   font-size: 13px;
 }
 .assessment-item:last-child { border-bottom: none; }
@@ -222,49 +217,18 @@ body {
 .assessment-item .pct { font-weight: 700; font-size: 14px; color: var(--blue); }
 .assessment-item .meta { color: var(--text-muted); font-size: 11px; }
 
-.milestone {
-  display: flex; align-items: flex-start; gap: 10px;
-  padding: 8px 0; font-size: 13px;
-}
-.milestone-dot {
-  width: 9px; height: 9px; border-radius: 50%; margin-top: 6px; flex-shrink: 0;
-}
+.milestone { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; font-size: 13px; }
+.milestone-dot { width: 9px; height: 9px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
 .milestone-dot.warn { background: var(--amber); }
 .milestone-dot.danger { background: var(--red); }
 .milestone-dot.info { background: var(--blue); }
 .milestone-week { font-weight: 600; }
 .milestone-desc { color: var(--text-soft); font-size: 12px; }
 
-/* ================================================================ */
-/*                      DROP ZONE                                    */
-/* ================================================================ */
-.dropzone-wrap { margin-bottom: 24px; }
-.dropzone {
-  border: 2px dashed #cbd5e1;
-  border-radius: var(--radius); padding: 32px 24px;
-  text-align: center; cursor: pointer; position: relative;
-}
-.dropzone.drag-over {
-  border-color: var(--blue);
-  background: var(--blue-bg);
-}
-.dropzone-icon { font-size: 36px; margin-bottom: 10px; }
-.dropzone-title { font-size: 15px; font-weight: 600; }
-.dropzone-hint { font-size: 13px; color: var(--text-soft); margin-top: 6px; }
-.dropzone-feedback {
-  margin-top: 14px; padding: 12px 18px; border-radius: var(--radius-xs);
-  font-size: 13px; display: none;
-}
-.dropzone-feedback.success { display: block; background: var(--green-bg); color: #15803d; border: 1px solid var(--green-border); }
-.dropzone-feedback.error { display: block; background: var(--red-bg); color: #b91c1c; border: 1px solid var(--red-border); }
-.dropzone-feedback.info { display: block; background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
-
-/* ================================================================ */
-/*                    MATERIALS GRID                                  */
-/* ================================================================ */
+/* ============================ MATERIALS GRID ============================ */
 .materials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(66px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
   gap: 10px;
 }
 .material-cell {
@@ -274,17 +238,11 @@ body {
   border: 1px solid #e2e8f0;
   background: #fff;
   transition: var(--transition); padding: 4px; gap: 2px;
-  position: relative;
 }
-.material-cell:hover {
-  transform: scale(1.08);
-  border-color: var(--blue);
-  background: var(--blue-bg);
-}
+.material-cell:hover { transform: scale(1.08); border-color: var(--blue); background: var(--blue-bg); }
 .material-cell .week-num { font-weight: 700; font-size: 16px; color: var(--text); }
 .material-cell .week-label { color: var(--text-muted); font-size: 10px; }
 
-/* Week cell status colors — unified */
 .material-cell.full { border-color: var(--green-border); background: var(--green-bg); }
 .material-cell.full .week-num { color: var(--green); }
 .material-cell.partial { border-color: var(--amber-border); background: var(--amber-bg); }
@@ -293,23 +251,18 @@ body {
 .material-cell.key .week-num { color: var(--red); }
 .material-cell.key.full { border-color: var(--purple-border); background: var(--purple-bg); }
 .material-cell.key.full .week-num { color: var(--purple); }
-
-/* ================================================================ */
-/*                     ILO CARD                                      */
-/* ================================================================ */
-.ilo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 10px;
+.material-cell.has-notes::after {
+  content: '📝'; position: absolute; bottom: 2px; right: 4px; font-size: 9px;
 }
+
+/* ============================ ILO ============================ */
+.ilo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
 .ilo-chip {
-  padding: 14px 16px; border-radius: var(--radius-sm);
-  font-size: 12px; line-height: 1.5;
-  transition: var(--transition);
+  padding: 13px 15px; border-radius: var(--radius-sm);
+  font-size: 12px; line-height: 1.5; transition: var(--transition);
 }
 .ilo-chip:hover { transform: translateY(-1px) scale(1.02); }
 .ilo-chip strong { font-size: 13px; display: block; margin-bottom: 3px; }
-
 .ilo-1 { background: var(--blue-bg); border: 1px solid var(--blue-border); }
 .ilo-1 strong { color: var(--blue); }
 .ilo-2 { background: var(--green-bg); border: 1px solid var(--green-border); }
@@ -321,9 +274,7 @@ body {
 .ilo-5 { background: var(--red-bg); border: 1px solid var(--red-border); }
 .ilo-5 strong { color: var(--red); }
 
-/* ================================================================ */
-/*                    WEEK SECTIONS                                  */
-/* ================================================================ */
+/* ============================ WEEK SECTIONS ============================ */
 .week-section {
   margin-bottom: 14px; overflow: hidden;
   border-radius: var(--radius);
@@ -336,11 +287,7 @@ body {
 }
 .week-section:hover { box-shadow: var(--glass-hover); }
 
-.week-header {
-  display: flex; align-items: center; padding: 18px 24px;
-  cursor: pointer; user-select: none;
-  transition: background 0.2s;
-}
+.week-header { display: flex; align-items: center; padding: 18px 22px; cursor: pointer; user-select: none; transition: background 0.2s; }
 .week-header:hover { background: rgba(255,255,255,0.25); }
 .week-badge {
   width: 36px; height: 36px; border-radius: 50%;
@@ -348,7 +295,6 @@ body {
   font-weight: 700; font-size: 14px; margin-right: 14px; flex-shrink: 0;
   color: #fff;
 }
-/* Unified week badge colors */
 .week-badge.active { background: var(--blue); }
 .week-badge.key { background: var(--red); }
 .week-badge.collected { background: var(--green); }
@@ -358,74 +304,92 @@ body {
 .week-info { flex: 1; }
 .week-info .topic { font-weight: 600; font-size: 15px; }
 .week-info .flags { display: flex; gap: 6px; margin-top: 5px; flex-wrap: wrap; }
-.flag {
-  font-size: 10px; padding: 3px 10px; border-radius: 12px;
-  font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px;
-}
+.flag { font-size: 10px; padding: 3px 10px; border-radius: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
 .flag.quiz { background: var(--red-bg); color: #b91c1c; }
 .flag.paper { background: var(--amber-bg); color: #b45309; }
 .flag.pres { background: var(--purple-bg); color: #7c3aed; }
 .flag.case { background: var(--blue-bg); color: #2563eb; }
 .flag.warn { background: var(--teal-bg); color: #0f766e; }
-.week-toggle {
-  font-size: 14px; color: var(--text-muted);
-  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
+.week-toggle { font-size: 14px; color: var(--text-muted); transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1); }
 .week-section.expanded .week-toggle { transform: rotate(180deg); }
-.week-body { display: none; padding: 0 24px 24px; }
+.week-body { display: none; padding: 0 22px 22px; }
 .week-section.expanded .week-body { display: block; }
 
-/* Material slots */
-.material-slots { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
-.material-slot {
-  flex: 1; min-width: 140px;
-  border: 1px dashed #cbd5e1; border-radius: var(--radius-sm);
-  padding: 14px 16px; text-align: center;
-  background: rgba(255,255,255,0.4); transition: var(--transition);
-}
-.material-slot:hover { border-color: var(--blue); background: rgba(255,255,255,0.65); }
-.material-slot.drag-over { border-color: var(--blue); background: var(--blue-bg); }
-.material-slot .slot-type { font-size: 11px; color: var(--text-soft); font-weight: 600; }
-.material-slot .slot-name { font-size: 12px; color: var(--text); margin-top: 4px; word-break: break-all; }
-.material-slot.filled {
-  border-style: solid; border-color: var(--green-border);
-  background: var(--green-bg);
-}
-.material-slot .slot-check { display: none; font-size: 18px; }
-.material-slot.filled .slot-check { display: block; }
-
-/* Notes */
-.notes-area {
-  width: 100%; min-height: 80px; border: 1px solid #e2e8f0;
-  border-radius: var(--radius-sm); padding: 14px 16px;
-  font-size: 13px; font-family: var(--font); resize: vertical;
-  background: rgba(255,255,255,0.55); color: var(--text); outline: none;
+/* ============================ WEEK FILES (single area) ============================ */
+.week-files {
+  margin: 16px 0 4px;
+  border: 1.5px dashed #cbd5e1; border-radius: var(--radius-sm);
+  padding: 14px 16px; background: rgba(255,255,255,0.4);
   transition: var(--transition);
 }
-.notes-area:focus {
-  border-color: var(--blue);
-  background: rgba(255,255,255,0.85);
-  box-shadow: 0 0 0 3px var(--blue-bg);
+.week-files.drag-over { border-color: var(--blue); background: var(--blue-bg); }
+.week-files-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 8px;
 }
-.notes-hint { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
-.save-indicator { font-size: 11px; color: #15803d; opacity: 0; transition: opacity 0.3s; margin-left: 8px; }
-.save-indicator.visible { opacity: 1; }
+.week-files-title { font-size: 12.5px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 6px; }
+.week-files-count { font-size: 11.5px; color: var(--green); font-weight: 600; }
+.week-files-list { display: flex; flex-direction: column; gap: 4px; max-height: 160px; overflow-y: auto; margin-bottom: 6px; }
+.week-file-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 5px 10px; border-radius: 8px;
+  font-size: 12px; background: rgba(255,255,255,0.5);
+  transition: background 0.15s;
+}
+.week-file-item:hover { background: rgba(0,0,0,0.05); }
+.week-file-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text); font-size: 12px; }
+.week-file-remove {
+  width: 20px; height: 20px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; color: var(--text-muted); cursor: pointer;
+  flex-shrink: 0; font-weight: 600; transition: var(--transition);
+}
+.week-file-remove:hover { background: var(--red-bg); color: var(--red); }
+.week-files-add {
+  display: block; width: 100%; padding: 7px; border-radius: 10px;
+  border: 1px dashed var(--slate-border); background: transparent;
+  font-size: 12px; color: var(--text-muted); cursor: pointer;
+  font-family: var(--font); transition: var(--transition);
+}
+.week-files-add:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-bg); }
+.week-files-empty { font-size: 12px; color: var(--text-muted); padding: 4px 0 8px; }
 
-/* ================================================================ */
-/*                WEEK 1 CONTENT SECTIONS                            */
-/* ================================================================ */
+/* ============================ MODULE TABS ============================ */
+.module-tabs {
+  display: flex; gap: 8px; margin: 18px 0 14px;
+  padding: 6px; background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 16px; overflow-x: auto; flex-wrap: wrap;
+}
+.tab-btn {
+  flex: 1; min-width: 120px; padding: 10px 12px;
+  border: none; border-radius: 12px;
+  background: transparent; color: var(--text-soft);
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  font-family: var(--font); transition: var(--transition);
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.tab-btn:hover { background: rgba(255,255,255,0.7); color: var(--text); transform: translateY(-1px); }
+.tab-btn.active { background: var(--blue); color: #fff; box-shadow: 0 4px 14px var(--blue-bg); }
+.tab-btn .tab-ico { font-size: 15px; }
+.tab-btn.has-content::after {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green); margin-left: 2px;
+}
+
+.module-panel { display: none; animation: fadeIn 0.3s ease; }
+.module-panel.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ============================ WEEK 1 CONTENT ============================ */
 .w1-section {
-  margin-bottom: 20px;
-  padding: 20px 24px;
+  margin-bottom: 18px;
+  padding: 18px 20px;
   border-radius: var(--radius-sm);
   background: rgba(255,255,255,0.45);
   border: 1px solid rgba(0,0,0,0.06);
-  transition: var(--transition);
 }
-.w1-section:hover { background: rgba(255,255,255,0.65); }
-.w1-section-header {
-  display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
-}
+.w1-section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
 .w1-section-num {
   width: 34px; height: 34px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
@@ -438,27 +402,14 @@ body {
 .w1-section-header h3 { font-size: 16px; font-weight: 600; }
 .w1-section-header p { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 
-/* Exercise table */
-.exercise-table { width: 100%; font-size: 13px; border-collapse: collapse; margin: 8px 0 16px; }
-.exercise-table th, .exercise-table td {
-  border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left;
-}
-.exercise-table th {
-  background: #f8fafc; font-weight: 600; font-size: 12px; color: var(--text-soft);
-}
+.exercise-table { width: 100%; font-size: 13px; border-collapse: collapse; margin: 8px 0 14px; }
+.exercise-table th, .exercise-table td { border: 1px solid #e2e8f0; padding: 9px 12px; text-align: left; }
+.exercise-table th { background: #f8fafc; font-weight: 600; font-size: 12px; color: var(--text-soft); }
 .exercise-table td { font-size: 12px; }
-.exercise-table .answer {
-  background: var(--green-bg); font-weight: 700; color: #15803d;
-  font-family: "SF Mono", "Fira Code", monospace; text-align: center;
-}
+.exercise-table .answer { background: var(--green-bg); font-weight: 700; color: #15803d; font-family: "SF Mono", "Fira Code", monospace; text-align: center; }
 
-/* Layer stack */
-.layer-stack { margin: 12px 0 16px; }
-.layer {
-  padding: 16px 18px; border-radius: var(--radius-sm);
-  margin-bottom: 8px; font-size: 13px; line-height: 1.5;
-  transition: var(--transition);
-}
+.layer-stack { margin: 12px 0 14px; }
+.layer { padding: 15px 17px; border-radius: var(--radius-sm); margin-bottom: 8px; font-size: 13px; line-height: 1.5; transition: var(--transition); }
 .layer:hover { transform: translateX(2px); }
 .layer-1 { background: var(--blue-bg); border-left: 4px solid var(--blue); }
 .layer-2 { background: var(--green-bg); border-left: 4px solid var(--green); }
@@ -467,53 +418,23 @@ body {
 .layer-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
 .layer-desc { color: var(--text-soft); font-size: 12px; }
 
-/* Comparison table */
-.comp-table { width: 100%; font-size: 12px; border-collapse: collapse; margin: 10px 0; }
-.comp-table th, .comp-table td {
-  border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left;
-}
-.comp-table th {
-  background: #f8fafc; font-weight: 600; font-size: 11px; color: var(--text-soft);
-}
+.comp-table { width: 100%; font-size: 12px; border-collapse: collapse; margin: 8px 0 12px; }
+.comp-table th, .comp-table td { border: 1px solid #e2e8f0; padding: 9px 12px; text-align: left; }
+.comp-table th { background: #f8fafc; font-weight: 600; font-size: 11px; color: var(--text-soft); }
 .comp-table td { vertical-align: top; }
 .comp-table tr:hover td { background: rgba(248,250,252,0.5); }
 
-/* Reminder boxes */
-.reminder {
-  padding: 14px 18px; border-radius: var(--radius-sm);
-  font-size: 13px; margin-top: 12px; line-height: 1.5;
-}
-.reminder.quiz { background: var(--red-bg); border: 1px solid var(--red-border); }
-.reminder.paper { background: var(--amber-bg); border: 1px solid var(--amber-border); }
-.reminder.info { background: var(--blue-bg); border: 1px solid var(--blue-border); }
-.reminder.pres { background: var(--purple-bg); border: 1px solid var(--purple-border); }
-
-/* Reading card */
-.reading-card {
-  background: rgba(255,255,255,0.5);
-  border: 1px solid #e2e8f0;
-  border-radius: var(--radius-sm);
-  padding: 14px 16px; margin-bottom: 8px;
-  transition: var(--transition);
-}
-.reading-card:hover { background: rgba(255,255,255,0.7); }
+.reading-card { background: rgba(255,255,255,0.5); border: 1px solid #e2e8f0; border-radius: var(--radius-sm); padding: 13px 15px; margin-bottom: 8px; }
 .reading-card h5 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
 .reading-card p { font-size: 12px; color: var(--text-soft); }
 
-/* Highlight box */
 .insight-box {
-  padding: 12px 16px; border-radius: var(--radius-xs);
+  padding: 11px 15px; border-radius: var(--radius-xs);
   background: rgba(255,255,255,0.55); border: 1px solid #e2e8f0;
   font-size: 12px; color: var(--text-soft); margin: 8px 0;
-  transition: var(--transition);
 }
-
-/* Sub-grid for cards */
-.sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
-.sub-card {
-  padding: 10px 12px; border-radius: 10px; font-size: 12px;
-  border: 1px solid transparent;
-}
+.sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+.sub-card { padding: 10px 12px; border-radius: 10px; font-size: 12px; border: 1px solid transparent; }
 .sub-card.blue { background: var(--blue-bg); border-color: var(--blue-border); }
 .sub-card.green { background: var(--green-bg); border-color: var(--green-border); }
 .sub-card.amber { background: var(--amber-bg); border-color: var(--amber-border); }
@@ -521,9 +442,116 @@ body {
 .sub-card.red { background: var(--red-bg); border-color: var(--red-border); }
 .sub-card strong { display: block; margin-bottom: 2px; }
 
-/* ================================================================ */
-/*                       TOAST                                       */
-/* ================================================================ */
+/* ============================ QUIZ ============================ */
+.quiz-banner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap;
+  padding: 13px 16px; border-radius: var(--radius-sm);
+  background: var(--purple-bg); border: 1px solid var(--purple-border);
+  margin-bottom: 16px;
+}
+.quiz-banner-text { font-size: 13px; color: var(--text); }
+.quiz-banner-text strong { color: var(--purple); }
+.quiz-score { font-size: 13px; font-weight: 700; color: var(--purple); }
+
+.mcq-q {
+  padding: 15px 17px; border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.5); border: 1px solid #e2e8f0;
+  margin-bottom: 12px;
+}
+.mcq-q-title { font-size: 13.5px; font-weight: 600; margin-bottom: 10px; }
+.mcq-option {
+  display: flex; align-items: flex-start; gap: 9px;
+  width: 100%; text-align: left;
+  padding: 9px 12px; margin-bottom: 6px;
+  border: 1.5px solid #e2e8f0; border-radius: 10px;
+  background: rgba(255,255,255,0.55);
+  font-size: 12.5px; font-family: var(--font); color: var(--text);
+  cursor: pointer; transition: var(--transition);
+}
+.mcq-option:hover { border-color: var(--blue); background: var(--blue-bg); transform: translateX(2px); }
+.mcq-option .opt-key {
+  width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; background: #f1f5f9; color: var(--text-soft);
+}
+.mcq-option.selected { border-color: var(--amber); background: var(--amber-bg); }
+.mcq-option.correct { border-color: var(--green); background: var(--green-bg); }
+.mcq-option.correct .opt-key { background: var(--green); color: #fff; }
+.mcq-option.wrong { border-color: var(--red); background: var(--red-bg); }
+.mcq-option.wrong .opt-key { background: var(--red); color: #fff; }
+.mcq-option.disabled { cursor: default; }
+.mcq-option.disabled:hover { border-color: #e2e8f0; background: rgba(255,255,255,0.55); transform: none; }
+.mcq-explain {
+  display: none; margin-top: 8px; padding: 10px 12px;
+  border-radius: 10px; font-size: 12px; line-height: 1.55;
+  background: var(--blue-bg); border: 1px solid var(--blue-border); color: var(--text-soft);
+}
+.mcq-explain.show { display: block; }
+
+.short-q {
+  padding: 15px 17px; border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.5); border: 1px solid #e2e8f0;
+  margin-bottom: 12px;
+}
+.short-q-title { font-size: 13.5px; font-weight: 600; margin-bottom: 8px; }
+.short-q textarea {
+  width: 100%; min-height: 72px; border: 1px solid #e2e8f0;
+  border-radius: 10px; padding: 10px 12px; font-size: 12.5px;
+  font-family: var(--font); resize: vertical;
+  background: rgba(255,255,255,0.6); color: var(--text); outline: none;
+  transition: var(--transition);
+}
+.short-q textarea:focus { border-color: var(--blue); background: rgba(255,255,255,0.9); box-shadow: 0 0 0 3px var(--blue-bg); }
+.model-toggle {
+  margin-top: 8px; padding: 7px 14px; border-radius: 16px;
+  border: 1px solid var(--purple-border); background: var(--purple-bg);
+  color: var(--purple); font-size: 12px; font-weight: 600; cursor: pointer;
+  font-family: var(--font); transition: var(--transition);
+}
+.model-toggle:hover { transform: translateY(-1px); }
+.model-answer {
+  display: none; margin-top: 8px; padding: 11px 13px;
+  border-radius: 10px; font-size: 12.5px; line-height: 1.6;
+  background: var(--green-bg); border: 1px solid var(--green-border); color: #14532d;
+}
+.model-answer.show { display: block; }
+.model-answer strong { display: block; margin-bottom: 4px; color: #15803d; }
+
+.quiz-placeholder {
+  padding: 26px 20px; text-align: center;
+  border: 1.5px dashed var(--slate-border); border-radius: var(--radius-sm);
+  color: var(--text-muted); font-size: 13px;
+}
+
+/* ============================ PLACEHOLDER (weeks 2-13) ============================ */
+.content-placeholder {
+  padding: 22px 20px; text-align: center;
+  border: 1.5px dashed var(--slate-border); border-radius: var(--radius-sm);
+  color: var(--text-muted); font-size: 13px; line-height: 1.7;
+}
+.content-placeholder .ph-ico { font-size: 26px; margin-bottom: 8px; display: block; }
+
+/* ============================ NOTES ============================ */
+.notes-area {
+  width: 100%; min-height: 76px; border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm); padding: 13px 15px;
+  font-size: 13px; font-family: var(--font); resize: vertical;
+  background: rgba(255,255,255,0.55); color: var(--text); outline: none;
+  transition: var(--transition);
+}
+.notes-area:focus { border-color: var(--blue); background: rgba(255,255,255,0.85); box-shadow: 0 0 0 3px var(--blue-bg); }
+.notes-hint { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
+.save-indicator { font-size: 11px; color: #15803d; opacity: 0; transition: opacity 0.3s; margin-left: 8px; }
+.save-indicator.visible { opacity: 1; }
+
+.reminder { padding: 13px 17px; border-radius: var(--radius-sm); font-size: 13px; margin-top: 12px; line-height: 1.55; }
+.reminder.quiz { background: var(--red-bg); border: 1px solid var(--red-border); }
+.reminder.paper { background: var(--amber-bg); border: 1px solid var(--amber-border); }
+.reminder.info { background: var(--blue-bg); border: 1px solid var(--blue-border); }
+.reminder.pres { background: var(--purple-bg); border: 1px solid var(--purple-border); }
+
+/* ============================ TOAST / FOOTER ============================ */
 .toast {
   position: fixed; bottom: 28px; right: 28px;
   background: rgba(30,41,59,0.92);
@@ -536,425 +564,711 @@ body {
 }
 .toast.show { opacity: 1; transform: translateY(0); }
 
-/* ================================================================ */
-/*                       FOOTER                                      */
-/* ================================================================ */
 .site-footer {
-  margin-top: 48px; padding: 20px 0;
+  margin-top: 44px; padding: 20px 0;
   border-top: 1px solid rgba(0,0,0,0.06);
   text-align: center; font-size: 11px; color: var(--text-muted);
   display: flex; align-items: center; justify-content: center;
   gap: 16px; flex-wrap: wrap;
 }
 .site-footer .counter-wrap { display: flex; align-items: center; gap: 6px; }
-.site-footer .counter-dot {
-  width: 5px; height: 5px; border-radius: 50%; background: var(--text-muted);
-}
+.site-footer .counter-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--text-muted); }
 
-/* ================================================================ */
-/*                      PRINT                                        */
-/* ================================================================ */
-@media print {
-  .dropzone-wrap, .btn, .week-toggle { display: none !important; }
-  .week-body { display: block !important; }
-  body { background: #fff; }
-}
-
-/* ================================================================ */
-/*                  RESPONSIVE                                       */
-/* ================================================================ */
+@media print { .dropzone-wrap, .btn, .lang-btn, .week-toggle { display: none !important; } .week-body, .module-panel { display: block !important; } body { background: #fff; } }
 @media (max-width: 600px) {
   .container { padding: 16px 14px 60px; }
-  .hero { padding: 24px 20px; }
-  .hero-title { font-size: 21px; }
+  .hero { padding: 22px 18px; }
+  .hero-title { font-size: 20px; }
   .hero-steps { grid-template-columns: 1fr; }
-  .header { padding: 20px; }
+  .header { padding: 18px; }
   .sub-grid { grid-template-columns: 1fr; }
+  .tab-btn { min-width: 100px; padding: 9px 8px; font-size: 12px; }
 }
 </style>
 </head>
 <body>
-<div class="container">
-
-<!-- ================================================================ -->
-<!--                          HEADER                                    -->
-<!-- ================================================================ -->
-<div class="header glass">
-  <div class="header-left">
-    <h1>HD6002 AI Ethics & Governance</h1>
-    <div class="sub">Dr. Sabrina Luk · AY2026-27 Semester 1 · 3 AU</div>
-  </div>
-  <div class="header-right">
-    <div class="progress-ring" id="progressRing" title="材料收集进度">0/13</div>
-    <button class="btn btn-sm" onclick="resetAll()" title="清除所有数据">🔄 重置</button>
-  </div>
-</div>
-
-<!-- ================================================================ -->
-<!--                     THIS WEEK HERO                                -->
-<!-- ================================================================ -->
-<div class="hero glass" id="thisWeekHero">
-  <div class="hero-badge"><span class="dot"></span>Week 1 · 入门奠基</div>
-  <div class="hero-title">AI、伦理与治理入门</div>
-  <div class="hero-sub">这不是"导论随便听听"——本周是整门课的地基。按顺序完成以下四步，点击跳转到下方详细内容。</div>
-  <div class="hero-steps" id="heroSteps"></div>
-</div>
-
-<!-- ================================================================ -->
-<!--                       DROP ZONE                                   -->
-<!-- ================================================================ -->
-<div class="dropzone-wrap">
-  <div class="dropzone glass" id="mainDropzone">
-    <div class="dropzone-icon">📂</div>
-    <div class="dropzone-title">将课件或阅读 PDF 拖放到这里</div>
-    <div class="dropzone-hint">支持 .PDF、.pptx 文件 · 自动识别周次和类型 · 也可点击选择文件</div>
-    <input type="file" id="fileInput" multiple accept=".pdf,.pptx,.ppt,.docx,.doc" style="display:none">
-    <div class="dropzone-feedback" id="dropFeedback"></div>
-  </div>
-</div>
-
-<!-- ================================================================ -->
-<!--                        DASHBOARD                                  -->
-<!-- ================================================================ -->
-<div class="dashboard">
-  <div class="glass" style="overflow:hidden;">
-    <div class="card-body">
-      <div class="card-title">📊 评分结构</div>
-      <div class="assessment-item"><span class="name">课堂讨论</span><span class="pct">15%</span><span class="meta">每周</span></div>
-      <div class="assessment-item"><span class="name">Quiz 1</span><span class="pct">15%</span><span class="meta">Week 5 · 闭卷·无补考</span></div>
-      <div class="assessment-item"><span class="name">Quiz 2</span><span class="pct">15%</span><span class="meta">Week 10 · 闭卷·无补考</span></div>
-      <div class="assessment-item"><span class="name">反思论文</span><span class="pct">15%</span><span class="meta">Week 7 · 课内当堂</span></div>
-      <div class="assessment-item"><span class="name">小组展示</span><span class="pct">20%</span><span class="meta">Week 12 (团队15%+个人5%)</span></div>
-      <div class="assessment-item"><span class="name">案例分析</span><span class="pct">20%</span><span class="meta">Week 13 · 闭卷</span></div>
-    </div>
-  </div>
-  <div class="glass" style="overflow:hidden;">
-    <div class="card-body">
-      <div class="card-title">⚡ 关键节点</div>
-      <div class="milestone"><div class="milestone-dot info"></div><div><span class="milestone-week">Week 4</span><span class="milestone-desc">确定小组展示主题 + 组队</span></div></div>
-      <div class="milestone"><div class="milestone-dot danger"></div><div><span class="milestone-week">Week 5</span><span class="milestone-desc">Quiz 1 (覆盖 Week 1-4) · 闭卷·无补考</span></div></div>
-      <div class="milestone"><div class="milestone-dot warn"></div><div><span class="milestone-week">Week 7</span><span class="milestone-desc">课内反思论文 (AI in Healthcare) · 无补考</span></div></div>
-      <div class="milestone"><div class="milestone-dot danger"></div><div><span class="milestone-week">Week 10</span><span class="milestone-desc">Quiz 2 (覆盖 Week 5-9) · 闭卷·无补考</span></div></div>
-      <div class="milestone"><div class="milestone-dot info"></div><div><span class="milestone-week">Week 12</span><span class="milestone-desc">小组展示 (PPT 课前2天提交 Turnitin)</span></div></div>
-      <div class="milestone"><div class="milestone-dot danger"></div><div><span class="milestone-week">Week 13</span><span class="milestone-desc">闭卷案例分析 (综合) · 无补考</span></div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ================================================================ -->
-<!--                     MATERIALS GRID                                 -->
-<!-- ================================================================ -->
-<div class="glass" style="overflow:hidden;margin-bottom:24px;">
-  <div class="card-body">
-    <div class="card-title" style="justify-content:space-between;flex-wrap:wrap;">
-      <span>📁 材料收集状态</span>
-      <span style="font-size:12px;color:var(--text-muted);font-weight:400;text-transform:none;">
-        🟢 齐全 &nbsp; 🟡 部分 &nbsp; 🔴 关键周 &nbsp; ⚪ 未收集
-      </span>
-    </div>
-    <div class="materials-grid" id="materialsGrid"></div>
-    <p style="margin-top:10px;font-size:12px;color:var(--text-muted);">💡 将文件拖到上方拖放区，系统自动识别。点击方块跳转。</p>
-  </div>
-</div>
-
-<!-- ================================================================ -->
-<!--                      ILO REFERENCE                                -->
-<!-- ================================================================ -->
-<div class="glass" style="overflow:hidden;margin-bottom:20px;">
-  <div class="card-body">
-    <div class="card-title">🎯 五大学习目标 (ILOs)</div>
-    <div class="ilo-grid">
-      <div class="ilo-chip ilo-1"><strong>ILO 1</strong>描述 AI 及其不同类型</div>
-      <div class="ilo-chip ilo-2"><strong>ILO 2</strong>识别并解释 AI 伦理原则</div>
-      <div class="ilo-chip ilo-3"><strong>ILO 3</strong>分析 AI 应用的收益与风险</div>
-      <div class="ilo-chip ilo-4"><strong>ILO 4</strong>比较各国 AI 治理方法</div>
-      <div class="ilo-chip ilo-5"><strong>ILO 5</strong>识别有效 AI 治理的促进与障碍因素</div>
-    </div>
-  </div>
-</div>
-
-<!-- ================================================================ -->
-<!--                     WEEK SECTIONS                                 -->
-<!-- ================================================================ -->
-<div id="weekSections"></div>
-
-<!-- ================================================================ -->
-<!--                         FOOTER                                    -->
-<!-- ================================================================ -->
-<footer class="site-footer">
-  <span>Maintained by <strong>ZhouXiang 周想</strong></span>
-  <span class="counter-wrap"><span class="counter-dot"></span><span id="visitDisplay">加载中…</span></span>
-</footer>
-
-</div>
-
+<div class="container" id="app"></div>
 <div class="toast" id="toast"></div>
 
-<!-- ================================================================ -->
-<!--                        SCRIPT                                     -->
-<!-- ================================================================ -->
 <script>
-// ==============================
-//         DATA MANAGEMENT
-// ==============================
-const DEFAULT_STATE = {
-  materials: {},
-  notes: {},
-  stepCompletion: {},
-  lastUpdated: null
-};
+// ================================================================
+//                     STATE MANAGEMENT
+// ================================================================
+const STORAGE_KEY = 'hd6002_studyhub';
+const LANG_KEY = 'hd6002_lang';
+
+function getDefaultState() {
+  const s = {
+    materials: {}, notes: {}, stepCompletion: {},
+    activeTabs: {}, quizState: {},
+    lang: localStorage.getItem(LANG_KEY) || 'zh',
+    lastUpdated: new Date().toISOString()
+  };
+  for (let w = 1; w <= 13; w++) {
+    s.materials[w] = { files: [] };
+    s.notes[w] = '';
+  }
+  return s;
+}
+
+function migrateSlot(slot) {
+  if (!slot) return [];
+  if (Array.isArray(slot.files)) return slot.files;              // new array format
+  if (slot.collected && slot.filename) return [{ filename: slot.filename }]; // oldest format
+  return [];
+}
 
 function loadState() {
   try {
-    const raw = localStorage.getItem('hd6002_studyhub');
+    const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
       const state = JSON.parse(raw);
       for (let w = 1; w <= 13; w++) {
-        if (!state.materials[w]) state.materials[w] = { slides: {collected: false, filename: ''}, reading1: {collected: false, filename: ''}, reading2: {collected: false, filename: ''} };
-        if (!state.materials[w].reading2) state.materials[w].reading2 = { collected: false, filename: '' };
+        const m = state.materials[w];
+        if (!m) { state.materials[w] = { files: [] }; }
+        else if (Array.isArray(m.files)) { /* already new */ }
+        else {
+          // flatten slides / reading1 / reading2 (new-old multi-slot) into one list
+          const all = [];
+          ['slides', 'reading1', 'reading2'].forEach(slot => {
+            if (m[slot]) all.push(...migrateSlot(m[slot]));
+          });
+          state.materials[w] = { files: all };
+        }
         if (!state.notes[w]) state.notes[w] = '';
       }
       if (!state.stepCompletion) state.stepCompletion = {};
+      if (!state.activeTabs) state.activeTabs = {};
+      if (!state.quizState) state.quizState = {};
+      if (!state.lang) state.lang = localStorage.getItem(LANG_KEY) || 'zh';
       return state;
     }
   } catch(e) { console.error('State load error:', e); }
   return getDefaultState();
 }
 
-function getDefaultState() {
-  const s = { materials: {}, notes: {}, stepCompletion: {}, lastUpdated: new Date().toISOString() };
-  for (let w = 1; w <= 13; w++) {
-    s.materials[w] = { slides: {collected: false, filename: ''}, reading1: {collected: false, filename: ''}, reading2: {collected: false, filename: ''} };
-    s.notes[w] = '';
-  }
-  return s;
-}
-
-function saveState(state) {
-  state.lastUpdated = new Date().toISOString();
-  localStorage.setItem('hd6002_studyhub', JSON.stringify(state));
-}
-
 let appState = loadState();
+let lang = appState.lang || 'zh';
 
-function preloadWeek1() {
-  if (!appState.materials[1]) appState.materials[1] = { slides: {collected: false, filename: ''}, reading1: {collected: false, filename: ''}, reading2: {collected: false, filename: ''} };
-  if (!appState.notes[1]) appState.notes[1] = '';
-  saveState(appState);
+function saveState() {
+  appState.lastUpdated = new Date().toISOString();
+  appState.lang = lang;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+  localStorage.setItem(LANG_KEY, lang);
 }
-preloadWeek1();
 
-// ==============================
-//        WEEK DEFINITIONS
-// ==============================
+// ================================================================
+//                     I18N HELPERS
+// ================================================================
+const S = {
+  zh: {
+    appSub: 'Dr. Sabrina Luk · AY2026-27 Sem 1 · 3 AU',
+    langBtn: 'English',
+    reset: '🔄 重置',
+    progressTitle: '材料收集进度',
+    heroBadge: 'Week 1 · 入门奠基',
+    heroTitle: 'AI、伦理与治理入门',
+    heroSub: '这不是“导论随便听听”——本周是整门课的地基。按顺序完成四步，点击跳转到对应模块。',
+    heroSteps: [
+      { title: '填空练习', desc: '完成课件两处填空，理解 AI 能力维度与 ML 三范式' },
+      { title: '知识图谱', desc: '建立四层认知：定义→技术→伦理 vs 治理→原则与风险' },
+      { title: '精读阅读', desc: '读懂两篇指定阅读：UNESCO (2022) 与 PwC (2024)' },
+      { title: '模拟 Quiz', desc: '5 道选择 + 3 道简答，检验本周掌握程度' }
+    ],
+    dropTitle: '将课件或阅读文件拖放到这里',
+    dropHint: '支持 .pdf / .pptx / .docx · 自动识别文件名中的 Week X · 也可点击选择（可多选）',
+    assmtTitle: '📊 评分结构',
+    assessments: [
+      { name: '课堂讨论', pct: '15%', meta: '每周' },
+      { name: 'Quiz 1', pct: '15%', meta: 'Week 5 · 闭卷·无补考' },
+      { name: 'Quiz 2', pct: '15%', meta: 'Week 10 · 闭卷·无补考' },
+      { name: '反思论文', pct: '15%', meta: 'Week 7 · 课内当堂' },
+      { name: '小组展示', pct: '20%', meta: 'Week 12 (团队15%+个人5%)' },
+      { name: '案例分析', pct: '20%', meta: 'Week 13 · 闭卷' }
+    ],
+    mileTitle: '⚡ 关键节点',
+    milestones: [
+      { cls: 'info', wk: 'Week 4', desc: '确定小组展示主题 + 组队' },
+      { cls: 'danger', wk: 'Week 5', desc: 'Quiz 1 (覆盖 Week 1-4) · 闭卷·无补考' },
+      { cls: 'warn', wk: 'Week 7', desc: '课内反思论文 (AI in Healthcare) · 无补考' },
+      { cls: 'danger', wk: 'Week 10', desc: 'Quiz 2 (覆盖 Week 5-9) · 闭卷·无补考' },
+      { cls: 'info', wk: 'Week 12', desc: '小组展示 (PPT 课前2天提交 Turnitin)' },
+      { cls: 'danger', wk: 'Week 13', desc: '闭卷案例分析 (综合) · 无补考' }
+    ],
+    matsTitle: '📁 材料收集状态',
+    matsLegend: '🟢 齐全　🟡 部分　🔴 关键周　⚪ 未收集',
+    matsHint: '💡 将文件拖到上方拖放区，系统自动归到对应周。点击方块跳转。',
+    iloTitle: '🎯 五大学习目标 (ILOs)',
+    ilos: [
+      '描述 AI 及其不同类型',
+      '识别并解释 AI 伦理原则',
+      '分析 AI 应用的收益与风险',
+      '比较各国 AI 治理方法',
+      '识别有效 AI 治理的促进与障碍因素'
+    ],
+    weekFilesTitle: '📂 本周材料',
+    weekFilesEmpty: '尚未上传材料 — 拖放文件到此处，或点击下方按钮添加（支持多个附件）',
+    weekFilesAdd: '+ 点击添加文件（可多选）',
+    tabs: [
+      { key: 'exercise', ico: '✏️', label: '填空练习' },
+      { key: 'knowledge', ico: '🗺️', label: '知识图谱' },
+      { key: 'reading',   ico: '📖', label: '精读阅读' },
+      { key: 'quiz',      ico: '📝', label: '模拟 Quiz' }
+    ],
+    placeholderTitle: '本周内容待补充',
+    placeholderBody: '上传 Week {w} 的课件和阅读后，我可以帮你整理：填空练习答案、知识图谱、精读指南和模拟 Quiz。把文件拖到上方材料区，然后在对话中告诉我。',
+    quizComingTitle: '模拟 Quiz 待制作',
+    quizComingBody: '等本周材料到位后，我会基于课件和阅读出 5 道选择题 + 3 道简答题（中英双语、使用教材原词）。',
+    quizReadyTitle: '📝 模拟 Quiz — Week {w}',
+    quizReadySub: '5 道选择题 + 3 道简答题 · 英文术语使用教材原词',
+    quizScore: '已答对 {n}/{t}',
+    quizRetake: '↺ 重新作答',
+    quizMCQTitle: '选择题（点击选项作答）',
+    quizShortTitle: '简答题（先自己答，再对照参考答案）',
+    showModel: '📖 查看参考答案',
+    hideModel: '收起参考答案',
+    notesHint: '📝 课堂笔记（自动保存到浏览器）',
+    notesPlaceholder: '在这里输入本周的课堂笔记、关键概念、思考问题...',
+    saved: '已保存 ✓',
+    removed: '已移除 "{f}"',
+    addedToast: '✅ "{f}" → Week {w}',
+    dupToast: '⚠️ "{f}" 已存在',
+    weekFull: '材料齐全',
+    weekPartial: '部分收集',
+    weekEmpty: '未收集',
+    keyWeek: '⚡关键周',
+    footerMaintained: 'Maintained by',
+    visitLoading: '加载中…'
+  },
+  en: {
+    appSub: 'Dr. Sabrina Luk · AY2026-27 Sem 1 · 3 AU',
+    langBtn: '中文',
+    reset: '🔄 Reset',
+    progressTitle: 'Materials progress',
+    heroBadge: 'Week 1 · Foundation',
+    heroTitle: 'AI, Ethics & Governance — Introduction',
+    heroSub: 'This is not a "sit back and listen" intro — it is the foundation of the whole course. Complete the four steps in order; click to jump to the module.',
+    heroSteps: [
+      { title: 'Exercises', desc: 'Complete the two fill-in exercises from the slides: AI capability dimensions & ML paradigms' },
+      { title: 'Knowledge Map', desc: 'Build the four-layer framework: definitions → techniques → ethics vs governance → principles & risks' },
+      { title: 'Close Reading', desc: 'Master the two assigned readings: UNESCO (2022) and PwC (2024)' },
+      { title: 'Mock Quiz', desc: '5 MCQs + 3 short answers to test what you have learned this week' }
+    ],
+    dropTitle: 'Drop course files here',
+    dropHint: '.pdf / .pptx / .docx · auto-detects "Week X" in filename · click to choose (multiple allowed)',
+    assmtTitle: '📊 Assessment Structure',
+    assessments: [
+      { name: 'Class Participation', pct: '15%', meta: 'Every week' },
+      { name: 'Quiz 1', pct: '15%', meta: 'Week 5 · closed-book · no make-up' },
+      { name: 'Quiz 2', pct: '15%', meta: 'Week 10 · closed-book · no make-up' },
+      { name: 'Reflection Paper', pct: '15%', meta: 'Week 7 · in-class' },
+      { name: 'Group Presentation', pct: '20%', meta: 'Week 12 (team 15% + individual 5%)' },
+      { name: 'Case Study Analysis', pct: '20%', meta: 'Week 13 · closed-book' }
+    ],
+    mileTitle: '⚡ Key Milestones',
+    milestones: [
+      { cls: 'info', wk: 'Week 4', desc: 'Confirm presentation topic + form teams' },
+      { cls: 'danger', wk: 'Week 5', desc: 'Quiz 1 (covers Week 1-4) · closed-book · no make-up' },
+      { cls: 'warn', wk: 'Week 7', desc: 'In-class reflection paper (AI in Healthcare) · no make-up' },
+      { cls: 'danger', wk: 'Week 10', desc: 'Quiz 2 (covers Week 5-9) · closed-book · no make-up' },
+      { cls: 'info', wk: 'Week 12', desc: 'Group presentation (PPT to Turnitin 2 days before)' },
+      { cls: 'danger', wk: 'Week 13', desc: 'Closed-book case study (comprehensive) · no make-up' }
+    ],
+    matsTitle: '📁 Materials Status',
+    matsLegend: '🟢 Complete　🟡 Partial　🔴 Key week　⚪ Not collected',
+    matsHint: '💡 Drop files into the zone above; they are routed to the right week automatically. Click a cell to jump.',
+    iloTitle: '🎯 Intended Learning Outcomes',
+    ilos: [
+      'Describe AI and its different types',
+      'Identify and explain AI ethics principles',
+      'Analyse benefits and risks of AI applications',
+      'Compare AI governance approaches across countries',
+      'Identify enablers and barriers to effective AI governance'
+    ],
+    weekFilesTitle: '📂 Week Materials',
+    weekFilesEmpty: 'No files yet — drop files here, or click the button below to add (multiple allowed)',
+    weekFilesAdd: '+ Add files (multiple allowed)',
+    tabs: [
+      { key: 'exercise', ico: '✏️', label: 'Exercises' },
+      { key: 'knowledge', ico: '🗺️', label: 'Knowledge Map' },
+      { key: 'reading',   ico: '📖', label: 'Close Reading' },
+      { key: 'quiz',      ico: '📝', label: 'Mock Quiz' }
+    ],
+    placeholderTitle: 'Content for this week is pending',
+    placeholderBody: 'Once you upload the Week {w} slides and readings, I can prepare: exercise answers, knowledge map, reading guide and a mock quiz. Drop files into the materials area above, then tell me in the chat.',
+    quizComingTitle: 'Mock quiz coming soon',
+    quizComingBody: 'When this week\'s materials arrive, I will build 5 MCQs + 3 short-answer questions (bilingual, using the exact terminology from the readings).',
+    quizReadyTitle: '📝 Mock Quiz — Week {w}',
+    quizReadySub: '5 MCQs + 3 short answers · English terms follow the course materials',
+    quizScore: 'Correct: {n}/{t}',
+    quizRetake: '↺ Retake',
+    quizMCQTitle: 'Multiple choice (click an option)',
+    quizShortTitle: 'Short answers (answer first, then check the model answer)',
+    showModel: '📖 Show model answer',
+    hideModel: 'Hide model answer',
+    notesHint: '📝 Class notes (auto-saved in your browser)',
+    notesPlaceholder: 'Type your notes, key concepts, and questions for this week here...',
+    saved: 'Saved ✓',
+    removed: 'Removed "{f}"',
+    addedToast: '✅ "{f}" → Week {w}',
+    dupToast: '⚠️ "{f}" already exists',
+    weekFull: 'Complete',
+    weekPartial: 'Partial',
+    weekEmpty: 'Not collected',
+    keyWeek: '⚡Key week',
+    footerMaintained: 'Maintained by',
+    visitLoading: 'Loading…'
+  }
+};
+
+function t(key) { return (S[lang] && S[lang][key]) || S.zh[key]; }
+function bi(obj) { return obj[lang] || obj.zh; }
+
+// ================================================================
+//                      WEEK DEFINITIONS
+// ================================================================
 const WEEKS = [
-  { num: 1, topic: 'Introduction to AI, Ethics and Governance', flags: [], defaultReadings: ['UNESCO (2022)', 'Reese & Becker (2024) PwC'], hasRead2: true },
-  { num: 2, topic: 'Human Intelligence vs. Artificial Intelligence', flags: [], defaultReadings: ['Cambridge Judge BS (2025)', 'Jarrahi et al. (2022)'], hasRead2: true, extraRead: 'Stern (2025) WSJ' },
-  { num: 3, topic: 'Trust in AI', flags: [], defaultReadings: ['Afroogh et al. (2024)', 'Gillespie et al. (2025)'], hasRead2: true },
-  { num: 4, topic: 'Predictive Policing', flags: ['组队·定题'], defaultReadings: ['Mavis (2025)', 'Soderholm (2023)'], hasRead2: true },
-  { num: 5, topic: 'AI Surveillance & Human Rights', flags: ['Quiz 1'], defaultReadings: ['Francis (2024)', 'Gabrielli (2025)'], hasRead2: true },
-  { num: 6, topic: 'Predictive Algorithms in Justice System', flags: [], defaultReadings: ['Fine et al. (2023)'], hasRead2: false },
-  { num: 7, topic: 'AI in Healthcare', flags: ['反思论文'], defaultReadings: ['Fahim et al. (2025)'], hasRead2: false },
-  { num: 8, topic: 'AI in Recruitment', flags: [], defaultReadings: ['Rigotti & Fosch-Villaronga (2024)', 'Zhang et al. (2025)'], hasRead2: true },
-  { num: 9, topic: 'Automated Decision Making (Public Sector)', flags: [], defaultReadings: ['Tian et al. (2025)'], hasRead2: false },
-  { num: 10, topic: 'AI-Driven Disinformation', flags: ['Quiz 2'], defaultReadings: ['Romanishyn et al. (2025)'], hasRead2: false },
-  { num: 11, topic: 'Governing AI: The 5W1H Framework', flags: [], defaultReadings: ['Liao et al. (2025)'], hasRead2: false },
-  { num: 12, topic: 'Group Presentation', flags: ['小组展示'], defaultReadings: [], hasRead2: false },
-  { num: 13, topic: 'Case Study Analysis', flags: ['案例分析'], defaultReadings: [], hasRead2: false }
+  { num: 1, topic: { zh: 'AI、伦理与治理导论', en: 'Introduction to AI, Ethics and Governance' }, flags: [], hasContent: true, expected: 2 },
+  { num: 2, topic: { zh: '人类智能 vs 人工智能', en: 'Human Intelligence vs. Artificial Intelligence' }, flags: [], expected: 2 },
+  { num: 3, topic: { zh: 'AI 中的信任', en: 'Trust in AI' }, flags: [], expected: 2 },
+  { num: 4, topic: { zh: '预测性警务', en: 'Predictive Policing' }, flags: ['warn'], expected: 2 },
+  { num: 5, topic: { zh: 'AI 监控与人权', en: 'AI Surveillance & Human Rights' }, flags: ['quiz'], expected: 2 },
+  { num: 6, topic: { zh: '司法系统中的预测算法', en: 'Predictive Algorithms in Justice System' }, flags: [], expected: 1 },
+  { num: 7, topic: { zh: '医疗中的 AI', en: 'AI in Healthcare' }, flags: ['paper'], expected: 1 },
+  { num: 8, topic: { zh: '招聘中的 AI', en: 'AI in Recruitment' }, flags: [], expected: 2 },
+  { num: 9, topic: { zh: '公共部门自动化决策', en: 'Automated Decision Making (Public Sector)' }, flags: [], expected: 1 },
+  { num: 10, topic: { zh: 'AI 驱动的虚假信息', en: 'AI-Driven Disinformation' }, flags: ['quiz'], expected: 1 },
+  { num: 11, topic: { zh: '治理 AI：5W1H 框架', en: 'Governing AI: The 5W1H Framework' }, flags: [], expected: 1 },
+  { num: 12, topic: { zh: '小组展示', en: 'Group Presentation' }, flags: ['pres'], expected: 1 },
+  { num: 13, topic: { zh: '案例分析', en: 'Case Study Analysis' }, flags: ['case'], expected: 1 }
 ];
-
 const KEY_WEEKS = [5, 7, 10, 13];
+const FLAG_KEYS = { quiz: 'quiz', paper: 'paper', pres: 'pres', case: 'case', warn: 'warn' };
 
-// ==============================
-//        FILE PROCESSING
-// ==============================
+function weekTopic(w) { return bi(w.topic); }
+function flagText(f, wk) {
+  const map = {
+    warn: { zh: '组队·定题', en: 'Team & Topic' },
+    quiz: { zh: 'Quiz ' + (wk.num === 5 ? '1' : '2'), en: 'Quiz ' + (wk.num === 5 ? '1' : '2') },
+    paper: { zh: '反思论文', en: 'Reflection Paper' },
+    pres: { zh: '小组展示', en: 'Group Presentation' },
+    case: { zh: '案例分析', en: 'Case Study' }
+  };
+  return map[f][lang];
+}
+
+// ================================================================
+//                    FILE PROCESSING (single area)
+// ================================================================
 function getWeekFromFilename(filename) {
   const name = filename.toLowerCase();
-  let match = name.match(/week\s*[_.-]?\s*(\d+)/i);
-  if (match) return parseInt(match[1]);
-  match = name.match(/\bw(\d+)\b/i);
-  if (match) return parseInt(match[1]);
+  let m = name.match(/week\s*[_.-]?\s*(\d+)/i);
+  if (m) return parseInt(m[1]);
+  m = name.match(/\bw(\d+)\b/i);
+  if (m) return parseInt(m[1]);
   return null;
 }
 
-function getSlotFromFilename(filename) {
-  const name = filename.toLowerCase();
-  if (/student.version|slides|lecture|课件|lecture\s*slides|week\s*\d+\s*(\.pdf|$)/i.test(name) && !/reading|et al|pwc|unesco|recommendation/i.test(name)) {
-    return 'slides';
+function addFileToWeek(weekNum, filename, silent) {
+  if (!appState.materials[weekNum]) appState.materials[weekNum] = { files: [] };
+  const list = appState.materials[weekNum].files;
+  if (list.some(f => f.filename === filename)) {
+    if (!silent) showToast(t('dupToast').replace('{f}', filename));
+    return false;
   }
-  return 'reading';
+  list.push({ filename: filename });
+  saveState();
+  if (!silent) showToast(t('addedToast').replace('{f}', filename).replace('{w}', weekNum));
+  return true;
 }
 
-function determineReadingSlot(weekNum, filename) {
-  const name = filename.toLowerCase();
-  const week = WEEKS.find(w => w.num === weekNum);
-  if (!week) return 'reading1';
-  const readings = week.defaultReadings || [];
-  if (readings.length === 0) return 'reading1';
-  for (let i = 0; i < readings.length; i++) {
-    const r = readings[i].toLowerCase();
-    const firstWord = r.split(/[,\s(]+/)[0].toLowerCase();
-    if (name.includes(firstWord) && firstWord.length > 2) {
-      return i === 0 ? 'reading1' : 'reading2';
-    }
-  }
-  const mats = appState.materials[weekNum];
-  if (mats && !mats.reading1.collected) return 'reading1';
-  if (mats && mats.reading1.collected && week.hasRead2 && !mats.reading2.collected) return 'reading2';
-  return 'reading1';
-}
-
-function processFile(filename) {
-  const week = getWeekFromFilename(filename);
-  if (!week || week < 1 || week > 13) {
-    return { success: false, message: '\u65e0\u6cd5\u8bc6\u522b "' + filename + '" \u5bf9\u5e94\u7684\u5468\u6b21\u3002\u8bf7\u786e\u8ba4\u6587\u4ef6\u540d\u5305\u542b "Week X" \u4fe1\u606f\u3002' };
-  }
-  const slot = getSlotFromFilename(filename);
-  if (slot === 'slides') {
-    if (!appState.materials[week]) initWeekMaterials(week);
-    appState.materials[week].slides = { collected: true, filename: filename };
-    saveState(appState);
-    return { success: true, message: '\u2705 "' + filename + '" \u5df2\u8bc6\u522b\u4e3a Week ' + week + ' \u8bfe\u4ef6', week, slot: 'slides' };
-  } else {
-    if (!appState.materials[week]) initWeekMaterials(week);
-    const readingSlot = determineReadingSlot(week, filename);
-    if (readingSlot === 'reading1') {
-      appState.materials[week].reading1 = { collected: true, filename: filename };
-    } else {
-      appState.materials[week].reading2 = { collected: true, filename: filename };
-    }
-    saveState(appState);
-    return { success: true, message: '\u2705 "' + filename + '" \u5df2\u8bc6\u522b\u4e3a Week ' + week + ' \u9605\u8bfb', week, slot: readingSlot };
-  }
-}
-
-function initWeekMaterials(weekNum) {
-  appState.materials[weekNum] = {
-    slides: { collected: false, filename: '' },
-    reading1: { collected: false, filename: '' },
-    reading2: { collected: false, filename: '' }
-  };
-  if (!appState.notes[weekNum]) appState.notes[weekNum] = '';
-}
-
-function handleFiles(files) {
-  if (!files || files.length === 0) return;
+function handleFiles(fileList) {
   const feedback = document.getElementById('dropFeedback');
-  let messages = [];
-  let anySuccess = false;
-  for (const file of files) {
-    const result = processFile(file.name);
-    messages.push(result.message);
-    if (result.success) anySuccess = true;
+  if (!fileList || fileList.length === 0) return;
+  const messages = [];
+  let anySuccess = false, anyFail = false;
+  for (const file of fileList) {
+    const wk = getWeekFromFilename(file.name);
+    if (!wk || wk < 1 || wk > 13) {
+      messages.push('⚠️ "' + file.name + '" ' + (lang === 'zh' ? '无法识别周次，请确认文件名含 Week X' : 'week not recognised — filename should contain "Week X"'));
+      anyFail = true;
+    } else if (addFileToWeek(wk, file.name, true)) {
+      messages.push('✅ "' + file.name + '" → Week ' + wk);
+      anySuccess = true;
+    } else {
+      anyFail = true;
+    }
   }
-  feedback.className = 'dropzone-feedback ' + (anySuccess ? 'success' : 'error');
+  feedback.className = 'dropzone-feedback ' + (anySuccess ? (anyFail ? 'info' : 'success') : 'error');
   feedback.textContent = messages.join('\n');
   feedback.style.display = 'block';
   setTimeout(() => { feedback.style.display = 'none'; }, 5000);
   refreshAll();
 }
 
-// ==============================
-//         PROGRESS CALC
-// ==============================
-function getTotalSlots() {
-  let total = 0;
-  for (let w = 1; w <= 13; w++) {
-    total++;
-    total++;
-    const week = WEEKS.find(wk => wk.num === w);
-    if (week && week.hasRead2) total++;
-  }
-  return total;
-}
-
-function getCollectedCount() {
-  let count = 0;
-  for (let w = 1; w <= 13; w++) {
-    const m = appState.materials[w];
-    if (m) {
-      if (m.slides && m.slides.collected) count++;
-      if (m.reading1 && m.reading1.collected) count++;
-      if (m.reading2 && m.reading2.collected) count++;
-    }
-  }
-  return count;
-}
-
-function getWeekCompletion(weekNum) {
-  const m = appState.materials[weekNum];
-  const week = WEEKS.find(w => w.num === weekNum);
-  if (!m || !week) return 'empty';
-  let expected = 2;
-  if (week.hasRead2) expected = 3;
-  let collected = 0;
-  if (m.slides && m.slides.collected) collected++;
-  if (m.reading1 && m.reading1.collected) collected++;
-  if (m.reading2 && m.reading2.collected) collected++;
-  if (collected === 0) return 'empty';
-  if (collected === expected) return 'full';
+// ================================================================
+//                    PROGRESS & COMPLETION
+// ================================================================
+function filesOf(w) { return (appState.materials[w] && appState.materials[w].files) || []; }
+function getWeekCompletion(w) {
+  const week = WEEKS.find(x => x.num === w);
+  const n = filesOf(w).length;
+  if (n === 0) return 'empty';
+  if (n >= (week ? week.expected : 1)) return 'full';
   return 'partial';
 }
-
-function isKeyWeek(weekNum) {
-  return KEY_WEEKS.includes(weekNum);
+function isKeyWeek(w) { return KEY_WEEKS.includes(w); }
+function getCollectedCount() {
+  let c = 0;
+  for (let w = 1; w <= 13; w++) c += filesOf(w).length > 0 ? 1 : 0;
+  return c;
 }
 
-// ==============================
-//           RENDERING
-// ==============================
-function renderProgress() {
-  const ring = document.getElementById('progressRing');
-  const total = getTotalSlots();
-  const collected = getCollectedCount();
-  ring.textContent = collected + '/' + total;
-  const pct = collected / total;
-  if (pct >= 0.5) { ring.style.borderColor = 'var(--green)'; ring.style.color = 'var(--green)'; }
-  else if (pct > 0) { ring.style.borderColor = 'var(--amber)'; ring.style.color = 'var(--amber)'; }
-  else { ring.style.borderColor = '#cbd5e1'; ring.style.color = 'var(--text-muted)'; }
+// ================================================================
+//                      WEEK 1 CONTENT
+// ================================================================
+const W1 = {
+  exerciseTitle: { zh: '填空练习：理解 AI 能力维度与机器学习范式', en: 'Exercises: AI capability dimensions & machine learning paradigms' },
+  exerciseSub: { zh: '完成课件第 36 页和第 41 页的两处填空。这是 Quiz 1 的必考内容。', en: 'Complete the two fill-in exercises from slides 36 and 41 — a must-know for Quiz 1.' },
+
+  ex1Title: { zh: '练习一：AI 扫地机器人能力分析（幻灯片第 36 页）', en: 'Exercise 1: Analysing an AI robot vacuum cleaner (slide 36)' },
+  ex1Cols: { zh: ['能力维度', '答案', '含义', '技术实现'], en: ['Capability', 'Answer', 'Meaning', 'Technical implementation'] },
+  ex1Rows: [
+    { cap: 'Perception', capZh: '感知', ans: 'scan', meaning: { zh: '通过计算机视觉感知环境', en: 'perceive the environment through computer vision' }, tech: { zh: 'LiDAR + 传感器实时建图', en: 'LiDAR + sensors for real-time mapping' } },
+    { cap: 'Language processing', capZh: '语言处理', ans: 'understand', meaning: { zh: '理解语音指令', en: 'understand voice commands' }, tech: { zh: 'NLP 自然语言处理', en: 'NLP — natural language processing' } },
+    { cap: 'Reasoning', capZh: '推理', ans: 'determine', meaning: { zh: '自主决策清洁策略', en: 'autonomously decide cleaning strategies' }, tech: { zh: '基于数据分析确定优先级、路径', en: 'data-driven priority and route decisions' } },
+    { cap: 'Learning', capZh: '学习', ans: 'improve', meaning: { zh: '从经验中持续优化', en: 'continuously improve from experience' }, tech: { zh: '优化污渍检测、路线规划', en: 'optimise dirt detection and path planning' } }
+  ],
+
+  ex2Title: { zh: '练习二：机器学习三种范式（幻灯片第 41 页）', en: 'Exercise 2: Three machine learning paradigms (slide 41)' },
+  ex2Cols: { zh: ['类型', '训练方式', '学习目标', '典型用例'], en: ['Paradigm', 'Training data', 'Learning goal', 'Typical use cases'] },
+  ex2Rows: [
+    { type: 'Supervised', ans: 'labeled', goal: { zh: '分类 + 预测/回归', en: 'classification + prediction/regression' }, use: { zh: '物体检测、垃圾邮件识别、医疗诊断', en: 'object detection, spam filtering, medical diagnosis' } },
+    { type: 'Unsupervised', ans: 'unlabeled', goal: { zh: '发现隐藏模式', en: 'discover hidden patterns' }, use: { zh: '客户分群、异常检测', en: 'customer segmentation, anomaly detection' } },
+    { type: 'Reinforcement', ans: 'trial & error', goal: { zh: '通过奖励/惩罚优化', en: 'optimise via rewards / penalties' }, use: { zh: '机器人、游戏 AI、自动驾驶', en: 'robotics, game AI, autonomous driving' } }
+  ],
+  exInsight: { zh: '💡 关键区分：有无标签区分监督/无监督；有无奖惩机制区分强化学习。GPT 的 RLHF 就是强化学习的应用。', en: '💡 Key distinction: labelled vs unlabelled data separates supervised from unsupervised; reward-penalty separates reinforcement learning. GPT\'s RLHF is reinforcement learning in action.' },
+
+  kmTitle: { zh: '知识图谱：建立 AI 治理的四层认知框架', en: 'Knowledge Map: the four-layer cognitive framework of AI governance' },
+  kmSub: { zh: '从定义到技术谱系，再到伦理与治理的区分，最后到原则与风险——这是整门课的思维骨架。', en: 'From definitions to the technical spectrum, to the ethics–governance distinction, to principles and risks — this is the thinking skeleton of the whole course.' },
+  kmLayers: [
+    { title: { zh: 'Layer 1: AI 是什么？（定义层）', en: 'Layer 1: What is AI? (Definitions)' },
+      desc: { zh: 'McCarthy → UNESCAP → ISO → Rai et al. → 核心共识：<em>能执行通常需要人类智能才能完成的任务的计算机系统</em>', en: 'McCarthy → UNESCAP → ISO → Rai et al. → core consensus: <em>computer systems able to perform tasks normally requiring human intelligence</em>' } },
+    { title: { zh: 'Layer 2: AI 技术谱系（概念关系层）', en: 'Layer 2: The AI technical spectrum (conceptual relations)' },
+      desc: { zh: 'AI ⊃ ML ⊃ DL · 三种范式 (Supervised / Unsupervised / Reinforcement) · ANN 结构 (Input → Hidden → Output)', en: 'AI ⊃ ML ⊃ DL · three paradigms (Supervised / Unsupervised / Reinforcement) · ANN structure (Input → Hidden → Output)' } },
+    { title: { zh: 'Layer 3: 伦理 vs 治理（框架区分层）', en: 'Layer 3: Ethics vs Governance (framework distinction)' },
+      desc: { zh: '<strong>AI Ethics</strong> = 基础原则（“应该怎样”）· <strong>AI Governance</strong> = 把原则翻译为政策、法规和组织框架（“如何确保”）', en: '<strong>AI Ethics</strong> = foundational principles ("what should be") · <strong>AI Governance</strong> = translating principles into policies, regulations and organisational frameworks ("how to ensure")' } },
+    { title: { zh: 'Layer 4: 原则与风险（应用层）', en: 'Layer 4: Principles & risks (application)' },
+      desc: { zh: '风险：Bias · Black Box · Privacy · 原则：Proportionality · Fairness · Privacy · Accountability · 双视角：UNESCO（人权，自上而下）vs PwC（企业，自下而上）', en: 'Risks: Bias · Black Box · Privacy · Principles: Proportionality · Fairness · Privacy · Accountability · Two lenses: UNESCO (human rights, top-down) vs PwC (enterprise value, bottom-up)' } }
+  ],
+  histTitle: { zh: 'AI 历史关键里程碑', en: 'Key milestones in AI history' },
+  histCols: { zh: ['年代', '事件', '意义'], en: ['Era', 'Event', 'Significance'] },
+  histRows: [
+    { era: '1950s', ev: 'Turing Test', sig: { zh: '首次提出机器智能评价标准', en: 'first standard for evaluating machine intelligence' } },
+    { era: '1956', ev: 'Dartmouth 会议，McCarthy 提出“AI”', sig: { zh: 'AI 学科正式诞生', en: 'birth of AI as a field' } },
+    { era: '1980s', ev: 'AI 进入工业/医疗', sig: { zh: '从实验室走向产业', en: 'from the lab to industry' } },
+    { era: '2010s', ev: '深度学习黄金十年', sig: { zh: '算力+数据+算法三重突破', en: 'computing power + data + algorithms' } },
+    { era: '2020s', ev: 'GPT-4 等生成式 AI', sig: { zh: 'AI 进入“创造性”阶段', en: 'AI enters the "generative" era' } }
+  ],
+  iloIdxTitle: { zh: '核心概念对 ILO 快速索引', en: 'Core concepts → ILO quick index' },
+  iloIdxCols: { zh: ['概念', 'ILO', '考试关联'], en: ['Concept', 'ILO', 'Exam relevance'] },
+  iloIdxRows: [
+    { c: { zh: 'AI 定义 (4 来源)', en: 'AI definitions (4 sources)' }, ilo: 'ILO 1', r: { zh: 'Quiz 1 必考', en: 'Quiz 1 must-know' } },
+    { c: { zh: 'AI/ML/DL 关系 + 三种 ML', en: 'AI/ML/DL relationship + three ML paradigms' }, ilo: 'ILO 1', r: { zh: 'Quiz 1 必考', en: 'Quiz 1 must-know' } },
+    { c: { zh: 'AI 风险 (Bias/Black Box/Privacy)', en: 'AI risks (Bias / Black Box / Privacy)' }, ilo: 'ILO 2, 3', r: { zh: '课堂讨论、反思论文、案例分析', en: 'discussion, reflection paper, case study' } },
+    { c: { zh: 'Ethics vs Governance 区分', en: 'Ethics vs Governance distinction' }, ilo: 'ILO 2, 4, 5', r: { zh: '整门课核心框架', en: 'core framework of the course' } },
+    { c: { zh: 'UNESCO 原则 / PwC 价值驱动', en: 'UNESCO principles / PwC value driver' }, ilo: 'ILO 2, 4, 5', r: { zh: 'Quiz 1、跨国治理比较', en: 'Quiz 1, cross-country governance comparison' } }
+  ],
+
+  unescoTitle: { zh: '精读 UNESCO (2022)：从人权视角自上而下', en: 'Close reading — UNESCO (2022): top-down, human-rights perspective' },
+  unescoSub: { zh: '193 国通过的首个 AI 伦理全球标准。理解四大核心价值观、十项原则（其中四项为课件重点）和两项明确禁止。', en: 'The first global standard on AI ethics, adopted by 193 member states. Learn the four core values, the ten principles (four key ones), and the two prohibitions.' },
+  unescoCard: { zh: '<h5>Recommendation on the Ethics of AI</h5><p>2021 年 11 月由 193 个成员国通过 · 史上第一个 AI 伦理全球标准</p>', en: '<h5>Recommendation on the Ethics of AI</h5><p>Adopted by 193 member states, November 2021 · the first global standard on AI ethics</p>' },
+  valuesTitle: { zh: '四大核心价值观', en: 'Four core values' },
+  values: [
+    { zh: '尊重、保护和促进人权与人类尊严', en: 'Respect, protect and promote human rights and human dignity' },
+    { zh: '生活在和平、公正与互联的社会中', en: 'Live in a peaceful, fair and interconnected society' },
+    { zh: '确保多样性和包容性', en: 'Ensure diversity and inclusiveness' },
+    { zh: '环境与生态系统蓬勃发展', en: 'Environment and ecosystems flourish' }
+  ],
+  principlesTitle: { zh: '十项原则（⭐为课件重点标记）', en: 'Ten principles (⭐ = key ones highlighted in the slides)' },
+  principles: [
+    { key: true, name: { zh: 'Proportionality & Do No Harm', en: 'Proportionality & Do No Harm' }, desc: { zh: 'AI 方法不应超出实现合法目标所需', en: 'AI methods should not go beyond what is needed to achieve legitimate goals' } },
+    { key: false, name: { zh: 'Safety and Security', en: 'Safety and Security' }, desc: { zh: '避免意外伤害，防止攻击漏洞', en: 'avoid unintended harm; protect against attacks' } },
+    { key: true, name: { zh: 'Fairness & Non-discrimination', en: 'Fairness & Non-discrimination' }, desc: { zh: '包容性方法，收益惠及所有群体', en: 'inclusive approach; benefits reach all groups' } },
+    { key: false, name: { zh: 'Sustainability', en: 'Sustainability' }, desc: { zh: '评估 AI 对 SDGs 的影响', en: 'assess AI\'s impact on the SDGs' } },
+    { key: true, name: { zh: 'Right to Privacy & Data Protection', en: 'Right to Privacy & Data Protection' }, desc: { zh: '全生命周期隐私保护，知情同意', en: 'lifecycle privacy protection; informed consent' } },
+    { key: false, name: { zh: 'Human Oversight', en: 'Human Oversight' }, desc: { zh: 'AI 不取代人类最终责任', en: 'AI must not displace final human responsibility' } },
+    { key: false, name: { zh: 'Transparency & Explainability', en: 'Transparency & Explainability' }, desc: { zh: '适当透明度和可解释性', en: 'appropriate transparency and explainability' } },
+    { key: true, name: { zh: 'Responsibility & Accountability', en: 'Responsibility & Accountability' }, desc: { zh: '审计、影响评估、尽职调查机制', en: 'audits, impact assessments, due diligence' } },
+    { key: false, name: { zh: 'Awareness & Literacy', en: 'Awareness & Literacy' }, desc: { zh: '公众数字素养教育', en: 'public digital literacy education' } },
+    { key: false, name: { zh: 'Multi-stakeholder Governance', en: 'Multi-stakeholder Governance' }, desc: { zh: '包容、透明的多方参与治理', en: 'inclusive, transparent multi-stakeholder governance' } }
+  ],
+  unescoToolsTitle: { zh: '配套工具与明确禁止', en: 'Tools & explicit prohibitions' },
+  tools: [
+    { cls: 'green', zh: '🛠 EIA (Ethical Impact Assessment)', en: '🛠 EIA (Ethical Impact Assessment)' },
+    { cls: 'green', zh: '🛠 RAM (Readiness Assessment)', en: '🛠 RAM (Readiness Assessment)' },
+    { cls: 'red', zh: '🚫 Social Scoring 禁止社会信用评分', en: '🚫 Social Scoring is prohibited' },
+    { cls: 'red', zh: '🚫 Mass Surveillance 禁止大规模监控', en: '🚫 Mass Surveillance is prohibited' }
+  ],
+
+  pwcTitle: { zh: '精读 PwC (2024)：企业视角——治理就是价值', en: 'Close reading — PwC (2024): enterprise view — governance as value' },
+  pwcSub: { zh: '核心论点：AI 治理不只是合规，而是通过“支持创新”和“建立信任”两条路径创造商业价值。', en: 'Core thesis: AI governance is not just compliance — it creates business value through two pathways: supporting innovation and building trust.' },
+  pwcCard: { zh: '<h5>Reese & Becker (2024) — PwC</h5><p>核心理念：AI 治理不仅是合规要求，更是企业的 <strong>价值驱动器 (Value Driver)</strong></p>', en: '<h5>Reese & Becker (2024) — PwC</h5><p>Core idea: AI governance is not merely a compliance requirement — it is a <strong>value driver</strong> for the firm</p>' },
+  path1Title: { zh: '路径一：支持创新与规模化', en: 'Pathway 1: Support innovation and scaling' },
+  pull: { zh: '<strong>Pull（市场拉动）</strong><br>治理框架提供客户反馈机制 → 市场需求驱动 AI 开发', en: '<strong>Pull (market-driven)</strong><br>governance framework provides customer feedback loops → market demand drives AI development' },
+  push: { zh: '<strong>Push（技术推动）</strong><br>治理框架提供实验空间（实验室、沙盒）→ 鼓励探索新技术', en: '<strong>Push (technology-driven)</strong><br>governance provides experimentation space (labs, sandboxes) → encourages exploring new technology' },
+  funnel: { zh: '💡 Innovation Funnel：治理措施贯穿 idea → PoC → scaling 全过程，系统化筛选和推进用例。', en: '💡 Innovation Funnel: governance measures span the full journey from idea → PoC → scaling, systematically screening and advancing use cases.' },
+  path2Title: { zh: '路径二：驱动可信 AI (Trustworthy AI)', en: 'Pathway 2: Drive trustworthy AI' },
+  trustPrinciples: [
+    { name: { zh: 'Human Oversight', en: 'Human Oversight' }, desc: { zh: '向用户解释模型决策逻辑，让用户参与设计', en: 'explain model decisions to users; involve users in design' } },
+    { name: { zh: 'Transparency', en: 'Transparency' }, desc: { zh: '确保决策过程可理解、可质疑', en: 'ensure decisions are understandable and challengeable' } },
+    { name: { zh: 'Robustness & Safety', en: 'Robustness & Safety' }, desc: { zh: '系统稳定可靠，能抵抗攻击', en: 'systems are stable and resilient to attacks' } },
+    { name: { zh: 'Privacy & Security', en: 'Privacy & Security' }, desc: { zh: '全生命周期数据保护', en: 'data protection across the lifecycle' } },
+    { name: { zh: 'Fairness & Societal Wellbeing', en: 'Fairness & Societal Wellbeing' }, desc: { zh: '促进社会公平和整体福祉', en: 'promote fairness and societal wellbeing' } }
+  ],
+  vsTitle: { zh: 'UNESCO vs PwC 对比（ILO 4 核心训练）', en: 'UNESCO vs PwC comparison (core ILO 4 training)' },
+  vsCols: { zh: ['维度', 'UNESCO (2022)', 'PwC (2024)'], en: ['Dimension', 'UNESCO (2022)', 'PwC (2024)'] },
+  vsRows: [
+    { d: { zh: '出发点', en: 'Starting point' }, a: { zh: '人权视角，自上而下', en: 'human rights, top-down' }, b: { zh: '企业价值视角，自下而上', en: 'enterprise value, bottom-up' } },
+    { d: { zh: '核心逻辑', en: 'Core logic' }, a: { zh: '保护人类免受 AI 伤害', en: 'protect humans from AI harm' }, b: { zh: '治理让 AI 更好创造商业价值', en: 'governance lets AI create business value' } },
+    { d: { zh: '受众', en: 'Audience' }, a: { zh: '成员国政府、政策制定者', en: 'member-state governments, policymakers' }, b: { zh: '企业组织', en: 'business organisations' } }
+  ],
+  vsCommon: { zh: 'Fairness · Transparency · Accountability · Privacy（高度重叠）', en: 'Fairness · Transparency · Accountability · Privacy (highly overlapping)' },
+  vsInsight: { zh: '💡 “同归殊途”的格局：同一套原则在不同制度框架下以不同逻辑被使用——这对理解全球 AI 治理网络至关重要。', en: '💡 Same destination, different paths: the same set of principles is used through different institutional logics — essential for understanding the global AI governance landscape.' }
+};
+
+// ================================================================
+//                        QUIZ DATA (Week 1)
+// ================================================================
+const WEEK_QUIZ = {
+  1: {
+    mcq: [
+      { q: { zh: '以下哪个定义最准确地概括了本课程对 Artificial Intelligence（AI）的理解？', en: 'Which definition best captures the course\'s understanding of Artificial Intelligence (AI)?' },
+        options: [
+          { zh: '任何使用数据的计算机软件', en: 'Any computer software that uses data' },
+          { zh: '能执行通常需要人类智能才能完成的任务的计算机系统', en: 'Computer systems able to perform tasks normally requiring human intelligence' },
+          { zh: '物理上替代人类工人的机器人', en: 'Robots that physically replace human workers' },
+          { zh: '只用标注数据学习的算法', en: 'Algorithms that only learn from labelled data' }
+        ],
+        answer: 1,
+        explain: { zh: '这是综合 McCarthy、UNESCAP、ISO 与 Rai et al. 的共识定义——执行通常需要人类智能的任务的计算机系统。', en: 'This synthesises McCarthy, UNESCAP, ISO and Rai et al. — systems performing tasks that normally require human intelligence.' } },
+      { q: { zh: '一个系统用已标注数据训练，把邮件分为垃圾邮件/非垃圾邮件。它属于哪种学习范式？', en: 'A system is trained on labelled data to classify emails as spam or not spam. Which learning paradigm does it use?' },
+        options: [
+          { zh: 'Unsupervised learning（无监督学习）', en: 'Unsupervised learning' },
+          { zh: 'Reinforcement learning（强化学习）', en: 'Reinforcement learning' },
+          { zh: 'Supervised learning（监督学习）', en: 'Supervised learning' },
+          { zh: 'Deep learning（深度学习）', en: 'Deep learning' }
+        ],
+        answer: 2,
+        explain: { zh: 'Supervised learning 使用 labeled（已标注）数据进行分类与预测/回归。', en: 'Supervised learning uses labelled data for classification and prediction/regression.' } },
+      { q: { zh: '以下哪一项 NOT（不是）课件中强调的 UNESCO (2022) 四项重点原则之一？', en: 'Which of the following is NOT one of the four key UNESCO (2022) principles highlighted in the course?' },
+        options: [
+          { zh: 'Proportionality & Do No Harm（比例原则与不伤害）', en: 'Proportionality & Do No Harm' },
+          { zh: 'Fairness & Non-discrimination（公平与非歧视）', en: 'Fairness & Non-discrimination' },
+          { zh: 'Right to Privacy & Data Protection（隐私权与数据保护）', en: 'Right to Privacy & Data Protection' },
+          { zh: 'Profit Maximisation（利润最大化）', en: 'Profit Maximisation' }
+        ],
+        answer: 3,
+        explain: { zh: '四项重点原则是：Proportionality & Do No Harm、Fairness & Non-discrimination、Right to Privacy & Data Protection、Responsibility & Accountability。', en: 'The four key principles are Proportionality & Do No Harm, Fairness & Non-discrimination, Right to Privacy & Data Protection, and Responsibility & Accountability.' } },
+      { q: { zh: '根据课件，AI Ethics 与 AI Governance 的关键区别是什么？', en: 'According to the course, what is the key difference between AI Ethics and AI Governance?' },
+        options: [
+          { zh: 'Ethics 管法律，Governance 管价值观', en: 'Ethics deals with laws; Governance deals with values' },
+          { zh: 'Ethics 提供基础原则（“应该怎样”），Governance 将其转化为政策、法规与组织框架（“如何确保”）', en: 'Ethics provides principles ("what should be"); Governance translates them into policies, regulations and frameworks ("how to ensure")' },
+          { zh: 'Ethics 只适用于公司，Governance 只适用于政府', en: 'Ethics applies only to companies; Governance only to governments' },
+          { zh: '两者是同一个概念', en: 'They are the same concept' }
+        ],
+        answer: 1,
+        explain: { zh: 'AI Ethics = 基础原则；AI Governance = 把原则翻译成政策、法规和组织框架。这是全课核心区分。', en: 'AI Ethics = foundational principles; AI Governance = translating them into policy, regulation and organisational frameworks. This distinction runs through the whole course.' } },
+      { q: { zh: '在 PwC 阅读（Reese & Becker 2024）中，AI 治理通过哪两条路径创造价值？', en: 'In the PwC reading (Reese & Becker 2024), AI governance creates value through which TWO pathways?' },
+        options: [
+          { zh: '削减成本与裁员', en: 'Cost cutting and staff reduction' },
+          { zh: '支持创新与规模化 + 驱动可信 AI', en: 'Supporting innovation and scaling + driving trustworthy AI' },
+          { zh: '外包与离岸', en: 'Outsourcing and offshoring' },
+          { zh: '营销与品牌建设', en: 'Marketing and branding' }
+        ],
+        answer: 1,
+        explain: { zh: 'PwC 论证治理通过 (1) 支持创新与规模化（pull + push）和 (2) 驱动可信 AI（human oversight、transparency、robustness、privacy、fairness）创造价值。', en: 'PwC argues governance creates value via (1) supporting innovation and scaling (pull + push) and (2) driving trustworthy AI (human oversight, transparency, robustness, privacy, fairness).' } }
+    ],
+    short: [
+      { q: { zh: '用课件中的定义，区分 AI Ethics 与 AI Governance。', en: 'Using the definitions from the course materials, distinguish AI Ethics from AI Governance.' },
+        model: { zh: 'AI Ethics 提供基础原则——即“应该怎样”发生（如公平、非歧视、问责）。AI Governance 关注如何确保这些原则被落实——将原则转化为政策、法规与组织框架（如审计、影响评估、合规结构）。Ethics 回答“应该怎样”，Governance 回答“如何确保”。', en: 'AI Ethics provides the foundational principles — what "should" happen (e.g., fairness, non-discrimination, accountability). AI Governance is about how to ensure these principles are implemented — translating them into policies, regulations and organisational frameworks (e.g., audits, impact assessments, compliance structures). Ethics asks "what should be"; governance asks "how to ensure".' } },
+      { q: { zh: '说出机器学习三种范式，并为每种举一个现实应用例子。', en: 'Name the three machine learning paradigms and give one real-world application for each.' },
+        model: { zh: '(1) Supervised learning（监督学习）——用已标注数据学习；例：垃圾邮件过滤、物体检测、医疗诊断。(2) Unsupervised learning（无监督学习）——从无标注数据中发现隐藏模式；例：客户分群、异常检测。(3) Reinforcement learning（强化学习）——通过试错与奖惩机制学习；例：机器人、游戏 AI、自动驾驶。', en: '(1) Supervised learning — learns from labelled data; e.g., spam filtering, object detection, medical diagnosis. (2) Unsupervised learning — finds hidden patterns in unlabelled data; e.g., customer segmentation, anomaly detection. (3) Reinforcement learning — learns through trial and error with rewards/penalties; e.g., robotics, game AI, autonomous driving.' } },
+      { q: { zh: '解释 UNESCO (2022) 与 PwC (2024) 在 AI 治理上的视角差异，以及它们在哪里汇聚。', en: 'Explain the difference in perspective between UNESCO (2022) and PwC (2024) on AI governance, and where they converge.' },
+        model: { zh: 'UNESCO 采取自上而下的人权视角：AI 必须尊重、保护和促进人权，治理是为了保护社会免受伤害。PwC 采取自下而上的企业价值视角：治理是价值驱动器，支持创新并建立可信 AI。两者在原则语言上汇聚——fairness、transparency、accountability、privacy——说明同一套价值观可以通过不同制度逻辑被实现。', en: 'UNESCO takes a top-down, human-rights perspective: AI must respect, protect and promote human rights; governance safeguards society from harm. PwC takes a bottom-up, enterprise-value perspective: governance is a value driver that supports innovation and builds trustworthy AI. They converge on a common principle language — fairness, transparency, accountability, privacy — showing that the same values can be implemented through different institutional logics.' } }
+    ]
+  }
+};
+
+// ================================================================
+//                         RENDERING
+// ================================================================
+function renderApp() {
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  const app = document.getElementById('app');
+  app.innerHTML = '' +
+    renderHeader() +
+    renderHero() +
+    renderDropzone() +
+    renderDashboard() +
+    renderMaterialsCard() +
+    renderIloCard() +
+    '<div id="weekSections"></div>' +
+    renderFooter();
+  renderWeekSections();
+  bindDropzone();
+  refreshProgress();
 }
 
-function renderMaterialsGrid() {
-  const grid = document.getElementById('materialsGrid');
-  grid.innerHTML = '';
+function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+
+function renderHeader() {
+  const total = 13, collected = getCollectedCount();
+  return '<div class="header glass">' +
+    '<div class="header-left">' +
+    '  <h1>HD6002 AI Ethics & Governance</h1>' +
+    '  <div class="sub">' + t('appSub') + '</div>' +
+    '</div>' +
+    '<div class="header-right">' +
+    '  <button class="lang-btn" id="langBtn" title="Toggle language / 切换语言">🌐 ' + t('langBtn') + '</button>' +
+    '  <div class="progress-ring" id="progressRing" title="' + t('progressTitle') + '">' + collected + '/' + total + '</div>' +
+    '  <button class="btn btn-sm" onclick="resetAll()">' + t('reset') + '</button>' +
+    '</div>' +
+    '</div>';
+}
+
+function renderHero() {
+  const steps = t('heroSteps');
+  const icons = ['✏️', '🗺️', '📖', '📝'];
+  const modules = ['exercise', 'knowledge', 'reading', 'quiz'];
+  return '<div class="hero glass">' +
+    '<div class="hero-badge"><span class="dot"></span>' + t('heroBadge') + '</div>' +
+    '<div class="hero-title">' + t('heroTitle') + '</div>' +
+    '<div class="hero-sub">' + t('heroSub') + '</div>' +
+    '<div class="hero-steps">' + steps.map((s, i) => {
+      const key = 'step' + (i + 1);
+      const done = appState.stepCompletion && appState.stepCompletion[key];
+      return '<div class="hero-step" onclick="toggleHeroStep(\'' + key + '\', this); openWeekTab(1, \'' + modules[i] + '\');">' +
+        '<div class="step-num s' + (i + 1) + '">' + icons[i] + '</div>' +
+        '<h4>' + s.title + '</h4>' +
+        '<p>' + s.desc + '</p>' +
+        '<div class="step-check' + (done ? ' checked' : '') + '">✓</div>' +
+        '</div>';
+    }).join('') + '</div>' +
+    '</div>';
+}
+
+function renderDropzone() {
+  return '<div class="dropzone-wrap">' +
+    '<div class="dropzone glass" id="mainDropzone">' +
+    '  <div class="dropzone-icon">📂</div>' +
+    '  <div class="dropzone-title">' + t('dropTitle') + '</div>' +
+    '  <div class="dropzone-hint">' + t('dropHint') + '</div>' +
+    '  <input type="file" id="fileInput" multiple accept=".pdf,.pptx,.ppt,.docx,.doc" style="display:none">' +
+    '  <div class="dropzone-feedback" id="dropFeedback"></div>' +
+    '</div>' +
+    '</div>';
+}
+
+function renderDashboard() {
+  const items = t('assessments').map(a =>
+    '<div class="assessment-item"><span class="name">' + a.name + '</span><span class="pct">' + a.pct + '</span><span class="meta">' + a.meta + '</span></div>'
+  ).join('');
+  const miles = t('milestones').map(m =>
+    '<div class="milestone"><div class="milestone-dot ' + m.cls + '"></div><div><span class="milestone-week">' + m.wk + '</span><span class="milestone-desc">' + m.desc + '</span></div></div>'
+  ).join('');
+  return '<div class="dashboard">' +
+    '<div class="glass"><div class="card-body"><div class="card-title">' + t('assmtTitle') + '</div>' + items + '</div></div>' +
+    '<div class="glass"><div class="card-body"><div class="card-title">' + t('mileTitle') + '</div>' + miles + '</div></div>' +
+    '</div>';
+}
+
+function renderMaterialsCard() {
+  let cells = '';
   for (let w = 1; w <= 13; w++) {
     const completion = getWeekCompletion(w);
-    const cell = document.createElement('div');
-    cell.className = 'material-cell';
-    if (isKeyWeek(w)) cell.classList.add('key');
-    if (completion === 'full') cell.classList.add('full');
-    if (completion === 'partial' && !isKeyWeek(w)) cell.classList.add('partial');
-    if (appState.notes[w] && appState.notes[w].trim()) cell.classList.add('has-notes');
-    cell.innerHTML = '<span class="week-num">' + w + '</span><span class="week-label">Week</span>';
-    let statusText = completion === 'full' ? '\u6750\u6599\u9f50\u5168' : completion === 'partial' ? '\u90e8\u5206\u6536\u96c6' : '\u672a\u6536\u96c6';
-    if (isKeyWeek(w)) statusText += ' \u26a1\u5173\u952e\u5468';
-    cell.title = 'Week ' + w + ': ' + statusText;
-    cell.onclick = () => scrollToWeek(w);
-    grid.appendChild(cell);
+    const cls = ['material-cell'];
+    if (isKeyWeek(w)) cls.push('key');
+    if (completion === 'full') cls.push('full');
+    if (completion === 'partial' && !isKeyWeek(w)) cls.push('partial');
+    if (appState.notes[w] && appState.notes[w].trim()) cls.push('has-notes');
+    let statusText = completion === 'full' ? t('weekFull') : completion === 'partial' ? t('weekPartial') : t('weekEmpty');
+    if (isKeyWeek(w)) statusText += ' ' + t('keyWeek');
+    cells += '<div class="' + cls.join(' ') + '" title="Week ' + w + ': ' + statusText + '" onclick="openWeek(' + w + ')">' +
+      '<span class="week-num">' + w + '</span><span class="week-label">Week</span></div>';
   }
+  return '<div class="glass"><div class="card-body">' +
+    '<div class="card-title" style="justify-content:space-between;flex-wrap:wrap;">' +
+    '  <span>' + t('matsTitle') + '</span>' +
+    '  <span style="font-size:12px;color:var(--text-muted);font-weight:400;text-transform:none;">' + t('matsLegend') + '</span>' +
+    '</div>' +
+    '<div class="materials-grid">' + cells + '</div>' +
+    '<p style="margin-top:10px;font-size:12px;color:var(--text-muted);">' + t('matsHint') + '</p>' +
+    '</div></div>';
 }
 
-function scrollToWeek(weekNum) {
-  const el = document.getElementById('week-' + weekNum);
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    if (!el.classList.contains('expanded')) {
-      el.classList.add('expanded');
-      const notesArea = el.querySelector('.notes-area');
-      if (notesArea && !notesArea.value && appState.notes[weekNum]) {
-        notesArea.value = appState.notes[weekNum];
-      }
-    }
-  }
+function renderIloCard() {
+  const ilos = t('ilos').map((s, i) =>
+    '<div class="ilo-chip ilo-' + (i + 1) + '"><strong>ILO ' + (i + 1) + '</strong>' + s + '</div>'
+  ).join('');
+  return '<div class="glass" style="margin-bottom:20px;"><div class="card-body">' +
+    '<div class="card-title">' + t('iloTitle') + '</div>' +
+    '<div class="ilo-grid">' + ilos + '</div>' +
+    '</div></div>';
 }
 
-function getFlagClass(flag) {
-  if (flag.includes('Quiz')) return 'quiz';
-  if (flag.includes('\u8bba\u6587')) return 'paper';
-  if (flag.includes('\u5c55\u793a')) return 'pres';
-  if (flag.includes('\u6848\u4f8b')) return 'case';
-  if (flag.includes('\u7ec4\u961f') || flag.includes('\u5b9a\u9898')) return 'warn';
-  return '';
+function renderFooter() {
+  return '<footer class="site-footer">' +
+    '<span>' + t('footerMaintained') + ' <strong>ZhouXiang 周想</strong></span>' +
+    '<span class="counter-wrap"><span class="counter-dot"></span><span id="visitDisplay">' + t('visitLoading') + '</span></span>' +
+    '</footer>';
+}
+
+// ---------------- WEEK SECTIONS ----------------
+function renderWeekSections() {
+  const container = document.getElementById('weekSections');
+  container.innerHTML = '';
+  WEEKS.forEach(w => container.appendChild(renderWeekSection(w)));
+  bindLangBtn();
+}
+
+function renderWeekSection(week) {
+  const section = document.createElement('div');
+  section.className = 'week-section' + (week.num === 1 ? ' expanded' : '');
+  section.id = 'week-' + week.num;
+
+  const completion = getWeekCompletion(week.num);
+  let badgeClass = getWeekBadgeClass(week.num);
+  let badgeContent = week.num;
+  if (completion === 'full') badgeContent = '✓';
+
+  const flags = week.flags.map(f =>
+    '<span class="flag ' + FLAG_KEYS[f] + '">' + flagText(f, week) + '</span>'
+  ).join('');
+
+  const header = document.createElement('div');
+  header.className = 'week-header';
+  header.onclick = function() {
+    section.classList.toggle('expanded');
+    if (section.classList.contains('expanded')) hydrateNotes(week.num, section);
+  };
+  header.innerHTML =
+    '<div class="week-badge ' + badgeClass + '">' + badgeContent + '</div>' +
+    '<div class="week-info">' +
+    '  <div class="topic">Week ' + week.num + ': ' + weekTopic(week) + '</div>' +
+    '  <div class="flags">' + flags + '</div>' +
+    '</div>' +
+    '<div class="week-toggle">▼</div>';
+  section.appendChild(header);
+
+  const body = document.createElement('div');
+  body.className = 'week-body';
+  body.appendChild(renderWeekFiles(week));
+  body.appendChild(renderModuleTabs(week));
+  body.appendChild(renderModulePanels(week));
+  body.appendChild(renderNotesBlock(week.num));
+  section.appendChild(body);
+  return section;
 }
 
 function getWeekBadgeClass(weekNum) {
@@ -966,387 +1280,490 @@ function getWeekBadgeClass(weekNum) {
   return 'default';
 }
 
-// ==============================
-//       THIS WEEK HERO
-// ==============================
-function renderHeroSteps() {
-  const container = document.getElementById('heroSteps');
-  if (!container) return;
+function renderWeekFiles(week) {
+  const wrap = document.createElement('div');
+  wrap.className = 'week-files';
+  wrap.id = 'week-files-' + week.num;
+  const files = filesOf(week.num);
 
-  const steps = [
-    { num: 1, title: '\u586b\u7a7a\u7ec3\u4e60', desc: '\u5b8c\u6210\u8bfe\u4ef6\u4e24\u5904\u586b\u7a7a\uff0c\u7406\u89e3 AI \u80fd\u529b\u7ef4\u5ea6\u4e0e ML \u4e09\u79cd\u8303\u5f0f', cls: 's1', stepKey: 'step1', anchor: 'w1-exercise' },
-    { num: 2, title: '\u77e5\u8bc6\u6846\u67b6', desc: '\u5efa\u7acb\u56db\u5c42\u8ba4\u77e5\uff1a\u5b9a\u4e49\u2192\u6280\u672f\u2192\u4f26\u7406vs\u6cbb\u7406\u2192\u539f\u5219\u4e0e\u98ce\u9669', cls: 's2', stepKey: 'step2', anchor: 'w1-knowledge' },
-    { num: 3, title: '\u7cbe\u8bfb UNESCO', desc: '\u7406\u89e3\u5341\u5927\u539f\u5219\u548c\u56db\u9879\u6838\u5fc3\uff0c\u81ea\u4e0a\u800c\u4e0b\u7684\u4eba\u6743\u89c6\u89d2', cls: 's3', stepKey: 'step3', anchor: 'w1-unesco' },
-    { num: 4, title: '\u7cbe\u8bfb PwC', desc: '\u7406\u89e3\u201c\u6cbb\u7406=\u4ef7\u503c\u9a71\u52a8\u5668\u201d\uff0c\u81ea\u4e0b\u800c\u4e0a\u7684\u4f01\u4e1a\u89c6\u89d2', cls: 's4', stepKey: 'step4', anchor: 'w1-pwc' }
-  ];
+  let listHTML = '';
+  if (files.length === 0) {
+    listHTML = '<div class="week-files-empty">📄 ' + t('weekFilesEmpty') + '</div>';
+  } else {
+    listHTML = files.map((f, idx) =>
+      '<div class="week-file-item"><span class="week-file-name" title="' + esc(f.filename) + '">📄 ' + esc(f.filename) + '</span>' +
+      '<span class="week-file-remove" data-w="' + week.num + '" data-idx="' + idx + '">×</span></div>'
+    ).join('');
+  }
 
-  container.innerHTML = steps.map(s => {
-    const done = appState.stepCompletion && appState.stepCompletion[s.stepKey];
-    return '<div class="hero-step" onclick="toggleHeroStep(\'' + s.stepKey + '\', this); scrollToSection(\'' + s.anchor + '\');">' +
-      '<div class="step-num ' + s.cls + '">' + s.num + '</div>' +
-      '<h4>' + s.title + '</h4>' +
-      '<p>' + s.desc + '</p>' +
-      '<div class="step-check' + (done ? ' checked' : '') + '">\u2713</div>' +
-    '</div>';
-  }).join('');
+  wrap.innerHTML =
+    '<div class="week-files-header">' +
+    '  <span class="week-files-title">' + t('weekFilesTitle') + '</span>' +
+    (files.length > 0 ? '<span class="week-files-count">' + files.length + ' file' + (files.length > 1 ? 's' : '') + '</span>' : '') +
+    '</div>' +
+    '<div class="week-files-list">' + listHTML + '</div>' +
+    '<button class="week-files-add">' + t('weekFilesAdd') + '</button>';
+
+  // remove file
+  wrap.querySelectorAll('.week-file-remove').forEach(btn => {
+    btn.onclick = function(e) {
+      e.stopPropagation();
+      const w = parseInt(this.dataset.w), idx = parseInt(this.dataset.idx);
+      const removed = appState.materials[w].files[idx].filename;
+      appState.materials[w].files.splice(idx, 1);
+      saveState();
+      showToast(t('removed').replace('{f}', removed));
+      refreshAll();
+    };
+  });
+
+  // add files (click)
+  wrap.querySelector('.week-files-add').onclick = function(e) {
+    e.stopPropagation();
+    const input = document.createElement('input');
+    input.type = 'file'; input.multiple = true;
+    input.accept = '.pdf,.pptx,.ppt,.docx,.doc';
+    input.onchange = function() {
+      for (const f of input.files) addFileToWeek(week.num, f.name, false);
+      refreshAll();
+    };
+    input.click();
+  };
+
+  // drag & drop onto the area
+  wrap.addEventListener('dragover', function(e) { e.preventDefault(); e.stopPropagation(); this.classList.add('drag-over'); });
+  wrap.addEventListener('dragleave', function(e) { this.classList.remove('drag-over'); });
+  wrap.addEventListener('drop', function(e) {
+    e.preventDefault(); e.stopPropagation(); this.classList.remove('drag-over');
+    for (const f of e.dataTransfer.files) addFileToWeek(week.num, f.name, false);
+    refreshAll();
+  });
+  return wrap;
 }
 
-function toggleHeroStep(key, el) {
-  if (!appState.stepCompletion) appState.stepCompletion = {};
-  appState.stepCompletion[key] = !appState.stepCompletion[key];
-  saveState(appState);
-  const check = el.querySelector('.step-check');
-  if (appState.stepCompletion[key]) check.classList.add('checked');
-  else check.classList.remove('checked');
+function renderModuleTabs(week) {
+  const tabs = document.createElement('div');
+  tabs.className = 'module-tabs';
+  tabs.id = 'tabs-' + week.num;
+  const active = (appState.activeTabs && appState.activeTabs[week.num]) || 'exercise';
+  const contentMap = { exercise: hasExercise(week), knowledge: hasKnowledge(week), reading: hasReading(week), quiz: hasQuiz(week) };
+  t('tabs').forEach(tab => {
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (tab.key === active ? ' active' : '') + (contentMap[tab.key] ? ' has-content' : '');
+    btn.dataset.module = tab.key;
+    btn.innerHTML = '<span class="tab-ico">' + tab.ico + '</span>' + tab.label;
+    btn.onclick = function() { setActiveTab(week.num, tab.key); };
+    tabs.appendChild(btn);
+  });
+  return tabs;
 }
 
-function scrollToSection(anchorId) {
-  const el = document.getElementById(anchorId);
+function renderModulePanels(week) {
+  const host = document.createElement('div');
+  const active = (appState.activeTabs && appState.activeTabs[week.num]) || 'exercise';
+  const modules = ['exercise', 'knowledge', 'reading', 'quiz'];
+  modules.forEach(m => {
+    const panel = document.createElement('div');
+    panel.className = 'module-panel' + (m === active ? ' active' : '');
+    panel.id = 'panel-' + week.num + '-' + m;
+    if (week.num === 1) renderW1Panel(m, panel);
+    else renderPlaceholderPanel(m, week, panel);
+    host.appendChild(panel);
+  });
+  return host;
+}
+
+function setActiveTab(weekNum, moduleKey) {
+  if (!appState.activeTabs) appState.activeTabs = {};
+  appState.activeTabs[weekNum] = moduleKey;
+  saveState();
+  const tabsHost = document.getElementById('tabs-' + weekNum);
+  if (tabsHost) {
+    tabsHost.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.module === moduleKey));
+  }
+  ['exercise', 'knowledge', 'reading', 'quiz'].forEach(m => {
+    const p = document.getElementById('panel-' + weekNum + '-' + m);
+    if (p) p.classList.toggle('active', m === moduleKey);
+  });
+}
+
+function openWeek(weekNum) {
+  const el = document.getElementById('week-' + weekNum);
   if (el) {
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    // Also expand Week 1 if not already
-    const w1 = document.getElementById('week-1');
-    if (w1 && !w1.classList.contains('expanded')) {
-      w1.classList.add('expanded');
-      const notesArea = w1.querySelector('.notes-area');
-      if (notesArea && !notesArea.value && appState.notes[1]) {
-        notesArea.value = appState.notes[1];
-      }
+    if (!el.classList.contains('expanded')) {
+      el.classList.add('expanded');
+      hydrateNotes(weekNum, el);
     }
   }
 }
 
-function renderWeekSections() {
-  const container = document.getElementById('weekSections');
-  container.innerHTML = '';
-  renderWeek1(container);
-  for (let i = 1; i < WEEKS.length; i++) {
-    renderGenericWeek(container, WEEKS[i]);
-  }
+function openWeekTab(weekNum, moduleKey) {
+  openWeek(weekNum);
+  setTimeout(() => setActiveTab(weekNum, moduleKey), 60);
 }
 
-function renderWeekHeader(week, sectionDiv) {
-  const completion = getWeekCompletion(week.num);
-  const badgeClass = getWeekBadgeClass(week.num);
-  const header = document.createElement('div');
-  header.className = 'week-header';
-  header.onclick = function() {
-    sectionDiv.classList.toggle('expanded');
-    if (sectionDiv.classList.contains('expanded')) {
-      const notesArea = sectionDiv.querySelector('.notes-area');
-      if (notesArea && notesArea.value === '') {
-        notesArea.value = appState.notes[week.num] || '';
-      }
-    }
-  };
-  let badgeContent = week.num;
-  if (completion === 'full') badgeContent = '\u2713';
-  let flagsHTML = '';
-  week.flags.forEach(f => {
-    const cls = getFlagClass(f);
-    if (cls) flagsHTML += '<span class="flag ' + cls + '">' + f + '</span>';
+// ---------------- CONTENT PRESENCE ----------------
+function hasExercise(w) { return w.num === 1; }
+function hasKnowledge(w) { return w.num === 1; }
+function hasReading(w) { return w.num === 1; }
+function hasQuiz(w) { return !!WEEK_QUIZ[w.num]; }
+
+// ---------------- WEEK 1 PANELS ----------------
+function renderW1Panel(moduleKey, panel) {
+  if (moduleKey === 'exercise') panel.innerHTML = w1ExerciseHTML();
+  if (moduleKey === 'knowledge') panel.innerHTML = w1KnowledgeHTML();
+  if (moduleKey === 'reading') panel.innerHTML = w1ReadingHTML();
+  if (moduleKey === 'quiz') renderQuizPanel(1, panel);
+}
+
+function w1ExerciseHTML() {
+  const L = W1;
+  let h = '';
+  h += '<div class="w1-section">';
+  h += '<div class="w1-section-header"><div class="w1-section-num s1">1</div><div><h3>' + bi(L.exerciseTitle) + '</h3><p>' + bi(L.exerciseSub) + '</p></div></div>';
+
+  h += '<h4 style="margin-bottom:8px;font-size:14px;">' + bi(L.ex1Title) + '</h4>';
+  h += '<table class="exercise-table"><tr>' + L.ex1Cols[lang].map(c => '<th>' + c + '</th>').join('') + '</tr>';
+  L.ex1Rows.forEach(r => {
+    h += '<tr><td><strong>' + r.cap + '</strong><br><span style="font-size:11px;color:var(--text-muted);">' + r.capZh + '</span></td>' +
+      '<td class="answer">' + r.ans + '</td><td>' + bi(r.meaning) + '</td><td>' + bi(r.tech) + '</td></tr>';
   });
-  header.innerHTML = '' +
-    '<div class="week-badge ' + badgeClass + '">' + badgeContent + '</div>' +
-    '<div class="week-info">' +
-    '  <div class="topic">Week ' + week.num + ': ' + week.topic + '</div>' +
-    '  <div class="flags">' + flagsHTML + '</div>' +
-    '</div>' +
-    '<div class="week-toggle">\u25bc</div>';
-  sectionDiv.appendChild(header);
+  h += '</table>';
+
+  h += '<h4 style="margin-bottom:8px;font-size:14px;">' + bi(L.ex2Title) + '</h4>';
+  h += '<table class="exercise-table"><tr>' + L.ex2Cols[lang].map(c => '<th>' + c + '</th>').join('') + '</tr>';
+  L.ex2Rows.forEach(r => {
+    h += '<tr><td><strong>' + r.type + '</strong></td><td class="answer">' + r.ans + '</td><td>' + bi(r.goal) + '</td><td>' + bi(r.use) + '</td></tr>';
+  });
+  h += '</table>';
+  h += '<div class="insight-box">' + bi(L.exInsight) + '</div>';
+  h += '</div>';
+  return h;
 }
 
-function renderMaterialSlots(week, bodyDiv) {
-  const mats = appState.materials[week.num];
-  const slots = document.createElement('div');
-  slots.className = 'material-slots';
-  const slidesSlot = createMaterialSlot('\u8bfe\u4ef6', 'slides', week.num, mats);
-  slots.appendChild(slidesSlot);
-  const r1Name = week.defaultReadings && week.defaultReadings.length > 0 ? week.defaultReadings[0] : 'Reading';
-  const r1Slot = createMaterialSlot(r1Name, 'reading1', week.num, mats);
-  slots.appendChild(r1Slot);
-  if (week.hasRead2 && week.defaultReadings && week.defaultReadings.length > 1) {
-    const r2Slot = createMaterialSlot(week.defaultReadings[1], 'reading2', week.num, mats);
-    slots.appendChild(r2Slot);
-  } else if (week.hasRead2) {
-    const r2Slot = createMaterialSlot('Reading 2', 'reading2', week.num, mats);
-    slots.appendChild(r2Slot);
-  }
-  if (week.extraRead) {
-    const extraSlot = document.createElement('div');
-    extraSlot.className = 'material-slot';
-    extraSlot.style.borderColor = '#e2e8f0';
-    extraSlot.style.background = 'rgba(255,255,255,0.3)';
-    extraSlot.innerHTML = '<div class="slot-type" style="color:var(--text-muted);">\ud83d\udcc4 \u8865\u5145\u9605\u8bfb</div><div class="slot-name" style="color:var(--text-muted);">' + week.extraRead + '</div>';
-    slots.appendChild(extraSlot);
-  }
-  bodyDiv.appendChild(slots);
+function w1KnowledgeHTML() {
+  const L = W1;
+  let h = '';
+  h += '<div class="w1-section">';
+  h += '<div class="w1-section-header"><div class="w1-section-num s2">2</div><div><h3>' + bi(L.kmTitle) + '</h3><p>' + bi(L.kmSub) + '</p></div></div>';
+  h += '<div class="layer-stack">';
+  L.kmLayers.forEach((l, i) => {
+    h += '<div class="layer layer-' + (i + 1) + '"><div class="layer-title">' + bi(l.title) + '</div><div class="layer-desc">' + bi(l.desc) + '</div></div>';
+  });
+  h += '</div>';
+
+  h += '<h4 style="margin:10px 0 8px;">' + bi(L.histTitle) + '</h4>';
+  h += '<table class="comp-table"><tr>' + L.histCols[lang].map(c => '<th>' + c + '</th>').join('') + '</tr>';
+  L.histRows.forEach(r => { h += '<tr><td>' + r.era + '</td><td>' + r.ev + '</td><td>' + bi(r.sig) + '</td></tr>'; });
+  h += '</table>';
+
+  h += '<h4 style="margin:10px 0 8px;">' + bi(L.iloIdxTitle) + '</h4>';
+  h += '<table class="comp-table"><tr>' + L.iloIdxCols[lang].map(c => '<th>' + c + '</th>').join('') + '</tr>';
+  L.iloIdxRows.forEach(r => { h += '<tr><td>' + bi(r.c) + '</td><td>' + r.ilo + '</td><td>' + bi(r.r) + '</td></tr>'; });
+  h += '</table>';
+  h += '</div>';
+  return h;
 }
 
-function createMaterialSlot(label, slotType, weekNum, mats) {
-  const slot = document.createElement('div');
-  slot.className = 'material-slot';
-  slot.setAttribute('data-week', weekNum);
-  slot.setAttribute('data-slot', slotType);
-  const isFilled = mats && mats[slotType] && mats[slotType].collected;
-  if (isFilled) {
-    slot.classList.add('filled');
-    slot.innerHTML = '<div class="slot-type">' + (slotType === 'slides' ? '\ud83d\udcd8 \u8bfe\u4ef6' : '\ud83d\udcc4 \u9605\u8bfb') + '</div>' +
-      '<div class="slot-name">' + mats[slotType].filename + '</div>' +
-      '<div class="slot-check">\u2705</div>';
+function w1ReadingHTML() {
+  const L = W1;
+  let h = '';
+
+  // UNESCO section
+  h += '<div class="w1-section">';
+  h += '<div class="w1-section-header"><div class="w1-section-num s3">3</div><div><h3>' + bi(L.unescoTitle) + '</h3><p>' + bi(L.unescoSub) + '</p></div></div>';
+  h += '<div class="reading-card">' + bi(L.unescoCard) + '</div>';
+  h += '<h4 style="margin:10px 0 8px;">' + bi(L.valuesTitle) + '</h4>';
+  h += '<div class="sub-grid">';
+  const valCls = ['blue', 'green', 'amber', 'purple'];
+  L.values.forEach((v, i) => { h += '<div class="sub-card ' + valCls[i] + '"><strong>' + (i + 1) + '.</strong> ' + bi(v) + '</div>'; });
+  h += '</div>';
+  h += '<h4 style="margin:10px 0 8px;">' + bi(L.principlesTitle) + '</h4>';
+  h += '<table class="comp-table"><tr><th>#</th><th>' + (lang === 'zh' ? '原则' : 'Principle') + '</th><th>' + (lang === 'zh' ? '要点' : 'Key point') + '</th></tr>';
+  L.principles.forEach((p, i) => {
+    const bg = p.key ? ' style="background:var(--amber-bg)"' : '';
+    h += '<tr' + bg + '><td>' + (i + 1) + '</td><td><strong>' + (p.key ? '⭐ ' : '') + bi(p.name) + '</strong></td><td style="font-size:12px;">' + bi(p.desc) + '</td></tr>';
+  });
+  h += '</table>';
+  h += '<h4 style="margin:10px 0 8px;">' + bi(L.unescoToolsTitle) + '</h4>';
+  h += '<div class="sub-grid">';
+  L.tools.forEach(tl => { h += '<div class="sub-card ' + tl.cls + '">' + bi(tl) + '</div>'; });
+  h += '</div>';
+  h += '</div>';
+
+  // PwC section
+  h += '<div class="w1-section">';
+  h += '<div class="w1-section-header"><div class="w1-section-num s4">4</div><div><h3>' + bi(L.pwcTitle) + '</h3><p>' + bi(L.pwcSub) + '</p></div></div>';
+  h += '<div class="reading-card">' + bi(L.pwcCard) + '</div>';
+  h += '<h4 style="margin:10px 0 8px;">' + bi(L.path1Title) + '</h4>';
+  h += '<div class="sub-grid">';
+  h += '<div class="sub-card blue">' + bi(L.pull) + '</div>';
+  h += '<div class="sub-card blue">' + bi(L.push) + '</div>';
+  h += '</div>';
+  h += '<div class="insight-box">' + bi(L.funnel) + '</div>';
+  h += '<h4 style="margin:12px 0 8px;">' + bi(L.path2Title) + '</h4>';
+  h += '<table class="comp-table"><tr><th>' + (lang === 'zh' ? '原则' : 'Principle') + '</th><th>' + (lang === 'zh' ? '实践方式' : 'Practice') + '</th></tr>';
+  L.trustPrinciples.forEach(p => { h += '<tr><td>' + bi(p.name) + '</td><td style="font-size:12px;">' + bi(p.desc) + '</td></tr>'; });
+  h += '</table>';
+  h += '<h4 style="margin:10px 0 8px;">' + bi(L.vsTitle) + '</h4>';
+  h += '<table class="comp-table"><tr>' + L.vsCols[lang].map(c => '<th>' + c + '</th>').join('') + '</tr>';
+  L.vsRows.forEach(r => { h += '<tr><td>' + bi(r.d) + '</td><td>' + bi(r.a) + '</td><td>' + bi(r.b) + '</td></tr>'; });
+  h += '<tr><td style="background:var(--green-bg);font-weight:600;">' + (lang === 'zh' ? '共同语言' : 'Common language') + '</td><td colspan="2" style="text-align:center;background:var(--green-bg);">' + bi(L.vsCommon) + '</td></tr>';
+  h += '</table>';
+  h += '<div class="insight-box">' + bi(L.vsInsight) + '</div>';
+  h += '</div>';
+  return h;
+}
+
+// ---------------- QUIZ PANEL ----------------
+function renderQuizPanel(weekNum, panel) {
+  const quiz = WEEK_QUIZ[weekNum];
+  if (!quiz) {
+    panel.innerHTML = '<div class="quiz-placeholder">' +
+      '<span class="ph-ico">📝</span>' +
+      '<strong>' + t('quizComingTitle') + '</strong><br>' + t('quizComingBody') +
+      '</div>';
+    return;
+  }
+  const st = appState.quizState[weekNum] || { mcq: {}, short: {}, revealed: {} };
+  appState.quizState[weekNum] = st;
+
+  let h = '';
+  h += '<div class="quiz-banner">' +
+    '<div class="quiz-banner-text">' + t('quizReadyTitle').replace('{w}', weekNum) + '<br><span style="font-weight:400;font-size:12px;">' + t('quizReadySub') + '</span></div>' +
+    '<div style="display:flex;align-items:center;gap:10px;">' +
+    '  <span class="quiz-score" id="quizScore-' + weekNum + '"></span>' +
+    '  <button class="btn btn-sm" onclick="retakeQuiz(' + weekNum + ')">' + t('quizRetake') + '</button>' +
+    '</div></div>';
+
+  // MCQs
+  h += '<h4 style="margin:4px 0 10px;font-size:13px;color:var(--text-soft);">' + t('quizMCQTitle') + '</h4>';
+  quiz.mcq.forEach((q, qi) => {
+    h += '<div class="mcq-q">';
+    h += '<div class="mcq-q-title">' + (qi + 1) + '. ' + bi(q.q) + '</div>';
+    q.options.forEach((op, oi) => {
+      const sel = st.mcq[qi];
+      let cls = 'mcq-option';
+      if (sel !== undefined) {
+        cls += ' disabled';
+        if (oi === q.answer) cls += ' correct';
+        else if (oi === sel) cls += ' wrong';
+      } else if (sel === undefined) { /* idle */ }
+      h += '<button class="' + cls + '" data-w="' + weekNum + '" data-q="' + qi + '" data-o="' + oi + '">' +
+        '<span class="opt-key">' + 'ABCD'[oi] + '</span><span>' + bi(op) + '</span></button>';
+    });
+    h += '<div class="mcq-explain" id="mcqEx-' + weekNum + '-' + qi + '">💡 ' + bi(q.explain) + '</div>';
+    h += '</div>';
+  });
+
+  // Short answers
+  h += '<h4 style="margin:16px 0 10px;font-size:13px;color:var(--text-soft);">' + t('quizShortTitle') + '</h4>';
+  quiz.short.forEach((q, qi) => {
+    h += '<div class="short-q">';
+    h += '<div class="short-q-title">' + (quiz.mcq.length + qi + 1) + '. ' + bi(q.q) + '</div>';
+    h += '<textarea id="shortIn-' + weekNum + '-' + qi + '" placeholder="' + (lang === 'zh' ? '先自己写，再对照参考答案...' : 'Answer first, then compare with the model answer...') + '"></textarea>';
+    h += '<button class="model-toggle" id="modelBtn-' + weekNum + '-' + qi + '" onclick="toggleModel(' + weekNum + ',' + qi + ')">' + (st.revealed[qi] ? t('hideModel') : t('showModel')) + '</button>';
+    h += '<div class="model-answer" id="modelAns-' + weekNum + '-' + qi + '"><strong>' + (lang === 'zh' ? '参考答案' : 'Model answer') + '</strong>' + bi(q.model) + '</div>';
+    h += '</div>';
+  });
+
+  panel.innerHTML = h;
+
+  // restore state
+  quiz.mcq.forEach((q, qi) => {
+    const ta = document.getElementById('shortIn-' + weekNum + '-' + qi);
+    if (ta) ta.value = st.short[qi] || '';
+    if (st.revealed[qi]) {
+      const ma = document.getElementById('modelAns-' + weekNum + '-' + qi);
+      if (ma) ma.classList.add('show');
+    }
+  });
+  updateQuizScore(weekNum);
+
+  // bind MCQ clicks
+  panel.querySelectorAll('.mcq-option:not(.disabled)').forEach(btn => {
+    btn.onclick = function() { answerMcq(weekNum, parseInt(this.dataset.q), parseInt(this.dataset.o)); };
+  });
+  // bind short answer save
+  quiz.short.forEach((q, qi) => {
+    const ta = document.getElementById('shortIn-' + weekNum + '-' + qi);
+    if (ta) ta.addEventListener('input', function() {
+      st.short[qi] = this.value;
+      saveState();
+    });
+  });
+}
+
+function answerMcq(weekNum, qi, oi) {
+  const quiz = WEEK_QUIZ[weekNum];
+  const st = appState.quizState[weekNum] || {};
+  st.mcq = st.mcq || {};
+  st.mcq[qi] = oi;
+  appState.quizState[weekNum] = st;
+  saveState();
+
+  const q = quiz.mcq[qi];
+  const panel = document.getElementById('panel-' + weekNum + '-quiz');
+  const qEl = panel.querySelectorAll('.mcq-q')[qi];
+  const opts = qEl.querySelectorAll('.mcq-option');
+  opts.forEach((btn, idx) => {
+    btn.classList.add('disabled');
+    btn.classList.remove('selected');
+    if (idx === q.answer) btn.classList.add('correct');
+    else if (idx === oi) btn.classList.add('wrong');
+  });
+  const ex = document.getElementById('mcqEx-' + weekNum + '-' + qi);
+  if (ex) ex.classList.add('show');
+  updateQuizScore(weekNum);
+}
+
+function updateQuizScore(weekNum) {
+  const quiz = WEEK_QUIZ[weekNum];
+  const st = appState.quizState[weekNum];
+  const el = document.getElementById('quizScore-' + weekNum);
+  if (!el) return;
+  if (!st || !st.mcq) return;
+  const answered = Object.keys(st.mcq).length;
+  if (answered === 0) { el.textContent = ''; return; }
+  let correct = 0;
+  quiz.mcq.forEach((q, qi) => { if (st.mcq[qi] === q.answer) correct++; });
+  el.textContent = t('quizScore').replace('{n}', correct).replace('{t}', quiz.mcq.length);
+  const pct = correct / quiz.mcq.length;
+  el.style.color = pct >= 0.6 ? 'var(--green)' : pct >= 0.4 ? 'var(--amber)' : 'var(--red)';
+}
+
+function retakeQuiz(weekNum) {
+  if (!confirm(lang === 'zh' ? '清空本周 Quiz 作答记录并重新开始？' : 'Clear this week\'s quiz answers and start over?')) return;
+  appState.quizState[weekNum] = { mcq: {}, short: {}, revealed: {} };
+  saveState();
+  const panel = document.getElementById('panel-' + weekNum + '-quiz');
+  renderQuizPanel(weekNum, panel);
+}
+
+function toggleModel(weekNum, qi) {
+  const st = appState.quizState[weekNum];
+  st.revealed[qi] = !st.revealed[qi];
+  saveState();
+  const ma = document.getElementById('modelAns-' + weekNum + '-' + qi);
+  const btn = document.getElementById('modelBtn-' + weekNum + '-' + qi);
+  if (ma) ma.classList.toggle('show');
+  if (btn) btn.textContent = st.revealed[qi] ? t('hideModel') : t('showModel');
+}
+
+// ---------------- PLACEHOLDER PANELS (weeks 2-13) ----------------
+function renderPlaceholderPanel(moduleKey, week, panel) {
+  if (moduleKey === 'quiz') {
+    panel.innerHTML = '<div class="quiz-placeholder">' +
+      '<span class="ph-ico">📝</span>' +
+      '<strong>' + t('quizComingTitle') + '</strong><br>' + t('quizComingBody') +
+      '</div>';
   } else {
-    slot.innerHTML = '<div class="slot-type">' + (slotType === 'slides' ? '\ud83d\udcd8 \u8bfe\u4ef6' : '\ud83d\udcc4 \u9605\u8bfb') + '</div>' +
-      '<div class="slot-name" style="color:var(--text-muted);">' + label + ' \u2014 \u62d6\u653e\u6587\u4ef6\u5230\u6b64\u5904</div>' +
-      '<div class="slot-check">\u2705</div>';
+    panel.innerHTML = '<div class="content-placeholder">' +
+      '<span class="ph-ico">📚</span>' +
+      '<strong>' + t('placeholderTitle') + '</strong><br>' +
+      t('placeholderBody').replace('{w}', week.num) +
+      '</div>';
   }
-  slot.addEventListener('dragover', function(e) { e.preventDefault(); e.stopPropagation(); this.classList.add('drag-over'); });
-  slot.addEventListener('dragleave', function(e) { this.classList.remove('drag-over'); });
-  slot.addEventListener('drop', function(e) {
-    e.preventDefault(); e.stopPropagation(); this.classList.remove('drag-over');
-    const files = e.dataTransfer.files;
-    if (files.length > 0) { forceAssignFile(files[0].name, weekNum, slotType); refreshAll(); }
-  });
-  if (isFilled) {
-    slot.title = '\u70b9\u51fb\u79fb\u9664';
-    slot.onclick = function(e) {
-      e.stopPropagation();
-      if (confirm('\u79fb\u9664 "' + mats[slotType].filename + '"?')) {
-        mats[slotType] = { collected: false, filename: '' };
-        saveState(appState); refreshAll(); showToast('\u5df2\u79fb\u9664');
-      }
-    };
-  }
-  return slot;
 }
 
-function forceAssignFile(filename, weekNum, slotType) {
-  if (!appState.materials[weekNum]) initWeekMaterials(weekNum);
-  appState.materials[weekNum][slotType] = { collected: true, filename: filename };
-  saveState(appState);
-  showToast('\u2705 "' + filename + '" \u2192 Week ' + weekNum + ' ' + (slotType === 'slides' ? '\u8bfe\u4ef6' : '\u9605\u8bfb'));
-}
-
-function renderNotesArea(weekNum, bodyDiv) {
-  const notesWrapper = document.createElement('div');
+// ---------------- NOTES ----------------
+function renderNotesBlock(weekNum) {
+  const wrapper = document.createElement('div');
+  wrapper.style.marginTop = '16px';
   const hint = document.createElement('div');
   hint.className = 'notes-hint';
-  hint.textContent = '\ud83d\udcdd \u8bfe\u5802\u7b14\u8bb0\uff08\u81ea\u52a8\u4fdd\u5b58\u5230\u6d4f\u89c8\u5668\uff09';
-  notesWrapper.appendChild(hint);
+  hint.textContent = t('notesHint');
+  wrapper.appendChild(hint);
   const textarea = document.createElement('textarea');
   textarea.className = 'notes-area';
-  textarea.placeholder = '\u5728\u8fd9\u91cc\u8f93\u5165\u672c\u5468\u7684\u8bfe\u5802\u7b14\u8bb0\u3001\u5173\u952e\u6982\u5ff5\u3001\u601d\u8003\u95ee\u9898...';
+  textarea.placeholder = t('notesPlaceholder');
+  textarea.dataset.week = weekNum;
   textarea.value = appState.notes[weekNum] || '';
-  textarea.setAttribute('data-week', weekNum);
   let saveTimeout;
   textarea.addEventListener('input', function() {
     clearTimeout(saveTimeout);
-    const indicator = this.parentElement.querySelector('.save-indicator');
+    const indicator = wrapper.querySelector('.save-indicator');
     saveTimeout = setTimeout(() => {
       appState.notes[weekNum] = this.value;
-      saveState(appState);
+      saveState();
       if (indicator) { indicator.classList.add('visible'); setTimeout(() => indicator.classList.remove('visible'), 2000); }
     }, 500);
   });
-  notesWrapper.appendChild(textarea);
+  wrapper.appendChild(textarea);
   const indicator = document.createElement('span');
   indicator.className = 'save-indicator';
-  indicator.textContent = '\u5df2\u4fdd\u5b58 \u2713';
-  notesWrapper.appendChild(indicator);
-  bodyDiv.appendChild(notesWrapper);
+  indicator.textContent = t('saved');
+  wrapper.appendChild(indicator);
+  return wrapper;
 }
 
-function renderGenericWeek(container, week) {
-  const section = document.createElement('div');
-  section.className = 'week-section';
-  section.id = 'week-' + week.num;
-  renderWeekHeader(week, section);
-  const body = document.createElement('div');
-  body.className = 'week-body';
-  renderMaterialSlots(week, body);
-  renderNotesArea(week.num, body);
-  if (week.num === 5) {
-    const r = document.createElement('div'); r.className = 'reminder quiz';
-    r.innerHTML = '<strong>\u26a0 Quiz 1 \u5907\u8003\u63d0\u9192\uff1a</strong> \u8986\u76d6 Week 1-4\u3002\u590d\u4e60 Week 1-4 \u7684\u7b14\u8bb0 + \u77e5\u8bc6\u56fe\u8c31\u3002';
-    body.appendChild(r);
-  }
-  if (week.num === 10) {
-    const r = document.createElement('div'); r.className = 'reminder quiz';
-    r.innerHTML = '<strong>\u26a0 Quiz 2 \u5907\u8003\u63d0\u9192\uff1a</strong> \u8986\u76d6 Week 5-9\u3002\u590d\u4e60 Week 5-9 \u7684\u7b14\u8bb0\u3002';
-    body.appendChild(r);
-  }
-  if (week.num === 7) {
-    const r = document.createElement('div'); r.className = 'reminder paper';
-    r.innerHTML = '<strong>\u26a0 \u53cd\u601d\u8bba\u6587\u63d0\u9192\uff1a</strong> \u672c\u5468\u8bfe\u5185\u5f53\u5802\u5199 AI in Healthcare \u53cd\u601d\u8bba\u6587\u3002\u63d0\u524d\u8bfb\u5b8c Fahim et al. (2025)\u3002\u65e0\u8865\u8003\uff01';
-    body.appendChild(r);
-  }
-  if (week.num === 4) {
-    const r = document.createElement('div'); r.className = 'reminder info';
-    r.innerHTML = '<strong>\u672c\u5468\u786e\u5b9a\u5c0f\u7ec4\u5c55\u793a\u4e3b\u9898 + \u7ec4\u961f\uff01</strong> \u63d0\u524d\u601d\u8003\u611f\u5174\u8da3\u7684 AI \u5e94\u7528\u9886\u57df\u3002';
-    body.appendChild(r);
-  }
-  if (week.num === 12) {
-    const r = document.createElement('div'); r.className = 'reminder pres';
-    r.innerHTML = '<strong>\u5c0f\u7ec4\u5c55\u793a\u5468\uff1a</strong> PPT \u8bfe\u524d 2 \u5929\u63d0\u4ea4 Turnitin\u300220 \u5206\u949f\u5c55\u793a + 10 \u5206\u949f Q&A\u3002\u9700\u56fd\u5bb6/\u57ce\u5e02\u5b9e\u4f8b\u3002';
-    body.appendChild(r);
-  }
-  section.appendChild(body);
-  container.appendChild(section);
+function hydrateNotes(weekNum, section) {
+  const ta = section.querySelector('.notes-area');
+  if (ta && ta.value === '') ta.value = appState.notes[weekNum] || '';
 }
 
-// ==============================
-//       WEEK 1 — FLOWING CONTENT
-// ==============================
-function renderWeek1(container) {
-  const section = document.createElement('div');
-  section.className = 'week-section expanded';
-  section.id = 'week-1';
-  const week = WEEKS[0];
-  renderWeekHeader(week, section);
-  const body = document.createElement('div');
-  body.className = 'week-body';
-  renderMaterialSlots(week, body);
-
-  // --- Section 1: Fill-in Exercises ---
-  const s1 = document.createElement('div');
-  s1.className = 'w1-section'; s1.id = 'w1-exercise';
-  s1.innerHTML = '' +
-    '<div class="w1-section-header">' +
-    '  <div class="w1-section-num s1">1</div>' +
-    '  <div><h3>\u586b\u7a7a\u7ec3\u4e60\uff1a\u7406\u89e3 AI \u80fd\u529b\u7ef4\u5ea6\u4e0e\u673a\u5668\u5b66\u4e60\u8303\u5f0f</h3><p>\u5b8c\u6210\u8bfe\u4ef6\u7b2c 36 \u9875\u548c\u7b2c 41 \u9875\u7684\u4e24\u5904\u586b\u7a7a\u3002\u8fd9\u662f Quiz 1 \u7684\u5fc5\u8003\u5185\u5bb9\u3002</p></div>' +
-    '</div>' +
-    '<h4 style="margin-bottom:10px;font-size:14px;">\u7ec3\u4e60\u4e00\uff1aAI \u626b\u5730\u673a\u5668\u4eba\u80fd\u529b\u5206\u6790\uff08\u5e7b\u706f\u7247\u7b2c 36 \u9875\uff09</h4>' +
-    '<table class="exercise-table">' +
-    '  <tr><th>\u80fd\u529b\u7ef4\u5ea6</th><th>\u7b54\u6848</th><th>\u542b\u4e49</th><th>\u6280\u672f\u5b9e\u73b0</th></tr>' +
-    '  <tr><td><strong>Perception</strong><br><span style="font-size:11px;color:var(--text-muted);">\u611f\u77e5</span></td><td class="answer">scan</td><td>\u901a\u8fc7\u8ba1\u7b97\u673a\u89c6\u89c9\u611f\u77e5\u73af\u5883</td><td style="font-size:12px;">LiDar + \u4f20\u611f\u5668\u5b9e\u65f6\u5efa\u56fe</td></tr>' +
-    '  <tr><td><strong>Language processing</strong><br><span style="font-size:11px;color:var(--text-muted);">\u8bed\u8a00\u5904\u7406</span></td><td class="answer">understand</td><td>\u7406\u89e3\u8bed\u97f3\u6307\u4ee4</td><td style="font-size:12px;">NLP \u81ea\u7136\u8bed\u8a00\u5904\u7406</td></tr>' +
-    '  <tr><td><strong>Reasoning</strong><br><span style="font-size:11px;color:var(--text-muted);">\u63a8\u7406</span></td><td class="answer">determine</td><td>\u81ea\u4e3b\u51b3\u7b56\u6e05\u6d01\u7b56\u7565</td><td style="font-size:12px;">\u57fa\u4e8e\u6570\u636e\u5206\u6790\u786e\u5b9a\u4f18\u5148\u7ea7\u3001\u8def\u5f84</td></tr>' +
-    '  <tr><td><strong>Learning</strong><br><span style="font-size:11px;color:var(--text-muted);">\u5b66\u4e60</span></td><td class="answer">improve</td><td>\u4ece\u7ecf\u9a8c\u4e2d\u6301\u7eed\u4f18\u5316</td><td style="font-size:12px;">\u4f18\u5316\u6c61\u57a2\u68c0\u6d4b\u3001\u8def\u7ebf\u89c4\u5212</td></tr>' +
-    '</table>' +
-    '<h4 style="margin-bottom:10px;font-size:14px;">\u7ec3\u4e60\u4e8c\uff1a\u673a\u5668\u5b66\u4e60\u4e09\u79cd\u8303\u5f0f\uff08\u5e7b\u706f\u7247\u7b2c 41 \u9875\uff09</h4>' +
-    '<table class="exercise-table" style="margin-bottom:12px;">' +
-    '  <tr><th>\u7c7b\u578b</th><th>\u8bad\u7ec3\u65b9\u5f0f</th><th>\u5b66\u4e60\u76ee\u6807</th><th>\u5178\u578b\u7528\u4f8b</th></tr>' +
-    '  <tr><td><strong>Supervised</strong></td><td class="answer">labeled</td><td>\u5206\u7c7b + \u9884\u6d4b/\u56de\u5f52</td><td style="font-size:12px;">\u7269\u4f53\u68c0\u6d4b\u3001\u5783\u573e\u90ae\u4ef6\u8bc6\u522b\u3001\u533b\u7597\u8bca\u65ad</td></tr>' +
-    '  <tr><td><strong>Unsupervised</strong></td><td class="answer">unlabeled</td><td>\u53d1\u73b0\u9690\u85cf\u6a21\u5f0f</td><td style="font-size:12px;">\u5ba2\u6237\u5206\u7fa4\u3001\u5f02\u5e38\u68c0\u6d4b</td></tr>' +
-    '  <tr><td><strong>Reinforcement</strong></td><td class="answer">trial & error</td><td>\u901a\u8fc7\u5956\u52b1/\u60e9\u7f5a\u4f18\u5316</td><td style="font-size:12px;">\u673a\u5668\u4eba\u3001\u6e38\u620fAI\u3001\u81ea\u52a8\u9a7e\u9a76</td></tr>' +
-    '</table>' +
-    '<div class="insight-box">\ud83d\udca1 <strong>\u5173\u952e\u533a\u5206\uff1a</strong>\u6709\u65e0\u6807\u7b7e\u533a\u5206\u76d1\u7763/\u65e0\u76d1\u7763\uff1b\u6709\u65e0\u5956\u60e9\u673a\u5236\u533a\u5206\u5f3a\u5316\u5b66\u4e60\u3002GPT \u7684 RLHF \u5c31\u662f\u5f3a\u5316\u5b66\u4e60\u7684\u5e94\u7528\u3002</div>';
-  body.appendChild(s1);
-
-  // --- Section 2: Knowledge Map ---
-  const s2 = document.createElement('div');
-  s2.className = 'w1-section'; s2.id = 'w1-knowledge';
-  s2.innerHTML = '' +
-    '<div class="w1-section-header">' +
-    '  <div class="w1-section-num s2">2</div>' +
-    '  <div><h3>\u77e5\u8bc6\u56fe\u8c31\uff1a\u5efa\u7acb AI \u6cbb\u7406\u7684\u56db\u5c42\u8ba4\u77e5\u6846\u67b6</h3><p>\u4ece\u5b9a\u4e49\u5230\u6280\u672f\u8c31\u7cfb\uff0c\u518d\u5230\u4f26\u7406\u4e0e\u6cbb\u7406\u7684\u533a\u5206\uff0c\u6700\u540e\u5230\u539f\u5219\u4e0e\u98ce\u9669\u2014\u2014\u8fd9\u662f\u6574\u95e8\u8bfe\u7684\u601d\u7ef4\u9aa8\u67b6\u3002</p></div>' +
-    '</div>' +
-    '<div class="layer-stack">' +
-    '  <div class="layer layer-1"><div class="layer-title">Layer 1: AI \u662f\u4ec0\u4e48\uff1f\uff08\u5b9a\u4e49\u5c42\uff09</div><div class="layer-desc">McCarthy \u2192 UNESCAP \u2192 ISO \u2192 Rai et al. \u2192 \u6838\u5fc3\u5171\u8bc6\uff1a<em>\u80fd\u6267\u884c\u901a\u5e38\u9700\u8981\u4eba\u7c7b\u667a\u80fd\u624d\u80fd\u5b8c\u6210\u7684\u4efb\u52a1\u7684\u8ba1\u7b97\u673a\u7cfb\u7edf</em></div></div>' +
-    '  <div class="layer layer-2"><div class="layer-title">Layer 2: AI \u6280\u672f\u8c31\u7cfb\uff08\u6982\u5ff5\u5173\u7cfb\u5c42\uff09</div><div class="layer-desc">AI \u2283 ML \u2283 DL \u00b7 \u4e09\u79cd\u8303\u5f0f (Supervised / Unsupervised / Reinforcement) \u00b7 ANN \u7ed3\u6784 (Input \u2192 Hidden \u2192 Output)</div></div>' +
-    '  <div class="layer layer-3"><div class="layer-title">Layer 3: \u4f26\u7406 vs \u6cbb\u7406\uff08\u6846\u67b6\u533a\u5206\u5c42\uff09</div><div class="layer-desc"><strong>AI Ethics</strong> = \u57fa\u7840\u539f\u5219\uff08\u201c\u5e94\u8be5\u600e\u6837\u201d\uff09\u00b7 <strong>AI Governance</strong> = \u628a\u539f\u5219\u7ffb\u8bd1\u4e3a\u653f\u7b56\u3001\u6cd5\u89c4\u548c\u6846\u67b6\uff08\u201c\u5982\u4f55\u786e\u4fdd\u201d\uff09</div></div>' +
-    '  <div class="layer layer-4"><div class="layer-title">Layer 4: \u539f\u5219\u4e0e\u98ce\u9669\uff08\u5e94\u7528\u5c42\uff09</div><div class="layer-desc">\u98ce\u9669\uff1aBias \u00b7 Black Box \u00b7 Privacy \u00b7 \u539f\u5219\uff1aProportionality \u00b7 Fairness \u00b7 Privacy \u00b7 Accountability \u00b7 \u53cc\u89c6\u89d2\uff1aUNESCO(\u4eba\u6743\u81ea\u4e0a\u800c\u4e0b) vs PwC(\u4f01\u4e1a\u81ea\u4e0b\u800c\u4e0a)</div></div>' +
-    '</div>' +
-    '<h4 style="margin:12px 0 8px;">AI \u5386\u53f2\u5173\u952e\u91cc\u7a0b\u7891</h4>' +
-    '<table class="comp-table" style="margin-bottom:12px;">' +
-    '  <tr><th>\u5e74\u4ee3</th><th>\u4e8b\u4ef6</th><th>\u610f\u4e49</th></tr>' +
-    '  <tr><td>1950s</td><td>Turing Test</td><td>\u9996\u6b21\u63d0\u51fa\u673a\u5668\u667a\u80fd\u8bc4\u4ef7\u6807\u51c6</td></tr>' +
-    '  <tr><td>1956</td><td>Dartmouth \u4f1a\u8bae\uff0cMcCarthy \u63d0\u51fa\u201cAI\u201d</td><td>AI \u5b66\u79d1\u6b63\u5f0f\u8bde\u751f</td></tr>' +
-    '  <tr><td>1980s</td><td>AI \u8fdb\u5165\u5de5\u4e1a/\u533b\u7597</td><td>\u4ece\u5b9e\u9a8c\u5ba4\u8d70\u5411\u4ea7\u4e1a</td></tr>' +
-    '  <tr><td>2010s</td><td>\u6df1\u5ea6\u5b66\u4e60\u9ec4\u91d1\u5341\u5e74</td><td>\u7b97\u529b+\u6570\u636e+\u7b97\u6cd5\u4e09\u91cd\u7a81\u7834</td></tr>' +
-    '  <tr><td>2020s</td><td>GPT-4 \u7b49\u751f\u6210\u5f0f AI</td><td>AI \u8fdb\u5165\u201c\u521b\u9020\u6027\u201d\u9636\u6bb5</td></tr>' +
-    '</table>' +
-    '<h4 style="margin:12px 0 8px;">\u6838\u5fc3\u6982\u5ff5\u5bf9 ILO \u5feb\u901f\u7d22\u5f15</h4>' +
-    '<table class="comp-table">' +
-    '  <tr><th>\u6982\u5ff5</th><th>ILO</th><th>\u8003\u8bd5\u5173\u8054</th></tr>' +
-    '  <tr><td>AI \u5b9a\u4e49 (4 \u6765\u6e90)</td><td>ILO 1</td><td>Quiz 1 \u5fc5\u8003</td></tr>' +
-    '  <tr><td>AI/ML/DL \u5173\u7cfb + \u4e09\u79cd ML</td><td>ILO 1</td><td>Quiz 1 \u5fc5\u8003</td></tr>' +
-    '  <tr><td>AI \u98ce\u9669 (Bias/Black Box/Privacy)</td><td>ILO 2, 3</td><td>\u8bfe\u5802\u8ba8\u8bba\u3001\u53cd\u601d\u8bba\u6587\u3001\u6848\u4f8b\u5206\u6790</td></tr>' +
-    '  <tr><td>Ethics vs Governance \u533a\u5206</td><td>ILO 2, 4, 5</td><td>\u6574\u95e8\u8bfe\u6838\u5fc3\u6846\u67b6</td></tr>' +
-    '  <tr><td>UNESCO \u539f\u5219 / PwC \u4ef7\u503c\u9a71\u52a8</td><td>ILO 2, 4, 5</td><td>Quiz 1\u3001\u8de8\u56fd\u6cbb\u7406\u6bd4\u8f83</td></tr>' +
-    '</table>';
-  body.appendChild(s2);
-
-  // --- Section 3: UNESCO ---
-  const s3 = document.createElement('div');
-  s3.className = 'w1-section'; s3.id = 'w1-unesco';
-  s3.innerHTML = '' +
-    '<div class="w1-section-header">' +
-    '  <div class="w1-section-num s3">3</div>' +
-    '  <div><h3>\u7cbe\u8bfb UNESCO (2022)\uff1a\u4ece\u4eba\u6743\u89c6\u89d2\u81ea\u4e0a\u800c\u4e0b</h3><p>193 \u56fd\u901a\u8fc7\u7684\u9996\u4e2a AI \u4f26\u7406\u5168\u7403\u6807\u51c6\u3002\u7406\u89e3\u56db\u5927\u6838\u5fc3\u4ef7\u503c\u89c2\u3001\u5341\u5927\u539f\u5219\u548c\u4e24\u9879\u660e\u786e\u7981\u6b62\u3002</p></div>' +
-    '</div>' +
-    '<div class="reading-card"><h5>Recommendation on the Ethics of AI</h5><p>2021\u5e7411\u6708\u7531193\u4e2a\u6210\u5458\u56fd\u901a\u8fc7 \u00b7 \u53f2\u4e0a\u7b2c\u4e00\u4e2aAI\u4f26\u7406\u5168\u7403\u6807\u51c6</p></div>' +
-    '<h4 style="margin:12px 0 8px;">\u56db\u5927\u6838\u5fc3\u4ef7\u503c\u89c2</h4>' +
-    '<div class="sub-grid">' +
-    '  <div class="sub-card blue"><strong>1.</strong> \u5c0a\u91cd\u3001\u4fdd\u62a4\u548c\u4fc3\u8fdb\u4eba\u6743\u4e0e\u4eba\u7c7b\u5c0a\u4e25</div>' +
-    '  <div class="sub-card green"><strong>2.</strong> \u751f\u6d3b\u5728\u548c\u5e73\u3001\u516c\u6b63\u4e0e\u4e92\u8054\u7684\u793e\u4f1a\u4e2d</div>' +
-    '  <div class="sub-card amber"><strong>3.</strong> \u786e\u4fdd\u591a\u6837\u6027\u548c\u5305\u5bb9\u6027</div>' +
-    '  <div class="sub-card purple"><strong>4.</strong> \u73af\u5883\u4e0e\u751f\u6001\u7cfb\u7edf\u84ec\u52c3\u53d1\u5c55</div>' +
-    '</div>' +
-    '<h4 style="margin:12px 0 8px;">\u5341\u5927\u539f\u5219\uff08\u2b50\u4e3a\u8bfe\u4ef6\u91cd\u70b9\u6807\u8bb0\uff09</h4>' +
-    '<table class="comp-table" style="margin-bottom:14px;">' +
-    '  <tr><th>#</th><th>\u539f\u5219</th><th>\u8981\u70b9</th></tr>' +
-    '  <tr style="background:var(--amber-bg)"><td>1</td><td><strong>\u2b50 Proportionality & Do No Harm</strong></td><td style="font-size:12px;">AI \u65b9\u6cd5\u4e0d\u5e94\u8d85\u51fa\u5b9e\u73b0\u5408\u6cd5\u76ee\u6807\u6240\u9700</td></tr>' +
-    '  <tr><td>2</td><td>Safety and Security</td><td style="font-size:12px;">\u907f\u514d\u610f\u5916\u4f24\u5bb3\uff0c\u9632\u6b62\u653b\u51fb\u6f0f\u6d1e</td></tr>' +
-    '  <tr style="background:var(--amber-bg)"><td>3</td><td><strong>\u2b50 Fairness & Non-discrimination</strong></td><td style="font-size:12px;">\u5305\u5bb9\u6027\u65b9\u6cd5\uff0c\u6536\u76ca\u60e0\u53ca\u6240\u6709\u7fa4\u4f53</td></tr>' +
-    '  <tr><td>4</td><td>Sustainability</td><td style="font-size:12px;">\u8bc4\u4f30 AI \u5bf9 SDGs \u7684\u5f71\u54cd</td></tr>' +
-    '  <tr style="background:var(--amber-bg)"><td>5</td><td><strong>\u2b50 Right to Privacy</strong></td><td style="font-size:12px;">\u5168\u751f\u547d\u5468\u671f\u9690\u79c1\u4fdd\u62a4\uff0c\u77e5\u60c5\u540c\u610f</td></tr>' +
-    '  <tr><td>6</td><td>Human Oversight</td><td style="font-size:12px;">AI \u4e0d\u53d6\u4ee3\u4eba\u7c7b\u6700\u7ec8\u8d23\u4efb</td></tr>' +
-    '  <tr><td>7</td><td>Transparency</td><td style="font-size:12px;">\u9002\u5f53\u900f\u660e\u5ea6\u548c\u53ef\u89e3\u91ca\u6027</td></tr>' +
-    '  <tr style="background:var(--amber-bg)"><td>8</td><td><strong>\u2b50 Responsibility & Accountability</strong></td><td style="font-size:12px;">\u5ba1\u8ba1\u3001\u5f71\u54cd\u8bc4\u4f30\u3001\u5c3d\u804c\u8c03\u67e5\u673a\u5236</td></tr>' +
-    '  <tr><td>9</td><td>Awareness & Literacy</td><td style="font-size:12px;">\u516c\u4f17\u6570\u5b57\u7d20\u517b\u6559\u80b2</td></tr>' +
-    '  <tr><td>10</td><td>Multi-stakeholder Governance</td><td style="font-size:12px;">\u5305\u5bb9\u3001\u900f\u660e\u7684\u591a\u65b9\u53c2\u4e0e\u6cbb\u7406</td></tr>' +
-    '</table>' +
-    '<div class="sub-grid">' +
-    '  <div class="sub-card green"><strong>\ud83d\udee0 EIA</strong> (Ethical Impact Assessment)</div>' +
-    '  <div class="sub-card green"><strong>\ud83d\udee0 RAM</strong> (Readiness Assessment)</div>' +
-    '  <div class="sub-card red"><strong>\ud83d\udeab Social Scoring</strong> \u7981\u6b62\u793e\u4f1a\u4fe1\u7528\u8bc4\u5206</div>' +
-    '  <div class="sub-card red"><strong>\ud83d\udeab Mass Surveillance</strong> \u7981\u6b62\u5927\u89c4\u6a21\u76d1\u63a7</div>' +
-    '</div>';
-  body.appendChild(s3);
-
-  // --- Section 4: PwC ---
-  const s4 = document.createElement('div');
-  s4.className = 'w1-section'; s4.id = 'w1-pwc';
-  s4.innerHTML = '' +
-    '<div class="w1-section-header">' +
-    '  <div class="w1-section-num s4">4</div>' +
-    '  <div><h3>\u7cbe\u8bfb PwC (2024)\uff1a\u4f01\u4e1a\u89c6\u89d2\u2014\u2014\u6cbb\u7406\u5c31\u662f\u4ef7\u503c</h3><p>\u6838\u5fc3\u8bba\u70b9\uff1aAI \u6cbb\u7406\u4e0d\u53ea\u662f\u5408\u89c4\uff0c\u800c\u662f\u901a\u8fc7\u201c\u652f\u6301\u521b\u65b0\u201d\u548c\u201c\u5efa\u7acb\u4fe1\u4efb\u201d\u4e24\u6761\u8def\u5f84\u521b\u9020\u5546\u4e1a\u4ef7\u503c\u3002</p></div>' +
-    '</div>' +
-    '<div class="reading-card"><h5>Reese & Becker (2024) \u2014 PwC</h5><p>\u6838\u5fc3\u7406\u5ff5\uff1aAI \u6cbb\u7406\u4e0d\u4ec5\u662f\u5408\u89c4\u8981\u6c42\uff0c\u66f4\u662f\u4f01\u4e1a\u7684 <strong>\u4ef7\u503c\u9a71\u52a8\u5668 (Value Driver)</strong></p></div>' +
-    '<h4 style="margin:12px 0 8px;">\u8def\u5f84\u4e00\uff1a\u652f\u6301\u521b\u65b0\u4e0e\u89c4\u6a21\u5316</h4>' +
-    '<div class="sub-grid">' +
-    '  <div class="sub-card blue"><strong>Pull\uff08\u5e02\u573a\u62c9\u52a8\uff09</strong><br>\u6cbb\u7406\u6846\u67b6\u63d0\u4f9b\u5ba2\u6237\u53cd\u9988\u673a\u5236 \u2192 \u5e02\u573a\u9700\u6c42\u9a71\u52a8 AI \u5f00\u53d1</div>' +
-    '  <div class="sub-card blue"><strong>Push\uff08\u6280\u672f\u63a8\u52a8\uff09</strong><br>\u6cbb\u7406\u6846\u67b6\u63d0\u4f9b\u5b9e\u9a8c\u7a7a\u95f4\uff08\u5b9e\u9a8c\u5ba4\u3001\u6c99\u76d2\uff09\u2192 \u9f13\u52b1\u63a2\u7d22\u65b0\u6280\u672f</div>' +
-    '</div>' +
-    '<div class="insight-box">\ud83d\udca1 Innovation Funnel\uff1a\u6cbb\u7406\u63aa\u65bd\u8d2f\u7a7f idea \u2192 PoC \u2192 scaling \u5168\u8fc7\u7a0b\uff0c\u7cfb\u7edf\u5316\u7b5b\u9009\u548c\u63a8\u8fdb\u7528\u4f8b\u3002</div>' +
-    '<h4 style="margin:14px 0 8px;">\u8def\u5f84\u4e8c\uff1a\u9a71\u52a8\u53ef\u4fe1 AI</h4>' +
-    '<table class="comp-table" style="margin-bottom:14px;">' +
-    '  <tr><th>\u539f\u5219</th><th>\u5b9e\u8df5\u65b9\u5f0f</th></tr>' +
-    '  <tr><td>Human Oversight</td><td style="font-size:12px;">\u5411\u7528\u6237\u89e3\u91ca\u6a21\u578b\u51b3\u7b56\u903b\u8f91\uff0c\u8ba9\u7528\u6237\u53c2\u4e0e\u8bbe\u8ba1</td></tr>' +
-    '  <tr><td>Transparency</td><td style="font-size:12px;">\u786e\u4fdd\u51b3\u7b56\u8fc7\u7a0b\u53ef\u7406\u89e3\u3001\u53ef\u8d28\u7591</td></tr>' +
-    '  <tr><td>Robustness & Safety</td><td style="font-size:12px;">\u7cfb\u7edf\u7a33\u5b9a\u53ef\u9760\uff0c\u80fd\u62b5\u6297\u653b\u51fb</td></tr>' +
-    '  <tr><td>Privacy & Security</td><td style="font-size:12px;">\u5168\u751f\u547d\u5468\u671f\u6570\u636e\u4fdd\u62a4</td></tr>' +
-    '  <tr><td>Fairness & Societal Wellbeing</td><td style="font-size:12px;">\u4fc3\u8fdb\u793e\u4f1a\u516c\u5e73\u548c\u6574\u4f53\u798f\u7949</td></tr>' +
-    '</table>' +
-    '<h4 style="margin:12px 0 8px;">UNESCO vs PwC \u5bf9\u6bd4\uff08ILO 4 \u6838\u5fc3\u8bad\u7ec3\uff09</h4>' +
-    '<table class="comp-table">' +
-    '  <tr><th>\u7ef4\u5ea6</th><th>UNESCO (2022)</th><th>PwC (2024)</th></tr>' +
-    '  <tr><td>\u51fa\u53d1\u70b9</td><td>\u4eba\u6743\u89c6\u89d2\uff0c\u81ea\u4e0a\u800c\u4e0b</td><td>\u4f01\u4e1a\u4ef7\u503c\u89c6\u89d2\uff0c\u81ea\u4e0b\u800c\u4e0a</td></tr>' +
-    '  <tr><td>\u6838\u5fc3\u903b\u8f91</td><td>\u4fdd\u62a4\u4eba\u7c7b\u514d\u53d7 AI \u4f24\u5bb3</td><td>\u6cbb\u7406\u8ba9 AI \u66f4\u597d\u521b\u9020\u5546\u4e1a\u4ef7\u503c</td></tr>' +
-    '  <tr><td>\u53d7\u4f17</td><td>\u6210\u5458\u56fd\u653f\u5e9c\u3001\u653f\u7b56\u5236\u5b9a\u8005</td><td>\u4f01\u4e1a\u7ec4\u7ec7</td></tr>' +
-    '  <tr><td>\u5171\u540c\u8bed\u8a00</td><td colspan="2" style="text-align:center;background:var(--green-bg);">Fairness \u00b7 Transparency \u00b7 Accountability \u00b7 Privacy\uff08\u9ad8\u5ea6\u91cd\u53e0\uff09</td></tr>' +
-    '</table>' +
-    '<div class="insight-box" style="margin-top:8px;">\ud83d\udca1 \u201c\u540c\u5f52\u6b8a\u9014\u201d\u7684\u683c\u5c40\uff1a\u540c\u4e00\u5957\u539f\u5219\u5728\u4e0d\u540c\u5236\u5ea6\u6846\u67b6\u4e0b\u4ee5\u4e0d\u540c\u903b\u8f91\u88ab\u4f7f\u7528\u2014\u2014\u8fd9\u5bf9\u7406\u89e3\u5168\u7403 AI \u6cbb\u7406\u7f51\u7edc\u81f3\u5173\u91cd\u8981\u3002</div>';
-  body.appendChild(s4);
-
-  renderNotesArea(1, body);
-  section.appendChild(body);
-  container.appendChild(section);
+// ---------------- HERO STEPS ----------------
+function toggleHeroStep(key, el) {
+  if (!appState.stepCompletion) appState.stepCompletion = {};
+  appState.stepCompletion[key] = !appState.stepCompletion[key];
+  saveState();
+  const check = el.querySelector('.step-check');
+  if (check) check.classList.toggle('checked', appState.stepCompletion[key]);
 }
 
-// ==============================
-//          TOAST
-// ==============================
+// ---------------- PROGRESS ----------------
+function refreshProgress() {
+  const ring = document.getElementById('progressRing');
+  if (!ring) return;
+  const collected = getCollectedCount();
+  ring.textContent = collected + '/13';
+  const pct = collected / 13;
+  if (pct >= 0.5) { ring.style.borderColor = 'var(--green)'; ring.style.color = 'var(--green)'; }
+  else if (pct > 0) { ring.style.borderColor = 'var(--amber)'; ring.style.color = 'var(--amber)'; }
+  else { ring.style.borderColor = '#cbd5e1'; ring.style.color = 'var(--text-muted)'; }
+}
+
+// ---------------- DROPZONE / LANG BINDINGS ----------------
+function bindDropzone() {
+  const dropzone = document.getElementById('mainDropzone');
+  const fileInput = document.getElementById('fileInput');
+  if (!dropzone || !fileInput) return;
+  dropzone.onclick = () => fileInput.click();
+  fileInput.onchange = () => { handleFiles(fileInput.files); fileInput.value = ''; };
+  dropzone.addEventListener('dragover', function(e) { e.preventDefault(); this.classList.add('drag-over'); });
+  dropzone.addEventListener('dragleave', function(e) { this.classList.remove('drag-over'); });
+  dropzone.addEventListener('drop', function(e) { e.preventDefault(); this.classList.remove('drag-over'); handleFiles(e.dataTransfer.files); });
+  document.addEventListener('paste', function(e) { const files = e.clipboardData.files; if (files.length > 0) handleFiles(files); });
+}
+
+function bindLangBtn() {
+  const btn = document.getElementById('langBtn');
+  if (btn) {
+    btn.onclick = function() {
+      lang = lang === 'zh' ? 'en' : 'zh';
+      saveState();
+      renderApp();
+    };
+  }
+}
+
+function refreshAll() {
+  renderApp();
+}
+
+// ================================================================
+//                         GLOBAL ACTIONS
+// ================================================================
+function resetAll() {
+  if (!confirm(lang === 'zh' ? '确定要清除所有数据吗？（包括材料记录、笔记和 Quiz 作答）此操作不可撤销。' : 'Clear all data (materials, notes, quiz answers)? This cannot be undone.')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  appState = getDefaultState();
+  saveState();
+  refreshAll();
+  showToast(lang === 'zh' ? '已全部重置' : 'All reset');
+}
+
 function showToast(message) {
   const toast = document.getElementById('toast');
   toast.textContent = message;
@@ -1354,73 +1771,36 @@ function showToast(message) {
   setTimeout(() => toast.classList.remove('show'), 2500);
 }
 
-// ==============================
-//    DROP ZONE EVENT HANDLERS
-// ==============================
-const dropzone = document.getElementById('mainDropzone');
-const fileInput = document.getElementById('fileInput');
-dropzone.addEventListener('click', () => fileInput.click());
-fileInput.addEventListener('change', () => handleFiles(fileInput.files));
-dropzone.addEventListener('dragover', function(e) { e.preventDefault(); this.classList.add('drag-over'); });
-dropzone.addEventListener('dragleave', function(e) { this.classList.remove('drag-over'); });
-dropzone.addEventListener('drop', function(e) { e.preventDefault(); this.classList.remove('drag-over'); handleFiles(e.dataTransfer.files); });
-document.addEventListener('paste', function(e) { const files = e.clipboardData.files; if (files.length > 0) handleFiles(files); });
-
-// ==============================
-//      GLOBAL ACTIONS
-// ==============================
-function resetAll() {
-  if (confirm('\u786e\u5b9a\u8981\u6e05\u9664\u6240\u6709\u6570\u636e\u5417\uff1f\uff08\u5305\u62ec\u6750\u6599\u8bb0\u5f55\u548c\u7b14\u8bb0\uff09\u6b64\u64cd\u4f5c\u4e0d\u53ef\u64a4\u9500\u3002')) {
-    localStorage.removeItem('hd6002_studyhub');
-    appState = getDefaultState();
-    saveState(appState);
-    refreshAll();
-    showToast('\u5df2\u5168\u90e8\u91cd\u7f6e');
-  }
-}
-
-// ==============================
-//       REFRESH ALL
-// ==============================
-function refreshAll() {
-  renderProgress();
-  renderMaterialsGrid();
-  renderHeroSteps();
-  renderWeekSections();
-}
-
-// ==============================
-//       VISIT COUNTER
-// ==============================
+// ================================================================
+//                       VISIT COUNTER
+// ================================================================
 (function trackVisit() {
   const NS = 'hd6002-zhouxiang';
   const KEY = 'studyhub-visits';
-  const display = document.getElementById('visitDisplay');
   const API_BASE = 'https://api.countapi.xyz';
+  const display = document.getElementById('visitDisplay');
+  if (!display) return;
   fetch(API_BASE + '/hit/' + NS + '/' + KEY)
-    .then(r => {
-      if (!r.ok) throw new Error('Hit failed');
-      return r.json();
-    })
-    .then(data => { display.textContent = data.value + ' visits'; })
+    .then(r => { if (!r.ok) throw new Error('hit failed'); return r.json(); })
+    .then(d => { display.textContent = d.value + ' visits'; })
     .catch(() => {
       fetch(API_BASE + '/get/' + NS + '/' + KEY)
         .then(r => r.json())
-        .then(data => { display.textContent = data.value + ' visits'; })
+        .then(d => { display.textContent = d.value + ' visits'; })
         .catch(() => {
-          fetch('https://api.countapi.xyz/create?namespace=' + NS + '&key=' + KEY + '&value=0&update_lowerbound=0&update_upperbound=1000000')
+          fetch(API_BASE + '/create?namespace=' + NS + '&key=' + KEY + '&value=0&update_lowerbound=0&update_upperbound=1000000')
             .then(() => fetch(API_BASE + '/hit/' + NS + '/' + KEY))
             .then(r => r.json())
-            .then(data => { display.textContent = data.value + ' visits'; })
-            .catch(() => { display.textContent = 'visits: \u2014'; });
+            .then(d => { display.textContent = d.value + ' visits'; })
+            .catch(() => { display.textContent = 'visits: —'; });
         });
     });
 })();
 
-// ==============================
-//         INIT
-// ==============================
-refreshAll();
+// ================================================================
+//                         INIT
+// ================================================================
+renderApp();
 </script>
 </body>
 </html>
