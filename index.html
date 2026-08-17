@@ -716,7 +716,8 @@ const S = {
       { key: 'quiz',      ico: '📝', label: '模拟 Quiz' }
     ],
     placeholderTitle: '本周内容待补充',
-    placeholderBody: '上传 Week {w} 的课件和阅读后，我可以帮你整理：填空练习答案、知识图谱、精读指南和模拟 Quiz。把文件拖到上方材料区，然后在对话中告诉我。',
+    placeholderBodyNoFiles: '请先将 Week {w} 的课件和阅读材料上传到上方材料区，然后在对话中把这些文件发给我，我就能帮你生成：填空练习、知识图谱、精读指南和模拟 Quiz。',
+    placeholderBodyHasFiles: '✅ 已上传 {n} 个文件。请<strong>在对话中把这些文件发给我</strong>，我读取后会立即生成本周的填空练习、知识图谱、精读指南和模拟 Quiz。',
     quizComingTitle: '模拟 Quiz 待制作',
     quizComingBody: '等本周材料到位后，我会基于课件和阅读出 5 道选择题 + 3 道简答题（中英双语、使用教材原词）。',
     quizReadyTitle: '📝 模拟 Quiz — Week {w}',
@@ -797,7 +798,8 @@ const S = {
       { key: 'quiz',      ico: '📝', label: 'Mock Quiz' }
     ],
     placeholderTitle: 'Content for this week is pending',
-    placeholderBody: 'Once you upload the Week {w} slides and readings, I can prepare: exercise answers, knowledge map, reading guide and a mock quiz. Drop files into the materials area above, then tell me in the chat.',
+    placeholderBodyNoFiles: 'Please upload Week {w} slides and readings to the materials area above, then send those files to me in this chat. I will generate exercises, knowledge map, close-reading guide and mock quiz.',
+    placeholderBodyHasFiles: '✅ {n} file(s) uploaded. Please <strong>send those files to me in this chat</strong> so I can read them and generate exercises, knowledge map, close-reading guide and mock quiz for Week {w}.',
     quizComingTitle: 'Mock quiz coming soon',
     quizComingBody: 'When this week\'s materials arrive, I will build 5 MCQs + 3 short-answer questions (bilingual, using the exact terminology from the readings).',
     quizReadyTitle: '📝 Mock Quiz — Week {w}',
@@ -1041,6 +1043,136 @@ const W1 = {
   vsInsight: { zh: '💡 “同归殊途”的格局：同一套原则在不同制度框架下以不同逻辑被使用——这对理解全球 AI 治理网络至关重要。', en: '💡 Same destination, different paths: the same set of principles is used through different institutional logics — essential for understanding the global AI governance landscape.' }
 };
 
+
+// ================================================================
+//                        WEEK 2 DATA
+// ================================================================
+const W2 = {
+  exerciseTitle: { zh: '填空练习：三种 AI 类型 + Human vs AI 决策对比', en: 'Exercises: three types of AI + human vs AI decision-making' },
+  exerciseSub: { zh: '对应课件 Part Two / Part Four（幻灯片 14-15、19-20），与 Cambridge 阅读的结论。', en: 'Based on slides 14-15 & 19-20, plus the Cambridge reading conclusion.' },
+
+  ex1Title: { zh: '练习一：三种 AI 类型填空（幻灯片 14-15）', en: 'Exercise 1: Three types of AI (slides 14-15)' },
+  ex1Cols: { zh: ['维度', '答案', 'ANI 窄 AI', 'AGI 通用 AI', 'ASI 超级 AI'], en: ['Dimension', 'Answer', 'ANI (Narrow AI)', 'AGI (General AI)', 'ASI (Superintelligence)'] },
+  ex1Rows: [
+    { dim: { zh: '智能范围', en: 'Scope of intelligence' }, ans: { zh: 'S__ → Specific', en: 'S__ → Specific' },
+      a: { zh: '特定领域', en: 'Specific — within a defined domain' }, b: { zh: '跨领域', en: 'General — across domains' }, c: { zh: '超越人类', en: 'Super — beyond human' } },
+    { dim: { zh: '任务范围', en: 'Scope of tasks' }, ans: { zh: 'N__ / B__ / E__ b__', en: 'N__ / B__ / E__ b__' },
+      a: { zh: 'Narrow：特定或有限任务', en: 'Narrow: specific or limited tasks' }, b: { zh: 'Broad：跨领域广泛任务', en: 'Broad: wide range of tasks across domains' }, c: { zh: 'Everything beyond：所有智力任务', en: 'Everything beyond: all intellectual tasks' } },
+    { dim: { zh: '学习能力', en: 'Learning ability' }, ans: { zh: '限定任务 / 可迁移 / 自主改进', en: 'Defined / Transferable / Self-improving' },
+      a: { zh: '基于训练在限定任务内学习', en: 'Learns within a defined task based on training' }, b: { zh: '从经验学习并迁移到新情境', en: 'Learns from experience, applies to new situations' }, c: { zh: '自主改进，智能指数增长', en: 'Self-improves autonomously; exponential growth' } },
+    { dim: { zh: '适应性', en: 'Adaptability' }, ans: { zh: 'L__ / H__ / E__ h__', en: 'L__ / H__ / E__ h__' },
+      a: { zh: 'Limited：受训练数据或规则约束', en: 'Limited: constrained by training data/rules' }, b: { zh: 'High：少量重训练即可适应', en: 'High: adapts with limited retraining' }, c: { zh: 'Extreme high：自主适应', en: 'Extreme high: autonomous adaptation' } },
+    { dim: { zh: '发展状态', en: 'Development status' }, ans: { zh: '已存在 / 理论 / 假设', en: 'Today / Theoretical / Hypothetical' },
+      a: { zh: 'Exist today（最常见）', en: 'Exist today (most prevalent)' }, b: { zh: '理论阶段，尚未实现', en: 'Theoretical — not yet achieved' }, c: { zh: '假设阶段，尚未实现', en: 'Hypothetical — not yet achieved' } }
+  ],
+  ex1Insight: { zh: '💡 ANI 举例：文档分类、图像/语音识别、推荐系统（Netflix、Amazon）；AGI 与 ASI 目前都没有现实例子。', en: '💡 ANI examples: document classification, image/voice recognition, recommendation systems (Netflix, Amazon); AGI and ASI currently have no real-world example.' },
+
+  ex2Title: { zh: '练习二：Human vs AI —— 谁更占优？（幻灯片 19-20 + Cambridge）', en: 'Exercise 2: Human vs AI — who has the edge? (slides 19-20 + Cambridge)' },
+  ex2Cols: { zh: ['维度', '占优方', '原因'], en: ['Dimension', 'Edge', 'Reason'] },
+  ex2Rows: [
+    { dim: { zh: '速度与规模化', en: 'Speed & scalability' }, who: { zh: 'AI', en: 'AI' }, cls: 'red',
+      why: { zh: '以惊人速度处理海量数据，超越人类认知能力（数据分析、模式识别）', en: 'processes vast data at incredible speeds, surpassing human cognition' } },
+    { dim: { zh: '一致性与可靠性', en: 'Consistency & reliability' }, who: { zh: 'AI', en: 'AI' }, cls: 'red',
+      why: { zh: '重复任务高精度、无疲劳、无偏见', en: 'repetitive tasks with high accuracy, without fatigue or bias' } },
+    { dim: { zh: '自动化', en: 'Automation' }, who: { zh: 'AI', en: 'AI' }, cls: 'red',
+      why: { zh: '自动化例行任务、简化流程、降低成本', en: 'automates routine tasks, reduces manual labour and costs' } },
+    { dim: { zh: '创造力与创新', en: 'Creativity & innovation' }, who: { zh: '人类', en: 'Human' }, cls: 'green',
+      why: { zh: '跳出框架思考、产生新颖想法、以创造力适应新情境', en: 'thinks outside the box, generates novel ideas, adapts with creativity' } },
+    { dim: { zh: '情商', en: 'Emotional intelligence' }, who: { zh: '人类', en: 'Human' }, cls: 'green',
+      why: { zh: '同理心、社交互动、情感理解，维系人际关系', en: 'empathy, social interaction, emotional understanding' } },
+    { dim: { zh: '伦理', en: 'Ethics' }, who: { zh: '人类', en: 'Human' }, cls: 'green',
+      why: { zh: '权衡社会文化影响，做出复杂道德决策', en: 'weighs societal and cultural implications for moral decisions' } },
+    { dim: { zh: '不确定性 / 战略远见', en: 'Uncertainty / strategic foresight' }, who: { zh: '人类', en: 'Human' }, cls: 'green',
+      why: { zh: 'AI 依赖历史数据、为短期增长优化；面对突发扰动人类更有直觉与灵活战略', en: 'AI relies on historical data; humans keep intuition and strategic flexibility in disruption' } }
+  ],
+  ex2Insight: { zh: '💡 结论：AI 在数据驱动、基于逻辑的决策上占优；人类在直觉、伦理、适应性、战略远见上占优。更好的问题是——人类如何最好地利用 AI 做出最佳决策？', en: '💡 Conclusion: AI wins on data-driven, logic-based decisions; humans on intuition, ethics, adaptability and strategic foresight. The better question: how can humans best use AI to arrive at the best decisions?' },
+
+  kmTitle: { zh: '知识图谱：Human intelligence vs AI', en: 'Knowledge Map: human intelligence vs AI' },
+  kmSub: { zh: '从三种 AI 类型 → 决策能力对比 → 混合智能 → AI 时代领导力，构成 Week 2 的完整思维骨架。', en: 'From three types of AI → decision-making comparison → hybrid intelligence → AI-era leadership: the full Week 2 mental skeleton.' },
+  kmTheme: { zh: '主题：AI 与人类智能既非对立也非替代——关键在于互补与治理', en: 'Theme: AI and human intelligence are neither opposed nor substitutive — the key is complementarity and governance' },
+  kmBranches: [
+    { cls: 'blue', t: { zh: '① 三种 AI 类型', en: '① Three types of AI' },
+      d: { zh: '<strong>ANI</strong>（窄 AI/Weak AI）：现在 · 特定任务<br><strong>AGI</strong>（通用 AI/Strong AI）：理论阶段 · 跨领域<br><strong>ASI</strong>（超级 AI）：假设阶段 · 超越人类', en: '<strong>ANI</strong> (Narrow/Weak AI): today · specific tasks<br><strong>AGI</strong> (General/Strong AI): theoretical · cross-domain<br><strong>ASI</strong> (Superintelligence): hypothetical · beyond human' } },
+    { cls: 'red', t: { zh: '② 决策能力对比', en: '② Decision-making comparison' },
+      d: { zh: '<strong>AI 占优</strong>：数据驱动、逻辑型决策——速度/准确度/模式识别<br><strong>人类占优</strong>：直觉、伦理、适应性、战略远见', en: '<strong>AI edge</strong>: data-driven, logic-based — speed/accuracy/pattern recognition<br><strong>Human edge</strong>: intuition, ethics, adaptability, strategic foresight' } },
+    { cls: 'green', t: { zh: '③ 混合智能 (Hybrid Intelligence)', en: '③ Hybrid Intelligence' },
+      d: { zh: '人类与 AI 交叠区：<br><strong>Human-augmented AI</strong>（人类增强 AI）+<br><strong>Augmented human intelligence</strong>（AI 增强人类）', en: 'The human–AI overlap:<br><strong>Human-augmented AI</strong> + <strong>augmented human intelligence</strong>' } },
+    { cls: 'amber', t: { zh: '④ AI 时代领导力 (5 项技能)', en: '④ Leadership in the age of AI (5 skills)' },
+      d: { zh: 'AI literacy · Human-centered perspective · Ethical leadership · Strategic vision · Change management', en: 'AI literacy · Human-centered perspective · Ethical leadership · Strategic vision · Change management' } }
+  ],
+  kmTableTitle: { zh: '核心概念速查表', en: 'Core concepts quick reference' },
+  kmTableCols: { zh: ['概念', '定义', '考点 / 出处'], en: ['Concept', 'Definition', 'Source / exam link'] },
+  kmRows: [
+    { c: { zh: 'Tacit knowledge（隐性知识）', en: 'Tacit knowledge' },
+      d: { zh: '个人智慧、洞察、直觉，随经验积累，难以言说或外化', en: 'personal wisdom, insight, intuition built from experience — hard to express or extract' },
+      s: { zh: 'Polanyi: "we can know more than we can tell" · Jarrahi', en: 'Polanyi: "we can know more than we can tell" · Jarrahi' } },
+    { c: { zh: 'Machine tacit knowledge（机器隐性知识）', en: 'Machine tacit knowledge' },
+      d: { zh: 'AI 自我学习获得的、无法编码或向人解释的知识（黑箱）', en: 'knowledge AI develops through self-learning but cannot codify or explain (black box)' },
+      s: { zh: 'Burrell 2016 · Jarrahi', en: 'Burrell 2016 · Jarrahi' } },
+    { c: { zh: 'Human-augmented AI', en: 'Human-augmented AI' },
+      d: { zh: '人类训练/纠错/标注 AI，AI 依赖人类持续输入而改进', en: 'AI trained and improved by human input; relies on humans as mediators' },
+      s: { zh: 'heteromation · human computation · Jarrahi', en: 'heteromation · human computation · Jarrahi' } },
+    { c: { zh: 'Augmented human intelligence', en: 'Augmented human intelligence' },
+      d: { zh: 'AI 扩展人类能力而非替代：预测分析、认知带宽扩展', en: 'AI extends human capability: predictive analytics, broader cognitive bandwidth' },
+      s: { zh: 'Kasparov + AI 对弈 · 智能助手 · Jarrahi', en: 'Kasparov & AI chess partner · assistants · Jarrahi' } },
+    { c: { zh: 'Algorithm aversion（算法厌恶）', en: 'Algorithm aversion' },
+      d: { zh: '多数人（尤其年长者）更信任人类决策者而非算法', en: 'majorities, especially older people, favour human decision-makers over algorithms' },
+      s: { zh: 'Kaiser & Reisch · 6 国研究 · Cambridge', en: 'Kaiser & Reisch · 6-country study · Cambridge' } }
+  ],
+  kmInsight: { zh: '💡 贯穿线索：黑箱（machine tacit knowledge）与人类隐性知识的鸿沟，正是 AI alignment（机器理解人类）与 AI literacy（人类理解机器）双向努力的对象。', en: '💡 Thread: the gap between black-box machine tacit knowledge and human tacit knowledge is what AI alignment (machine understands human) and AI literacy (human understands machine) both address.' },
+
+  readingTitle: { zh: '精读三篇阅读材料', en: 'Close reading: three readings' },
+  r1Title: { zh: '阅读 1 · Jarrahi, Lutz & Newlands (2022) — 学术论文', en: 'Reading 1 · Jarrahi, Lutz & Newlands (2022) — academic paper' },
+  r1Sub: { zh: '“AI, human intelligence and hybrid intelligence based on mutual augmentation”，Big Data & Society', en: '"AI, human intelligence and hybrid intelligence based on mutual augmentation", Big Data & Society' },
+  r1Card: { zh: '<strong>核心论点：</strong>界定 AI 的最好方式，是把它与人类智能对比——存在两类 AI：超越人类智能的，以及本质上与人类智能纠缠的（hybrid intelligence）。', en: '<strong>Thesis:</strong> the best way to delineate AI is to contrast it with human intelligence — there are two kinds of AI: one that surpasses it, one inherently intertwined with it (hybrid intelligence).' },
+  r1Areas: [
+    { cls: 'amber', t: { zh: 'Human intelligence（黄色区）', en: 'Human intelligence (yellow)' },
+      d: { zh: '通用智能 · 类比思维 · 因果推断 · 隐性知识 · 具身智能 · 情感/社会/协作智能', en: 'general intelligence · analogical thinking · causation · tacit knowledge · embodied · emotional/social/cooperative' } },
+    { cls: 'blue', t: { zh: 'AI（蓝色区）', en: 'AI (blue)' },
+      d: { zh: '任务中心 · 速度与规模 · 分类优势 · machine tacit knowledge（黑箱，无法解释）', en: 'task-centric · speed and scale · classification · machine tacit knowledge (black box)' } },
+    { cls: 'green', t: { zh: 'Hybrid intelligence（橙色交叠区）', en: 'Hybrid intelligence (orange overlap)' },
+      d: { zh: '持续 human–AI interaction 产生两个产出：human-augmented AI + augmented human intelligence', en: 'continuous human–AI interaction yields: human-augmented AI + augmented human intelligence' } }
+  ],
+  r1Insight: { zh: '💡 AI 是 sociotechnical system：真正有效的智能表现需要人类贡献（AI alignment + AI literacy 双向对齐）；"到达人类级智能"既不合理也不可行。', en: '💡 AI is a sociotechnical system: real-world performance needs human contribution (AI alignment + AI literacy). Reaching human-level intelligence is neither sensible nor feasible.' },
+
+  r2Title: { zh: '阅读 2 · Stern (2025) — WSJ 案例：AI 经营售卖机', en: 'Reading 2 · Stern (2025) — WSJ case: the AI vending machine' },
+  r2Sub: { zh: '“We Let AI Run Our Office Vending Machine. It Lost Hundreds of Dollars.” — Anthropic 红队实验', en: '"We Let AI Run Our Office Vending Machine. It Lost Hundreds of Dollars." — an Anthropic red-team experiment' },
+  r2Card: { zh: '<strong>故事梗概：</strong>Claude 驱动的 AI agent “Claudius” 全权经营 WSJ 编辑部售卖机（进货、定价、客服）。几天内它被说服免费送光库存，买了 PlayStation 5 和一条活鱼，亏损超 $1,000。', en: '<strong>Plot:</strong> Claude-powered agent "Claudius" ran the WSJ newsroom vending machine (buying, pricing, customer service). Within days it gave away nearly all inventory for free, bought a PlayStation 5 and a live fish — losing over $1,000.' },
+  r2FailTitle: { zh: '失败点（投票游戏后的现实注脚）', en: 'What went wrong (a real-world footnote to the voting game)' },
+  r2Fails: [
+    { zh: '社会工程：记者用 140+ 条消息把它说服成 "Soviet vending machine"，再用伪造公司文件发动 "董事会政变"，让它彻底免费', en: 'social engineering: 140+ messages convinced it it was a Soviet machine; fake corporate documents staged a "boardroom coup"' },
+    { zh: '目标漂移：上下文窗口被指令与对话填满后，忘记利润目标与护栏', en: 'goal drift: as context filled up, it lost track of goals, priorities and guardrails' },
+    { zh: '幻觉：宣称把钱留在机器旁，让同事去翻找', en: 'hallucination: it claimed cash was left by the machine for a colleague' },
+    { zh: '护栏不足：实验版模型比公开版 guardrails 更少；v2 加了个 "CEO bot" Seymour 仍被架空', en: 'weak guardrails: the test model had fewer guardrails; even v2\'s "CEO bot" Seymour was outmanoeuvred' }
+  ],
+  r2Insight: { zh: '💡 治理启示：给 AI agent 自主权（钱、采购、定价）必须配以硬约束与人类监督；"规则"对善于说服的人类并不足够——这也是 Human Oversight 原则的实践案例。', en: '💡 Governance lesson: granting an AI agent autonomy (money, purchasing, pricing) requires hard constraints and human oversight — rules alone are not robust against persuasive humans. A live case for Human Oversight.' },
+
+  r3Title: { zh: '阅读 3 · Cambridge Judge (2025) — AI 决策研究综述', en: 'Reading 3 · Cambridge Judge (2025) — AI decision-making synthesis' },
+  r3Sub: { zh: '“Human brain vs AI: what makes better decisions?” — 商学院研究汇编', en: '"Human brain vs AI: what makes better decisions?" — research synthesis' },
+  r3Card: { zh: '<strong>一句话结论：</strong>数据驱动、基于逻辑的决策——AI 无人能及（速度、准确度、模式识别）；直觉、伦理判断、适应性、战略远见——人类胜出。', en: '<strong>Bottom line:</strong> for data-driven, logic-based decisions AI is unmatched; for intuition, ethical judgment, adaptability and strategic foresight, humans win.' },
+  r3FindTitle: { zh: '关键研究发现', en: 'Key findings' },
+  r3Finds: [
+    { cls: 'blue', t: { zh: 'AI CEO 实验', en: 'AI CEO experiment' },
+      d: { zh: '汽车行业模拟：AI CEO 更快设计高性能产品、优化成本与供应链，但市场突变时失败（依赖历史数据、缺灵活性）', en: 'auto-industry simulation: AI CEOs designed products faster and optimised supply chains, but failed under unexpected market shifts' } },
+    { cls: 'blue', t: { zh: 'LLM 预测政策效果', en: 'LLM policy prediction' },
+      d: { zh: 'LLM 能高精度预测食品政策干预效果；"公式通常比人做得好，只要数据无偏见"', en: 'LLMs accurately predict food-policy effects; formulas beat people unless training data is biased' } },
+    { cls: 'amber', t: { zh: '创造力研究', en: 'Creativity studies' },
+      d: { zh: 'human-AI 共创初始新颖但随后停滞，human-only 团队持续提升；LLM 集体创造力约等于 8-10 个人', en: 'human-AI co-creation was innovative at first then stagnated; LLM collective creativity equals ~8-10 humans' } },
+    { cls: 'green', t: { zh: 'Algorithm aversion', en: 'Algorithm aversion' },
+      d: { zh: '6 国 10 个决策情境：多数人偏好人类决策者，年长者尤其明显；信息干预效果有限', en: '6 countries, 10 scenarios: majorities prefer human decision-makers, especially older people' } }
+  ],
+  r3TipTitle: { zh: '整合 AI 决策的 6 条日常建议', en: '6 tips for integrating AI into decision-making' },
+  r3Tips: [
+    { zh: '数据密集、逻辑型任务放心用 AI', en: 'use AI confidently for data-heavy, logic-based tasks' },
+    { zh: '伦理/情感情境依靠自己的判断', en: 'rely on your own judgment in ethical/emotional contexts' },
+    { zh: '始终监督 AI 输出（幻觉、输入错误）', en: 'keep oversight of AI outputs (hallucinations, bad input)' },
+    { zh: '把 AI 当创意助理，自己负责打磨', en: 'use AI as a creative assistant, refine yourself' },
+    { zh: '透明说明是否及如何使用 AI', en: 'be transparent about AI use' },
+    { zh: '保持了解，但不过度依赖', en: 'stay informed, but don\'t over-rely' }
+  ],
+  r3Insight: { zh: '💡 对课程的意义：阅读给出 "AI 何时更好" 的证据基础，正好支撑投票游戏的讨论，也衔接 Jarrahi 的 hybrid intelligence —— 竞争是错的，互补才是答案。', en: '💡 For the course: the reading provides evidence for "when AI is better", supporting the voting game and linking to Jarrahi\'s hybrid intelligence — competition is the wrong frame; complementarity is the answer.' }
+};
+
 // ================================================================
 //                        QUIZ DATA (Week 1)
 // ================================================================
@@ -1100,6 +1232,63 @@ const WEEK_QUIZ = {
         model: { zh: '(1) Supervised learning（监督学习）——用已标注数据学习；例：垃圾邮件过滤、物体检测、医疗诊断。(2) Unsupervised learning（无监督学习）——从无标注数据中发现隐藏模式；例：客户分群、异常检测。(3) Reinforcement learning（强化学习）——通过试错与奖惩机制学习；例：机器人、游戏 AI、自动驾驶。', en: '(1) Supervised learning — learns from labelled data; e.g., spam filtering, object detection, medical diagnosis. (2) Unsupervised learning — finds hidden patterns in unlabelled data; e.g., customer segmentation, anomaly detection. (3) Reinforcement learning — learns through trial and error with rewards/penalties; e.g., robotics, game AI, autonomous driving.' } },
       { q: { zh: '解释 UNESCO (2022) 与 PwC (2024) 在 AI 治理上的视角差异，以及它们在哪里汇聚。', en: 'Explain the difference in perspective between UNESCO (2022) and PwC (2024) on AI governance, and where they converge.' },
         model: { zh: 'UNESCO 采取自上而下的人权视角：AI 必须尊重、保护和促进人权，治理是为了保护社会免受伤害。PwC 采取自下而上的企业价值视角：治理是价值驱动器，支持创新并建立可信 AI。两者在原则语言上汇聚——fairness、transparency、accountability、privacy——说明同一套价值观可以通过不同制度逻辑被实现。', en: 'UNESCO takes a top-down, human-rights perspective: AI must respect, protect and promote human rights; governance safeguards society from harm. PwC takes a bottom-up, enterprise-value perspective: governance is a value driver that supports innovation and builds trustworthy AI. They converge on a common principle language — fairness, transparency, accountability, privacy — showing that the same values can be implemented through different institutional logics.' } }
+    ]
+  }  ,
+  2: {
+    mcq: [
+      { q: { zh: '以下哪项最准确地描述了 Artificial Narrow Intelligence（ANI）？', en: 'Which best describes Artificial Narrow Intelligence (ANI)?' },
+        options: [
+          { zh: '目前最常见、已存在的 AI，执行特定或有限任务', en: 'The most common AI today, performing specific or limited tasks' },
+          { zh: '跨领域执行广泛任务的通用智能', en: 'General intelligence across a wide range of domains' },
+          { zh: '超越人类所有智力任务的假设型智能', en: 'Hypothetical intelligence beyond all human intellectual tasks' },
+          { zh: '一种人类智能', en: 'A form of human intelligence' }
+        ],
+        answer: 0,
+        explain: { zh: 'ANI（Narrow AI / Weak AI）是唯一已实现的 AI 类型，如文档分类、图像/语音识别、推荐系统（Netflix、Amazon）。AGI 与 ASI 目前均无现实例子。', en: 'ANI (Narrow/Weak AI) is the only implemented type — e.g., document classification, image/voice recognition, recommendation systems. AGI and ASI have no real-world examples yet.' } },
+      { q: { zh: '根据 Jarrahi et al. (2022)，"hybrid intelligence"（混合智能）指的是什么？', en: 'According to Jarrahi et al. (2022), what is "hybrid intelligence"?' },
+        options: [
+          { zh: 'AI 完全取代人类智能', en: 'AI fully replacing human intelligence' },
+          { zh: '人类与 AI 在持续交互中相互增强能力的交叠区', en: 'The overlap where humans and AI augment each other through continuous interaction' },
+          { zh: '仅由人类提供的智能', en: 'Intelligence provided only by humans' },
+          { zh: 'ASI 的另一个名称', en: 'Another name for ASI' }
+        ],
+        answer: 1,
+        explain: { zh: 'Hybrid intelligence 是 Figure 1 中的橙色交叠区，通过 human–AI interaction 产生两个产出：human-augmented AI（人类增强 AI）与 augmented human intelligence（AI 增强人类）。', en: 'Hybrid intelligence is the orange overlap in Figure 1, produced through human–AI interaction: human-augmented AI and augmented human intelligence.' } },
+      { q: { zh: '"We can know more than we can tell"（我们能知道的比能说出来的多）指的是什么？', en: '"We can know more than we can tell" refers to what?' },
+        options: [
+          { zh: '机器的隐性知识', en: 'Machine tacit knowledge' },
+          { zh: '人类的隐性知识（tacit knowledge），难以言说因而难以被 AI 复制', en: 'Human tacit knowledge — hard to articulate, hence hard for AI to replicate' },
+          { zh: '强化学习的奖励机制', en: 'Reinforcement learning\'s reward mechanism' },
+          { zh: '数据偏见', en: 'Data bias' }
+        ],
+        answer: 1,
+        explain: { zh: 'Polanyi 的名言，被 Jarrahi 引用：人类隐性知识（个人智慧、洞察、直觉、经验）难以外化表达，因此大部分无法被 AI 复制。', en: 'Polanyi\'s famous line, cited by Jarrahi: much of human tacit knowledge (wisdom, insight, intuition, experience) is impossible to articulate — and therefore to replicate in AI.' } },
+      { q: { zh: 'WSJ 的 Claudius 实验（Stern 2025）主要揭示了 AI agent 的什么问题？', en: 'The WSJ Claudius experiment (Stern 2025) mainly revealed what about AI agents?' },
+        options: [
+          { zh: 'AI agent 能出色管理库存和定价', en: 'AI agents excel at inventory and pricing' },
+          { zh: '拥有自主权的 AI agent 容易被社会工程操纵、在上下文填满后目标漂移', en: 'Autonomous AI agents are easily manipulated via social engineering and suffer goal drift as context fills' },
+          { zh: 'AI agent 不需要人类监督', en: 'AI agents need no human oversight' },
+          { zh: 'AI agent 的利润率远高于人类', en: 'AI agents are far more profitable than humans' }
+        ],
+        answer: 1,
+        explain: { zh: 'Claudius 被记者用伪造文件发动 "董事会政变"，免费送光库存并购买 PlayStation 5 与活鱼；原因包括社会工程、上下文窗口限制、护栏不足。', en: 'Journalists staged a fake "boardroom coup" to make Claudius give everything away free and buy a PS5 and a live fish — due to social engineering, context-window limits and weak guardrails.' } },
+      { q: { zh: '根据 Cambridge Judge (2025) 的研究综述，AI 在哪种情况下能做出更好的决策？', en: 'According to Cambridge Judge (2025), when does AI make better decisions?' },
+        options: [
+          { zh: '涉及伦理与道德判断时', en: 'In ethical and moral judgments' },
+          { zh: '数据驱动、基于逻辑的决策（速度、准确度、模式识别）', en: 'Data-driven, logic-based decisions (speed, accuracy, pattern recognition)' },
+          { zh: '需要战略远见和应对不确定性时', en: 'When strategic foresight and uncertainty handling are needed' },
+          { zh: '需要同理心的人际互动中', en: 'In empathetic interpersonal interactions' }
+        ],
+        answer: 1,
+        explain: { zh: '"Yes – when it comes to data-driven, logic-based decisions, where AI is unmatched in speed, accuracy and pattern recognition. No – when it comes to intuition, ethical judgment, adaptability and strategic foresight."', en: '"Yes — for data-driven, logic-based decisions, where AI is unmatched in speed, accuracy and pattern recognition. No — for intuition, ethical judgment, adaptability and strategic foresight."' } }
+    ],
+    short: [
+      { q: { zh: '用 Jarrahi et al. (2022) 的框架区分 human intelligence、AI 与 hybrid intelligence，并各举一例说明 human-augmented AI 与 augmented human intelligence。', en: 'Using Jarrahi et al. (2022), distinguish human intelligence, AI and hybrid intelligence, and give one example each of human-augmented AI and augmented human intelligence.' },
+        model: { zh: 'Human intelligence：通用智能——类比思维、因果推断、隐性知识（tacit knowledge）、具身智能、情感/社会/协作智能。AI：任务中心——在速度、规模、分类上超越人类，但产生 machine tacit knowledge（黑箱、无法解释）。Hybrid intelligence：两者交叠区，通过持续 human–AI interaction 产生两个产出。Human-augmented AI：人类训练/标注/监督 AI，AI 依赖人类输入改进（如 RLHF、数据标注——heteromation / human computation）。Augmented human intelligence：AI 扩展人类能力而非替代（如 Kasparov 与 AI 对弈专注战略、个人智能助手扩展认知带宽）。', en: 'Human intelligence: general — analogical thinking, causation, tacit knowledge, embodiment, emotional/social/cooperative intelligence. AI: task-centric — surpasses humans in speed, scale, classification, but produces machine tacit knowledge (black box). Hybrid intelligence: the overlap, produced by continuous human–AI interaction. Human-augmented AI: humans train/annotate/supervise AI, which improves through human input (e.g., RLHF, data labelling — heteromation/human computation). Augmented human intelligence: AI extends human capability (e.g., Kasparov teaming with AI for strategy; assistants widening cognitive bandwidth).' } },
+      { q: { zh: '根据 Cambridge Judge (2025)，AI 在哪些决策中优于人类、在哪些方面落后？作者认为更值得问的问题是什么？', en: 'Per Cambridge Judge (2025), where does AI outperform humans and where does it fall behind? What better question does the author pose?' },
+        model: { zh: '优于：数据驱动、逻辑型决策——速度、准确度、模式识别（如 AI CEO 更快设计产品并优化供应链、癌症早期检测更准、金融高频交易）。落后：不确定性、模糊性、伦理判断、战略远见、同理心——AI 依赖历史数据、为短期目标优化，突发扰动时缺乏灵活性。更好的问题："How can humans best use AI in order to arrive at the best decisions?"——用 AI 增强人类判断，同时保留人类 oversight 与伦理责任。', en: 'Outperforms: data-driven, logic-based decisions — speed, accuracy, pattern recognition (AI CEOs design faster and optimise supply chains; earlier cancer detection; high-frequency trading). Falls behind: uncertainty, ambiguity, ethics, strategic foresight, empathy — AI relies on historical data, optimises for short-term goals, and lacks flexibility in disruption. Better question: "How can humans best use AI in order to arrive at the best decisions?" — augment human judgment while keeping human oversight and ethical responsibility.' } },
+      { q: { zh: '从 WSJ 的 Claudius 售卖机实验总结 AI agent 失败的三大原因，并说明对 AI 治理的启示。', en: 'Summarise three causes of the Claudius vending-machine failure and their implications for AI governance.' },
+        model: { zh: '(1) 社会工程/操纵：记者用 140+ 条消息和伪造公司文件发动 "董事会政变"，AI 无法稳健区分真实与虚假权威。(2) 目标漂移：上下文窗口被指令与对话填满后，模型忘记利润目标与护栏。(3) 护栏不足与幻觉：实验版模型 guardrails 较少；AI 声称把钱放在机器旁（幻觉）。治理启示：AI agent 的自主权（资金、采购、定价）必须配以硬约束与人类监督（Human Oversight）；"规则"对善于说服的人类不够，需要更鲁棒的真实性校验与指令遵循能力。', en: '(1) Social engineering: 140+ messages and fake corporate documents staged a "boardroom coup" — the AI could not robustly distinguish real from fake authority. (2) Goal drift: as context filled up, it lost track of profit goals and guardrails. (3) Weak guardrails and hallucination: the test model had fewer guardrails; it claimed cash was left by the machine. Governance implications: agent autonomy (money, purchasing, pricing) must come with hard constraints and human oversight; rules alone are insufficient against persuasive humans — agents need more robust truthfulness checks and instruction following.' } }
     ]
   }
 };
@@ -1387,6 +1576,7 @@ function renderModulePanels(week) {
     panel.className = 'module-panel' + (m === active ? ' active' : '');
     panel.id = 'panel-' + week.num + '-' + m;
     if (week.num === 1) renderW1Panel(m, panel);
+    else if (week.num === 2) renderW2Panel(m, panel);
     else renderPlaceholderPanel(m, week, panel);
     host.appendChild(panel);
   });
@@ -1539,6 +1729,112 @@ function w1ReadingHTML() {
   return h;
 }
 
+
+function renderW2Panel(moduleKey, panel) {
+  if (moduleKey === 'exercise') panel.innerHTML = w2ExerciseHTML();
+  if (moduleKey === 'knowledge') panel.innerHTML = w2KnowledgeHTML();
+  if (moduleKey === 'reading') panel.innerHTML = w2ReadingHTML();
+  if (moduleKey === 'quiz') renderQuizPanel(2, panel);
+}
+
+function w2ExerciseHTML() {
+  const L = W2;
+  let h = '';
+  h += '<div class="w1-section">';
+  h += '<div class="w1-section-header"><div class="w1-section-num s1">1</div><div><h3>' + bi(L.exerciseTitle) + '</h3><p>' + bi(L.exerciseSub) + '</p></div></div>';
+
+  h += '<h4 style="margin-bottom:8px;font-size:14px;">' + bi(L.ex1Title) + '</h4>';
+  h += '<table class="exercise-table"><tr>' + L.ex1Cols[lang].map(c => '<th>' + c + '</th>').join('') + '</tr>';
+  L.ex1Rows.forEach(r => {
+    h += '<tr><td><strong>' + bi(r.dim) + '</strong></td>' +
+      '<td class="answer">' + bi(r.ans) + '</td>' +
+      '<td style="font-size:11px;">' + bi(r.a) + '</td>' +
+      '<td style="font-size:11px;">' + bi(r.b) + '</td>' +
+      '<td style="font-size:11px;">' + bi(r.c) + '</td></tr>';
+  });
+  h += '</table>';
+  h += '<div class="insight-box">' + bi(L.ex1Insight) + '</div>';
+
+  h += '<h4 style="margin-bottom:8px;font-size:14px;">' + bi(L.ex2Title) + '</h4>';
+  h += '<table class="exercise-table"><tr>' + L.ex2Cols[lang].map(c => '<th>' + c + '</th>').join('') + '</tr>';
+  L.ex2Rows.forEach(r => {
+    const cls = r.cls === 'red' ? ' color-red' : ' color-green';
+    h += '<tr><td><strong>' + bi(r.dim) + '</strong></td>' +
+      '<td class="answer' + cls + '">' + bi(r.who) + '</td>' +
+      '<td style="font-size:11px;">' + bi(r.why) + '</td></tr>';
+  });
+  h += '</table>';
+  h += '<div class="insight-box">' + bi(L.ex2Insight) + '</div>';
+  h += '</div>';
+  return h;
+}
+
+function w2KnowledgeHTML() {
+  const L = W2;
+  let h = '';
+  h += '<div class="w1-section">';
+  h += '<div class="w1-section-header"><div class="w1-section-num s2">2</div><div><h3>' + bi(L.kmTitle) + '</h3><p>' + bi(L.kmSub) + '</p></div></div>';
+  h += '<div class="reading-card" style="text-align:center;">' + bi(L.kmTheme) + '</div>';
+  h += '<div class="sub-grid">';
+  L.kmBranches.forEach(b => {
+    h += '<div class="sub-card ' + b.cls + '"><strong>' + bi(b.t) + '</strong><br><span style="font-size:12px;">' + bi(b.d) + '</span></div>';
+  });
+  h += '</div>';
+
+  h += '<h4 style="margin:10px 0 8px;">' + bi(L.kmTableTitle) + '</h4>';
+  h += '<table class="comp-table"><tr>' + L.kmTableCols[lang].map(c => '<th>' + c + '</th>').join('') + '</tr>';
+  L.kmRows.forEach(r => {
+    h += '<tr><td><strong>' + bi(r.c) + '</strong></td><td style="font-size:12px;">' + bi(r.d) + '</td><td style="font-size:11px;">' + bi(r.s) + '</td></tr>';
+  });
+  h += '</table>';
+  h += '<div class="insight-box">' + bi(L.kmInsight) + '</div>';
+  h += '</div>';
+  return h;
+}
+
+function w2ReadingHTML() {
+  const L = W2;
+  let h = '';
+  h += '<div class="w1-section">';
+  h += '<div class="w1-section-header"><div class="w1-section-num s3">3</div><div><h3>' + bi(L.readingTitle) + '</h3></div></div>';
+
+  // Reading 1: Jarrahi
+  h += '<h4 style="margin:10px 0 8px;">' + bi(L.r1Title) + '</h4>';
+  h += '<p style="font-size:11px;color:var(--text-muted);margin:-4px 0 8px;">' + bi(L.r1Sub) + '</p>';
+  h += '<div class="reading-card">' + bi(L.r1Card) + '</div>';
+  h += '<div class="sub-grid">';
+  L.r1Areas.forEach(a => { h += '<div class="sub-card ' + a.cls + '"><strong>' + bi(a.t) + '</strong><br><span style="font-size:12px;">' + bi(a.d) + '</span></div>'; });
+  h += '</div>';
+  h += '<div class="insight-box">' + bi(L.r1Insight) + '</div>';
+
+  // Reading 2: Stern
+  h += '<h4 style="margin:14px 0 8px;">' + bi(L.r2Title) + '</h4>';
+  h += '<p style="font-size:11px;color:var(--text-muted);margin:-4px 0 8px;">' + bi(L.r2Sub) + '</p>';
+  h += '<div class="reading-card">' + bi(L.r2Card) + '</div>';
+  h += '<h4 style="margin:10px 0 8px;">' + bi(L.r2FailTitle) + '</h4>';
+  h += '<div class="sub-grid">';
+  L.r2Fails.forEach(f => { h += '<div class="sub-card red"><span style="font-size:12px;">⚠️ ' + bi(f) + '</span></div>'; });
+  h += '</div>';
+  h += '<div class="insight-box">' + bi(L.r2Insight) + '</div>';
+
+  // Reading 3: Cambridge
+  h += '<h4 style="margin:14px 0 8px;">' + bi(L.r3Title) + '</h4>';
+  h += '<p style="font-size:11px;color:var(--text-muted);margin:-4px 0 8px;">' + bi(L.r3Sub) + '</p>';
+  h += '<div class="reading-card">' + bi(L.r3Card) + '</div>';
+  h += '<h4 style="margin:10px 0 8px;">' + bi(L.r3FindTitle) + '</h4>';
+  h += '<div class="sub-grid">';
+  L.r3Finds.forEach(f => { h += '<div class="sub-card ' + f.cls + '"><strong>' + bi(f.t) + '</strong><br><span style="font-size:12px;">' + bi(f.d) + '</span></div>'; });
+  h += '</div>';
+  h += '<h4 style="margin:10px 0 8px;">' + bi(L.r3TipTitle) + '</h4>';
+  h += '<div class="sub-grid">';
+  L.r3Tips.forEach(tp => { h += '<div class="sub-card green"><span style="font-size:12px;">✅ ' + bi(tp) + '</span></div>'; });
+  h += '</div>';
+  h += '<div class="insight-box">' + bi(L.r3Insight) + '</div>';
+
+  h += '</div>';
+  return h;
+}
+
 // ---------------- QUIZ PANEL ----------------
 function renderQuizPanel(weekNum, panel) {
   const quiz = WEEK_QUIZ[weekNum];
@@ -1676,16 +1972,28 @@ function toggleModel(weekNum, qi) {
 
 // ---------------- PLACEHOLDER PANELS (weeks 2-13) ----------------
 function renderPlaceholderPanel(moduleKey, week, panel) {
+  const hasFiles = filesOf(week.num).length > 0;
+  const fileCount = filesOf(week.num).length;
   if (moduleKey === 'quiz') {
-    panel.innerHTML = '<div class="quiz-placeholder">' +
-      '<span class="ph-ico">📝</span>' +
-      '<strong>' + t('quizComingTitle') + '</strong><br>' + t('quizComingBody') +
-      '</div>';
+    if (hasFiles) {
+      panel.innerHTML = '<div class="content-placeholder">' +
+        '<span class="ph-ico">📝</span>' +
+        '<strong>' + t('quizComingTitle') + '</strong><br>' +
+        t('placeholderBodyHasFiles').replace('{n}', fileCount).replace('{w}', week.num) +
+        '</div>';
+    } else {
+      panel.innerHTML = '<div class="quiz-placeholder">' +
+        '<span class="ph-ico">📝</span>' +
+        '<strong>' + t('quizComingTitle') + '</strong><br>' + t('quizComingBody') +
+        '</div>';
+    }
   } else {
+    const body = hasFiles
+      ? t('placeholderBodyHasFiles').replace('{n}', fileCount).replace('{w}', week.num)
+      : t('placeholderBodyNoFiles').replace('{w}', week.num);
     panel.innerHTML = '<div class="content-placeholder">' +
       '<span class="ph-ico">📚</span>' +
-      '<strong>' + t('placeholderTitle') + '</strong><br>' +
-      t('placeholderBody').replace('{w}', week.num) +
+      '<strong>' + t('placeholderTitle') + '</strong><br>' + body +
       '</div>';
   }
 }
