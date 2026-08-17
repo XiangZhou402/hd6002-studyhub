@@ -600,7 +600,7 @@ const LANG_KEY = 'hd6002_lang';
 function getDefaultState() {
   const s = {
     materials: {}, notes: {}, stepCompletion: {},
-    activeTabs: {}, quizState: {},
+    activeTabs: {}, quizState: {}, expandedWeeks: { 1: true },
     lang: localStorage.getItem(LANG_KEY) || 'zh',
     lastUpdated: new Date().toISOString()
   };
@@ -1113,14 +1113,12 @@ function renderApp() {
   app.innerHTML = '' +
     renderHeader() +
     renderHero() +
-    renderDropzone() +
     renderDashboard() +
     renderMaterialsCard() +
     renderIloCard() +
     '<div id="weekSections"></div>' +
     renderFooter();
   renderWeekSections();
-  bindDropzone();
   refreshProgress();
   trackVisit();
 }
@@ -1240,7 +1238,8 @@ function renderWeekSections() {
 
 function renderWeekSection(week) {
   const section = document.createElement('div');
-  section.className = 'week-section' + (week.num === 1 ? ' expanded' : '');
+  const isExpanded = (appState.expandedWeeks && appState.expandedWeeks[week.num]) || week.num === 1;
+  section.className = 'week-section' + (isExpanded ? ' expanded' : '');
   section.id = 'week-' + week.num;
 
   const completion = getWeekCompletion(week.num);
@@ -1256,6 +1255,9 @@ function renderWeekSection(week) {
   header.className = 'week-header';
   header.onclick = function() {
     section.classList.toggle('expanded');
+    if (!appState.expandedWeeks) appState.expandedWeeks = {};
+    appState.expandedWeeks[week.num] = section.classList.contains('expanded');
+    saveState();
     if (section.classList.contains('expanded')) hydrateNotes(week.num, section);
   };
   header.innerHTML =
@@ -1330,8 +1332,14 @@ function renderWeekFiles(week) {
     input.type = 'file'; input.multiple = true;
     input.accept = '.pdf,.pptx,.ppt,.docx,.doc';
     input.onchange = function() {
-      for (const f of input.files) addFileToWeek(week.num, f.name, false);
+      let added = 0, dups = 0;
+      for (const f of input.files) {
+        if (addFileToWeek(week.num, f.name, true)) added++;
+        else dups++;
+      }
       refreshAll();
+      if (added > 0) showToast(t('addedToast').replace('{f}', added + ' file' + (added > 1 ? 's' : '')).replace('{w}', week.num));
+      else if (dups > 0) showToast(t('dupToast').replace('{f}', dups + ' file' + (dups > 1 ? 's' : '')));
     };
     input.click();
   };
@@ -1341,8 +1349,14 @@ function renderWeekFiles(week) {
   wrap.addEventListener('dragleave', function(e) { this.classList.remove('drag-over'); });
   wrap.addEventListener('drop', function(e) {
     e.preventDefault(); e.stopPropagation(); this.classList.remove('drag-over');
-    for (const f of e.dataTransfer.files) addFileToWeek(week.num, f.name, false);
+    let added = 0, dups = 0;
+    for (const f of e.dataTransfer.files) {
+      if (addFileToWeek(week.num, f.name, true)) added++;
+      else dups++;
+    }
     refreshAll();
+    if (added > 0) showToast(t('addedToast').replace('{f}', added + ' file' + (added > 1 ? 's' : '')).replace('{w}', week.num));
+    else if (dups > 0) showToast(t('dupToast').replace('{f}', dups + ' file' + (dups > 1 ? 's' : '')));
   });
   return wrap;
 }
@@ -1399,6 +1413,9 @@ function openWeek(weekNum) {
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (!el.classList.contains('expanded')) {
       el.classList.add('expanded');
+      if (!appState.expandedWeeks) appState.expandedWeeks = {};
+      appState.expandedWeeks[weekNum] = true;
+      saveState();
       hydrateNotes(weekNum, el);
     }
   }
